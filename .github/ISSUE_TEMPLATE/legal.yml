@@ -1,0 +1,28 @@
+---
+name: "⚖️ Novo conteúdo jurídico"
+about: "Propor um guia novo, correção legal ou atualização de jurisprudência"
+title: "[LEGAL] "
+labels: ["conteudo-juridico"]
+assignees: []
+---
+
+## Tipo de conteúdo
+
+- [ ] Novo guia "O Que Fazer Agora" (situação de crise)
+- [ ] Nova análise de atualidade (STF, STJ, nova lei)
+- [ ] Correção em guia existente (lei mudou, súmula revogada, decisão nova)
+- [ ] Novo template/documento (PROCON, notificação, petição)
+- [ ] Atualização de conteúdo de presidência (presídios/)
+
+## Qual a situação da pessoa que busca isso?
+
+Descreva o momento de vulnerabilidade que este conteúdo vai atender.
+
+## Base legal / jurisprudência
+
+Cite as fontes (lei, artigo, súmula, número do RE/REsp, link do tribunal).
+**Toda referência deve ser verificada antes de publicar.** Erro aqui tem consequência real.
+
+## URL prevista
+
+Ex.: `o-que-fazer-agora/recebi-citacao-o-que-fazer.html`

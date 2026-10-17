@@ -1,0 +1,29 @@
+---
+name: "🛠️ Nova funcionalidade"
+about: "Propor uma melhoria técnica no site ou nas ferramentas"
+title: "[FEAT] "
+labels: ["enhancement"]
+assignees: []
+---
+
+## O que falta hoje
+
+Descreva o problema ou a limitação atual. **Qual persona é afetada?**
+(pessoa presa / família de preso / quem tem demanda cível / advogado / o próprio site)
+
+## Proposta
+
+O que você sugere construir? Como funciona na prática?
+
+## Relação com o ROADMAP
+
+Qual fase isto serve? (ver `ROADMAP.md`)
+- [ ] Fase 1 — Projeto Anjo (presos injustamente)
+- [ ] Fase 2 — Cível sem êxito
+- [ ] Fase 3 — Software jurídico (conversa com advogado)
+- [ ] Fase 4 — Escala e comunidade
+- [ ] Infraestrutura geral
+
+## Critério de aceitação
+
+Como saberemos que está pronto? Ex.: "Pessoa responde 5 perguntas e recebe orientação sobre habeas corpus."

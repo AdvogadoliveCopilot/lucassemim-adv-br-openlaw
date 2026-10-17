@@ -1,0 +1,29 @@
+---
+name: "🚨 Correção urgente"
+about: "Erro que afeta pessoas em crise — prioridade máxima"
+title: "[URGENTE] "
+labels: ["bug", "urgente"]
+assignees: []
+---
+
+## O que está errado
+
+Descreva o problema de forma clara. **Se afeta pessoa presa ou família, marque como urgente.**
+
+## Onde acontece
+
+- [ ] Site principal (página: ______)
+- [ ] Série "O Que Fazer Agora" (qual guia: ______)
+- [ ] API / chat de atendimento
+- [ ] Painel de gestão
+- [ ] Script de automação (`_ferramentas/`)
+
+## Impacto
+
+O que a pessoa não consegue fazer por causa disso?
+
+## Passos para reproduzir
+
+1.
+2.
+3.
