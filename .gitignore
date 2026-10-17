@@ -16,3 +16,11 @@ node_modules/
 
 # Chave local do site
 api/.claude-config.local.php
+
+# Qualquer variante local/secreta
+*.local.php
+*.local.js
+*.local.json
+*.key
+*.pem
+api/*.local.*
