@@ -1,0 +1,7 @@
+<!-- Lote G: em sitemap.xml, na entrada da home (<loc>https://lucassemim.adv.br/</loc>), trocar so o lastmod para 2026-10-10 -->
+    <url>
+        <loc>https://lucassemim.adv.br/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.00</priority>
+    </url>

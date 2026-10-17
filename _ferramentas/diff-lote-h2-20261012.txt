@@ -1,0 +1,116 @@
+--- antes/advogado-criminalista/barreiro.html
++++ depois/advogado-criminalista/barreiro.html
+@@ -115 +115 @@
+-    "name": "Dr. Lucas Semim - Advocacia Criminal Estratégica",
++    "name": "Dr. Lucas Semim - Advocacia Criminal",
+--- antes/advogado-criminalista/belohorizonte.html
++++ depois/advogado-criminalista/belohorizonte.html
+@@ -115 +115 @@
+-    "name": "Dr. Lucas Semim - Advocacia Criminal Estratégica",
++    "name": "Dr. Lucas Semim - Advocacia Criminal",
+@@ -463 +463 @@
+-                    <h2 class="lc-h2" id="h-live">Método Live em Belo Horizonte</h2>
++                    <h2 class="lc-h2" id="h-live">Como é o atendimento em Belo Horizonte</h2>
+--- antes/advogado-criminalista/betim.html
++++ depois/advogado-criminalista/betim.html
+@@ -115 +115 @@
+-    "name": "Dr. Lucas Semim - Advocacia Criminal Estratégica",
++    "name": "Dr. Lucas Semim - Advocacia Criminal",
+--- antes/advogado-criminalista/brumadinho.html
++++ depois/advogado-criminalista/brumadinho.html
+@@ -115 +115 @@
+-    "name": "Dr. Lucas Semim - Advocacia Criminal Estratégica",
++    "name": "Dr. Lucas Semim - Advocacia Criminal",
+--- antes/advogado-criminalista/caete.html
++++ depois/advogado-criminalista/caete.html
+@@ -115 +115 @@
+-    "name": "Dr. Lucas Semim - Advocacia Criminal Estratégica",
++    "name": "Dr. Lucas Semim - Advocacia Criminal",
+--- antes/advogado-criminalista/contagem.html
++++ depois/advogado-criminalista/contagem.html
+@@ -115 +115 @@
+-    "name": "Dr. Lucas Semim - Advocacia Criminal Estratégica",
++    "name": "Dr. Lucas Semim - Advocacia Criminal",
+--- antes/advogado-criminalista/esmeraldas.html
++++ depois/advogado-criminalista/esmeraldas.html
+@@ -115 +115 @@
+-    "name": "Dr. Lucas Semim - Advocacia Criminal Estratégica",
++    "name": "Dr. Lucas Semim - Advocacia Criminal",
+--- antes/advogado-criminalista/ibirite.html
++++ depois/advogado-criminalista/ibirite.html
+@@ -115 +115 @@
+-    "name": "Dr. Lucas Semim - Advocacia Criminal Estratégica",
++    "name": "Dr. Lucas Semim - Advocacia Criminal",
+--- antes/advogado-criminalista/igarape.html
++++ depois/advogado-criminalista/igarape.html
+@@ -115 +115 @@
+-    "name": "Dr. Lucas Semim - Advocacia Criminal Estratégica",
++    "name": "Dr. Lucas Semim - Advocacia Criminal",
+--- antes/advogado-criminalista/index.html
++++ depois/advogado-criminalista/index.html
+@@ -212 +212 @@
+-   "name": "Dr. Lucas Semim - Advocacia Criminal Estratégica",
++   "name": "Dr. Lucas Semim - Advocacia Criminal",
+--- antes/advogado-criminalista/lagoasanta.html
++++ depois/advogado-criminalista/lagoasanta.html
+@@ -115 +115 @@
+-    "name": "Dr. Lucas Semim - Advocacia Criminal Estratégica",
++    "name": "Dr. Lucas Semim - Advocacia Criminal",
+--- antes/advogado-criminalista/neves.html
++++ depois/advogado-criminalista/neves.html
+@@ -115 +115 @@
+-    "name": "Dr. Lucas Semim - Advocacia Criminal Estratégica",
++    "name": "Dr. Lucas Semim - Advocacia Criminal",
+--- antes/advogado-criminalista/novalima.html
++++ depois/advogado-criminalista/novalima.html
+@@ -115 +115 @@
+-    "name": "Dr. Lucas Semim - Advocacia Criminal Estratégica",
++    "name": "Dr. Lucas Semim - Advocacia Criminal",
+--- antes/advogado-criminalista/pedroleopoldo.html
++++ depois/advogado-criminalista/pedroleopoldo.html
+@@ -115 +115 @@
+-    "name": "Dr. Lucas Semim - Advocacia Criminal Estratégica",
++    "name": "Dr. Lucas Semim - Advocacia Criminal",
+--- antes/advogado-criminalista/sabara.html
++++ depois/advogado-criminalista/sabara.html
+@@ -115 +115 @@
+-    "name": "Dr. Lucas Semim - Advocacia Criminal Estratégica",
++    "name": "Dr. Lucas Semim - Advocacia Criminal",
+--- antes/advogado-criminalista/santaluzia.html
++++ depois/advogado-criminalista/santaluzia.html
+@@ -115 +115 @@
+-    "name": "Dr. Lucas Semim - Advocacia Criminal Estratégica",
++    "name": "Dr. Lucas Semim - Advocacia Criminal",
+--- antes/advogado-criminalista/saojosedalapa.html
++++ depois/advogado-criminalista/saojosedalapa.html
+@@ -115 +115 @@
+-    "name": "Dr. Lucas Semim - Advocacia Criminal Estratégica",
++    "name": "Dr. Lucas Semim - Advocacia Criminal",
+--- antes/advogado-criminalista/vespasiano.html
++++ depois/advogado-criminalista/vespasiano.html
+@@ -115 +115 @@
+-    "name": "Dr. Lucas Semim - Advocacia Criminal Estratégica",
++    "name": "Dr. Lucas Semim - Advocacia Criminal",
+--- antes/faq.html
++++ depois/faq.html
+@@ -114 +114 @@
+-                <div class="lc-panel lc-help" role="group" aria-label="Atendimento imediato" data-lc-hero>
++                <div class="lc-panel lc-help" role="group" aria-label="Contato com o advogado" data-lc-hero>
+@@ -135 +135 @@
+-<details class="lc-q" id="q-advogado-delegacia"><summary>A pessoa presa tem direito a advogado já na delegacia?</summary><div class="lc-q__a"><p>Sim. Além da garantia constitucional, o Estatuto da Advocacia (Lei 8.906/1994, art. 7º, III e XIV) assegura ao advogado conversar pessoal e reservadamente com o cliente preso e examinar o auto de prisão em flagrante e a investigação, mesmo sem procuração. Se esse acesso for negado, o advogado pode adotar as medidas cabíveis.</p><p class="lc-q__more"><a href="/defesa-criminal/oitiva-delegacia.html"><i class="fas fa-arrow-right" aria-hidden="true"></i>Oitiva em delegacia: protocolo de blindagem</a></p></div></details>
++<details class="lc-q" id="q-advogado-delegacia"><summary>A pessoa presa tem direito a advogado já na delegacia?</summary><div class="lc-q__a"><p>Sim. Além da garantia constitucional, o Estatuto da Advocacia (Lei 8.906/1994, art. 7º, III e XIV) assegura ao advogado conversar pessoal e reservadamente com o cliente preso e examinar o auto de prisão em flagrante e a investigação, mesmo sem procuração. Se esse acesso for negado, o advogado pode adotar as medidas cabíveis.</p><p class="lc-q__more"><a href="/defesa-criminal/oitiva-delegacia.html"><i class="fas fa-arrow-right" aria-hidden="true"></i>Oitiva em delegacia: como se preparar</a></p></div></details>
+--- antes/index.html
++++ depois/index.html
+@@ -167 +167 @@
+-        "name": "Dr. Lucas Semim - Advocacia Criminal Estratégica",
++        "name": "Dr. Lucas Semim - Advocacia Criminal",
+--- antes/js/ai-neural-seo.js
++++ depois/js/ai-neural-seo.js
+@@ -190 +190 @@
+-                "name": "Defesa Criminal — Serviços de Urgência e Estratégicos",
++                "name": "Defesa Criminal — Serviços de Urgência",
+--- antes/js/footer-seo.js
++++ depois/js/footer-seo.js
+@@ -722 +722 @@
+-      `© ${new Date().getFullYear()} Semim & Associados · Advocacia Criminal Inteligente`
++      `© ${new Date().getFullYear()} Semim & Associados · Advocacia Criminal`

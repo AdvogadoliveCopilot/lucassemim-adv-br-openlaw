@@ -1,0 +1,27 @@
+# ===========================================================
+# ROBOTS.TXT - PROTOCOLO DE INDEXAÇÃO | LUCAS SEMIM ADVOCACIA
+# ===========================================================
+
+# 1. ACESSO GERAL (Googlebot, Bingbot, etc.)
+User-agent: *
+Allow: /
+
+# 2. PERMISSÃO DE RENDERIZAÇÃO (IMPORTANTE)
+# O Google precisa acessar o CSS e JS para ver o design "Quantum"
+Allow: /codeleicivel/
+Allow: /img/
+Allow: /mapa.css
+
+# 3. BLOQUEIO DE ÁREAS RESTRITAS (SIGILO ABSOLUTO)
+# Impede que essas páginas apareçam no Google
+Disallow: /painel-cliente.html
+Disallow: /sala-reuniao.html
+Disallow: /area-restrita/
+Disallow: /admin/
+
+# 4. BLOQUEIO DE ARQUIVOS SENSÍVEIS
+Disallow: *.json
+Disallow: /codeleicivel/civel-meeting-logic.js
+
+# 5. MAPA DO SITE (Para o Google achar tudo rápido)
+Sitemap: https://civel.lucassemim.adv.br/sitemap.xml

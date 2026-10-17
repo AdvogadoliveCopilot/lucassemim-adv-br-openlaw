@@ -1,0 +1,249 @@
+# ================================================================== #
+# === .HTACCESS: ELITE SEO V7 — SEGURO & COMPATÍVEL APACHE 2026   === #
+# === Site: lucassemim.adv.br — Advocacia Criminal — Sabará/BH    === #
+# ================================================================== #
+
+# --- 1. CONFIGURAÇÃO DE CHARSET ---
+AddDefaultCharset UTF-8
+
+# --- 2. COMPRESSÃO DE DADOS (GZIP / DEFLATE) ---
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json application/xml application/ld+json image/svg+xml
+    SetEnvIfNoCase Request_URI \.(gif|jpe?g|png|webp|gz|zip|bz2)$ no-gzip
+</IfModule>
+
+# --- 3. CACHE INTELIGENTE DE NAVEGADOR (MOD_EXPIRES) ---
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/html                  "access plus 0 seconds"
+    ExpiresByType text/css                   "access plus 1 year"
+    ExpiresByType application/javascript     "access plus 1 year"
+    ExpiresByType image/jpeg                 "access plus 1 year"
+    ExpiresByType image/webp                 "access plus 1 year"
+    ExpiresByType image/png                  "access plus 1 year"
+    ExpiresByType image/svg+xml              "access plus 1 year"
+    ExpiresByType image/x-icon               "access plus 1 year"
+    ExpiresByType font/woff2                 "access plus 1 year"
+    ExpiresByType font/woff                  "access plus 1 year"
+    ExpiresByType font/ttf                   "access plus 1 year"
+    ExpiresByType application/json           "access plus 1 hour"
+    ExpiresByType application/ld+json        "access plus 1 day"
+    ExpiresByType text/xml                   "access plus 1 day"
+</IfModule>
+
+# --- 4. CABEÇALHOS DE SEGURANÇA E ACESSIBILIDADE DE IA (GEO / CORS) ---
+<IfModule mod_headers.c>
+    # Segurança Essencial
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # CORS Aberto para Citações e Leitura de IAs (ChatGPT, Claude, Gemini, Perplexity)
+    Header always set Access-Control-Allow-Origin "*"
+    Header always set Access-Control-Allow-Methods "GET, HEAD, OPTIONS"
+
+    # Indexação Máxima no Google e Buscadores
+    Header always set X-Robots-Tag "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+
+    # ESCUDO 04/10/2026: paginas privadas nunca entram no Google (a regra mais especifica vence a global)
+    <FilesMatch "^(painel-cliente|painel-gestao-admin|painel-processo|sala-reuniao)\.html$">
+        Header always set X-Robots-Tag "noindex, nofollow, noarchive, nosnippet"
+    </FilesMatch>
+
+    # ESCUDO 04/10/2026: CSP minimo — impede <base> forjado, plugins e embutir o site em outro dominio.
+    # (nao restringe scripts nem estilos, entao nao quebra nenhuma pagina)
+    Header always set Content-Security-Policy "base-uri 'self'; object-src 'none'; frame-ancestors 'self'"
+
+    # Cache Control Seguro para HTML (Revalidação rápida)
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "max-age=0, must-revalidate"
+    </FilesMatch>
+
+    # Cache Control para Assets Estáticos (1 ano)
+    <FilesMatch "\.(css|js|jpg|jpeg|webp|png|gif|svg|ico|woff|woff2|ttf)$">
+        Header set Cache-Control "max-age=31536000, public, immutable"
+    </FilesMatch>
+</IfModule>
+
+# --- 5. MOTOR DE REESCRITA (REWRITE ENGINE) ---
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # 5.1. Redirecionar www -> non-www (Canônico Oficial: https://lucassemim.adv.br)
+    RewriteCond %{HTTP_HOST} ^www\.lucassemim\.adv\.br [NC]
+    RewriteRule ^(.*)$ https://lucassemim.adv.br/$1 [R=301,L]
+
+    # 5.2. Forçar HTTPS
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://lucassemim.adv.br/$1 [R=301,L]
+
+    # 5.3. Remover index.html visível da raiz
+    RewriteCond %{THE_REQUEST} ^GET\ /index\.html [NC]
+    RewriteRule ^index\.html$ / [R=301,L]
+
+    # 5.3b. Politica de Privacidade: o aviso de cookies (js/lgpd.js) usa um link relativo que, dentro de
+    # subpastas (ex.: /o-que-fazer-agora/), cairia em 404. Manda para o endereco unico da politica.
+    RewriteRule ^.+/politica-(?:de-)?privacidade\.html$ /politica-privacidade.html [R=301,L]
+
+    # 5.4. URLs amigáveis (remove .html visível)
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}\.html -f
+    RewriteRule ^([^\.]+)/?$ $1.html [NC,L]
+
+    # 5.5. Bloqueio de injeções e ataques básicos
+    RewriteCond %{QUERY_STRING} (base64_encode|eval\(|javascript:|<script) [NC]
+    RewriteRule .* - [F,L]
+
+    # 5.6. ESCUDO 04/10/2026 — mais travas (somente regras ja suportadas por este servidor)
+    # a) metodos de depuracao (obs.: o Apache ignora .htaccess para TRACE; TRACK/DEBUG sao barrados aqui)
+    RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK|DEBUG) [NC]
+    RewriteRule .* - [F,L]
+    # b) ferramentas de varredura / ataque automatico
+    RewriteCond %{HTTP_USER_AGENT} (sqlmap|nikto|masscan|acunetix|wpscan|havij|zgrab|nessus|dirbuster|gobuster|nuclei) [NC]
+    RewriteRule .* - [F,L]
+    # c) traversal, byte nulo, SQLi, iframe e script (cru ou codificado como %3C) na query string
+    RewriteCond %{QUERY_STRING} (\.\./|%2e%2e|%00|union(%20|\+)+select|information_schema|<iframe|%3Ciframe|%3Cscript) [NC]
+    RewriteRule .* - [F,L]
+    # d) pastas ocultas (.git, .svn, .env...) em qualquer nivel
+    RewriteRule (^|/)\.(git|svn|hg|env|idea|vscode|DS_Store) - [F,L]
+    # e) codigo-fonte, logs, copias e pacotes nunca saem pela web
+    RewriteRule \.(gs|md|log|ini|sh|py|bak|old|orig|swp|sql|zip|tar|gz|7z|rar)$ - [F,L,NC]
+    # f) pastas de trabalho que nao devem estar publicas
+    RewriteRule ^apps-script/ - [F,L]
+    RewriteRule ^civel/Claude.outputs/ - [F,L]
+    RewriteRule ^clientes/ - [F,L]
+    # g) exportacao/backup do projeto Apps Script (traz codigo-fonte e pode trazer segredos)
+    RewriteRule (^|/)Advogado.Live[^/]*\.json$ - [F,L,NC]
+    # h) JSON: so os arquivos publicos do site; qualquer outro .json e negado
+    RewriteCond %{REQUEST_URI} \.json$ [NC]
+    RewriteCond %{REQUEST_URI} !(^|/)(manifest|noticias|seo-intelligence|version)\.json$ [NC]
+    RewriteRule .* - [F,L]
+    # i) alvos tipicos de scanner (o site nao usa WordPress, phpMyAdmin etc.)
+    RewriteRule ^(wp-admin|wp-login\.php|wp-content|wp-includes|xmlrpc\.php|phpmyadmin|pma|adminer|cgi-bin|vendor)(/|$) - [F,L,NC]
+</IfModule>
+
+# --- 6. BLOQUEIO DE ARQUIVOS SENSÍVEIS ---
+# ESCUDO 04/10/2026: o arquivo com a chave da IA nunca pode ser baixado pelo navegador
+# (o PHP continua lendo normalmente, pois o include usa o disco, nao o HTTP).
+<Files ".claude-config.php">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</Files>
+
+<FilesMatch "(^\.htaccess|\.env|\.git|composer\.|package\.json|\.bak|\.sql)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# ================================================= #
+# === 7. MIGRAÇÃO TÁTICA: REDIRECIONAMENTOS 301 === #
+# ================================================= #
+
+# --- 7.1. PÁGINAS REGIONAIS / CIDADES ---
+Redirect 301 /sabara.html https://lucassemim.adv.br/advogado-criminalista/sabara.html
+Redirect 301 /belohorizonte.html https://lucassemim.adv.br/advogado-criminalista/belohorizonte.html
+Redirect 301 /contagem.html https://lucassemim.adv.br/advogado-criminalista/contagem.html
+Redirect 301 /betim.html https://lucassemim.adv.br/advogado-criminalista/betim.html
+Redirect 301 /barreiro.html https://lucassemim.adv.br/advogado-criminalista/barreiro.html
+Redirect 301 /ibirite.html https://lucassemim.adv.br/advogado-criminalista/ibirite.html
+Redirect 301 /caete.html https://lucassemim.adv.br/advogado-criminalista/caete.html
+Redirect 301 /brumadinho.html https://lucassemim.adv.br/advogado-criminalista/brumadinho.html
+Redirect 301 /esmeraldas.html https://lucassemim.adv.br/advogado-criminalista/esmeraldas.html
+Redirect 301 /lagoasanta.html https://lucassemim.adv.br/advogado-criminalista/lagoasanta.html
+Redirect 301 /neves.html https://lucassemim.adv.br/advogado-criminalista/neves.html
+Redirect 301 /novalima.html https://lucassemim.adv.br/advogado-criminalista/novalima.html
+Redirect 301 /santaluzia.html https://lucassemim.adv.br/advogado-criminalista/santaluzia.html
+Redirect 301 /saojosedalapa.html https://lucassemim.adv.br/advogado-criminalista/saojosedalapa.html
+Redirect 301 /vespasiano.html https://lucassemim.adv.br/advogado-criminalista/vespasiano.html
+Redirect 301 /igarape.html https://lucassemim.adv.br/advogado-criminalista/igarape.html
+
+# --- 7.2. PASTA: DEFESA CRIMINAL ---
+Redirect 301 /advocacia-execucao-penal-estrategia-defesa.html https://lucassemim.adv.br/defesa-criminal/advocacia-execucao-penal-estrategia-defesa.html
+Redirect 301 /arrependimento-posterior.html https://lucassemim.adv.br/defesa-criminal/arrependimento-posterior.html
+Redirect 301 /audiencia-custodia.html https://lucassemim.adv.br/defesa-criminal/audiencia-custodia.html
+Redirect 301 /audiencia-de-custodia-guia-defesa-advogado.html https://lucassemim.adv.br/defesa-criminal/audiencia-de-custodia-guia-defesa-advogado.html
+Redirect 301 /audiencia-instrucao.html https://lucassemim.adv.br/defesa-criminal/audiencia-instrucao.html
+Redirect 301 /autoria-coautoria-participacao-concurso-de-pessoas.html https://lucassemim.adv.br/defesa-criminal/autoria-coautoria-participacao-concurso-de-pessoas.html
+Redirect 301 /beneficios-execucao-penal-remicao-detracao-livramento-condicional.html https://lucassemim.adv.br/defesa-criminal/beneficios-execucao-penal-remicao-detracao-livramento-condicional.html
+Redirect 301 /calculo-progressao-de-regime-execucao-penal.html https://lucassemim.adv.br/defesa-criminal/calculo-progressao-de-regime-execucao-penal.html
+Redirect 301 /concurso-de-crimes-material-formal-continuado.html https://lucassemim.adv.br/defesa-criminal/concurso-de-crimes-material-formal-continuado.html
+Redirect 301 /crime-de-bagatela-principio-insignificancia.html https://lucassemim.adv.br/defesa-criminal/crime-de-bagatela-principio-insignificancia.html
+Redirect 301 /crime-de-transito-homicidio-lesao-culposa-defesa.html https://lucassemim.adv.br/defesa-criminal/crime-de-transito-homicidio-lesao-culposa-defesa.html
+Redirect 301 /crime-impossivel.html https://lucassemim.adv.br/defesa-criminal/crime-impossivel.html
+Redirect 301 /crimes-contra-honra-calunia-difamacao-injuria.html https://lucassemim.adv.br/defesa-criminal/crimes-contra-honra-calunia-difamacao-injuria.html
+Redirect 301 /criminal-compliance-lei-anticorrupcao-defesa.html https://lucassemim.adv.br/defesa-criminal/criminal-compliance-lei-anticorrupcao-defesa.html
+Redirect 301 /defesa-colaboracao-premiada-delacao-lei-12850.html https://lucassemim.adv.br/defesa-criminal/defesa-colaboracao-premiada-delacao-lei-12850.html
+Redirect 301 /defesa-crime-sonegacao-fiscal-divida-nao-e-crime.html https://lucassemim.adv.br/defesa-criminal/defesa-crime-sonegacao-fiscal-divida-nao-e-crime.html
+Redirect 301 /defesa-deficiente-nulidade.html https://lucassemim.adv.br/defesa-criminal/defesa-deficiente-nulidade.html
+Redirect 301 /defesa-gestao-fraudulenta-temeraria-lei-7492.html https://lucassemim.adv.br/defesa-criminal/defesa-gestao-fraudulenta-temeraria-lei-7492.html
+Redirect 301 /defesa-tribunal-do-juri-guia-completo.html https://lucassemim.adv.br/defesa-criminal/defesa-tribunal-do-juri-guia-completo.html
+Redirect 301 /dever-legal.html https://lucassemim.adv.br/defesa-criminal/dever-legal.html
+Redirect 301 /dosimetria-da-pena-artigo-59-68-cp-guia-defesa.html https://lucassemim.adv.br/defesa-criminal/dosimetria-da-pena-artigo-59-68-cp-guia-defesa.html
+Redirect 301 /dosimetria-da-pena-calculo-artigo-59-cp.html https://lucassemim.adv.br/defesa-criminal/dosimetria-da-pena-calculo-artigo-59-cp.html
+Redirect 301 /erro-de-tipo-proibicao.html https://lucassemim.adv.br/defesa-criminal/erro-de-tipo-proibicao.html
+Redirect 301 /estado-de-necessidade.html https://lucassemim.adv.br/defesa-criminal/estado-de-necessidade.html
+Redirect 301 /excludentes-de-culpabilidade.html https://lucassemim.adv.br/defesa-criminal/excludentes-de-culpabilidade.html
+Redirect 301 /excludentes-de-ilicitude-diagnostico.html https://lucassemim.adv.br/defesa-criminal/excludentes-de-ilicitude-diagnostico.html
+Redirect 301 /execucao-penal-progressao-regime-remicao.html https://lucassemim.adv.br/defesa-criminal/execucao-penal-progressao-regime-remicao.html
+Redirect 301 /fato-atipico.html https://lucassemim.adv.br/defesa-criminal/fato-atipico.html
+Redirect 301 /furto-roubo-apropriacao-indebita-diferencas.html https://lucassemim.adv.br/defesa-criminal/furto-roubo-apropriacao-indebita-diferencas.html
+Redirect 301 /habeas-corpus-guia-impetracao-liminar.html https://lucassemim.adv.br/defesa-criminal/habeas-corpus-guia-impetracao-liminar.html
+Redirect 301 /in-dubio-pro-reo-presuncao-inocencia.html https://lucassemim.adv.br/defesa-criminal/in-dubio-pro-reo-presuncao-inocencia.html
+Redirect 301 /incompetencia-do-juizo.html https://lucassemim.adv.br/defesa-criminal/incompetencia-do-juizo.html
+Redirect 301 /inexigibilidade-conduta-diversa.html https://lucassemim.adv.br/defesa-criminal/inexigibilidade-conduta-diversa.html
+Redirect 301 /legitima-defesa-da-honra-inconstitucional-adpf-779.html https://lucassemim.adv.br/defesa-criminal/legitima-defesa-da-honra-inconstitucional-adpf-779.html
+Redirect 301 /legitima-defesa.html https://lucassemim.adv.br/defesa-criminal/legitima-defesa.html
+Redirect 301 /lei-maria-da-penha-defesa-medida-protetiva.html https://lucassemim.adv.br/defesa-criminal/lei-maria-da-penha-defesa-medida-protetiva.html
+Redirect 301 /nexo-causal-artigo-13-cp-causa-superveniente.html https://lucassemim.adv.br/defesa-criminal/nexo-causal-artigo-13-cp-causa-superveniente.html
+Redirect 301 /nulidade-processual-penal-defesa-absolvicao.html https://lucassemim.adv.br/defesa-criminal/nulidade-processual-penal-defesa-absolvicao.html
+Redirect 301 /nulidades-processo-penal-absoluta-relativa.html https://lucassemim.adv.br/defesa-criminal/nulidades-processo-penal-absoluta-relativa.html
+Redirect 301 /oitiva-delegacia.html https://lucassemim.adv.br/defesa-criminal/oitiva-delegacia.html
+Redirect 301 /ponte-de-ouro.html https://lucassemim.adv.br/defesa-criminal/ponte-de-ouro.html
+Redirect 301 /prescricao-extincao-punibilidade.html https://lucassemim.adv.br/defesa-criminal/prescricao-extincao-punibilidade.html
+Redirect 301 /prova-digital-nulidade-cadeia-de-custodia-whatsapp.html https://lucassemim.adv.br/defesa-criminal/prova-digital-nulidade-cadeia-de-custodia-whatsapp.html
+Redirect 301 /prova-ilicita-frutos-arvore-envenenada.html https://lucassemim.adv.br/defesa-criminal/prova-ilicita-frutos-arvore-envenenada.html
+Redirect 301 /trafico-de-drogas-defesa-desclassificacao-privilegiado.html https://lucassemim.adv.br/defesa-criminal/trafico-de-drogas-defesa-desclassificacao-privilegiado.html
+
+# --- 7.3. PASTA: LEGAL TECH ---
+Redirect 301 /calculadora-prescricao.html https://lucassemim.adv.br/legal-tech/calculadora-prescricao.html
+Redirect 301 /calculadora-widget.html https://lucassemim.adv.br/legal-tech/calculadora-widget.html
+Redirect 301 /convite.html https://lucassemim.adv.br/legal-tech/convite.html
+Redirect 301 /widget.html https://lucassemim.adv.br/legal-tech/widget.html
+
+# --- 7.4. PASTA: PORTAL DO CLIENTE ---
+Redirect 301 /cadastro-cliente.html https://lucassemim.adv.br/portal/cadastro-cliente.html
+Redirect 301 /painel-cliente.html https://lucassemim.adv.br/portal/painel-cliente.html
+Redirect 301 /template-cliente.html https://lucassemim.adv.br/portal/template-cliente.html
+
+# --- 7.5. CORREÇÕES DE NOTÍCIAS E ACESSOS RESIDUAIS ---
+Redirect 301 /stf-maconha-40g-usuario-traficante.html https://lucassemim.adv.br/news/stf-maconha-40g-usuario-traficante.html
+Redirect 301 /intervencao-venezuela-prisao-maduro-analise-juridica.html https://lucassemim.adv.br/news/intervencao-venezuela-prisao-maduro-analise-juridica.html
+Redirect 301 /politica-de-privacidade.html https://lucassemim.adv.br/politica-privacidade.html
+Redirect 301 /efesa-tribunal-do-juri-guia-completo.html https://lucassemim.adv.br/defesa-criminal/defesa-tribunal-do-juri-guia-completo.html
+
+# --- 7.5b. DUPLICATAS '-1' -> ORIGINAIS (conteúdo duplicado) ---
+Redirect 301 /news/erro-fatal-audiencia-custodia-habeas-corpus-1.html https://lucassemim.adv.br/news/erro-fatal-audiencia-custodia-habeas-corpus.html
+Redirect 301 /news/maria-da-penha-fianca-delegacia-audiencia-custodia-1.html https://lucassemim.adv.br/news/maria-da-penha-fianca-delegacia-audiencia-custodia.html
+Redirect 301 /news/prisao-preventiva-nao-e-condenacao-antecipada-stj-habeas-corpus-1.html https://lucassemim.adv.br/news/prisao-preventiva-nao-e-condenacao-antecipada-stj-habeas-corpus.html
+
+# --- 7.6. REDE DE SEGURANÇA CONTRA ERROS 404 RESIDUAIS ---
+RedirectMatch 301 ^/codelei/(?!analytics\.js$)(.*)$ https://lucassemim.adv.br/
+
+# ------------------------------------------------------------------ #
+# 8. DIRETRIZES FINAIS DE ERRO E LISTAGEM DE DIRETÓRIOS              #
+# ------------------------------------------------------------------ #
+ErrorDocument 404 /404.html
+Options -Indexes

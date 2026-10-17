@@ -1,0 +1,32 @@
+PORTAL DO CLIENTE — PROJETO NOVO  ·  entrega de 15/10/2026
+
+Leia nesta ordem:
+  0. ESTADO-INSTALACAO-20261015.md    O que já está instalado e no ar no seu Google, os endereços e o que ainda depende de você.
+  1. SUBIDA-SERVIDOR-12-10.md        O pacote de 12/10 (109 arquivos) que você pediu para enviar ao servidor.
+                                     Quem sobe é você, pelo FileZilla; a ordem e as conferências estão aí.
+  2. INSTALAR_PROJETO_NOVO.md        Script novo + planilha nova + pasta nova no Drive, com as pastas dos clientes
+                                     organizadas sozinhas (uns 15 minutos; independe do servidor).
+  3. CONFERENCIA-AGENTES-20261015.md O que os outros agentes fizeram e o veredito.
+  (INSTALAR_PORTAL_V3.md é o "modo B": instalar dentro do projeto antigo. Escolha um dos dois, não os dois.)
+
+Pastas:
+  apps-script/      Os 3 arquivos para colar no projeto novo: 00_Roteador_PROJETO_NOVO.gs, 32_Portal_Cliente_V3.gs, CentralComandos.html
+  site-modo-novo/   Rascunho da página do cliente ajustada ao projeto novo (NÃO subir antes da etapa 6 do guia)
+  _restaurar/       Cópia do painel-gestao-admin.html original de 12/10 (o modificado pelo outro agente não deve subir)
+  capturas/         Prints da Central de Comandos (dados fictícios), no computador e no celular
+  _testes/          Testes automáticos (não precisa abrir; veja o LEIA-ME dentro)
+
+Estado em 15/10/2026 (16h30):
+  - NO AR desde a tarde: js/ls-api-config.js (1.606 bytes), portal/painel-cliente.html (77.351 bytes, visual "aplicativo" ligado ao Portal V3)
+    e, às 16h25, o .htaccess (17.525 bytes; acrescenta só o redirecionamento 301 da política de privacidade a partir de subpastas). Os três conferidos byte a byte pelo FTP.
+    Contrato da API: contrato-portal-v3-20261015.md. Pacote, prints e backups: pasta subida-portal-app-20261015 / _ferramentas\backups no PC.
+    Com isso, os 109 arquivos do pacote de 12/10 estão no servidor.
+  - Falta (precisa de você): (1) abrir o site no celular com 4G e confirmar que a home, /o-que-fazer-agora/ e uma página 404 carregam (se der erro 500, reenviar
+    _ferramentas\backups\servidor-antes-portal-app-20261015\.htaccess); (2) criar o "Acesso de teste" na Central e testar o login na página do cliente.
+Estado às 12h do mesmo dia:
+  - Pacote de 12/10: grupos 1 a 4 (108 de 109 arquivos) estão no servidor. Falta só o .htaccess (grupo 5), por último.
+  - Projeto novo do Google: instalado, testado no Google real e publicado (Portal API e Central de Comandos). Veja ESTADO-INSTALACAO-20261015.md.
+  - O teste real achou e corrigiu um defeito (texto começando com "=" virava fórmula na planilha). Arquivo corrigido: 32_Portal_Cliente_V3.gs, sha256 ee802175...713f0.
+Testes: 81 do backend; 85 defeitos plantados de propósito, todos detectados; Central no navegador 21 passos (modo antigo) e
+14 (projeto novo), desktop e celular, sem erro de console; página do cliente 17 passos. No Google real passaram portal3Instalar,
+portal3Testes e portal3Diagnostico, e as cinco telas da Central abriram sem erro.

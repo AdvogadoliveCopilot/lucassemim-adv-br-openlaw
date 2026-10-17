@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central de Documentos — Ação Contra Casa de Apostas | Dr. Lucas Semim</title>
+    <meta name="description" content="Envie seus documentos sobre o caso das bets diretamente para o escritório Dr. Lucas Semim (OAB/MG 222.539). Você pode voltar e complementar o envio quantas vezes precisar até o processo ficar completo.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&family=Teko:wght@300;500&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+
+    <style>
+        :root { --cor-fundo: #08090a; --cor-ouro: #d4af37; --cor-vidro: rgba(15, 15, 20, 0.96); --cor-verde: #22c55e; --cor-erro: #c0392b; }
+        body {
+            background-color: var(--cor-fundo); color: #e0e0e0; font-family: 'Lato', sans-serif; overflow-x: hidden; min-height: 100vh; display: flex; flex-direction: column;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.88), rgba(0,0,0,0.75)), url('img/cadastro-processo-semim.png'); background-size: cover; background-position: center; background-attachment: fixed;
+        }
+        #header-placeholder { min-height: 80px; }
+        .onboarding-section { flex: 1; display: flex; align-items: center; justify-content: center; padding: 40px 20px; }
+        .wizard-card { width: 100%; max-width: 780px; background: var(--cor-vidro); border: 1px solid #444; border-top: 5px solid var(--cor-ouro); border-radius: 15px; padding: 0; box-shadow: 0 40px 100px rgba(0,0,0,0.9); position: relative; overflow: hidden; }
+        .progress-container { background: #222; height: 4px; width: 100%; }
+        .progress-bar-fill { height: 100%; background: var(--cor-ouro); width: 25%; transition: width 0.5s ease; }
+        .wizard-header { padding: 35px 40px 15px 40px; text-align: center; border-bottom: 1px solid #222; }
+        .wizard-title { font-family: 'Playfair Display'; color: #fff; font-size: 2rem; margin: 0; }
+        .wizard-sub { font-family: 'Fira Code'; color: #888; font-size: 0.78rem; letter-spacing: 2px; margin-top: 8px; text-transform: uppercase; }
+        .banner-retorno { background: rgba(212,175,55,0.1); border: 1px solid var(--cor-ouro); color: #f1d78c; padding: 14px 20px; border-radius: 8px; margin: 20px 40px 0; font-size: 0.9rem; display: none; }
+        .step-content { padding: 35px 40px; display: none; }
+        .step-content.active { display: block; animation: fadeIn 0.5s; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+        .form-label { color: #aaa; font-size: 0.8rem; font-weight: bold; display: block; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
+        .input-plat { width: 100%; padding: 14px; background: #0a0a0a; border: 1px solid #444; color: #fff; border-radius: 6px; font-family: 'Lato'; font-size: 1.05rem; margin-bottom: 22px; transition: 0.3s; }
+        .input-plat:focus { border-color: var(--cor-ouro); box-shadow: 0 0 15px rgba(212, 175, 55, 0.1); outline: none; }
+        .selection-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 22px; }
+        .btn-select { background: rgba(255,255,255,0.03); border: 1px solid #444; color: #ccc; padding: 22px 18px; border-radius: 8px; cursor: pointer; transition: 0.3s; text-align: left; }
+        .btn-select strong { display: block; font-family: 'Teko'; font-size: 1.25rem; text-transform: uppercase; color: #fff; letter-spacing: 0.5px; }
+        .btn-select span { font-size: 0.82rem; color: #888; }
+        .btn-select:hover, .btn-select.selected { background: var(--cor-ouro); border-color: var(--cor-ouro); transform: translateY(-2px); box-shadow: 0 5px 20px rgba(212, 175, 55, 0.2); }
+        .btn-select.selected strong, .btn-select:hover strong { color: #000; }
+        .btn-select.selected span, .btn-select:hover span { color: #333; }
+        .dropzone { border: 2px dashed #444; border-radius: 10px; padding: 30px 20px; text-align: center; cursor: pointer; transition: 0.3s; margin-bottom: 18px; }
+        .dropzone:hover, .dropzone.dragover { border-color: var(--cor-ouro); background: rgba(212,175,55,0.05); }
+        .dropzone-icon { font-size: 2.2rem; display: block; margin-bottom: 8px; }
+        .lista-arquivos { list-style: none; padding: 0; margin: 0 0 20px; }
+        .lista-arquivos li { display: flex; justify-content: space-between; align-items: center; background: #0a0a0a; border: 1px solid #333; border-radius: 6px; padding: 10px 14px; margin-bottom: 8px; font-size: 0.9rem; }
+        .lista-arquivos .remover { color: #c0392b; cursor: pointer; font-weight: bold; padding: 0 6px; }
+        .aviso-tamanho { color: #e74c3c; font-size: 0.82rem; margin-bottom: 14px; display: none; }
+        .nav-buttons { display: flex; justify-content: space-between; margin-top: 20px; }
+        .btn-prev { background: transparent; border: 1px solid #444; color: #888; padding: 10px 30px; border-radius: 50px; cursor: pointer; font-family: 'Teko'; font-size: 1.2rem; transition: 0.3s; }
+        .btn-next { background: var(--cor-ouro); color: #000; border: none; padding: 12px 50px; border-radius: 50px; cursor: pointer; font-family: 'Teko'; font-size: 1.5rem; font-weight: bold; transition: 0.3s; box-shadow: 0 0 20px rgba(212, 175, 55, 0.2); }
+        .btn-next:hover { transform: scale(1.05); background: #fff; }
+        .btn-next:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+        .final-screen { text-align: center; padding: 55px 40px; display: none; }
+        .check-anim { font-size: 4.5rem; color: var(--cor-verde); animation: popIn 0.5s; margin-bottom: 18px; }
+        @keyframes popIn { from { transform: scale(0); } to { transform: scale(1); } }
+        .links-artigos { text-align: left; background: #0a0a0a; border: 1px solid #333; border-radius: 8px; padding: 18px 22px; margin: 22px 0; }
+        .links-artigos a { color: var(--cor-ouro); text-decoration: none; display: block; margin: 6px 0; font-size: 0.92rem; }
+        .links-artigos a:hover { text-decoration: underline; }
+        .erro-box { background: rgba(192, 57, 43, 0.1); border: 1px solid var(--cor-erro); color: #e74c3c; padding: 14px; border-radius: 6px; margin-top: 16px; display: none; font-size: 0.88rem; }
+        @media(max-width: 600px) { .selection-grid { grid-template-columns: 1fr; } .step-content, .wizard-header { padding-left: 22px; padding-right: 22px; } .banner-retorno { margin-left: 22px; margin-right: 22px; } }
+    </style>
+<link rel="stylesheet" href="codeleicivel/civel-v2.css?v=20261008">
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main class="onboarding-section">
+        <div class="wizard-card" id="wizard-card">
+            <div class="progress-container"><div class="progress-bar-fill" id="progress-bar"></div></div>
+
+            <div class="wizard-header">
+                <h1 class="wizard-title">Central de Documentos</h1>
+                <p class="wizard-sub">// AÇÃO CONTRA CASA DE APOSTAS (BETS)</p>
+            </div>
+
+            <div class="banner-retorno" id="banner-retorno">
+                👋 Bem-vindo(a) de volta, <strong><span id="nome-retorno"></span></strong>. Seus dados de identificação já estão salvos — é só anexar os novos documentos abaixo que eles entram direto na sua pasta.
+            </div>
+
+            <form id="form-central" onsubmit="return false;">
+
+                <div class="step-content active" id="step-1">
+                    <p style="color:#ccc; font-size:0.95rem; margin-bottom:22px;">Estamos recebendo um volume grande de casos sobre a suspensão das bets (MP nº 1.394/2026). Para o Dr. Lucas analisar o seu com atenção, preencha os dados abaixo e envie os documentos — você pode voltar aqui depois e continuar enviando até o dossiê ficar completo.</p>
+
+                    <label class="form-label">Nome Completo</label>
+                    <input type="text" id="cad-nome" class="input-plat" placeholder="Digite nome e sobrenome..." required>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="form-label">CPF</label>
+                            <input type="text" id="cad-cpf" class="input-plat" placeholder="000.000.000-00" maxlength="14">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">WhatsApp</label>
+                            <input type="tel" id="cad-tel" class="input-plat" placeholder="(DDD) 9..." maxlength="15">
+                        </div>
+                    </div>
+
+                    <label class="form-label">E-mail</label>
+                    <input type="email" id="cad-email" class="input-plat" placeholder="seuemail@exemplo.com">
+
+                    <div class="nav-buttons" style="justify-content: flex-end;">
+                        <button class="btn-next" onclick="irEtapa(2)">AVANÇAR &rarr;</button>
+                    </div>
+                </div>
+
+                <div class="step-content" id="step-2">
+                    <label class="form-label">Qual é a sua situação com a casa de apostas?</label>
+                    <div class="selection-grid" id="grid-tipo-acao">
+                        <div class="btn-select" data-valor="Saldo retido / não consigo sacar após a suspensão">
+                            <strong>💰 Saldo Retido</strong><span>Não consigo sacar meu saldo desde a suspensão</span>
+                        </div>
+                        <div class="btn-select" data-valor="Cobrança indevida ou valores pagos a menor">
+                            <strong>📉 Valor Pago a Menos</strong><span>Recebi menos do que tinha direito, ou fui cobrado indevidamente</span>
+                        </div>
+                        <div class="btn-select" data-valor="Quero rescindir contrato / cancelar cadastro na casa">
+                            <strong>📄 Contrato com a Casa</strong><span>Quero rescindir ou entender meu contrato/cadastro</span>
+                        </div>
+                        <div class="btn-select" data-valor="Ludopatia — quero reaver valores apostados">
+                            <strong>🩺 Ludopatia / Dependência</strong><span>Quero avaliar a devolução de valores apostados</span>
+                        </div>
+                        <div class="btn-select" data-valor="Fui notificado ou investigado (operador, afiliado ou recebimento de pagamentos)">
+                            <strong>⚖️ Fui Notificado/Investigado</strong><span>Recebi notificação ou investigação como operador, afiliado ou por pagamentos recebidos</span>
+                        </div>
+                        <div class="btn-select" data-valor="Outro / não sei classificar">
+                            <strong>❓ Outro Caso</strong><span>Não sei classificar, quero explicar por escrito</span>
+                        </div>
+                    </div>
+                    <input type="hidden" id="cad-tipo-acao">
+
+                    <div class="nav-buttons">
+                        <button class="btn-prev" onclick="irEtapa(1)">&larr; VOLTAR</button>
+                        <button class="btn-next" id="btn-avancar-2" onclick="irEtapa(3)" disabled>AVANÇAR &rarr;</button>
+                    </div>
+                </div>
+
+                <div class="step-content" id="step-3">
+                    <label class="form-label">Relato Resumido</label>
+                    <textarea id="cad-resumo" class="input-plat" rows="3" placeholder="Conte brevemente o que aconteceu: nome da casa de apostas, valores envolvidos, datas..."></textarea>
+
+                    <label class="form-label">Documentos (prints da conta, comprovantes de depósito/saque, contrato, CPF/RG, notificação recebida etc.)</label>
+                    <div class="dropzone" id="dropzone">
+                        <span class="dropzone-icon">📎</span>
+                        <div>Arraste os arquivos aqui ou <strong style="color:var(--cor-ouro);">clique para escolher</strong></div>
+                        <div style="font-size:0.78rem; color:#666; margin-top:6px;">Fotos, PDF ou print de tela — até 8 MB por arquivo</div>
+                    </div>
+                    <input type="file" id="input-arquivos" multiple style="display:none;" accept="image/*,application/pdf">
+                    <ul class="lista-arquivos" id="lista-arquivos"></ul>
+                    <div class="aviso-tamanho" id="aviso-tamanho">Um ou mais arquivos passam de 8 MB e não puderam ser adicionados. Para vídeos ou arquivos grandes, envie pelo WhatsApp do escritório.</div>
+
+                    <div class="erro-box" id="erro-envio"></div>
+
+                    <div class="nav-buttons">
+                        <button class="btn-prev" onclick="irEtapa(2)">&larr; VOLTAR</button>
+                        <button class="btn-next" id="btn-enviar" onclick="enviarCentral()">ENVIAR DOCUMENTOS</button>
+                    </div>
+                </div>
+
+            </form>
+
+            <div id="final-screen" class="final-screen">
+                <div class="check-anim">✅</div>
+                <h2 style="font-family:'Teko'; font-size:2.6rem; color:#fff;" id="titulo-final">DOCUMENTOS RECEBIDOS</h2>
+                <p style="color:#ccc; font-size:1.05rem;" id="texto-final">
+                    Seus documentos foram enviados e organizados no seu processo. O Dr. Lucas vai analisar o seu caso — estamos com um volume grande de demandas sobre as bets, então pedimos um pouco de paciência.
+                </p>
+
+                <div class="links-artigos">
+                    <p style="color:#888; font-size:0.8rem; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">Enquanto isso, leia sobre seus direitos:</p>
+                    <a href="bets-civel.html" target="_blank">→ Visão geral: processos contra casas de apostas</a>
+                    <a href="guia-mp-proibe-bets-prazo-saque-saldo.html" target="_blank">→ Prazo para sacar o saldo após a suspensão</a>
+                    <a href="guia-site-apostas-ilegal-reaver-dinheiro.html" target="_blank">→ Como reaver dinheiro de site de apostas ilegal</a>
+                    <a href="guia-ludopatia-devolucao-apostas.html" target="_blank">→ Ludopatia e devolução de valores apostados</a>
+                </div>
+
+                <button class="btn-next" onclick="voltarParaEnvio()" style="margin-top:5px;">ENVIAR MAIS DOCUMENTOS</button>
+                <p style="margin-top:18px;"><a href="https://wa.me/5531989420094" target="_blank" style="color:#888; font-size:0.85rem;">Prefere falar por WhatsApp? Clique aqui →</a></p>
+            </div>
+
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="codeleicivel/civel-api-config.js?v=20261008"></script>
+    <script src="codeleicivel/civel-core.js?v=20261008"></script>
+
+    <script>
+    (function() {
+        const LS_KEY = 'civel_central_docs_cliente';
+        let arquivosAnexados = []; // {nome, mimeType, data (base64 sem prefixo)}
+        const MAX_TAMANHO = 8 * 1024 * 1024; // 8 MB
+
+        function $(id) { return document.getElementById(id); }
+
+        function atualizarProgresso(etapa) {
+            const pct = { 1: 25, 2: 55, 3: 85 }[etapa] || 25;
+            $('progress-bar').style.width = pct + '%';
+        }
+
+        window.irEtapa = function(etapa) {
+            document.querySelectorAll('.step-content').forEach(el => el.classList.remove('active'));
+            $('step-' + etapa).classList.add('active');
+            atualizarProgresso(etapa);
+        };
+
+        // --- SELEÇÃO DO TIPO DE AÇÃO ---
+        document.querySelectorAll('#grid-tipo-acao .btn-select').forEach(card => {
+            card.addEventListener('click', function() {
+                document.querySelectorAll('#grid-tipo-acao .btn-select').forEach(c => c.classList.remove('selected'));
+                this.classList.add('selected');
+                $('cad-tipo-acao').value = this.getAttribute('data-valor');
+                $('btn-avancar-2').disabled = false;
+            });
+        });
+
+        // --- UPLOAD DE ARQUIVOS ---
+        const dropzone = $('dropzone');
+        const inputArquivos = $('input-arquivos');
+        dropzone.addEventListener('click', () => inputArquivos.click());
+        dropzone.addEventListener('dragover', e => { e.preventDefault(); dropzone.classList.add('dragover'); });
+        dropzone.addEventListener('dragleave', () => dropzone.classList.remove('dragover'));
+        dropzone.addEventListener('drop', e => {
+            e.preventDefault();
+            dropzone.classList.remove('dragover');
+            processarArquivos(e.dataTransfer.files);
+        });
+        inputArquivos.addEventListener('change', e => processarArquivos(e.target.files));
+
+        function processarArquivos(fileList) {
+            let algumGrandeDemais = false;
+            Array.from(fileList).forEach(file => {
+                if (file.size > MAX_TAMANHO) { algumGrandeDemais = true; return; }
+                const reader = new FileReader();
+                reader.onload = function(ev) {
+                    const base64 = ev.target.result.split(',')[1];
+                    arquivosAnexados.push({ nome: file.name, mimeType: file.type || 'application/octet-stream', data: base64 });
+                    renderizarLista();
+                };
+                reader.readAsDataURL(file);
+            });
+            $('aviso-tamanho').style.display = algumGrandeDemais ? 'block' : 'none';
+        }
+
+        function renderizarLista() {
+            const ul = $('lista-arquivos');
+            ul.innerHTML = '';
+            arquivosAnexados.forEach((arq, i) => {
+                const li = document.createElement('li');
+                li.innerHTML = '<span>📄 ' + arq.nome + '</span><span class="remover" data-i="' + i + '">✕</span>';
+                ul.appendChild(li);
+            });
+            ul.querySelectorAll('.remover').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    arquivosAnexados.splice(parseInt(this.getAttribute('data-i'), 10), 1);
+                    renderizarLista();
+                });
+            });
+        }
+
+        // --- ENVIO ---
+        window.enviarCentral = async function() {
+            const btn = $('btn-enviar');
+            const erroBox = $('erro-envio');
+            erroBox.style.display = 'none';
+
+            const dados = {
+                nome: $('cad-nome').value,
+                cpf: $('cad-cpf').value,
+                email: $('cad-email').value,
+                whatsapp: $('cad-tel').value,
+                tipoAcao: $('cad-tipo-acao').value,
+                relato: $('cad-resumo').value,
+                situacao: 'Central de Documentos — Apostas/Bets',
+                arquivos: arquivosAnexados
+            };
+
+            if (!dados.nome) {
+                erroBox.textContent = 'Preencha ao menos o nome completo na primeira etapa.';
+                erroBox.style.display = 'block';
+                return;
+            }
+
+            if (!window.CIVEL_API_URL || CIVEL_API_URL.indexOf('COLE_AQUI') !== -1) {
+                erroBox.textContent = 'Envio automático ainda em configuração. Fale com o escritório pelo WhatsApp: (31) 98942-0094.';
+                erroBox.style.display = 'block';
+                return;
+            }
+
+            btn.disabled = true;
+            btn.textContent = '📡 ENVIANDO...';
+
+            try {
+                const resp = await fetch(CIVEL_API_URL, {
+                    method: 'POST',
+                    body: JSON.stringify(dados)
+                });
+                const resultado = await resp.json();
+
+                if (resultado.status === 'sucesso') {
+                    try {
+                        localStorage.setItem(LS_KEY, JSON.stringify({ nome: dados.nome, cpf: dados.cpf, email: dados.email, whatsapp: dados.whatsapp }));
+                    } catch (e) {}
+
+                    $('titulo-final').textContent = resultado.clienteNovo ? 'DOCUMENTOS RECEBIDOS' : 'DOCUMENTOS ADICIONADOS AO SEU PROCESSO';
+                    $('texto-final').textContent = resultado.clienteNovo
+                        ? 'Sua pasta foi criada e os documentos organizados. O Dr. Lucas vai analisar o seu caso — estamos com um volume grande de demandas sobre as bets, então pedimos um pouco de paciência.'
+                        : 'Mais documentos foram adicionados ao seu processo já existente. Você pode voltar aqui sempre que tiver um novo documento.';
+
+                    document.querySelectorAll('.step-content').forEach(el => el.classList.remove('active'));
+                    $('final-screen').style.display = 'block';
+                    $('progress-bar').style.width = '100%';
+                } else {
+                    throw new Error(resultado.mensagem || 'Erro desconhecido.');
+                }
+            } catch (e) {
+                erroBox.textContent = 'Não foi possível enviar agora (' + e.message + '). Tente novamente ou mande pelo WhatsApp: (31) 98942-0094.';
+                erroBox.style.display = 'block';
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'ENVIAR DOCUMENTOS';
+            }
+        };
+
+        window.voltarParaEnvio = function() {
+            arquivosAnexados = [];
+            renderizarLista();
+            $('cad-resumo').value = '';
+            $('aviso-tamanho').style.display = 'none';
+            $('final-screen').style.display = 'none';
+            document.querySelectorAll('.step-content').forEach(el => el.classList.remove('active'));
+            $('step-3').classList.add('active');
+            atualizarProgresso(3);
+        };
+
+        // --- RECONHECIMENTO DE CLIENTE QUE JÁ VOLTOU ---
+        window.civelReady(function() {
+            try {
+                const salvo = JSON.parse(localStorage.getItem(LS_KEY) || 'null');
+                if (salvo && salvo.nome) {
+                    $('cad-nome').value = salvo.nome || '';
+                    $('cad-cpf').value = salvo.cpf || '';
+                    $('cad-email').value = salvo.email || '';
+                    $('cad-tel').value = salvo.whatsapp || '';
+                    $('nome-retorno').textContent = salvo.nome;
+                    $('banner-retorno').style.display = 'block';
+                }
+            } catch (e) {}
+        });
+    })();
+    </script>
+
+<script src="codeleicivel/civel-v2.js?v=20261008" defer></script>
+</body>
+</html>

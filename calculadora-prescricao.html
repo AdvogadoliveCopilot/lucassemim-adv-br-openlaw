@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO & META TAGS -->
+    <title>Calculadora de Prescrição Penal 2026 | Art. 109 CP | Dr. Lucas Semim OAB/MG 222.539</title>
+    <meta name="description" content="Calcule a prescrição penal do seu caso (PPP, PPE, Retroativa) com base no Art. 109 do CP. Ferramenta gratuita desenvolvida pelo advogado criminalista Dr. Lucas Semim, OAB/MG 222.539, Belo Horizonte e Sabará-MG.">
+    <meta name="keywords" content="calculadora prescrição penal, Art 109 CP, prescrição criminal, PPP, PPE, prescrição retroativa, advogado Belo Horizonte, advogado Sabará, Dr Lucas Semim">
+    <link rel="canonical" href="https://lucassemim.adv.br/legal-tech/calculadora-prescricao.html" />
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NWBG9D4');</script>
+<!-- End Google Tag Manager -->
+    
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Calculadora de Prescrição Penal — Art. 109 CP",
+      "url": "https://lucassemim.adv.br/legal-tech/calculadora-prescricao.html",
+      "description": "Ferramenta de cálculo de prescrição penal baseada nos Arts. 109-117 do Código Penal Brasileiro.",
+      "applicationCategory": "LegalTech",
+      "author": {
+        "@type": "Person",
+        "name": "Lucas Renan Semim",
+        "jobTitle": "Advogado Criminalista",
+        "identifier": "OAB/MG 222.539"
+      },
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" }
+    }
+    </script>
+    
+    <!-- BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Início","item":"https://lucassemim.adv.br/"},
+        {"@type":"ListItem","position":2,"name":"Legal Tech","item":"https://lucassemim.adv.br/legal-tech/"},
+        {"@type":"ListItem","position":3,"name":"Calculadora de Prescrição","item":"https://lucassemim.adv.br/legal-tech/calculadora-prescricao.html"}
+      ]
+    }
+    </script>
+
+    <!-- FONTES GLOBAIS -->
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600&family=Fira+Code:wght@400;500;600&family=Orbitron:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* === DESIGN SYSTEM: QUANTUM ELITE === */
+        :root {
+            /* Cores Base */
+            --bg-zero:       #020202;
+            --bg-primary:    #050505;
+            --bg-card:       #0d0d0d;
+            --bg-glass:      rgba(13,13,13,0.92);
+            /* Acento Principal — Dourado */
+            --gold:          #d4af37;
+            --gold-dim:      rgba(212,175,55,0.15);
+            --gold-glow:     0 0 30px rgba(212,175,55,0.25);
+            /* Acento Secundário — Ciano Tempo */
+            --cyan:          #00e5ff;
+            --cyan-dim:      rgba(0,229,255,0.08);
+            --cyan-glow:     0 0 20px rgba(0,229,255,0.2);
+            /* Status */
+            --verde-prescrito: #00c87a;
+            --vermelho-ativo:  #e74c3c;
+            --amarelo-alerta:  #f39c12;
+            /* Tipografia */
+            --font-display:  'Teko', sans-serif;
+            --font-mono:     'Fira Code', monospace;
+            --font-digital:  'Orbitron', sans-serif;
+            /* Borders */
+            --border-subtle: 1px solid rgba(255,255,255,0.04);
+            --border-cyan:   1px solid rgba(0,229,255,0.2);
+            --border-gold:   1px solid rgba(212,175,55,0.3);
+        }
+
+        body {
+            background-color: var(--bg-zero);
+            color: #fff;
+            font-family: 'Roboto', sans-serif;
+            overflow-x: hidden;
+            padding-top: 80px; /* offset navbar */
+            position: relative;
+        }
+
+        /* Atmosfera Visual: Papel Milimetrado Jurídico */
+        body::before {
+            content: '';
+            position: fixed; inset: 0;
+            background: 
+                radial-gradient(circle at 50% 50%, rgba(0, 229, 255, 0.03) 0%, transparent 60%),
+                repeating-linear-gradient(rgba(255,255,255,0.01) 0, rgba(255,255,255,0.01) 1px, transparent 1px, transparent 20px);
+            z-index: -2; pointer-events: none;
+        }
+
+        /* Grain Overlay */
+        body::after {
+            content:''; position:fixed; inset:0; pointer-events:none; opacity:0.04;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            z-index: 9999;
+        }
+
+        /* === NAVBAR === */
+        .navbar-custom {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border-bottom: var(--border-gold);
+            padding: 15px 0;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        .navbar-brand { font-family: var(--font-display); font-size: 1.6rem; color: #fff; letter-spacing: 1px; }
+        .navbar-brand i { color: var(--gold); }
+        .nav-link-custom { color: #aaa; font-family: var(--font-display); font-size: 1.2rem; text-decoration: none; transition: 0.3s; margin-right: 20px;}
+        .nav-link-custom:hover { color: var(--gold); }
+        .btn-urgencia-menu { background: #8b0000; color: #fff; border: 1px solid #ff4d4d; padding: 6px 20px; border-radius: 4px; font-family: var(--font-display); font-size: 1.2rem; text-decoration: none; box-shadow: 0 0 15px rgba(139,0,0,0.4); transition: 0.3s; }
+        .btn-urgencia-menu:hover { box-shadow: 0 0 25px rgba(255,77,77,0.6); transform: translateY(-2px); color: #fff; }
+
+        /* === PROGRESS BAR === */
+        .progress-container { width: 100%; max-width: 900px; margin: 40px auto 20px auto; padding: 0 20px; }
+        .progress-track { position: relative; height: 4px; background: #222; border-radius: 2px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
+        .progress-fill { position: absolute; top: 0; left: 0; height: 100%; background: var(--cyan); width: 0%; transition: width 0.5s ease-in-out; box-shadow: var(--cyan-glow); }
+        .step-dot { width: 20px; height: 20px; background: #222; border-radius: 50%; border: 2px solid #444; position: relative; z-index: 2; transition: 0.4s; display: flex; justify-content: center; align-items: center; font-family: var(--font-mono); font-size: 10px; color: transparent;}
+        .step-dot.active { background: var(--cyan); border-color: var(--cyan); box-shadow: var(--cyan-glow); }
+        .step-dot.completed { background: var(--verde-prescrito); border-color: var(--verde-prescrito); color: #000; }
+        .step-label { position: absolute; top: -25px; left: 50%; transform: translateX(-50%); font-family: var(--font-display); font-size: 1rem; color: #666; white-space: nowrap; }
+        .step-dot.active .step-label { color: var(--cyan); }
+
+        /* === MÁQUINA DE CÁLCULO (CONTAINER) === */
+        .calc-machine {
+            max-width: 900px; margin: 0 auto 60px auto;
+            background: var(--bg-card);
+            border: var(--border-subtle);
+            border-top: 3px solid var(--cyan);
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 -2px 20px rgba(0,229,255,0.1), 0 20px 50px rgba(0,0,0,0.8);
+            position: relative;
+        }
+        
+        @media(max-width: 768px) {
+            .calc-machine { padding: 25px 15px; }
+        }
+
+        /* DISPLAY DIGITAL (CABEÇALHO) */
+        .calc-display-container { background: #000; border: 1px solid #333; border-radius: 6px; padding: 15px 20px; margin-bottom: 30px; box-shadow: inset 0 0 20px rgba(0,0,0,0.8); }
+        .calc-display { font-family: var(--font-digital); color: var(--cyan); font-size: 1.1rem; line-height: 1.5; letter-spacing: 1px; text-shadow: 0 0 10px rgba(0,229,255,0.4); display: flex; flex-direction: column; gap: 5px; }
+        .cursor-blink::after { content: '█'; animation: blink 1s infinite; margin-left: 5px; }
+        @keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+
+        /* WIZARD SECTIONS */
+        .step-section { display: none; animation: fadeIn 0.4s ease-out forwards; opacity: 0; transform: translateY(10px); }
+        .step-section.active { display: block; }
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
+        
+        .section-header { font-family: var(--font-display); font-size: 2.2rem; color: #fff; margin-bottom: 25px; letter-spacing: 1px; border-bottom: 1px solid #222; padding-bottom: 10px; }
+
+        /* ETAPA 1: CARDS DE MODO */
+        .mode-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+        .mode-card { background: #111; border: var(--border-subtle); border-radius: 6px; padding: 25px 20px; text-align: center; cursor: pointer; transition: 0.3s; position: relative; overflow: hidden; }
+        .mode-card:hover { border-color: var(--cyan); background: var(--cyan-dim); transform: translateY(-3px); }
+        .mode-icon { font-size: 2.5rem; margin-bottom: 15px; display: block; }
+        .mode-title { font-family: var(--font-display); font-size: 1.6rem; color: #fff; margin-bottom: 5px; line-height: 1; }
+        .mode-desc { font-family: var(--font-mono); font-size: 0.75rem; color: #888; }
+        .mode-badge { font-family: var(--font-mono); font-size: 0.7rem; background: #222; color: #aaa; padding: 3px 8px; border-radius: 3px; display: inline-block; margin-top: 10px; }
+        .mode-card.special { grid-column: 1 / -1; border-color: rgba(243, 156, 18, 0.3); background: rgba(243, 156, 18, 0.02); }
+        .mode-card.special:hover { border-color: var(--amarelo-alerta); background: rgba(243, 156, 18, 0.08); }
+        
+        @media(max-width: 576px) { .mode-grid { grid-template-columns: 1fr; } .mode-card.special { grid-column: auto; } }
+
+        /* INPUTS E FORMULÁRIOS */
+        .form-label { color: var(--gold); font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 5px; letter-spacing: 1px; }
+        .form-control-custom { width: 100%; padding: 14px 18px; background: #080808; border: var(--border-subtle); color: #fff; border-radius: 6px; font-family: var(--font-mono); font-size: 1rem; transition: 0.3s; }
+        .form-control-custom:focus { outline: none; border: var(--border-cyan); box-shadow: var(--cyan-glow); }
+        input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(1); cursor: pointer; }
+
+        /* Referência Rápida (Acordeão Mini) */
+        .ref-box { background: #111; border: 1px dashed #333; border-radius: 6px; padding: 15px; margin-top: 20px; }
+        .ref-box summary { cursor: pointer; font-family: var(--font-mono); font-size: 0.85rem; color: #aaa; font-weight: bold; outline: none; }
+        .ref-list { margin-top: 15px; padding-left: 0; list-style: none; font-family: var(--font-mono); font-size: 0.8rem; color: #888; }
+        .ref-list li { margin-bottom: 6px; padding-bottom: 6px; border-bottom: 1px solid #1a1a1a; display: flex; justify-content: space-between;}
+        .ref-list li span { color: var(--gold); }
+
+        /* Checkboxes Custom */
+        .checkbox-wrapper { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 15px; background: #111; padding: 15px; border-radius: 6px; border: 1px solid #222; transition: 0.2s;}
+        .checkbox-wrapper:hover { border-color: #444; }
+        .checkbox-wrapper input[type="checkbox"] { width: 20px; height: 20px; accent-color: var(--cyan); cursor: pointer; margin-top: 2px;}
+        .checkbox-text { font-family: 'Lato'; font-size: 1rem; color: #ddd; }
+        .hidden-input { display: none; margin-top: 15px; padding-left: 32px;}
+        .hidden-input.show { display: block; animation: fadeIn 0.3s ease; }
+
+        /* Marcos Interruptivos */
+        .marco-item { background: #0a0a0a; border: 1px solid #333; padding: 15px; border-radius: 6px; margin-bottom: 10px; display: flex; gap: 15px; align-items: flex-end;}
+        @media(max-width: 576px) { .marco-item { flex-direction: column; align-items: stretch; } }
+        .btn-add-marco { background: transparent; border: 1px dashed var(--cyan); color: var(--cyan); font-family: var(--font-display); font-size: 1.2rem; padding: 10px 20px; width: 100%; border-radius: 4px; transition: 0.3s; }
+        .btn-add-marco:hover { background: var(--cyan-dim); }
+        .btn-remover-marco { background: transparent; border: 1px solid #ff4d4d; color: #ff4d4d; border-radius: 4px; padding: 12px 15px; transition: 0.2s; }
+        .btn-remover-marco:hover { background: #8b0000; color: #fff; }
+
+        /* Botões Navegação Wizard */
+        .wizard-nav { display: flex; justify-content: space-between; margin-top: 40px; padding-top: 20px; border-top: 1px solid #222; }
+        .btn-wizard { background: var(--cyan); color: #000; font-family: var(--font-display); font-size: 1.5rem; font-weight: bold; border: none; padding: 10px 30px; border-radius: 4px; cursor: pointer; transition: 0.3s; box-shadow: var(--cyan-glow); }
+        .btn-wizard:hover { background: #fff; box-shadow: 0 0 20px rgba(255,255,255,0.4); transform: translateY(-2px); }
+        .btn-wizard-back { background: transparent; border: 1px solid #555; color: #aaa; font-family: var(--font-display); font-size: 1.3rem; padding: 10px 20px; border-radius: 4px; transition: 0.3s; }
+        .btn-wizard-back:hover { border-color: #fff; color: #fff; }
+        @media(max-width: 576px) { .btn-wizard { font-size: 1.2rem; padding: 10px 20px; } .btn-wizard-back { font-size: 1.1rem; padding: 10px 15px; } }
+
+        /* Linha do Tempo Dinâmica */
+        .timeline-visual { margin-top: 30px; padding: 20px; background: #0a0a0a; border-radius: 6px; border: 1px solid #222; }
+        .tl-track { height: 2px; background: #333; position: relative; margin: 30px 0; }
+        .tl-point { position: absolute; top: -6px; width: 14px; height: 14px; border-radius: 50%; background: #222; border: 2px solid #555; transform: translateX(-50%); transition: 0.3s; }
+        .tl-point.filled { background: var(--verde-prescrito); border-color: #fff; box-shadow: 0 0 10px var(--verde-prescrito); }
+        .tl-label { position: absolute; top: 20px; left: 50%; transform: translateX(-50%); font-family: var(--font-mono); font-size: 0.65rem; color: #888; white-space: nowrap; text-align: center;}
+        
+        /* SEEU Alert */
+        .seeu-box { background: rgba(243, 156, 18, 0.05); border: 1px solid rgba(243, 156, 18, 0.3); border-radius: 6px; padding: 25px; margin-bottom: 25px; display: none; }
+        .seeu-box.active { display: block; animation: fadeIn 0.4s ease; }
+
+        /* MENSAGENS INLINE (Zero Alert) */
+        .error-msg { color: #ff4d4d; font-family: var(--font-mono); font-size: 0.8rem; margin-top: 5px; display: none; }
+        .error-msg.active { display: block; animation: fadeIn 0.3s; }
+
+        /* TELA PROCESSAMENTO */
+        #processing-screen { display: none; text-align: center; padding: 60px 0; }
+        .cyber-hourglass { width: 60px; height: 80px; margin: 0 auto 30px; position: relative; }
+        .cyber-hourglass::before, .cyber-hourglass::after { content: ''; position: absolute; width: 0; height: 0; border-left: 30px solid transparent; border-right: 30px solid transparent; }
+        .cyber-hourglass::before { border-top: 40px solid var(--cyan); top: 0; animation: pourTop 2s infinite ease-in-out; }
+        .cyber-hourglass::after { border-bottom: 40px solid var(--cyan); bottom: 0; animation: fillBottom 2s infinite ease-in-out; }
+        @keyframes pourTop { 0% { border-top-width: 40px; } 50% { border-top-width: 5px; transform: translateY(35px); opacity: 0.2; } 100% { border-top-width: 40px; } }
+        @keyframes fillBottom { 0% { border-bottom-width: 5px; opacity: 0.2; } 50% { border-bottom-width: 40px; transform: translateY(0); opacity: 1;} 100% { border-bottom-width: 5px; } }
+        .process-log { font-family: var(--font-mono); color: var(--cyan); font-size: 0.9rem; margin-top: 20px; height: 20px;}
+
+        /* RESULTADO (VEREDITO) */
+        #resultado-screen { display: none; }
+        .veredicto-header { border: 1px dashed #333; padding: 30px; border-radius: 8px; text-align: center; margin-bottom: 30px; background: #080808; }
+        .veredicto-status { font-family: var(--font-display); font-size: 3.5rem; line-height: 1; letter-spacing: 1px; }
+        .status-prescrito { color: var(--verde-prescrito); text-shadow: 0 0 20px rgba(0, 200, 122, 0.4); }
+        .status-ativo { color: var(--vermelho-ativo); text-shadow: 0 0 20px rgba(231, 76, 60, 0.4); }
+        .status-alerta { color: var(--amarelo-alerta); text-shadow: 0 0 20px rgba(243, 156, 18, 0.4); }
+        
+        .result-details { background: #111; border-left: 3px solid #444; padding: 20px; font-family: var(--font-mono); font-size: 0.9rem; color: #ccc; line-height: 1.8; margin-bottom: 30px; }
+        .result-details span { color: #fff; font-weight: bold; }
+        
+        /* Barra Progresso Resultado */
+        .res-progress-wrap { background: #222; height: 10px; border-radius: 5px; overflow: hidden; margin: 15px 0 5px; }
+        .res-progress-fill { height: 100%; transition: 1s ease-out; }
+        
+        .aviso-legal { background: rgba(255,255,255,0.02); border: 1px solid #333; padding: 15px; font-size: 0.8rem; color: #888; border-radius: 6px; margin-bottom: 40px; }
+
+        /* CTA DR LUCAS */
+        .cta-lucas-card { background: linear-gradient(135deg, #0d0d0d, #111); border: var(--border-gold); border-left: 4px solid var(--gold); border-radius: 12px; padding: 35px; position: relative; overflow: hidden; }
+        .cta-lucas-card::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at top right, rgba(212,175,55,0.06), transparent 60%); pointer-events: none;}
+        .avatar-ls { width: 60px; height: 60px; background: #000; border: 2px solid var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 1.5rem; color: var(--gold); margin-bottom: 15px; }
+        .cta-badge { font-family: var(--font-display); font-size: 1.4rem; color: #fff; display: block; line-height: 1;}
+        .cta-oab { font-family: var(--font-mono); font-size: 0.75rem; color: var(--gold); margin-bottom: 15px; display: block; }
+        .cta-headline { font-size: 1.4rem; font-weight: bold; color: #fff; margin-bottom: 10px; position: relative; z-index: 2;}
+        .btn-whatsapp-cta { display: block; width: 100%; background: linear-gradient(135deg, #128c7e, #075e54); color: #fff; text-align: center; padding: 18px; border-radius: 8px; font-family: var(--font-display); font-size: 1.4rem; text-decoration: none; text-transform: uppercase; margin-bottom: 12px; box-shadow: 0 4px 20px rgba(18,140,126,0.3); transition: 0.3s; position: relative; z-index: 1;}
+        .btn-whatsapp-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(18,140,126,0.5); color: #fff; }
+        .btn-agendar-cta { display: block; width: 100%; text-align: center; background: transparent; border: var(--border-gold); color: var(--gold); padding: 14px; border-radius: 8px; font-family: var(--font-display); font-size: 1.2rem; text-decoration: none; text-transform: uppercase; transition: 0.3s; position: relative; z-index: 1;}
+        .btn-agendar-cta:hover { background: var(--gold-dim); color: var(--gold); }
+
+        /* EDUCACIONAL / FAQ */
+        .edu-section { max-width: 900px; margin: 0 auto 50px auto; }
+        .table-custom { color: #ccc; font-family: var(--font-mono); font-size: 0.85rem; background: #0d0d0d; border: 1px solid #222; }
+        .table-custom th { background: #151515; color: var(--gold); border-bottom: 1px solid #333; padding: 15px; font-family: var(--font-display); font-size: 1.2rem; letter-spacing: 1px;}
+        .table-custom td { padding: 12px 15px; border-bottom: 1px solid #222; }
+        .table-custom tr.highlight { background: rgba(212,175,55,0.1); border-left: 2px solid var(--gold); }
+        
+        .accordion-custom { --bs-accordion-bg: #0d0d0d; --bs-accordion-color: #fff; --bs-accordion-border-color: #222; --bs-accordion-btn-bg: #111; --bs-accordion-btn-color: #fff; --bs-accordion-active-bg: #151515; --bs-accordion-active-color: var(--gold); }
+        .accordion-custom .accordion-button { font-family: var(--font-display); font-size: 1.3rem; letter-spacing: 1px; }
+        .accordion-custom .accordion-button:focus { box-shadow: none; }
+        .accordion-custom .accordion-body { font-family: 'Lato'; font-size: 0.95rem; color: #bbb; line-height: 1.6; }
+        
+        /* WPP FLUTUANTE */
+        .float-wpp { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: #fff; padding: 14px 20px; border-radius: 50px; display: flex; align-items: center; gap: 10px; text-decoration: none; z-index: 9998; box-shadow: 0 4px 20px rgba(37,211,102,0.4); font-family: var(--font-display); font-size: 1.1rem; animation: pulse-green 2s infinite; transition: 0.3s; }
+        .float-wpp:hover { color: #fff; transform: scale(1.05); }
+        @keyframes pulse-green { 0%, 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0.4); } 50% { box-shadow: 0 0 0 12px rgba(37,211,102,0); } }
+
+        /* FOOTER */
+        footer { border-top: 1px solid #1a1a1a; background: #050505; }
+    </style>
+</head>
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NWBG9D4"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+    <!-- NAVBAR (Glass Effect) -->
+    <nav class="navbar navbar-dark navbar-custom fixed-top">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand" href="../index.html">
+                <i class="fas fa-balance-scale me-2"></i> SEMIM & ASSOCIADOS
+            </a>
+            <div class="d-none d-md-flex align-items-center">
+                <a href="../index.html" class="nav-link-custom"><i class="fas fa-arrow-left me-1"></i> VOLTAR AO SITE</a>
+                <a href="https://wa.me/5531989420094" target="_blank" class="btn-urgencia-menu">🚨 PLANTÃO 24H</a>
+            </div>
+            <!-- Mobile BTN -->
+            <div class="d-md-none">
+                 <a href="https://wa.me/5531989420094" target="_blank" class="btn-urgencia-menu px-2 py-1 fs-6">PLANTÃO</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- WIZARD UI -->
+    <div class="progress-container">
+        <div class="progress-track">
+            <div class="progress-fill" id="prog-fill"></div>
+            <div class="step-dot active" id="dot-1"><span class="step-label">Modo</span>✓</div>
+            <div class="step-dot" id="dot-2"><span class="step-label">Pena</span>✓</div>
+            <div class="step-dot" id="dot-3"><span class="step-label">Fato</span>✓</div>
+            <div class="step-dot" id="dot-4"><span class="step-label">Redutor</span>✓</div>
+            <div class="step-dot" id="dot-5"><span class="step-label">Marcos</span>✓</div>
+            <div class="step-dot" id="dot-6"><span class="step-label">Análise</span>✓</div>
+        </div>
+    </div>
+
+    <!-- MACHINE CONTAINER -->
+    <div class="calc-machine">
+        
+        <!-- DISPLAY DIGITAL -->
+        <div class="calc-display-container">
+            <div class="calc-display">
+                <span id="disp-modo">◉ STATUS: AGUARDANDO DADOS DO PROCESSO</span>
+                <span id="disp-calc">◉ <span class="cursor-blink"></span></span>
+            </div>
+            <div style="font-family: 'Fira Code'; font-size: 0.65rem; color: #666; text-align: right; margin-top: 5px;">
+                "A MÁQUINA DO TEMPO DA DEFESA CRIMINAL" · ART. 109 AO 117 DO CÓDIGO PENAL
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- ETAPA 1: MODO -->
+        <!-- ========================================== -->
+        <div id="step-1" class="step-section active">
+            <h2 class="section-header">QUAL É A SUA SITUAÇÃO?</h2>
+            <div class="mode-grid">
+                
+                <div class="mode-card" onclick="setMode('PPP_ABS')">
+                    <span class="mode-icon">⚖️</span>
+                    <div class="mode-title">INVESTIGADO / PROCESSADO</div>
+                    <div class="mode-desc">Sem sentença</div>
+                    <span class="mode-badge">PPP ABSTRATA</span>
+                </div>
+
+                <div class="mode-card" onclick="setMode('PPE')">
+                    <span class="mode-icon">🔒</span>
+                    <div class="mode-title">CONDENADO DEFINITIVO</div>
+                    <div class="mode-desc">Aguardando execução</div>
+                    <span class="mode-badge">PRESCRIÇÃO EXECUTÓRIA (PPE)</span>
+                </div>
+
+                <div class="mode-card" onclick="setMode('PPP_RETRO')">
+                    <span class="mode-icon">📋</span>
+                    <div class="mode-title">SENTENÇA PROFERIDA</div>
+                    <div class="mode-desc">Houve recurso?</div>
+                    <span class="mode-badge">PPP RETROATIVA</span>
+                </div>
+
+                <div class="mode-card" onclick="setMode('PPP_INTER')">
+                    <span class="mode-icon">⏳</span>
+                    <div class="mode-title">RECURSO PENDENTE</div>
+                    <div class="mode-desc">Proc. em curso após condenação</div>
+                    <span class="mode-badge">PPP INTERCORRENTE</span>
+                </div>
+
+                <div class="mode-card special" onclick="setMode('VIRTUAL')">
+                    <span class="mode-icon" style="font-size: 2rem;">🧮</span>
+                    <div class="mode-title" style="color: var(--amarelo-alerta);">SIMULAÇÃO ESTRATÉGICA</div>
+                    <div class="mode-desc">Perspectiva</div>
+                    <span class="mode-badge" style="background: rgba(243, 156, 18, 0.2); color: #fff;">VIRTUAL</span>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- ETAPA 2: PENA -->
+        <!-- ========================================== -->
+        <div id="step-2" class="step-section">
+            <h2 class="section-header">DADOS DO CRIME</h2>
+            
+            <label class="form-label" id="label-pena">PENA MÁXIMA EM ABSTRATO (ANOS)</label>
+            <p class="text-secondary small mb-3" id="desc-pena" style="font-family: var(--font-mono); font-size: 0.8rem;">Insira a pena máxima prevista no código para este crime.</p>
+            
+            <div class="d-flex gap-3 align-items-center mb-2">
+                <input type="range" class="form-range" id="pena-slider" min="0.1" max="40" step="0.1" value="4" style="flex-grow: 1;">
+                <input type="number" id="pena-input" class="form-control-custom" style="width: 100px; text-align: center;" value="4" step="0.1" min="0.1" max="100">
+            </div>
+            <div class="d-flex justify-content-between text-muted" style="font-family: var(--font-mono); font-size: 0.7rem;">
+                <span>← < 1 ano</span>
+                <span>Até 40 anos →</span>
+            </div>
+            <div id="err-pena" class="error-msg">Informe um valor válido maior que 0.</div>
+
+            <details class="ref-box">
+                <summary>ℹ️ REFERÊNCIA RÁPIDA (Crimes Comuns)</summary>
+                <ul class="ref-list">
+                    <li>Furto simples (Art. 155) <span>máx 4 anos → 8a</span></li>
+                    <li>Roubo simples (Art. 157) <span>máx 10 anos → 16a</span></li>
+                    <li>Tráfico de Drogas (Art. 33) <span>máx 15 anos → 20a</span></li>
+                    <li>Estelionato (Art. 171) <span>máx 5 anos → 12a</span></li>
+                    <li>Homicídio Simples (Art. 121) <span>máx 20 anos → 20a</span></li>
+                    <li>Porte de Arma (Art. 14 Lei 10826) <span>máx 4 anos → 8a</span></li>
+                </ul>
+            </details>
+
+            <div class="wizard-nav">
+                <button class="btn-wizard-back" onclick="prevStep(1)">← VOLTAR</button>
+                <button class="btn-wizard" onclick="nextStep(3)">AVANÇAR →</button>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- ETAPA 3: DATAS INICIAIS -->
+        <!-- ========================================== -->
+        <div id="step-3" class="step-section">
+            <h2 class="section-header">MARCOS TEMPORAIS</h2>
+            
+            <!-- Linha do Tempo Visual Simples -->
+            <div class="timeline-visual">
+                <div class="tl-track">
+                    <div class="tl-point" style="left: 0%;" id="tl-pt-1"><span class="tl-label" id="tl-lbl-1">Início</span></div>
+                    <div class="tl-point" style="left: 50%; display: none;" id="tl-pt-3"><span class="tl-label" id="tl-lbl-3">Sentença</span></div>
+                    <div class="tl-point" style="left: 100%;" id="tl-pt-2"><span class="tl-label" id="tl-lbl-2">Fim</span></div>
+                </div>
+            </div>
+
+            <div class="row g-4 mt-2">
+                <div class="col-md-6" id="box-data-1">
+                    <label class="form-label" id="label-data-1">DATA DO FATO</label>
+                    <input type="date" id="data-1" class="form-control-custom">
+                    <div id="err-d1" class="error-msg">Data inválida.</div>
+                </div>
+                <!-- Extra para Retroativa -->
+                <div class="col-md-6" id="box-data-3" style="display: none;">
+                    <label class="form-label" id="label-data-3">DATA DA SENTENÇA</label>
+                    <input type="date" id="data-3" class="form-control-custom">
+                    <div id="err-d3" class="error-msg">Data inválida ou incompatível.</div>
+                </div>
+                <div class="col-md-6" id="box-data-2">
+                    <label class="form-label" id="label-data-2">DATA ATUAL / ÚLTIMO MARCO</label>
+                    <input type="date" id="data-2" class="form-control-custom">
+                    <div id="err-d2" class="error-msg">Data inválida ou incompatível.</div>
+                </div>
+            </div>
+
+            <div class="wizard-nav">
+                <button class="btn-wizard-back" onclick="prevStep(2)">← VOLTAR</button>
+                <button class="btn-wizard" onclick="nextStep(4)">AVANÇAR →</button>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- ETAPA 4: REDUTOR ART 115 -->
+        <!-- ========================================== -->
+        <div id="step-4" class="step-section">
+            <h2 class="section-header">FATORES REDUTORES (ART. 115 CP)</h2>
+            <p class="text-secondary" style="font-size: 1rem; line-height: 1.6;">O prazo de prescrição é reduzido pela <strong>metade</strong> nos casos abaixo:</p>
+
+            <div class="checkbox-wrapper">
+                <input type="checkbox" id="chk-menor21" onchange="toggleIdade()">
+                <label for="chk-menor21" class="checkbox-text">O réu era <strong>MENOR DE 21 ANOS</strong> na data do crime.</label>
+            </div>
+            
+            <div class="checkbox-wrapper">
+                <input type="checkbox" id="chk-maior70" onchange="toggleIdade()">
+                <label for="chk-maior70" class="checkbox-text">O réu tinha <strong>MAIS DE 70 ANOS</strong> na data da sentença.</label>
+            </div>
+
+            <div style="background: rgba(139,0,0,0.1); border: 1px solid #8b0000; border-radius: 6px; padding: 15px; margin-top: 20px;">
+                <i class="fas fa-exclamation-triangle" style="color: #ff4d4d;"></i>
+                <span style="font-family: var(--font-mono); font-size: 0.85rem; margin-left: 10px; color: #ff4d4d;">
+                    ⚠ ATENÇÃO: A redução NÃO se aplica a crimes de violência sexual contra a mulher.
+                </span>
+            </div>
+
+            <div class="wizard-nav">
+                <button class="btn-wizard-back" onclick="prevStep(3)">← VOLTAR</button>
+                <button class="btn-wizard" onclick="nextStep(5)">AVANÇAR →</button>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- ETAPA 5: MARCOS INTERRUPTIVOS E SEEU -->
+        <!-- ========================================== -->
+        <div id="step-5" class="step-section">
+            
+            <!-- MARCOS (Apenas PPP ABS e RETRO) -->
+            <div id="box-marcos">
+                <h2 class="section-header">MARCOS INTERRUPTIVOS (ART. 117)</h2>
+                <p class="text-secondary" style="font-size: 1rem; line-height: 1.6;">Cada marco listado abaixo <strong>ZERA</strong> a contagem do prazo, reiniciando o cálculo.</p>
+
+                <div id="lista-marcos">
+                    <!-- Marcos adicionados dinamicamente via JS -->
+                </div>
+
+                <button class="btn-add-marco mt-2" onclick="addMarco()">
+                    <i class="fas fa-plus"></i> ADICIONAR MARCO
+                </button>
+                <p class="text-muted mt-3" style="font-family: var(--font-mono); font-size: 0.75rem;">ℹ️ Se não houve nenhum marco, deixe em branco. O prazo corre continuamente.</p>
+            </div>
+
+            <!-- SEEU (Apenas PPE e INTERCORRENTE) -->
+            <div id="box-seeu" class="seeu-box">
+                <h4 class="font-display text-white mb-3" style="font-size: 1.8rem;"><i class="fas fa-link text-gold me-2"></i> CONSULTA PÚBLICA SEEU</h4>
+                <p class="text-secondary" style="font-size: 0.95rem;">Para obter as datas exatas de trânsito em julgado e marcos de execução do processo:</p>
+                <a href="https://seeu.pje.jus.br/seeu/paginaPrincipal.jsp" target="_blank" class="btn btn-outline-warning w-100 font-teko fs-4 mb-3">
+                    <i class="fas fa-external-link-alt me-2"></i> ACESSAR SEEU TJMG
+                </a>
+                <ul style="font-family: var(--font-mono); font-size: 0.8rem; color: #888; padding-left: 20px;">
+                    <li>Acesse o link acima e clique em "Consulta Pública"</li>
+                    <li>Informe o número do processo ou CPF</li>
+                    <li>Localize: Trânsito em Julgado e Data da Sentença</li>
+                </ul>
+            </div>
+
+            <div class="wizard-nav">
+                <button class="btn-wizard-back" onclick="prevStep(4)">← VOLTAR</button>
+                <button class="btn-wizard" onclick="startProcessing()" id="btn-to-calc">CALCULAR RESULTADO →</button>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- TELA DE PROCESSAMENTO -->
+        <!-- ========================================== -->
+        <div id="processing-screen" class="step-section">
+            <div class="cyber-hourglass"></div>
+            <h3 class="font-display text-white fs-1 mb-4">PROCESSANDO AUTOS...</h3>
+            <div class="process-log" id="process-log">◉ INICIANDO MOTOR DE CÁLCULO...</div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- ETAPA FINAL: RESULTADO -->
+        <!-- ========================================== -->
+        <div id="resultado-screen" class="step-section">
+            
+            <div class="veredicto-header" id="v-box">
+                <div class="veredicto-status status-ativo" id="v-status">PUNIBILIDADE VIGENTE</div>
+                <div class="font-mono mt-2" style="color: #888; font-size: 1.1rem;" id="v-sub">Prazo não alcançado.</div>
+            </div>
+
+            <div class="result-details">
+                <h4 class="font-display text-gold mb-3 fs-3 border-bottom border-secondary pb-2">DETALHAMENTO DO CÁLCULO</h4>
+                <div>Modo: <span id="r-modo">---</span></div>
+                <div>Pena inserida: <span id="r-pena">---</span></div>
+                <div>Prazo Legal (Art. 109): <span id="r-prazo109">---</span></div>
+                <div>Redutor (Art. 115): <span id="r-redutor">---</span></div>
+                <div style="border-top: 1px solid #333; margin-top: 10px; padding-top: 10px;">
+                    Prazo Prescricional Efetivo: <span id="r-prazoefetivo" style="color: var(--cyan); font-size: 1.1rem;">---</span>
+                </div>
+                
+                <div class="mt-4 mb-1">Maior período analisado: <span id="r-maiorlapso">---</span></div>
+                
+                <!-- Barra de Progresso do Risco -->
+                <div class="res-progress-wrap">
+                    <div class="res-progress-fill" id="r-bar" style="width: 0%; background: var(--cyan);"></div>
+                </div>
+                <div style="text-align: right; font-size: 0.75rem; color: #888;" id="r-percent">0% consumido</div>
+            </div>
+
+            <div class="aviso-legal">
+                <strong>⚠ AVISO LEGAL:</strong> Este é um cálculo PRELIMINAR educacional. A prescrição real depende de análise de todos os marcos (Art. 117 CP), causas suspensivas (Art. 116 CP) e jurisprudência específica do STJ/STF.
+            </div>
+
+            <!-- CTA DR LUCAS -->
+            <div class="cta-lucas-card">
+                <div class="avatar-ls">LS</div>
+                <span class="cta-badge">DR. LUCAS RENAN SEMIM</span>
+                <span class="cta-oab">OAB/MG 222.539 · Advocacia Criminal</span>
+                
+                <h3 class="cta-headline">Este cálculo indicou algo relevante para o seu caso?</h3>
+                <p class="text-secondary mb-4" style="line-height: 1.6; font-size: 0.95rem;">
+                    A ferramenta calcula os prazos legais, mas a prescrição real depende de uma análise estratégica completa dos autos. <strong>Cada dia conta.</strong>
+                </p>
+
+                <div class="row g-3">
+                    <div class="col-md-12">
+                        <a href="https://wa.me/5531989420094" class="btn-whatsapp-cta" target="_blank">
+                            <i class="fab fa-whatsapp"></i> FALAR COM DR. LUCAS — PLANTÃO 24H
+                        </a>
+                    </div>
+                    <div class="col-md-12">
+                        <a href="https://cal.read.ai/lucas-fjd9a" class="btn-agendar-cta" target="_blank">
+                            <i class="far fa-calendar-alt"></i> AGENDAR CONSULTA ESTRATÉGICA
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-4">
+                    <small style="color: #666; font-family: var(--font-mono); font-size: 0.7rem;">Sabará · Belo Horizonte e todo o Brasil (Juízo 100% Digital)</small>
+                </div>
+            </div>
+
+            <div class="text-center mt-5">
+                <button class="btn-wizard-back" onclick="location.reload();"><i class="fas fa-redo"></i> NOVO CÁLCULO</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- SEÇÃO EDUCACIONAL INFERIOR -->
+    <div class="container edu-section fade-in-up">
+        <h2 class="font-display text-white fs-1 mb-4 border-bottom border-secondary pb-2">TABELA LEGAL — ART. 109 DO CP</h2>
+        <div class="table-responsive mb-5">
+            <table class="table table-custom text-center align-middle">
+                <thead>
+                    <tr>
+                        <th>PENA MÁXIMA</th>
+                        <th>PRAZO PRESCRICIONAL</th>
+                        <th class="text-start">EXEMPLO DE CRIME</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="tbl-row-3"><td>< 1 ano</td><td><strong>3 anos</strong></td><td class="text-start">Contravenção penal</td></tr>
+                    <tr id="tbl-row-4"><td>1 – 2 anos</td><td><strong>4 anos</strong></td><td class="text-start">Lesão corporal leve</td></tr>
+                    <tr id="tbl-row-8"><td>2 – 4 anos</td><td><strong>8 anos</strong></td><td class="text-start">Furto qualificado</td></tr>
+                    <tr id="tbl-row-12"><td>4 – 8 anos</td><td><strong>12 anos</strong></td><td class="text-start">Estelionato</td></tr>
+                    <tr id="tbl-row-16"><td>8 – 12 anos</td><td><strong>16 anos</strong></td><td class="text-start">Roubo simples</td></tr>
+                    <tr id="tbl-row-20"><td>> 12 anos</td><td><strong>20 anos</strong></td><td class="text-start">Homicídio / Tráfico</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 class="font-display text-white fs-1 mb-4 border-bottom border-secondary pb-2">FAQ JURÍDICO</h2>
+        <div class="accordion accordion-custom" id="faqPrescricao">
+            <div class="accordion-item">
+                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f1">▶ O que é a Prescrição Penal?</button></h2>
+                <div id="f1" class="accordion-collapse collapse" data-bs-parent="#faqPrescricao"><div class="accordion-body">É a perda do direito do Estado de punir ou executar uma pena devido à demora excessiva (lapso de tempo). Se o Estado demora, o processo morre.</div></div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f2">▶ Qual a diferença entre PPP e PPE?</button></h2>
+                <div id="f2" class="accordion-collapse collapse" data-bs-parent="#faqPrescricao"><div class="accordion-body">PPP (Pretensão Punitiva) ocorre antes da condenação definitiva. PPE (Executória) ocorre após o trânsito em julgado, quando o Estado demora a executar a prisão.</div></div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f3">▶ O crime hediondo prescreve?</button></h2>
+                <div id="f3" class="accordion-collapse collapse" data-bs-parent="#faqPrescricao"><div class="accordion-body">Sim. Quase todos os crimes prescrevem no Brasil (Tráfico, Homicídio). As únicas exceções (imprescritíveis) são Racismo e ação de grupos armados contra o Estado.</div></div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f4">▶ O que são marcos interruptivos?</button></h2>
+                <div id="f4" class="accordion-collapse collapse" data-bs-parent="#faqPrescricao"><div class="accordion-body">São atos do processo (ex: recebimento da denúncia, sentença) previstos no Art. 117 do CP que "zeram" o relógio da prescrição, fazendo a contagem recomeçar do zero.</div></div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f5">▶ O que muda com menos de 21 ou mais de 70 anos?</button></h2>
+                <div id="f5" class="accordion-collapse collapse" data-bs-parent="#faqPrescricao"><div class="accordion-body">O prazo prescricional é cortado pela metade (Art. 115, CP). Mas atenção: leis recentes proibiram esse benefício para crimes de violência sexual contra mulheres.</div></div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f6">▶ O que é a prescrição retroativa após a Lei 12.234/2010?</button></h2>
+                <div id="f6" class="accordion-collapse collapse" data-bs-parent="#faqPrescricao"><div class="accordion-body">Para crimes ocorridos após maio de 2010, a prescrição retroativa (baseada na pena da sentença) não pode mais retroagir à data do fato, mas apenas até o recebimento da denúncia.</div></div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f7">▶ Como consultar o SEEU?</button></h2>
+                <div id="f7" class="accordion-collapse collapse" data-bs-parent="#faqPrescricao"><div class="accordion-body">O Sistema Eletrônico de Execução Unificado (SEEU) permite consulta pública de andamentos pelo CPF ou nº do processo, útil para identificar o trânsito em julgado e fugas.</div></div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f8">▶ Este cálculo tem valor jurídico?</button></h2>
+                <div id="f8" class="accordion-collapse collapse" data-bs-parent="#faqPrescricao"><div class="accordion-body">Não automático. A máquina simula os prazos, mas o reconhecimento oficial exige que o advogado criminalista faça a petição demonstrando os fatos ao Juiz, que proferirá a decisão.</div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER PREMIUM -->
+    <footer>
+        <div class="container text-center py-5">
+            <p class="font-teko text-white fs-2 mb-1">SEMIM & ASSOCIADOS</p>
+            <p class="text-secondary small mb-1">Advocacia Criminal · Dr. Lucas Renan Semim · OAB/MG 222.539</p>
+            <p class="text-secondary small mb-0">Sabará & Comarca de Belo Horizonte · MG · Brasil</p>
+            <div class="mt-3">
+                <span class="badge bg-dark border border-secondary text-secondary" style="font-family:'Fira Code'; font-size:0.7rem; padding: 6px 10px;">
+                    ⚠ FERRAMENTA EDUCACIONAL — NÃO SUBSTITUI CONSULTA JURÍDICA
+                </span>
+            </div>
+            <p class="text-muted small mt-4 mb-0">© 2026 · Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+    <!-- WPP FLUTUANTE -->
+    <a href="https://wa.me/5531989420094" class="float-wpp" target="_blank" id="float-wpp" style="display:none;">
+        <i class="fab fa-whatsapp fs-4"></i>
+        <span class="float-label-wpp d-none d-md-block" style="margin-left:5px;">PLANTÃO</span>
+    </a>
+
+    <!-- SCRIPTS CORE -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- LÓGICA DA CALCULADORA YMYL -->
+    <script>
+        // ESTADO GLOBAL DO WIZARD
+        const state = {
+            modo: null,
+            pena: 0,
+            data1: null,
+            data2: null,
+            data3: null, // Para retroativa
+            redutorAtivo: false,
+            marcos: [] // { tipo, data }
+        };
+
+        const configModos = {
+            'PPP_ABS': { title: "PPP ABSTRATA", label1: "DATA DO FATO", label2: "DATA ATUAL (OU ÚLTIMO MARCO)", needsMarcos: true, useData3: false },
+            'PPP_RETRO': { title: "PPP RETROATIVA", label1: "DATA RECEB. DENÚNCIA", label2: "DATA DA SENTENÇA", needsMarcos: true, useData3: true },
+            'PPP_INTER': { title: "PPP INTERCORRENTE", label1: "DATA DA SENTENÇA", label2: "DATA ATUAL / TRÂNSITO EM JULGADO", needsMarcos: false, useData3: false },
+            'PPE': { title: "PRESCRIÇÃO EXECUTÓRIA (PPE)", label1: "TRÂNSITO EM JULGADO (ACUSAÇÃO)", label2: "DATA ATUAL", needsMarcos: false, useData3: false },
+            'VIRTUAL': { title: "SIMULAÇÃO ESTRATÉGICA (VIRTUAL)", label1: "DATA DO FATO", label2: "DATA ATUAL", needsMarcos: false, useData3: false }
+        };
+
+        const listMarcosTipos = [
+            "Recebimento da denúncia ou queixa (Art. 117, I)",
+            "Pronúncia (Tribunal do Júri) (Art. 117, II)",
+            "Decisão confirmatória da pronúncia (Art. 117, III)",
+            "Publicação da sentença condenatória recorrível (Art. 117, IV)",
+            "Início/continuação do cumprimento da pena (Art. 117, V)",
+            "Reincidência (Art. 117, VI)"
+        ];
+
+        // SET MODO (Etapa 1 -> 2)
+        function setMode(mode) {
+            state.modo = mode;
+            
+            // UI Updates
+            document.querySelectorAll('.mode-card').forEach(c => c.style.borderColor = 'var(--border-subtle)');
+            event.currentTarget.style.borderColor = 'var(--cyan)';
+            
+            updateDisplay(`◉ MODO: ${configModos[mode].title}`, null);
+            
+            // Configure Etapa 2 Labels
+            const conf = configModos[mode];
+            document.getElementById('label-pena').innerText = (mode === 'PPP_ABS' || mode === 'VIRTUAL') ? "PENA MÁXIMA EM ABSTRATO (ANOS)" : "PENA CONCRETA APLICADA (ANOS)";
+            
+            // Config Data Labels na Etapa 3
+            document.getElementById('label-data-1').innerText = conf.label1;
+            document.getElementById('tl-lbl-1').innerText = conf.label1.split(' ')[1] || "Data 1";
+            
+            document.getElementById('label-data-2').innerText = conf.label2;
+            document.getElementById('tl-lbl-2').innerText = conf.label2.split(' ')[0] || "Data 2";
+            
+            if(conf.useData3) {
+                document.getElementById('box-data-3').style.display = 'block';
+                document.getElementById('tl-pt-3').style.display = 'block';
+                document.getElementById('box-data-1').className = "col-md-4";
+                document.getElementById('box-data-2').className = "col-md-4";
+                document.getElementById('box-data-3').className = "col-md-4";
+            } else {
+                document.getElementById('box-data-3').style.display = 'none';
+                document.getElementById('tl-pt-3').style.display = 'none';
+                document.getElementById('box-data-1').className = "col-md-6";
+                document.getElementById('box-data-2').className = "col-md-6";
+            }
+
+            // Configuração da Etapa 5 (Marcos/SEEU)
+            document.getElementById('box-marcos').style.display = conf.needsMarcos ? 'block' : 'none';
+            document.getElementById('box-seeu').style.display = (mode === 'PPE' || mode === 'PPP_INTER') ? 'block' : 'none';
+
+            setTimeout(() => nextStep(2), 300);
+        }
+
+        // SYNC SLIDER E INPUT PENA
+        const pSlider = document.getElementById('pena-slider');
+        const pInput = document.getElementById('pena-input');
+        pSlider.addEventListener('input', (e) => { pInput.value = e.target.value; updatePrazoRealtime(); });
+        pInput.addEventListener('input', (e) => { pSlider.value = e.target.value; updatePrazoRealtime(); });
+
+        function updatePrazoRealtime() {
+            const val = parseFloat(pInput.value);
+            if(val > 0) {
+                const prazoBase = getPrazoArt109(val);
+                updateDisplay(null, `◉ PRAZO ART.109: ${prazoBase} ANOS`);
+                highlightTable(prazoBase);
+            }
+        }
+
+        function highlightTable(prazo) {
+            document.querySelectorAll('.table-custom tr').forEach(tr => tr.classList.remove('highlight'));
+            const map = { 3: '3', 4: '4', 8: '8', 12: '12', 16: '16', 20: '20' };
+            if(map[prazo]) {
+                const el = document.getElementById('tbl-row-'+map[prazo]);
+                if(el) el.classList.add('highlight');
+            }
+        }
+
+        // MOTOR ART 109
+        function getPrazoArt109(anos) {
+            if (anos > 12) return 20;
+            if (anos > 8) return 16;
+            if (anos > 4) return 12;
+            if (anos > 2) return 8;
+            if (anos >= 1) return 4;
+            return 3;
+        }
+
+        // NAVEGAÇÃO WIZARD
+        function nextStep(step) {
+            // Validações antes de avançar
+            if(step === 3) {
+                state.pena = parseFloat(pInput.value);
+                if(!state.pena || state.pena <= 0) {
+                    showErr('err-pena', true); return;
+                } else showErr('err-pena', false);
+            }
+            if(step === 4) {
+                state.data1 = new Date(document.getElementById('data-1').value);
+                state.data2 = new Date(document.getElementById('data-2').value);
+                
+                if(isNaN(state.data1)) { showErr('err-d1', true); return; } else showErr('err-d1', false);
+                if(isNaN(state.data2) || state.data2 < state.data1) { showErr('err-d2', true); return; } else showErr('err-d2', false);
+                
+                if(configModos[state.modo].useData3) {
+                    state.data3 = new Date(document.getElementById('data-3').value);
+                    if(isNaN(state.data3) || state.data3 < state.data1 || state.data3 > state.data2) { 
+                        showErr('err-d3', true); return; 
+                    } else showErr('err-d3', false);
+                    document.getElementById('tl-pt-3').classList.add('filled');
+                }
+                
+                document.getElementById('tl-pt-1').classList.add('filled');
+                document.getElementById('tl-pt-2').classList.add('filled');
+            }
+
+            hideAllSteps();
+            document.getElementById(`step-${step}`).classList.add('active');
+            updateProgress(step);
+        }
+
+        function prevStep(step) {
+            hideAllSteps();
+            document.getElementById(`step-${step}`).classList.add('active');
+            updateProgress(step);
+        }
+
+        function hideAllSteps() {
+            document.querySelectorAll('.step-section').forEach(s => s.classList.remove('active'));
+        }
+
+        function updateProgress(step) {
+            const fill = document.getElementById('prog-fill');
+            const perc = ((step - 1) / 5) * 100;
+            fill.style.width = perc + '%';
+            
+            for(let i=1; i<=6; i++) {
+                const dot = document.getElementById(`dot-${i}`);
+                if(i < step) { dot.className = 'step-dot completed'; }
+                else if(i === step) { dot.className = 'step-dot active'; }
+                else { dot.className = 'step-dot'; }
+            }
+        }
+
+        function showErr(id, show) {
+            const el = document.getElementById(id);
+            if(show) { el.classList.add('active'); } else { el.classList.remove('active'); }
+        }
+
+        function updateDisplay(linha1, linha2) {
+            if(linha1 !== null) document.getElementById('disp-modo').innerText = linha1;
+            if(linha2 !== null) {
+                document.getElementById('disp-calc').innerHTML = linha2 + ' <span class="cursor-blink"></span>';
+            }
+        }
+
+        // GERENCIAR MARCOS
+        let marcoCount = 0;
+        function addMarco() {
+            marcoCount++;
+            const div = document.createElement('div');
+            div.className = "marco-item fade-in-up visible";
+            div.id = `marco-row-${marcoCount}`;
+            
+            let opts = listMarcosTipos.map(m => `<option value="${m}">${m}</option>`).join('');
+            
+            div.innerHTML = `
+                <div style="flex-grow:1;">
+                    <label class="text-secondary small font-mono">TIPO DE MARCO</label>
+                    <select class="form-control-custom marco-tipo">${opts}</select>
+                </div>
+                <div>
+                    <label class="text-secondary small font-mono">DATA</label>
+                    <input type="date" class="form-control-custom marco-data" required>
+                </div>
+                <button class="btn-remover-marco" onclick="document.getElementById('marco-row-${marcoCount}').remove()"><i class="fas fa-trash"></i></button>
+            `;
+            document.getElementById('lista-marcos').appendChild(div);
+        }
+
+        // REDUTOR UI
+        function toggleIdade() {
+            state.redutorAtivo = document.getElementById('chk-menor21').checked || document.getElementById('chk-maior70').checked;
+            const str = state.redutorAtivo ? `◉ REDUTOR ART.115: ATIVO (${getPrazoArt109(state.pena)/2} ANOS)` : `◉ PRAZO ART.109: ${getPrazoArt109(state.pena)} ANOS`;
+            updateDisplay(null, str);
+        }
+
+        // ====== MOTOR DE PROCESSAMENTO FINAL ======
+        function startProcessing() {
+            hideAllSteps();
+            updateProgress(6);
+            document.getElementById('processing-screen').classList.add('active');
+
+            const logEl = document.getElementById('process-log');
+            const msgs = [
+                "◉ LENDO PENA E ART. 109 CP...",
+                "◉ AVALIANDO REDUTORES ART. 115...",
+                "◉ MAPEANDO LINHA DO TEMPO...",
+                "◉ CONFRONTANDO INTERVALOS (ART. 117)...",
+                "◉ COMPILANDO VEREDITO PRESCRICIONAL..."
+            ];
+            
+            let mIdx = 0;
+            const logInterval = setInterval(() => {
+                if(mIdx < msgs.length) { logEl.innerText = msgs[mIdx]; mIdx++; }
+            }, 500);
+
+            setTimeout(() => {
+                clearInterval(logInterval);
+                calcularVeredito();
+            }, 3000);
+        }
+
+        function calcularVeredito() {
+            hideAllSteps();
+            document.getElementById('resultado-screen').classList.add('active');
+
+            // Coleta Marcos Adicionados
+            state.marcos = [];
+            document.querySelectorAll('.marco-item').forEach(row => {
+                const dt = new Date(row.querySelector('.marco-data').value);
+                if(!isNaN(dt)) state.marcos.push(dt);
+            });
+
+            // Adiciona inicio, fim e meio (se aplicável)
+            let allDates = [state.data1, state.data2];
+            if(configModos[state.modo].useData3) allDates.push(state.data3);
+            allDates = allDates.concat(state.marcos).sort((a,b) => a - b);
+            
+            // Cálculos Base
+            let prazoLegal = getPrazoArt109(state.pena);
+            const redutorText = state.redutorAtivo ? "SIM (Reduz Pela Metade)" : "NÃO APLICÁVEL";
+            if(state.redutorAtivo) prazoLegal = prazoLegal / 2;
+
+            // Lógica de Lapsos
+            let maiorLapsoAnos = 0;
+            for(let i = 1; i < allDates.length; i++) {
+                const diffMs = allDates[i] - allDates[i-1];
+                const diffAnos = diffMs / (1000 * 60 * 60 * 24 * 365.25);
+                if(diffAnos > maiorLapsoAnos) maiorLapsoAnos = diffAnos;
+            }
+
+            // Veredito
+            let prescreveu = maiorLapsoAnos >= prazoLegal;
+            let statusText = "", statusClass = "", descText = "";
+            let perc = Math.min((maiorLapsoAnos / prazoLegal) * 100, 100);
+            let barColor = "var(--cyan)";
+
+            if(state.modo === 'VIRTUAL') {
+                statusText = prescreveu ? "ALERTA ESTRATÉGICO" : "SEM PRESCRIÇÃO VIRTUAL";
+                statusClass = prescreveu ? "status-alerta" : "status-ativo";
+                descText = prescreveu ? `⚠ Se aplicada a pena máxima abstrata simulada, o período decorrido já superaria o prazo legal. Tese em perspectiva.` : "Mesmo simulando a pior hipótese, o tempo necessário não foi atingido.";
+                barColor = prescreveu ? "var(--amarelo-alerta)" : "var(--cyan)";
+            } else {
+                if(prescreveu) {
+                    statusText = "PRESCRIÇÃO DETECTADA";
+                    statusClass = "status-prescrito";
+                    descText = `✓ SUPEROU O PRAZO LEGAL. O Estado perdeu o direito de punição no intervalo analisado.`;
+                    barColor = "var(--verde-prescrito)";
+                } else {
+                    statusText = "PUNIBILIDADE VIGENTE";
+                    statusClass = "status-ativo";
+                    descText = `✗ O lapso de tempo não alcançou o limite de ${prazoLegal} anos.`;
+                    if(perc > 70) barColor = "var(--amarelo-alerta)";
+                }
+            }
+
+            // Preenche UI
+            document.getElementById('v-status').innerText = statusText;
+            document.getElementById('v-status').className = `veredicto-status ${statusClass}`;
+            document.getElementById('v-sub').innerHTML = descText;
+            document.getElementById('v-box').style.borderColor = prescreveu ? "var(--verde-prescrito)" : "var(--vermelho-ativo)";
+            if(state.modo==='VIRTUAL' && prescreveu) document.getElementById('v-box').style.borderColor = "var(--amarelo-alerta)";
+
+            document.getElementById('r-modo').innerText = configModos[state.modo].title;
+            document.getElementById('r-pena').innerText = `${state.pena} anos`;
+            document.getElementById('r-prazo109').innerText = `${getPrazoArt109(state.pena)} anos`;
+            document.getElementById('r-redutor').innerText = redutorText;
+            document.getElementById('r-prazoefetivo').innerText = `${prazoLegal} ANOS LÍQUIDOS`;
+            document.getElementById('r-maiorlapso').innerText = `${maiorLapsoAnos.toFixed(2)} Anos ininterruptos`;
+
+            // Animação Barra Risco
+            setTimeout(() => {
+                document.getElementById('r-bar').style.width = perc + '%';
+                document.getElementById('r-bar').style.background = barColor;
+                document.getElementById('r-percent').innerText = `${perc.toFixed(1)}% do tempo consumido → restam ${(prazoLegal - maiorLapsoAnos).toFixed(1)} anos`;
+            }, 500);
+
+            updateDisplay("◉ STATUS: " + statusText, `◉ PRAZO LÍQUIDO: ${prazoLegal}A | DECORRIDO: ${maiorLapsoAnos.toFixed(1)}A`);
+        }
+
+        // Float WPP Listener
+        window.addEventListener('scroll', () => {
+            const btn = document.getElementById('float-wpp');
+            if (btn) btn.style.display = window.scrollY > 400 ? 'flex' : 'none';
+        });
+
+        // Initial setup for displays
+        updatePrazoRealtime();
+    </script>
+
+    <!-- SCRIPTS EXTERNOS MANTIDOS E PRESERVADOS -->
+    <script src="codelei/animacao.js?v=20261008" defer></script>
+    <script src="codelei/global.js?v=20261008" defer></script>
+    <script src="codelei/elite.js?v=20261008" defer></script>
+
+</body>
+</html>

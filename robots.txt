@@ -1,0 +1,136 @@
+# ================================================================== #
+# === ROBOTS.TXT: ELITE SEO V8 — lucassemim.adv.br                 === #
+# === Advocacia Criminal — Sabará / Belo Horizonte (MG)            === #
+# === Revisado: out/2026                                           === #
+# ================================================================== #
+#
+# IMPORTANTE (correção V8): um crawler que tem grupo próprio neste arquivo
+# IGNORA o grupo "User-agent: *". Na versão anterior cada buscador/IA tinha
+# um grupo só com "Allow: /", e por isso as áreas restritas abaixo só
+# valiam para bots sem grupo. Agora todos compartilham o MESMO conjunto
+# de regras (Googlebot, Bing, GPTBot, ClaudeBot, Perplexity etc. seguem
+# livres para indexar e citar o conteúdo público).
+
+# ------------------------------------------------------------------ #
+# 1. BUSCADORES + IAs (indexação e citação liberadas — mesmas regras) #
+# ------------------------------------------------------------------ #
+User-agent: Googlebot
+User-agent: Googlebot-Image
+User-agent: Googlebot-News
+User-agent: Googlebot-Video
+User-agent: GoogleOther
+User-agent: Google-Extended
+User-agent: Google-CloudVertexBot
+User-agent: Google-NotebookLM
+User-agent: FeedFetcher-Google
+User-agent: Google-Read-Aloud
+User-agent: Bingbot
+User-agent: MSNBot
+User-agent: MSNBot-Media
+User-agent: BingPreview
+User-agent: adidxbot
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: anthropic-ai
+User-agent: Claude-User
+User-agent: Claude-SearchBot
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Applebot
+User-agent: Applebot-Extended
+User-agent: meta-externalagent
+User-agent: facebookexternalhit
+User-agent: Bytespider
+User-agent: Amazonbot
+User-agent: cohere-ai
+User-agent: CCBot
+User-agent: DuckDuckBot
+User-agent: DuckAssistBot
+User-agent: Slurp
+User-agent: Baiduspider
+User-agent: Baiduspider-mobile
+User-agent: NaverBot
+User-agent: Sogou
+User-agent: Exabot
+User-agent: Teoma
+User-agent: MistralAI-User
+User-agent: YouBot
+User-agent: phind-bot
+User-agent: iaskspider
+User-agent: Diffbot
+User-agent: AI2Bot
+User-agent: HuggingFaceBot
+User-agent: TimpiBot
+User-agent: ia_archiver
+Disallow: /portal/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /cgi-bin/
+Disallow: /sala-reuniao.html
+Disallow: /legal-tech/convite.html
+Disallow: /*.pdf$
+
+# ------------------------------------------------------------------ #
+# 2. YANDEX (com limpeza de parâmetros de campanha)                   #
+# ------------------------------------------------------------------ #
+User-agent: YandexBot
+User-agent: YandexImages
+Disallow: /portal/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /cgi-bin/
+Disallow: /sala-reuniao.html
+Disallow: /legal-tech/convite.html
+Disallow: /*.pdf$
+Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term /
+
+# ------------------------------------------------------------------ #
+# 3. GOOGLE ADS (verificação de landing pages — precisa de acesso)    #
+# ------------------------------------------------------------------ #
+User-agent: AdsBot-Google
+User-agent: AdsBot-Google-Mobile
+User-agent: Mediapartners-Google
+Allow: /
+
+# ------------------------------------------------------------------ #
+# 4. FERRAMENTAS DE SEO (mantêm monitoramento, com intervalo)         #
+# ------------------------------------------------------------------ #
+User-agent: SemrushBot
+User-agent: AhrefsBot
+User-agent: MJ12bot
+User-agent: DataForSeoBot
+Disallow: /portal/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /cgi-bin/
+Disallow: /sala-reuniao.html
+Disallow: /legal-tech/convite.html
+Disallow: /*.pdf$
+Crawl-delay: 10
+
+# ------------------------------------------------------------------ #
+# 5. DEMAIS ROBÔS                                                     #
+# ------------------------------------------------------------------ #
+User-agent: *
+Allow: /
+Disallow: /portal/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /cgi-bin/
+Disallow: /sala-reuniao.html
+Disallow: /legal-tech/convite.html
+Disallow: /*.pdf$
+
+# ------------------------------------------------------------------ #
+# 6. SITEMAPS                                                         #
+# ------------------------------------------------------------------ #
+Sitemap: https://lucassemim.adv.br/sitemap.xml
+Sitemap: https://lucassemim.adv.br/sitemap-noticias.xml
+Sitemap: https://lucassemim.adv.br/sitemap-urgencia.xml
+Sitemap: https://lucassemim.adv.br/sitemap-presidios.xml

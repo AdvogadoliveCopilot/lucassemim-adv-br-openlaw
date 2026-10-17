@@ -1,0 +1,196 @@
+﻿LOTE G - Home (index.html) corrigida: visual de impacto mantido, texto dentro do Provimento 205/2021 - 10/10/2026
+===================================================================================================================
+Nada foi subido ao site. Este lote é rascunho para você aprovar.
+ESTADO: gravado na sua pasta do site em 12/10/2026 (index.html). Antes de gravar, comparei o index.html que estava na sua pasta com o
+backup deste lote (idêntico, 58.320 bytes) e a gravação teve trava de data (nada que você tenha mudado foi sobrescrito). NÃO foi
+enviado ao servidor: o envio é pelo FileZilla, depois do seu OK. Os itens 5, 6 e 7 valem para quem preferir copiar à mão.
+
+1) O QUE ESTE LOTE FAZ
+   A home tinha o visual escuro e dourado que você aprovou, mas vários textos que a publicidade da advocacia não aceita
+   (Provimento 205/2021 da OAB): "gratuito/grátis", "em até 15 minutos / 1 hora", "500+ casos atendidos", depoimentos com
+   "5.0 estrelas no Google", "100%", "sigilo absoluto", "defesa de alto rendimento", "Método Live™"... Este lote MANTÉM o visual de
+   impacto e a urgência (plantão 24h, WhatsApp e ligação na primeira tela, botões grandes, dourado) e troca o conteúdo por
+   informação útil: guias "O que fazer agora", perguntas frequentes com base legal e apresentação sóbria do advogado.
+   É UM arquivo só: index.html (68.831 bytes; o de antes tinha 58.320).
+
+2) ANTES x DEPOIS
+   ANTES                                                   DEPOIS
+
+   H1 "SEU FAMILIAR FOI PRESO AGORA? CADA MINUTO CONTA."   H1 "FAMILIAR PRESO? SAIBA O QUE FAZER AGORA." (a busca do cliente; promete
+                                                           informação, não prazo nem resultado)
+
+   "atua na delegacia em até 1 hora"                       "atua em flagrantes, audiências de custódia e habeas corpus, na
+                                                           delegacia e no fórum, em Sabará, BH e região metropolitana"
+
+   botões "FALAR COM DR. LUCAS AGORA" e "ANALISAR MEU      botões "FALAR COM O DR. LUCAS" (WhatsApp) e "VER O QUE FAZER AGORA"
+   CASO (GRATUITO)"                                        (rola até os guias)
+
+   "PLANTÃO ATIVO AGORA - --h--" e "Resposta média:        "PLANTÃO 24 HORAS - WhatsApp e telefone" (texto fixo; saiu o relógio
+   menos de 15 minutos" (relógio por JavaScript)           por JavaScript)
+
+   faixa 500+ casos / 8+ anos / 24h / 15 min               faixa 24 h plantão criminal / 222.539 inscrição na OAB/MG / Sabará e BH
+                                                           atendimento presencial / Sigilo dever profissional (só o que dá para provar)
+
+   3 cartões de situação: "atendimento estratégico",       3 cartões descritivos ("A atuação da defesa começa nas primeiras horas
+   "intervenção imediata em até 1 hora", "análise          após a prisão"; "Conte o seu caso para receber a orientação do
+   técnica sem custo inicial"                              advogado"); botões FALAR COM O PLANTÃO, ENVIAR MEU CASO e CONSULTAR
+                                                           SOBRE EXECUÇÃO
+
+   (não existia)                                           SEÇÃO NOVA "O QUE FAZER AGORA": 6 cartões levam aos guias (flagrante, "meu
+                                                           filho foi preso", audiência de custódia, intimado, mandado de prisão,
+                                                           progressão atrasada) + "VER TODOS OS GUIAS". Liga a home às páginas que
+                                                           chamam o cliente.
+
+   "O PESO DA VERDADE: a técnica que desequilibra o jogo"  "Artigos sobre prisão, processo e execução penal, escritos para quem
+   e "EXECUÇÃO PENAL INTELIGENTE"                          precisa entender o que está acontecendo"; "EXECUÇÃO PENAL"; títulos dos
+                                                           cartões em h3 (ordem de títulos correta)
+
+   "O QUE DIZEM NOSSOS CLIENTES" (3 depoimentos com        "DÚVIDAS FREQUENTES": 6 perguntas em HTML (<details>; abrem por clique e
+   iniciais, "Liberdade em 24h", "VER MAIS AVALIAÇÕES      teclado, funcionam sem JavaScript), com base legal (CF art. 5º, LXIII e
+   5.0 ESTRELAS NO GOOGLE")                                LXVIII; CPP arts. 306 e 310; Lei 8.906/1994) e o aviso "nenhum resultado
+                                                           é garantido". O mesmo texto vai para o FAQPage dos dados estruturados.
+
+   "POR QUE O DR. LUCAS SEMIM?": "defesa de alto           "CONHEÇA O DR. LUCAS SEMIM": inscrição na OAB/MG, atuação (da delegacia à
+   rendimento", "não é qualquer defesa", "advocacia        execução da pena) e 4 itens descritivos; "CALCULADORA DE PRESCRIÇÃO"
+   auditada (Método Live™)", "sigilo absoluto",            (sem "grátis")
+   "CALCULADORA PENAL (GRÁTIS)"
+
+   "PALMA DA MÃO": "escritório 100% digitalizado",         "Clientes do escritório contam com uma área reservada, de acesso restrito,
+   "sigilo absoluto"; o botão ACESSAR ÁREA DO CLIENTE      para acompanhar informações do caso e falar com o advogado"; o botão agora vai
+   levava ao painel antigo (painel-cliente.html)           ao portal novo (portal/painel-cliente.html), o mesmo do menu do site
+
+   faixa creme "Sigilo garantido... Resposta em até 15     faixa escura "Sigilo profissional previsto no Estatuto da OAB / Contato
+   minutos... Análise inicial gratuita"                    por WhatsApp e telefone / Advocacia é atividade de meio: nenhum resultado
+                                                           é garantido / Atendimento presencial em Sabará e BH"
+
+   meta description de 164 caracteres com "em até 1h";     description de 152 caracteres, sem prazo; OG e Twitter sem "em até 1 hora"
+   OG e Twitter com "em até 1 hora"
+
+   dados estruturados: priceRange e SearchAction (a        priceRange e SearchAction removidos; FAQPage acrescentado (texto = o visível);
+   busca interna não existe)                               LegalService, nome e @id mantidos
+
+   teste de qualidade: 48 problemas                        0 problemas (1 aviso: o vídeo só existe no servidor)
+
+   rolagem lateral no celular (12 px a mais que a tela),   sem rolagem lateral de 360 a 1366 px; contraste corrigido; cada seção com
+   textos pouco legíveis, faixa branca antes do rodapé     nome para leitor de tela; fundo preto até o rodapé
+
+3) O QUE NÃO MUDOU NESTE LOTE (de propósito; é compartilhado com o site todo ou depende de você)
+   - Cabeçalho, rodapé, chat, aviso de cookies, Central do Caso e barra fixa: vêm de arquivos dos Lotes D e E, não da home.
+   - Rodapé: "Semim & Associados - Advocacia Criminal Inteligente" (js/footer-seo.js, Lote D) e, nos dados estruturados,
+     o catálogo "Defesa Criminal - Serviços de Urgência e Estratégicos" (js/ai-neural-seo.js, Lote E). "Inteligente" e "Estratégicos"
+     podem ser lidos como autoelogio (art. 3º, IV do Provimento 205/2021). Mexo nesses dois quando você me disser o nome oficial
+     (item 11.8): Lote H.
+   - Nome do escritório nos dados estruturados ("Dr. Lucas Semim - Advocacia Criminal Estratégica") e os 3 @id do mesmo escritório;
+     endereço, CEP e coordenadas (há valores diferentes no site): Lote H, depois da sua resposta.
+   - Títulos dos cartões de artigos em destaque ("Guerra no Plenário", "Armadilha da Delegacia", "Temas 1084 e 1172"): são os títulos
+     dos próprios artigos; a revisão editorial dos artigos entra no Lote H.
+   - Agendamento (Cal.com) carrega em toda visita, antes de qualquer clique: Lote H (carregar só quando a pessoa pedir).
+   - Seção "palma da mão": o vídeo (video/escritorioonline.mp4) e a foto (img/provas/processoonline.webp) continuam como estavam. Eu
+     não tenho esses dois arquivos aqui (a home de antes já os chamava); confirme que continuam no servidor.
+
+4) ARQUIVO DO LOTE (1 para o servidor)
+   SUBSTITUI O QUE ESTÁ NO AR:  index.html   (raiz do site: /public_html/index.html)
+   NÃO enviar: _ferramentas, agentes.
+   Soma de verificação: e705061285405963 (SHA-256, 16 primeiros caracteres; arquivo _ferramentas\somas-lote-g.txt)
+   Diferenças linha a linha: _ferramentas\diff-lote-g-20261010.txt   |   Registro dos testes: _ferramentas\qa-lote-g-20261010.txt
+   Este index.html já traz o telefone novo, (31) 98942-0094. Se o pacote da troca de telefone (08/10) ainda não subiu, a home passa a
+   ter o número novo com este lote; as outras páginas só ganham o número novo com aquele pacote.
+
+5) ORDEM SEGURA DE ENVIO: ESTE LOTE VAI POR ÚLTIMO (pacote da troca de telefone, B, C v2, D, E, F e só então G)
+   Motivo 1 (cache): a home chama 16 arquivos com ?v=20261009 (cabeçalho, rodapé, aviso de cookies, chat, SEO, CTA, diagnóstico,
+   retorno de lead, anúncios, estilos). Vários são dos Lotes D e E e usam o MESMO nome de versão. O servidor guarda css/js por 1 ano:
+   se a home subir antes deles, o visitante guarda a versão ANTIGA desses arquivos sob o nome novo e só a trocaria daqui a um ano.
+   Motivo 2 (links): a home leva ao índice /advogado-criminalista/ e a 6 cidades (Lote F) e a 6 guias de /o-que-fazer-agora/ (Lote C v2).
+   Motivo 3 (telefone): um dos 16 arquivos, codelei/analytics.js, mudou no pacote da troca de telefone (08/10: passa a reconhecer o
+   número novo nos cliques). Esse pacote precisa estar no servidor antes (ou ao menos esse arquivo); pelo mesmo motivo do cache.
+   ACOMPANHAM (já estão na sua pasta; confirme que estão no servidor): img/lucasrenansemimeadvogado.jpeg, css/lucas-v2.css,
+   js/design-v2.js, js/tradutor-global.js, js/vlibras-plugin.js, js/vcard-smart.js, legal-tech/calculadora-prescricao.html,
+   portal/painel-cliente.html e js/ls-api-config.js (portal novo: o botão da área do cliente agora aponta para ele, e o login dele
+   depende da versão do Apps Script já publicada), faq.html, diagnostico.html (Lote E), os 7 artigos de news\ e o guia
+   progressao-de-regime-atrasada-o-que-fazer.html. Que eu não tenho aqui (a home de antes já chamava): img/og-home.jpg (prévia do link),
+   img/provas/processoonline.webp e video/escritorioonline.mp4; confirme que continuam no servidor.
+   Passo a passo: (1) opcional: _ferramentas\fazer-backup-antes-lote-g.bat; (2) copiar index.html para a pasta do site (substitui);
+   (3) ver no computador (item 6); (4) FileZilla: index.html -> /public_html (raiz).
+
+6) COMO VER NO SEU COMPUTADOR ANTES DE SUBIR
+   Dois cliques em _ferramentas\ver-lote-g-local.bat (usa o Python). Abre a home em http://127.0.0.1:8080/ a partir da sua própria pasta,
+   só neste computador. No aviso de cookies, clique em "Rejeitar" (se aceitar, o Google Analytics pode contar o teste como visita).
+   Se algo parecer antigo: Ctrl+Shift+R. Celular: F12 e o ícone de celular. Para a prévia ficar igual à que vai ao ar, os arquivos dos
+   Lotes B a F precisam estar na pasta (senão aparecem cabeçalho/rodapé antigos e os links levam às páginas antigas).
+   Prévias prontas em _ferramentas\previa\: previa-home-computador.jpg, previa-home-celular.jpg e o comparativo antes/depois
+   (comparativo-antes-depois-computador.jpg e ...-celular.jpg).
+
+7) BACKUP E COMO VOLTAR ATRÁS
+   _ferramentas\backups\index-antes-lote-g-20261010.html = a home de antes (a do pacote da troca de telefone, 08/10, de onde parti).
+   Se você gravar à mão: ANTES de copiar, dois cliques em _ferramentas\fazer-backup-antes-lote-g.bat (precisa do .ps1 ao lado; copia o
+   index.html que está AGORA na sua pasta para _ferramentas\backups\index-antes-lote-g-AAAAMMDD-HHMM.html). Voltar atrás: copiar o
+   backup de volta com o nome index.html e reenviar pelo FileZilla.
+
+8) SITEMAP E GOOGLE
+   Em sitemap.xml, na entrada da home (https://lucassemim.adv.br/), troque só o lastmod para 2026-10-10 (trecho pronto em
+   _ferramentas\sitemap-trecho-lote-g.txt). No Search Console: Inspeção de URL > Solicitar indexação da home. Título e description
+   mudam: o Google leva alguns dias para refazer o resultado. O sitemap.xml da sua pasta é uma cópia; confirme se é o mesmo do servidor.
+
+9) TESTES FEITOS (navegador de verdade, celular 390 px e computador 1366 px; só com dados fictícios) - sobre o próprio arquivo do lote
+   - Qualidade (meu script: título/description/canonical/OG, H1 único, ordem de títulos, JSON-LD, FAQPage = texto visível, links locais,
+     1 telefone só, rel nos links externos, versões de cache, termos proibidos no HTML e no texto final renderizado): antes 48 problemas,
+     depois 0 (1 aviso: vídeo só no servidor). Registro completo: _ferramentas\qa-lote-g-20261010.txt
+   - Varredura do que aparece na tela depois do JavaScript (inclui cabeçalho, rodapé, chat e dados estruturados injetados): 0 termos
+     proibidos na home; só restam os 2 do item 3 (arquivos compartilhados).
+   - Rolagem lateral (medida em 7 larguras): antes, 12 a 13 px a mais que a tela de 320 a 414 px; depois, 0 de 360 a 1366 px.
+     Sem erro de JavaScript; sem JavaScript a página mostra H1, botão do WhatsApp, as 6 perguntas
+     (a 1ª aberta) e o número 24; perguntas abrem e fecham por clique e por teclado (Enter e Espaço); contador termina em 24;
+     um único WhatsApp (31 98942-0094) em todos os links; 48 links-chave conferidos; JSON-LD lê sem erro e o FAQPage = texto visível.
+   - Acessibilidade (axe-core): 0 violações no celular e no computador (no 1º rascunho o teste apontou contraste e seções sem nome; corrigi).
+   - HTML: todas as etiquetas abertas foram fechadas (original e novo).
+   - Visual: comparei antes/depois em imagem (abertura, faixa de números, situações, guias, dúvidas, autoridade, faixa final), celular e
+     computador.
+   NÃO foi possível: testar no ar (a Hostinger bloqueia as minhas checagens), leitor de tela de verdade, medir velocidade. Em 320 px o
+   botão do menu (Lote E) passa 12 px da tela: está no Lote H.
+
+10) CONFERIR NO AR DEPOIS DE ENVIAR
+   https://lucassemim.adv.br/ no celular e no computador: H1 novo, WhatsApp/Ligar na primeira tela, "VER O QUE FAZER AGORA" rolando
+   até os guias, 6 cartões abrindo os guias, chips de cidades abrindo as páginas novas, perguntas abrindo, aviso de cookies na 1ª visita
+   (aba anônima), prévia do link no WhatsApp (img/og-home.jpg). Search Console: impressões e cliques da home em 28 dias antes/depois.
+   Sobre o FAQPage: desde 2023 o Google limita o resultado enriquecido de FAQ a sites de governo e saúde; aqui ele fica só como dado
+   estruturado coerente com o texto da página. Não conte com perguntas expandidas na busca.
+
+11) PARA VOCÊ CONFIRMAR (não decidi nada disso sozinho)
+   1) H1: troquei "SEU FAMILIAR FOI PRESO AGORA? CADA MINUTO CONTA." por "FAMILIAR PRESO? SAIBA O QUE FAZER AGORA." ("cada minuto conta"
+      pressiona o leitor e pode ser lido como expressão persuasiva, art. 3º, IV do Provimento 205/2021). O novo mantém a urgência em
+      "agora". A leitura final da regra é sua; se preferir a frase antiga, é uma linha, mas eu manteria a nova.
+   2) Plantão 24h todos os dias, inclusive madrugada e feriados: está no título, no selo, na barra de números, no cabeçalho e na faixa
+      final. A regra da OAB veda publicidade que induza a erro; anunciar o que não é entregue entra aí. É verdade para todos os dias?
+      (mesma pergunta do Lote F, item 12.1)
+   3) "Atendimento presencial em Sabará e BH": há escritório físico em BH? E o chip "Todas as cidades - Atendimento virtual": o
+      atendimento por vídeo/WhatsApp vale para qualquer cidade? (se não, eu tiro o chip)
+   4) Cidades da home (Sabará, BH, Contagem, Betim, Santa Luzia, Nova Lima) e a frase "a atuação em delegacias e processos alcança outras
+      cidades da região metropolitana": confirma?
+   5) "Área do cliente": o texto diz que clientes têm "área reservada, de acesso restrito, para acompanhar informações do caso e falar
+      com o advogado". Troquei o botão: o painel antigo da raiz (painel-cliente.html) tem o login dentro do próprio JavaScript e só
+      contas de teste; o portal novo (portal/painel-cliente.html: resumo, andamento, o que o advogado fez, documentos e pedidos ao
+      escritório) é o que o menu já usa. O portal está no ar, com login funcionando e clientes cadastrados? Se não, eu reduzo o texto
+      da home até ele estar.
+   6) Saíram de propósito: "500+ casos atendidos", "8+ anos" (não consegui verificar), prazos de resposta, "análise gratuita/grátis",
+      depoimentos e "5.0 estrelas", "100%", "absoluto", "alto rendimento", "Método Live™". Se discordar de algum, diga qual e eu avalio
+      caso a caso (sem prometer que cabe na regra).
+   7) Botões "FALAR COM O DR. LUCAS" e "ENVIAR MEU CASO": deixei neutros (convite, sem "agora!"). Os botões "PLANTÃO 24H" do cabeçalho
+      e do rodapé vêm dos Lotes D e E. Fica assim?
+   8) Nome oficial do escritório e endereço oficial (mesmos itens 12.5 e 12.6 do Lote F): com a sua resposta, harmonizo os dados
+      estruturados e o rodapé do site todo (inclusive "Inteligente" e "Estratégicos") no Lote H.
+   9) Título da página (aba e Google): continua "Advogado Criminalista Plantão 24h em Sabará e BH | Dr. Lucas Semim" (66 caracteres; o
+      Google costuma cortar perto de 60). Quer que eu encurte para "Advogado Criminalista 24h em Sabará e BH | Dr. Lucas Semim" (58)?
+   10) Os 4 títulos de artigos em destaque ("Guerra no Plenário", "Armadilha da Delegacia"...): mantenho até o Lote H ou prefere que eu
+      reescreva já, nos artigos e aqui?
+
+12) PRÓXIMOS PASSOS (depois do seu OK)
+    - Você sobe os lotes na ordem B, C (v2), D, E, F, G (ou eu gravo na pasta e você sobe). Nenhum deles foi enviado ao servidor.
+    - Me diga se o pacote da troca de telefone (08/10) já subiu: a ordem muda se ele ainda estiver pendente.
+    - Lote H: painel antigo (painel-cliente.html da raiz + codelei/clientes-vip.js, vip-logic.js e seguranca-painel.js: o login e a
+      lista de acesso ficam num JavaScript que qualquer pessoa lê; o vip-logic.js tem 7 telefones em texto): trocar por redirecionamento
+      ao portal e retirar esses arquivos do servidor. Também: links internos (guias <-> cidades <-> índice), noticias.html (rolagem lateral
+      e erro de JavaScript), plantao-flagrante.html, página dos presídios, artigos em destaque, endereço/CEP/coordenadas, nome do
+      escritório e @id, rodapé "Inteligente", agendamento sob demanda, 320 px, versão ?v=20261009 nas páginas antigas e sitemap.
+    - Painel do cliente -> "software jurídico": antes de mexer em código, eu apresento a arquitetura (papéis, autorização por caso no
+      servidor, sessão curta, verificação em 2 etapas, auditoria sem conteúdo sensível, sem dado de cliente em URL/analytics).
+    - Site cível (46+ páginas) com o mesmo design; OmniRoute e agentes (teste do pipeline).

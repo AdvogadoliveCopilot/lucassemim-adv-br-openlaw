@@ -1,0 +1,7 @@
+{"ts": "2026-10-06T07:17:11.162270", "status": "FALHA", "etapa": "AGENTE 1 — PESQUISADOR", "duracao_s": 0}
+{"ts": "2026-10-06T07:22:24.387732", "status": "FALHA", "etapa": "AGENTE 1 — PESQUISADOR", "duracao_s": 0}
+{"ts": "2026-10-17T09:33:19", "status": "FALHA", "etapa": "AGENTE 1 — PESQUISADOR", "duracao_s": 0}
+{"ts": "2026-10-17T09:34:11", "status": "FALHA", "etapa": "AGENTE 1 — PESQUISADOR", "duracao_s": 0}
+{"ts": "2026-10-17T09:36:19", "status": "FALHA", "etapa": "AGENTE 2 — REDATOR", "duracao_s": 0}
+{"ts": "2026-10-17T09:41:58", "status": "SUCESSO", "etapa": "pipeline completo (rascunho)", "duracao_s": 115}
+{"ts": "2026-10-17T10:50:07", "status": "SUCESSO", "etapa": "pipeline completo (rascunho)", "duracao_s": 35}

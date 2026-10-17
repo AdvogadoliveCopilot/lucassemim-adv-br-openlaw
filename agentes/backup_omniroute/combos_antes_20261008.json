@@ -1,0 +1,267 @@
+{
+  "_nota": "Combos do OmniRoute como estavam ANTES de 08/10/2026 (copiados do painel, conferidos modelo a modelo). Guardados so para consulta/desfazer.",
+  "_atencao": "Os modelos gemini-1.5 e gemini-2.0 foram aposentados pelo Google (erro 404). Os 'cc/...' usam o login OAuth da assinatura Claude, o que a politica da Anthropic de 19/02/2026 nao permite em ferramentas de terceiros. ddgw/oc/tllm davam erro 418/401/403.",
+  "_como_restaurar": "No painel do OmniRoute, abra Combos e edite cada combo. Ou envie estes registros por PUT em /api/combos/<id> estando logado no painel.",
+  "_salvo_em": "2026-10-08",
+  "combos": [
+    {
+      "id": "combo-best-fast",
+      "name": "auto/best-fast",
+      "strategy": "priority",
+      "models": [
+        {
+          "id": "combo-best-fast-model-1-gemini-2.0-flash",
+          "kind": "model",
+          "model": "gemini/gemini-2.0-flash",
+          "providerId": "gemini",
+          "weight": 100
+        },
+        {
+          "id": "combo-best-fast-model-2-cc-claude-sonnet-4-6",
+          "kind": "model",
+          "model": "cc/claude-sonnet-4-6",
+          "providerId": "claude",
+          "weight": 90
+        },
+        {
+          "id": "combo-best-fast-model-3-ddgw-gpt-4o-mini",
+          "kind": "model",
+          "model": "ddgw/gpt-4o-mini",
+          "providerId": "ddgw",
+          "weight": 80
+        },
+        {
+          "id": "combo-best-fast-model-4-gweb-gemini-3.5-flash",
+          "kind": "model",
+          "model": "gweb/gemini-3.5-flash",
+          "providerId": "gweb",
+          "weight": 70
+        },
+        {
+          "id": "combo-best-fast-model-5-tllm-gemini_2_0_flash",
+          "kind": "model",
+          "model": "tllm/gemini_2_0_flash",
+          "providerId": "tllm",
+          "weight": 60
+        }
+      ],
+      "config": {
+        "description": "Combo ultra-rapido para pesquisa de pautas, SEO e monitoramento."
+      },
+      "isHidden": false,
+      "sortOrder": 1,
+      "version": 2,
+      "createdAt": "2026-10-05T00:51:11.607662+00:00",
+      "updatedAt": "2026-10-05T00:51:11.607662+00:00"
+    },
+    {
+      "id": "combo-pro-chat",
+      "name": "auto/pro-chat",
+      "strategy": "priority",
+      "models": [
+        {
+          "id": "combo-pro-chat-model-1-gemini-1.5-pro",
+          "kind": "model",
+          "model": "gemini/gemini-1.5-pro",
+          "providerId": "gemini",
+          "weight": 100
+        },
+        {
+          "id": "combo-pro-chat-model-2-gemini-2.0-flash",
+          "kind": "model",
+          "model": "gemini/gemini-2.0-flash",
+          "providerId": "gemini",
+          "weight": 90
+        },
+        {
+          "id": "combo-pro-chat-model-3-cc-claude-sonnet-4-6",
+          "kind": "model",
+          "model": "cc/claude-sonnet-4-6",
+          "providerId": "claude",
+          "weight": 85
+        },
+        {
+          "id": "combo-pro-chat-model-4-ddgw-gpt-4o-mini",
+          "kind": "model",
+          "model": "ddgw/gpt-4o-mini",
+          "providerId": "ddgw",
+          "weight": 70
+        },
+        {
+          "id": "combo-pro-chat-model-5-oc-deepseek-v4-flash-free",
+          "kind": "model",
+          "model": "oc/deepseek-v4-flash-free",
+          "providerId": "opencode",
+          "weight": 60
+        }
+      ],
+      "config": {
+        "description": "Combo profissional para redacao aprofundada de artigos juridicos."
+      },
+      "isHidden": false,
+      "sortOrder": 2,
+      "version": 2,
+      "createdAt": "2026-10-05T00:51:11.607662+00:00",
+      "updatedAt": "2026-10-05T00:51:11.607662+00:00"
+    },
+    {
+      "id": "combo-smart",
+      "name": "auto/smart",
+      "strategy": "priority",
+      "models": [
+        {
+          "id": "combo-smart-model-1-gemini-2.0-flash",
+          "kind": "model",
+          "model": "gemini/gemini-2.0-flash",
+          "providerId": "gemini",
+          "weight": 100
+        },
+        {
+          "id": "combo-smart-model-2-gemini-1.5-pro",
+          "kind": "model",
+          "model": "gemini/gemini-1.5-pro",
+          "providerId": "gemini",
+          "weight": 90
+        },
+        {
+          "id": "combo-smart-model-3-cc-claude-sonnet-4-6",
+          "kind": "model",
+          "model": "cc/claude-sonnet-4-6",
+          "providerId": "claude",
+          "weight": 80
+        },
+        {
+          "id": "combo-smart-model-4-ddgw-gpt-4o-mini",
+          "kind": "model",
+          "model": "ddgw/gpt-4o-mini",
+          "providerId": "ddgw",
+          "weight": 70
+        }
+      ],
+      "config": {
+        "description": "Combo inteligente balanceado para auditoria SEO e refinamento."
+      },
+      "isHidden": false,
+      "sortOrder": 3,
+      "version": 2,
+      "createdAt": "2026-10-05T00:51:11.607662+00:00",
+      "updatedAt": "2026-10-05T00:51:11.607662+00:00"
+    },
+    {
+      "id": "combo-coding",
+      "name": "auto/coding",
+      "strategy": "priority",
+      "models": [
+        {
+          "id": "combo-coding-model-1-gemini-2.0-flash",
+          "kind": "model",
+          "model": "gemini/gemini-2.0-flash",
+          "providerId": "gemini",
+          "weight": 100
+        },
+        {
+          "id": "combo-coding-model-2-cc-claude-sonnet-4-6",
+          "kind": "model",
+          "model": "cc/claude-sonnet-4-6",
+          "providerId": "claude",
+          "weight": 90
+        },
+        {
+          "id": "combo-coding-model-3-ddgw-gpt-4o-mini",
+          "kind": "model",
+          "model": "ddgw/gpt-4o-mini",
+          "providerId": "ddgw",
+          "weight": 75
+        }
+      ],
+      "config": {
+        "description": "Combo tecnico para automacao de codigo HTML e publicacoes FTP."
+      },
+      "isHidden": false,
+      "sortOrder": 4,
+      "version": 2,
+      "createdAt": "2026-10-05T00:51:11.607662+00:00",
+      "updatedAt": "2026-10-05T00:51:11.607662+00:00"
+    },
+    {
+      "id": "combo-legal-writer",
+      "name": "auto/legal-writer",
+      "strategy": "priority",
+      "models": [
+        {
+          "id": "combo-legal-writer-model-1-gemini-1.5-pro",
+          "kind": "model",
+          "model": "gemini/gemini-1.5-pro",
+          "providerId": "gemini",
+          "weight": 100
+        },
+        {
+          "id": "combo-legal-writer-model-2-gemini-2.0-flash",
+          "kind": "model",
+          "model": "gemini/gemini-2.0-flash",
+          "providerId": "gemini",
+          "weight": 90
+        },
+        {
+          "id": "combo-legal-writer-model-3-cc-claude-sonnet-4-6",
+          "kind": "model",
+          "model": "cc/claude-sonnet-4-6",
+          "providerId": "claude",
+          "weight": 80
+        }
+      ],
+      "config": {
+        "description": "Combo especializado em Direito Penal, Juri, Trafico e Audiencia de Custodia."
+      },
+      "isHidden": false,
+      "sortOrder": 5,
+      "version": 2,
+      "createdAt": "2026-10-05T00:51:11.607662+00:00",
+      "updatedAt": "2026-10-05T00:51:11.607662+00:00"
+    },
+    {
+      "id": "combo-free",
+      "name": "auto/free",
+      "strategy": "priority",
+      "models": [
+        {
+          "id": "combo-free-model-1-ddgw-gpt-4o-mini",
+          "kind": "model",
+          "model": "ddgw/gpt-4o-mini",
+          "providerId": "ddgw",
+          "weight": 100
+        },
+        {
+          "id": "combo-free-model-2-ddgw-llama-4-scout",
+          "kind": "model",
+          "model": "ddgw/llama-4-scout",
+          "providerId": "ddgw",
+          "weight": 90
+        },
+        {
+          "id": "combo-free-model-3-oc-deepseek-v4-flash-free",
+          "kind": "model",
+          "model": "oc/deepseek-v4-flash-free",
+          "providerId": "opencode",
+          "weight": 80
+        },
+        {
+          "id": "combo-free-model-4-gweb-gemini-3.1-flash-lite",
+          "kind": "model",
+          "model": "gweb/gemini-3.1-flash-lite",
+          "providerId": "gweb",
+          "weight": 70
+        }
+      ],
+      "config": {
+        "description": "Combo gratuito com fallbacks comunitarios."
+      },
+      "isHidden": false,
+      "sortOrder": 6,
+      "version": 2,
+      "createdAt": "2026-10-05T00:51:11.607662+00:00",
+      "updatedAt": "2026-10-05T00:51:11.607662+00:00"
+    }
+  ],
+  "combo_nao_alterado": "lucassemim.adv (gemini-web/gemini-3.1-pro + ollama-cloud/gemma4:31b) - nao foi mexido."
+}

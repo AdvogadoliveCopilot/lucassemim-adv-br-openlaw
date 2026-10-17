@@ -1,0 +1,213 @@
+==============================================================================
+PAGINA: acabei-de-ser-preso-em-flagrante.html
+  AVISO [C07] prazo: confira se e prazo da LEI (ok) ou promessa do escritorio (proibido): ...Audiência de Custódia deve ocorrer em até 24 horas (Art. 306 do CPP). Dr. Lucas Rena...
+  -> 0 erro(s), 1 aviso(s); maior semelhanca: fui-preso-acusado-trafico-drogas.html 2%
+==============================================================================
+PAGINA: acidente-de-transito-com-vitima-o-que-fazer.html
+  AVISO [S04] poucos links para outros guias do indice (0); o usual e 3 ou mais
+  AVISO [C09] 4 afirmacao(oes) categorica(s) (sempre/nunca/impossivel...): confirme base legal ou suavize. Ex.: ...R IMEDIATAMENTE NO LOCAL Nunca saia do local sem presta...; ...NUTOS 1 Preste socorro e nunca abandone o local Acione ...; ...refa da perícia técnica, nunca de uma declaração emocio...; ...m crime autônomo e quase sempre leva à prisão em flagran...
+  -> 0 erro(s), 2 aviso(s); maior semelhanca: preso-embriaguez-ao-volante-como-sair-da-delegacia.html 1%
+==============================================================================
+PAGINA: agi-em-legitima-defesa-o-que-fazer.html
+  AVISO [S04] poucos links para outros guias do indice (1); o usual e 3 ou mais
+  AVISO [C07] prazo: confira se e prazo da LEI (ok) ou promessa do escritorio (proibido): ...Audiência de Custódia deve ocorrer em até 24 horas — e é nesse curto prazo que a tes...
+  AVISO [C09] 3 afirmacao(oes) categorica(s) (sempre/nunca/impossivel...): confirme base legal ou suavize. Ex.: ... reação a uma agressão é automaticamente legítima defesa aos olho...; ...r naquele exato momento, nunca no passado ou em uma sup...; ...a defesa não é presumida automaticamente pela polícia nem pelo de...
+  -> 0 erro(s), 3 aviso(s); maior semelhanca: fui-preso-por-furto-ou-roubo-o-que-fazer.html 2%
+==============================================================================
+PAGINA: conta-bloqueada-processo-criminal-o-que-fazer.html
+  AVISO [S04] poucos links para outros guias do indice (0); o usual e 3 ou mais
+  AVISO [C09] 4 afirmacao(oes) categorica(s) (sempre/nunca/impossivel...): confirme base legal ou suavize. Ex.: ...ra liberação de valores, sempre dependendo das particula...; ...ca condenação nem indica necessariamente que você será indiciado....; ... comparecimento deve ser sempre acompanhado por um advog...; ...nta (conta laranja)? Não necessariamente. A configuração de um cr...
+  -> 0 erro(s), 2 aviso(s); maior semelhanca: tornozeleira-eletronica-descarregou-o-que-fazer.html 1%
+==============================================================================
+PAGINA: estou-preso-preventivamente-o-que-fazer.html
+  AVISO [S04] poucos links para outros guias do indice (1); o usual e 3 ou mais
+  AVISO [C09] 1 afirmacao(oes) categorica(s) (sempre/nunca/impossivel...): confirme base legal ou suavize. Ex.: ...orpus pode ser impetrado sempre que alguém sofrer ou se ...
+  -> 0 erro(s), 2 aviso(s); maior semelhanca: tenho-audiencia-de-custodia-o-que-fazer.html 1%
+==============================================================================
+PAGINA: fui-acusado-calunia-difamacao-injuria-o-que-fazer.html
+  AVISO [S01] title com 97 caracteres (usual: 45 a 90)
+  AVISO [S01] description com 172 caracteres (usual: 110 a 165)
+  AVISO [S04] poucos links para outros guias do indice (0); o usual e 3 ou mais
+  AVISO [C09] 3 afirmacao(oes) categorica(s) (sempre/nunca/impossivel...): confirme base legal ou suavize. Ex.: ... processar se perde para sempre. Dr. Lucas Renan Semim O...; ...ado pode ser contestado. Sempre que possível, formalize ...; ...minalmente se perde para sempre. Existe diferença entre ...
+  -> 0 erro(s), 4 aviso(s); maior semelhanca: recebi-medida-protetiva-o-que-fazer.html 1%
+==============================================================================
+PAGINA: fui-acusado-de-ameaca-o-que-fazer.html
+  AVISO [C09] 1 afirmacao(oes) categorica(s) (sempre/nunca/impossivel...): confirme base legal ou suavize. Ex.: ... processo é o mesmo? Não necessariamente. Quando a ameaça ocorre ...
+  -> 0 erro(s), 1 aviso(s); maior semelhanca: fui-acusado-de-perseguicao-stalking-o-que-fazer.html 9%
+==============================================================================
+PAGINA: fui-acusado-de-perseguicao-stalking-o-que-fazer.html
+  AVISO [C09] 1 afirmacao(oes) categorica(s) (sempre/nunca/impossivel...): confirme base legal ou suavize. Ex.: ...s, como a ameaça , e não necessariamente como stalking. PERSEGUIÇ...
+  -> 0 erro(s), 1 aviso(s); maior semelhanca: fui-acusado-de-ameaca-o-que-fazer.html 9%
+==============================================================================
+PAGINA: fui-convidado-para-delacao-premiada-o-que-fazer.html
+  AVISO [C09] 2 afirmacao(oes) categorica(s) (sempre/nunca/impossivel...): confirme base legal ou suavize. Ex.: ...ensada com antecedência, nunca improvisada diante da au...; ...A colaboração premiada é sempre voluntária e não pode se...
+  -> 0 erro(s), 1 aviso(s); maior semelhanca: revista-pessoal-abordagem-policial-o-que-fazer.html 3%
+==============================================================================
+PAGINA: fui-intimado-para-depor-na-delegacia.html
+  AVISO [S04] nenhum link para artigo de /defesa-criminal/ ou /news/
+  AVISO [C09] 3 afirmacao(oes) categorica(s) (sempre/nunca/impossivel...): confirme base legal ou suavize. Ex.: ...l do Caso REGRA DE OURO: NUNCA VÁ À DELEGACIA SEM SABER...; ... e horário marcados, mas JAMAIS preste depoimento sem qu...; ...Penal). No entanto, você NUNCA deve ir sem que um advog...
+  -> 0 erro(s), 2 aviso(s); maior semelhanca: fui-notificado-investigado-apostas-ilegais-bets.html 3%
+==============================================================================
+PAGINA: fui-levado-para-delegacia-mas-nao-fui-preso.html
+  AVISO [S01] title com 98 caracteres (usual: 45 a 90)
+  AVISO [S01] description com 180 caracteres (usual: 110 a 165)
+  AVISO [S04] poucos links para outros guias do indice (0); o usual e 3 ou mais
+  AVISO [C09] 4 afirmacao(oes) categorica(s) (sempre/nunca/impossivel...): confirme base legal ou suavize. Ex.: ...ada. Isso não significa, necessariamente, que a história terminou...; ...ar medidas mais rígidas, sempre com controle judicial. D...; ...ante — mas não significa necessariamente arquivamento: pode virar...; ...r que o caso acabou? Não necessariamente. A liberação sem lavratu...
+  -> 0 erro(s), 4 aviso(s); maior semelhanca: mandado-de-busca-e-apreensao-o-que-fazer.html 2%
+==============================================================================
+PAGINA: fui-notificado-crime-eleitoral-redes-sociais-o-que-fazer.html
+  AVISO [S01] description com 187 caracteres (usual: 110 a 165)
+  AVISO [S04] nenhum link para artigo de /defesa-criminal/ ou /news/
+  AVISO [C09] 1 afirmacao(oes) categorica(s) (sempre/nunca/impossivel...): confirme base legal ou suavize. Ex.: ...didato, por si só, não é automaticamente um desses três crimes — ...
+  -> 0 erro(s), 3 aviso(s); maior semelhanca: fui-preso-boca-de-urna-o-que-fazer.html 2%
+==============================================================================
+PAGINA: fui-notificado-investigado-apostas-ilegais-bets.html
+  AVISO [S01] description com 172 caracteres (usual: 110 a 165)
+  AVISO [S04] nenhum link para artigo de /defesa-criminal/ ou /news/
+  AVISO [C09] 3 afirmacao(oes) categorica(s) (sempre/nunca/impossivel...): confirme base legal ou suavize. Ex.: ...clarecimentos, mesmo sem nunca ter sido o dono da opera...; ..." — ISSO ME PROTEGE? Não automaticamente. A responsabilidade de q...; ...novo projeto de lei? Não necessariamente. O projeto de lei comple...
+  -> 0 erro(s), 3 aviso(s); maior semelhanca: fui-intimado-para-depor-na-delegacia.html 2%
+==============================================================================
+PAGINA: fui-preso-acusado-trafico-drogas.html
+  AVISO [S04] poucos links para outros guias do indice (1); o usual e 3 ou mais
+  AVISO [C07] prazo: confira se e prazo da LEI (ok) ou promessa do escritorio (proibido): ...Audiência de Custódia deve ocorrer em até 24 horas. É nesta audiência que a defesa b...
+  -> 0 erro(s), 2 aviso(s); maior semelhanca: acabei-de-ser-preso-em-flagrante.html 2%
+==============================================================================
+PAGINA: fui-preso-boca-de-urna-o-que-fazer.html
+  AVISO [S04] nenhum link para artigo de /defesa-criminal/ ou /news/
+  AVISO [C07] prazo: confira se e prazo da LEI (ok) ou promessa do escritorio (proibido): ...o em flagrante deve ser comunicada em até 24h e segue para Audiência de Custódia...
+  AVISO [C09] 2 afirmacao(oes) categorica(s) (sempre/nunca/impossivel...): confirme base legal ou suavize. Ex.: ...evista para 18/12/2026 — sempre com a mesma ressalva do ...; ...ceção do flagrante quase sempre se aplica. Fui preso faz...
+  -> 0 erro(s), 3 aviso(s); maior semelhanca: fui-notificado-crime-eleitoral-redes-sociais-o-que-fazer.html 2%
+==============================================================================
+PAGINA: fui-preso-maria-da-penha.html
+  AVISO [S04] poucos links para outros guias do indice (0); o usual e 3 ou mais
+  AVISO [C07] prazo: confira se e prazo da LEI (ok) ou promessa do escritorio (proibido): ...to durante a Audiência de Custódia em até 24 horas . ⏰ URGENTE: O preparo técnico an...
+  AVISO [C07] prazo: confira se e prazo da LEI (ok) ou promessa do escritorio (proibido): ...alização da Audiência de Custódia (em até 24 horas) , ocasião em que a defesa técnic...
+  AVISO [C07] prazo: confira se e prazo da LEI (ok) ou promessa do escritorio (proibido): ...to durante a Audiência de Custódia em até 24 horas. Por que o Delegado não pode solt...
+  AVISO [C07] prazo: confira se e prazo da LEI (ok) ou promessa do escritorio (proibido): ...to durante a Audiência de Custódia em até 24 horas."             }           },  ...
+  AVISO [C09] 1 afirmacao(oes) categorica(s) (sempre/nunca/impossivel...): confirme base legal ou suavize. Ex.: ...caminho jurídico correto nunca é descumprir a ordem por...
+  -> 0 erro(s), 6 aviso(s); maior semelhanca: preso-embriaguez-ao-volante-como-sair-da-delegacia.html 1%
+==============================================================================
+PAGINA: fui-preso-por-furto-ou-roubo-o-que-fazer.html
+  AVISO [S04] poucos links para outros guias do indice (0); o usual e 3 ou mais
+  AVISO [C07] prazo: confira se e prazo da LEI (ok) ou promessa do escritorio (proibido): ...Audiência de Custódia deve ocorrer em até 24 horas. Dr. Lucas Renan Semim OAB/MG 222...
+  AVISO [C08] honorarios/valores: nao cite valores nem forma de pagamento (Prov. 205/2021, art. 3o, I): ... sem contrato nem recibo formal de honorários. 2. Deixar o preso prestar depoi...
+  AVISO [C09] 4 afirmacao(oes) categorica(s) (sempre/nunca/impossivel...): confirme base legal ou suavize. Ex.: ... crimes, no entanto, nem sempre é clara na prática: o ST...; ...rto. ERROS QUE A FAMÍLIA NUNCA DEVE COMETER: 1. Pagar v...; ...endo a primeira vez? Não necessariamente. Em furtos simples, sem ...; ...agente subtrai o bem sem nunca ter tido posse legítima ...
+  AVISO [D02] texto parecido com meu-filho-foi-preso.html (12% dos trechos proprios); ex.: "1 pagar valores a intermediários sem"
+  -> 0 erro(s), 5 aviso(s); maior semelhanca: meu-filho-foi-preso.html 12%
+==============================================================================
+PAGINA: fui-preso-porte-ilegal-de-arma.html
+  AVISO [C07] prazo: confira se e prazo da LEI (ok) ou promessa do escritorio (proibido): ...diência de Custódia perante o juiz em até 24 horas. 2. Numeração Raspada ou Suprimid...
+  AVISO [C07] prazo: confira se e prazo da LEI (ok) ou promessa do escritorio (proibido): ...e ao Juiz na Audiência de Custódia em até 24h. Estar com o registro da arma venc...
+  AVISO [C07] prazo: confira se e prazo da LEI (ok) ou promessa do escritorio (proibido): ...e ao Juiz na Audiência de Custódia em até 24h."             }           },   ...
+  -> 0 erro(s), 3 aviso(s); maior semelhanca: preso-embriaguez-ao-volante-como-sair-da-delegacia.html 2%
+==============================================================================
+PAGINA: fui-pronunciado-tribunal-do-juri-o-que-fazer.html
+  AVISO [S04] poucos links para outros guias do indice (0); o usual e 3 ou mais
+  AVISO [C09] 2 afirmacao(oes) categorica(s) (sempre/nunca/impossivel...): confirme base legal ou suavize. Ex.: ...s da data do julgamento, nunca na véspera. Como funcion...; ...inar um novo julgamento, nunca substituir diretamente o...
+  -> 0 erro(s), 2 aviso(s); maior semelhanca: progressao-de-regime-atrasada-o-que-fazer.html 0%
+==============================================================================
+PAGINA: mandado-de-busca-e-apreensao-o-que-fazer.html
+  AVISO [S04] poucos links para outros guias do indice (0); o usual e 3 ou mais
+  AVISO [C09] 2 afirmacao(oes) categorica(s) (sempre/nunca/impossivel...): confirme base legal ou suavize. Ex.: ...s policiais presentes e, sempre que possível, peça para ...; ... motivo da diligência e, sempre que possível, o nome do ...
+  -> 0 erro(s), 2 aviso(s); maior semelhanca: fui-levado-para-delegacia-mas-nao-fui-preso.html 2%
+==============================================================================
+PAGINA: meu-filho-foi-preso.html
+  AVISO [S04] poucos links para outros guias do indice (0); o usual e 3 ou mais
+  AVISO [C07] prazo: confira se e prazo da LEI (ok) ou promessa do escritorio (proibido): ...Audiência de Custódia deve ocorrer em até 24 horas. Dr. Lucas Renan Semim OAB/MG 222...
+  AVISO [C07] prazo: confira se e prazo da LEI (ok) ou promessa do escritorio (proibido): ...P). Ocorre a Audiência de Custódia em até 24h. MENOR DE 18 ANOS (ADOLESCENTE) Tr...
+  AVISO [C07] prazo: confira se e prazo da LEI (ok) ou promessa do escritorio (proibido): ...é encaminhado à Defensoria Pública em até 24 horas (art. 306, § 1º, do CPP), e quem ...
+  AVISO [C07] prazo: confira se e prazo da LEI (ok) ou promessa do escritorio (proibido): ...é encaminhado à Defensoria Pública em até 24 horas (art. 306, § 1º, do CPP), e quem ...
+  AVISO [C08] honorarios/valores: nao cite valores nem forma de pagamento (Prov. 205/2021, art. 3o, I): ... sem contrato nem recibo formal de honorários. 2. Deixar o preso prestar depoi...
+  AVISO [C09] 1 afirmacao(oes) categorica(s) (sempre/nunca/impossivel...): confirme base legal ou suavize. Ex.: ...ar . ERROS QUE A FAMÍLIA NUNCA DEVE COMETER: 1. Pagar v...
+  AVISO [D02] texto parecido com fui-preso-por-furto-ou-roubo-o-que-fazer.html (14% dos trechos proprios); ex.: "1 pagar valores a intermediários sem"
+  -> 0 erro(s), 8 aviso(s); maior semelhanca: fui-preso-por-furto-ou-roubo-o-que-fazer.html 14%
+==============================================================================
+PAGINA: preso-embriaguez-ao-volante-como-sair-da-delegacia.html
+  AVISO [S04] poucos links para outros guias do indice (0); o usual e 3 ou mais
+  AVISO [C07] prazo: confira se e prazo da LEI (ok) ou promessa do escritorio (proibido): ...diência de Custódia perante o juiz em até 24 horas. O Que Acontece Com a Minha CNH A...
+  -> 0 erro(s), 2 aviso(s); maior semelhanca: fui-preso-porte-ilegal-de-arma.html 2%
+==============================================================================
+PAGINA: preso-nao-consigo-pagar-fianca-o-que-fazer.html
+  AVISO [S01] description com 185 caracteres (usual: 110 a 165)
+  AVISO [C07] prazo: confira se e prazo da LEI (ok) ou promessa do escritorio (proibido): ...ondições . ⏰ Audiência de custódia em até 24 horas (CPP, art. 310). Se a fiança for ...
+  AVISO [C07] prazo: confira se e prazo da LEI (ok) ou promessa do escritorio (proibido): ...paralelo, a audiência de custódia, em até 24 horas, é a hora de pedir liberdade prov...
+  AVISO [C07] prazo: confira se e prazo da LEI (ok) ou promessa do escritorio (proibido): ...audiência de custódia deve ocorrer em até 24 horas da prisão (CPP, art. 310), e nela...
+  AVISO [C07] prazo: confira se e prazo da LEI (ok) ou promessa do escritorio (proibido): ...audiência de custódia deve ocorrer em até 24 horas da prisão (CPP, art. 310), e nela...
+  AVISO [C08] honorarios/valores: nao cite valores nem forma de pagamento (Prov. 205/2021, art. 3o, I): ...situação de rua, acusado de furtar R$ 285, que permanecia preso por fiança...
+  AVISO [C08] honorarios/valores: nao cite valores nem forma de pagamento (Prov. 205/2021, art. 3o, I): ...que permanecia preso por fiança de R$ 1.000 arbitrada pela polícia (STJ, 6...
+  AVISO [C09] 2 afirmacao(oes) categorica(s) (sempre/nunca/impossivel...): confirme base legal ou suavize. Ex.: ...m do que parece, e quase sempre existe um caminho jurídi...; ...ro. Vou ficar preso? Não necessariamente. Se o único motivo da cu...
+  -> 0 erro(s), 8 aviso(s); maior semelhanca: acabei-de-ser-preso-em-flagrante.html 0%
+==============================================================================
+PAGINA: progressao-de-regime-atrasada-o-que-fazer.html
+  AVISO [S01] description com 178 caracteres (usual: 110 a 165)
+  AVISO [S04] poucos links para outros guias do indice (1); o usual e 3 ou mais
+  AVISO [C09] 4 afirmacao(oes) categorica(s) (sempre/nunca/impossivel...): confirme base legal ou suavize. Ex.: ...do — o caminho correto é sempre a via jurídica, nunca a ...; ...é sempre a via jurídica, nunca a conduta por conta próp...; ...tivamente atingida. Vale sempre revisar se todos os dias...; ...o) configura falta grave automaticamente. Plantão criminal 24h Vo...
+  -> 0 erro(s), 3 aviso(s); maior semelhanca: tornozeleira-eletronica-descarregou-o-que-fazer.html 0%
+==============================================================================
+PAGINA: recebi-medida-protetiva-o-que-fazer.html
+  AVISO [S01] description com 182 caracteres (usual: 110 a 165)
+  AVISO [S04] poucos links para outros guias do indice (1); o usual e 3 ou mais
+  AVISO [C09] 3 afirmacao(oes) categorica(s) (sempre/nunca/impossivel...): confirme base legal ou suavize. Ex.: ...iretamente ao juízo, sem necessariamente haver prisão em flagrant...; ...TETIVA O caminho correto nunca é o descumprimento por c...; ...o sobre filhos em comum, sempre com autorização judicial...
+  -> 0 erro(s), 3 aviso(s); maior semelhanca: fui-preso-maria-da-penha.html 1%
+==============================================================================
+PAGINA: revista-pessoal-abordagem-policial-o-que-fazer.html
+  ok    nenhuma pendencia
+  -> 0 erro(s), 0 aviso(s); maior semelhanca: fui-convidado-para-delacao-premiada-o-que-fazer.html 2%
+==============================================================================
+PAGINA: tenho-audiencia-de-custodia-o-que-fazer.html
+  AVISO [S04] poucos links para outros guias do indice (0); o usual e 3 ou mais
+  AVISO [C07] prazo: confira se e prazo da LEI (ok) ou promessa do escritorio (proibido): ...audiência de custódia deve ocorrer em até 24 horas da prisão (Art. 306, §1º do CPP) ...
+  AVISO [C07] prazo: confira se e prazo da LEI (ok) ou promessa do escritorio (proibido): ...ssoa presa em flagrante a um juiz, em até 24 horas, para que a prisão seja analisada...
+  AVISO [C07] prazo: confira se e prazo da LEI (ok) ou promessa do escritorio (proibido): ...iz na audiência de custódia ocorra em até 24 horas contadas da prisão (Art. 306, §1º...
+  AVISO [C07] prazo: confira se e prazo da LEI (ok) ou promessa do escritorio (proibido): ...iz na audiência de custódia ocorra em até 24 horas contadas da prisão (Art. 306, §1º...
+  -> 0 erro(s), 5 aviso(s); maior semelhanca: estou-preso-preventivamente-o-que-fazer.html 1%
+==============================================================================
+PAGINA: tenho-audiencia-de-instrucao-o-que-fazer.html
+  AVISO [S01] description com 174 caracteres (usual: 110 a 165)
+  AVISO [S04] poucos links para outros guias do indice (1); o usual e 3 ou mais
+  AVISO [C07] prazo: confira se e prazo da LEI (ok) ou promessa do escritorio (proibido): ...logo após uma prisão em flagrante, em até 24 horas, apenas para decidir se o preso c...
+  AVISO [C07] prazo: confira se e prazo da LEI (ok) ou promessa do escritorio (proibido): ...logo após uma prisão em flagrante, em até 24 horas, apenas para decidir se o preso c...
+  AVISO [C09] 3 afirmacao(oes) categorica(s) (sempre/nunca/impossivel...): confirme base legal ou suavize. Ex.: ... interrogatório do réu é sempre o último ato, é essencia...; ...errogatório do acusado é sempre o último ato da instruçã...; ...e o meu interrogatório é sempre o último ato da audiênci...
+  -> 0 erro(s), 5 aviso(s); maior semelhanca: tenho-audiencia-de-custodia-o-que-fazer.html 1%
+==============================================================================
+PAGINA: tenho-mandado-de-prisao-o-que-fazer.html
+  AVISO [S04] poucos links para outros guias do indice (1); o usual e 3 ou mais
+  AVISO [C09] 1 afirmacao(oes) categorica(s) (sempre/nunca/impossivel...): confirme base legal ou suavize. Ex.: .... 319 do CPP) A prisão é sempre a última medida ( extrem...
+  -> 0 erro(s), 2 aviso(s); maior semelhanca: fui-intimado-para-depor-na-delegacia.html 1%
+==============================================================================
+PAGINA: tornozeleira-eletronica-descarregou-o-que-fazer.html
+  AVISO [S01] title com 100 caracteres (usual: 45 a 90)
+  AVISO [S04] poucos links para outros guias do indice (0); o usual e 3 ou mais
+  AVISO [C09] 2 afirmacao(oes) categorica(s) (sempre/nunca/impossivel...): confirme base legal ou suavize. Ex.: ... considerada falta grave automaticamente? Não automaticamente. A ...; ...ave automaticamente? Não automaticamente. A jurisprudência do STJ...
+  -> 0 erro(s), 3 aviso(s); maior semelhanca: conta-bloqueada-processo-criminal-o-que-fazer.html 1%
+==============================================================================
+RESUMO: 30 pagina(s), 0 erro(s), 91 aviso(s)
+  acabei-de-ser-preso-em-flagrante.html                          erros=0 avisos=1
+  acidente-de-transito-com-vitima-o-que-fazer.html               erros=0 avisos=2
+  agi-em-legitima-defesa-o-que-fazer.html                        erros=0 avisos=3
+  conta-bloqueada-processo-criminal-o-que-fazer.html             erros=0 avisos=2
+  estou-preso-preventivamente-o-que-fazer.html                   erros=0 avisos=2
+  fui-acusado-calunia-difamacao-injuria-o-que-fazer.html         erros=0 avisos=4
+  fui-acusado-de-ameaca-o-que-fazer.html                         erros=0 avisos=1
+  fui-acusado-de-perseguicao-stalking-o-que-fazer.html           erros=0 avisos=1
+  fui-convidado-para-delacao-premiada-o-que-fazer.html           erros=0 avisos=1
+  fui-intimado-para-depor-na-delegacia.html                      erros=0 avisos=2
+  fui-levado-para-delegacia-mas-nao-fui-preso.html               erros=0 avisos=4
+  fui-notificado-crime-eleitoral-redes-sociais-o-que-fazer.html  erros=0 avisos=3
+  fui-notificado-investigado-apostas-ilegais-bets.html           erros=0 avisos=3
+  fui-preso-acusado-trafico-drogas.html                          erros=0 avisos=2
+  fui-preso-boca-de-urna-o-que-fazer.html                        erros=0 avisos=3
+  fui-preso-maria-da-penha.html                                  erros=0 avisos=6
+  fui-preso-por-furto-ou-roubo-o-que-fazer.html                  erros=0 avisos=5
+  fui-preso-porte-ilegal-de-arma.html                            erros=0 avisos=3
+  fui-pronunciado-tribunal-do-juri-o-que-fazer.html              erros=0 avisos=2
+  mandado-de-busca-e-apreensao-o-que-fazer.html                  erros=0 avisos=2
+  meu-filho-foi-preso.html                                       erros=0 avisos=8
+  preso-embriaguez-ao-volante-como-sair-da-delegacia.html        erros=0 avisos=2
+  preso-nao-consigo-pagar-fianca-o-que-fazer.html                erros=0 avisos=8
+  progressao-de-regime-atrasada-o-que-fazer.html                 erros=0 avisos=3
+  recebi-medida-protetiva-o-que-fazer.html                       erros=0 avisos=3
+  tenho-audiencia-de-custodia-o-que-fazer.html                   erros=0 avisos=5
+  tenho-audiencia-de-instrucao-o-que-fazer.html                  erros=0 avisos=5
+  tenho-mandado-de-prisao-o-que-fazer.html                       erros=0 avisos=2
+  tornozeleira-eletronica-descarregou-o-que-fazer.html           erros=0 avisos=3

@@ -1,0 +1,118 @@
+==============================================================================
+js/lucas-core.js  (15 linhas de diferenca)
+==============================================================================
+--- antes/js/lucas-core.js
++++ depois/js/lucas-core.js
+@@ -3,6 +3,6 @@
+    - mede cliques nos botões de ação (evento próprio lc_cta_click; os cliques
+      de WhatsApp/telefone continuam sendo contados pelo analytics.js)
+-   - recolhe a barra fixa do celular enquanto os botões do topo (ou do final)
+-     estão na tela
++   - recolhe a barra fixa do celular enquanto os botões do topo, de uma faixa
++     de ação ou do final estão na tela
+    - FAQ: busca, abrir/fechar todas, link direto para uma pergunta (#q-...)
+    Se algo falhar, a página continua inteira e funcional (nada fica escondido).
+@@ -41,4 +41,7 @@
+   /* ---------- barra fixa do celular ---------- */
+   if ('IntersectionObserver' in window) {
++    /* Observa os BOTÕES (.lc-cta) de cada bloco, não o bloco inteiro: um painel alto que aparece só pela
++       metade na primeira tela do celular não pode esconder a barra enquanto os botões ainda estão fora da tela.
++       A faixa de baixo (altura da própria barra) fica fora da conta (rootMargin). */
+     var watch = function (sel, cls) {
+       var els = d.querySelectorAll(sel);
+@@ -49,8 +52,12 @@
+         var any = false; for (var k in vis) { if (vis[k]) { any = true; break; } }
+         root.classList.toggle(cls, any);
+-      }, { threshold: 0.2 });
+-      for (var i = 0; i < els.length; i++) { els[i].__lcId = cls + i; vis[cls + i] = false; io.observe(els[i]); }
++      }, { threshold: 0.25, rootMargin: '0px 0px -72px 0px' });
++      for (var i = 0; i < els.length; i++) {
++        var tg = els[i].querySelector('.lc-cta') || els[i];
++        tg.__lcId = cls + i; vis[cls + i] = false; io.observe(tg);
++      }
+     };
+     watch('[data-lc-hero]', 'lc-hero-in');
++    watch('[data-lc-band]', 'lc-band-in');
+     watch('[data-lc-end]', 'lc-end-in');
+   }
+
+==============================================================================
+css/lucas-core.css  (2 linhas de diferenca)
+==============================================================================
+--- antes/css/lucas-core.css
++++ depois/css/lucas-core.css
+@@ -220,5 +220,5 @@
+ .lc-sticky .lc-s-tel{flex:0 0 auto;min-width:108px;padding:10px 16px;border:1.5px solid var(--lc-gold);background:rgba(10,10,10,.94);color:var(--lc-gold-hi)!important}
+ .lc-sticky .lc-s-tel i{font-size:1.1rem;color:var(--lc-gold)}
+-html.lc.lc-hero-in .lc-sticky,html.lc.lc-end-in .lc-sticky{transform:translateY(115%);opacity:0;pointer-events:none}
++html.lc.lc-hero-in .lc-sticky,html.lc.lc-band-in .lc-sticky,html.lc.lc-end-in .lc-sticky{transform:translateY(115%);opacity:0;pointer-events:none}
+ @media(min-width:992px){.lc-sticky{display:none!important}}
+ .lc.has-sticky body{padding-bottom:84px}
+
+==============================================================================
+js/footer-seo.js  (13 linhas de diferenca)
+==============================================================================
+--- antes/js/footer-seo.js
++++ depois/js/footer-seo.js
+@@ -53,5 +53,5 @@
+       { icon: 'fas fa-map-pin',       text: 'Sabará & ',  bold: 'Comarca BH/MG' },
+       { icon: 'fas fa-clock',         text: 'Plantão ',   bold: '24h · 7 dias' },
+-      { icon: 'fas fa-bolt',          text: 'Resposta ',  bold: 'em até 15min' }
++      { icon: 'fas fa-lock',          text: 'Sigilo ',    bold: 'profissional' }
+     ]
+   },
+@@ -473,5 +473,5 @@
+     dot.setAttribute('aria-hidden', 'true');
+     urgBadge.appendChild(dot);
+-    urgBadge.appendChild(document.createTextNode('Plantão Ativo — Resposta em até 15 minutos'));
++    urgBadge.appendChild(document.createTextNode('Plantão criminal 24h'));
+ 
+     const btnRow = document.createElement('div');
+@@ -556,5 +556,5 @@
+     const tagline = document.createElement('p');
+     tagline.className = 'footer-tagline';
+-    tagline.textContent = 'O primeiro escritório inteligente focado em advocacia auditada e investigação defensiva. Não apenas defendemos — destruímos acusações na raiz.';
++    tagline.textContent = 'Advocacia criminal em Sabará e Belo Horizonte: defesa técnica em delegacias, audiências e processos, com sigilo profissional.';
+ 
+     const oabBadge = document.createElement('div');
+@@ -585,5 +585,5 @@
+     col.className = 'col-lg-3 col-md-6';
+ 
+-    const title = document.createElement('h5');
++    const title = document.createElement('h3');
+     title.className = 'footer-col-title';
+     title.textContent = 'Comarcas Atendidas';
+@@ -614,5 +614,5 @@
+     col.className = 'col-lg-3 col-md-6';
+ 
+-    const title = document.createElement('h5');
++    const title = document.createElement('h3');
+     title.className = 'footer-col-title';
+     title.textContent = 'Áreas de Atuação';
+@@ -638,5 +638,5 @@
+     col.className = 'col-lg-2 col-md-6';
+ 
+-    const title = document.createElement('h5');
++    const title = document.createElement('h3');
+     title.className = 'footer-col-title';
+     title.textContent = 'Recursos';
+@@ -821,5 +821,4 @@
+       'telephone':    '+5531989420094',
+       'openingHours': 'Mo-Su 00:00-23:59',
+-      'priceRange':   '$$',
+       'address': {
+         '@type':           'PostalAddress',
+
+==============================================================================
+js/lgpd.js  (2 linhas de diferenca)
+==============================================================================
+--- antes/js/lgpd.js
++++ depois/js/lgpd.js
+@@ -448,5 +448,5 @@
+         if (!el || el === this.state.bannerEl) return;
+         const cs = getComputedStyle(el);
+-        if (cs.display === 'none' || cs.visibility === 'hidden' || el.offsetHeight === 0) return;
++        if (cs.display === 'none' || cs.visibility === 'hidden' || el.offsetHeight === 0 || parseFloat(cs.opacity) < 0.05) return;
+         const rect = el.getBoundingClientRect();
+         if ((window.innerHeight - rect.bottom) < 60) {
+

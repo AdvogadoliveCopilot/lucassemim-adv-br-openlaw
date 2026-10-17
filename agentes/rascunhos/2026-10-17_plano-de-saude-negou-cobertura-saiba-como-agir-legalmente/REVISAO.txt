@@ -1,0 +1,34 @@
+REVISÃO DO RASCUNHO — Plano de saúde negou cobertura? Saiba como agir legalmente
+======================================================================
+Criado em: 2026-10-17T10:50:07   |   IA usada: gemini-3-flash-preview
+Abra no navegador:  artigo.html   (pode editar o HTML à vontade)
+Para publicar:      python pipeline.py --publicar plano-de-saude-negou-cobertura-saiba-como-agir-legalmente
+Para descartar:     python pipeline.py --descartar plano-de-saude-negou-cobertura-saiba-como-agir-legalmente
+
+1) O QUE BLOQUEIA A PUBLICAÇÃO (precisa ficar vazio)
+   - Ainda há marcador [CONFERIR] no texto — confirme a citação e apague o marcador
+
+2) PARA OLHAR COM ATENÇÃO
+   (nada)
+
+3) CITAÇÕES PARA CONFERIR EM FONTE OFICIAL (a IA pode errar número de súmula/artigo)
+   Fontes: planalto.gov.br (leis), portal.stf.jus.br (súmulas STF), scon.stj.jus.br (STJ)
+   [ ] Súmula 608 do STJ
+   [ ] Lei nº 9.656/98
+
+4) SEO — nota 68/100 (meta description nova aplicada)
+   - Incluir a palavra-chave principal 'negativa de plano de saúde' no início do título (H1) para aumentar a relevância imediata.
+   - Inserir a palavra-chave principal e variações locais no primeiro parágrafo do texto para melhorar a indexação semântica.
+   - Otimizar os subtítulos (H2) com termos de busca mais específicos, como 'advogado especializado em plano de saúde'.
+   - Verificar e validar as citações jurídicas (como a Súmula 608 do STJ mencionada) para garantir autoridade e E-E-A-T.
+   - Melhorar o uso de palavras-chave de cauda longa que conectem o problema jurídico à localização (Sabará e Belo Horizonte).
+   - (automático) palavra-chave principal “negativa de plano de saúde” não aparece no título nem no início do texto
+   Palavras-chave que faltam no texto: advogado especialista em plano de saúde, liminar contra plano de saúde, reajuste abusivo de plano de saúde, carência plano de saúde urgência, direitos do consumidor Sabará
+
+CHECKLIST DO ADVOGADO
+   [ ] Li o texto inteiro e concordo com cada afirmação
+   [ ] Conferi cada citação da seção 3 e apaguei qualquer [CONFERIR]
+   [ ] Sem promessa de resultado, valores, depoimentos ou comparação com outros advogados
+   [ ] Título, descrição e categoria estão como eu quero
+   [ ] O telefone (31) 98942-0094 aparece no quadro de contato do artigo
+   [ ] Se quiser o artigo listado em artigos.html, adicionar o link manualmente no capítulo certo

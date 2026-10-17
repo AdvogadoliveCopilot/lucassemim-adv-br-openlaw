@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área do Cliente | Portal Seguro | Dr. Lucas Semim</title>
+    <meta name="description" content="Acesso restrito para clientes. Acompanhe seus processos de Holding, Família e Contratos em tempo real com segurança bancária.">
+    <meta name="robots" content="noindex, nofollow"> <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&family=Teko:wght@300;500&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- TEMA: PORTAL QUANTUM --- */
+        :root {
+            --cor-fundo: #08090a;
+            --cor-ouro: #d4af37;
+            --cor-vidro: rgba(15, 15, 20, 0.92); /* Mais escuro para contraste */
+            --cor-erro: #c0392b;
+        }
+
+        body {
+            background-color: var(--cor-fundo); color: #e0e0e0; font-family: 'Lato', sans-serif;
+            min-height: 100vh; display: flex; flex-direction: column;
+            /* Fundo com a Imagem do Portal */
+            background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.9)), 
+                        url('img/portaldosemim.png');
+            background-size: cover; background-position: center; background-attachment: fixed;
+        }
+
+        #header-placeholder { min-height: 80px; }
+
+        /* LOGIN CARD */
+        main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 100px 20px 60px; }
+
+        .login-card {
+            width: 100%; max-width: 420px;
+            background: var(--cor-vidro);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-top: 4px solid var(--cor-ouro);
+            border-radius: 12px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.95);
+            position: relative; transform-style: preserve-3d;
+            animation: fadeIn 1s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+        .login-icon { font-size: 3.5rem; margin-bottom: 15px; display: inline-block; filter: drop-shadow(0 0 10px rgba(212,175,55,0.3)); }
+        .login-title { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: #fff; margin: 0; letter-spacing: 1px; }
+        .login-sub { font-family: 'Fira Code'; font-size: 0.8rem; color: var(--cor-ouro); margin-bottom: 35px; letter-spacing: 2px; text-transform: uppercase; }
+
+        .input-group-login { position: relative; margin-bottom: 20px; text-align: left; }
+        .input-login {
+            width: 100%; padding: 15px; padding-left: 45px;
+            background: #050505; border: 1px solid #333; color: #fff;
+            border-radius: 6px; font-family: 'Fira Code'; transition: 0.3s;
+        }
+        .input-login:focus { outline: none; border-color: var(--cor-ouro); box-shadow: 0 0 15px rgba(212,175,55,0.1); }
+        .input-icon { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #666; font-size: 1.2rem; }
+        
+        .toggle-pass { position: absolute; right: 15px; top: 50%; transform: translateY(-50%); cursor: pointer; color: #666; font-size: 1.2rem; z-index: 10; }
+        .toggle-pass:hover { color: #fff; }
+
+        .btn-login {
+            width: 100%; padding: 15px;
+            background: linear-gradient(45deg, var(--cor-ouro), #f1c40f);
+            color: #000; font-family: 'Teko'; font-size: 1.4rem; font-weight: bold;
+            border: none; border-radius: 6px; cursor: pointer; margin-top: 10px;
+            transition: 0.3s; text-transform: uppercase; letter-spacing: 1px;
+        }
+        .btn-login:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4); color: #000; }
+
+        /* DASHBOARD (OCULTO) */
+        .dashboard-wrapper { display: none; width: 100%; max-width: 1000px; }
+        .dash-header-card {
+            background: rgba(20,20,20,0.95); border: 1px solid #333; padding: 30px; border-radius: 12px;
+            border-left: 5px solid var(--cor-ouro); margin-bottom: 30px;
+            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;
+        }
+        .user-welcome h2 { font-family: 'Playfair Display'; color: #fff; font-size: 2rem; margin: 0; }
+        .user-welcome span { color: var(--cor-ouro); }
+        .user-id { font-family: 'Fira Code'; color: #666; font-size: 0.9rem; }
+
+        .dash-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .action-card {
+            background: rgba(255,255,255,0.02); border: 1px solid #333; padding: 30px;
+            border-radius: 10px; text-align: center; transition: 0.3s;
+        }
+        .action-card:hover { border-color: var(--cor-ouro); transform: translateY(-5px); background: rgba(255,255,255,0.04); }
+        .action-icon { font-size: 2.5rem; color: #888; margin-bottom: 15px; display: block; transition: 0.3s; }
+        .action-card:hover .action-icon { color: var(--cor-ouro); }
+        .action-title { font-family: 'Teko'; color: #fff; font-size: 1.5rem; margin: 0 0 10px 0; }
+        .action-desc { color: #aaa; font-size: 0.9rem; margin-bottom: 20px; min-height: 40px; }
+        
+        .btn-action {
+            display: inline-block; padding: 10px 25px; border: 1px solid #444; color: #ccc;
+            text-decoration: none; font-family: 'Teko'; font-size: 1.1rem; transition: 0.3s; border-radius: 4px;
+        }
+        .btn-action:hover { border-color: var(--cor-ouro); color: var(--cor-ouro); }
+
+        .erro-box { background: rgba(192, 57, 43, 0.1); border: 1px solid var(--cor-erro); color: #e74c3c; padding: 15px; border-radius: 6px; margin-top: 20px; display: none; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        
+        <section id="login-area" class="login-card">
+            <div class="login-icon">🔐</div>
+            <h1 class="login-title">Portal do Cliente</h1>
+            <p class="login-sub">// ACESSO CRIPTOGRAFADO</p>
+            
+            <form onsubmit="return false;">
+                <div class="input-group-login">
+                    <span class="input-icon">👤</span>
+                    <input type="email" id="cliente-email" class="input-login" placeholder="E-mail cadastrado" autocomplete="username">
+                </div>
+
+                <div class="input-group-login">
+                    <span class="input-icon">🔒</span>
+                    <input type="password" id="cliente-senha" class="input-login" placeholder="Senha de Acesso" autocomplete="current-password">
+                    <span class="toggle-pass" id="toggle-pass" role="button" tabindex="0" aria-label="Mostrar senha">
+                        <svg class="icone-olho-aberto" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                        <svg class="icone-olho-fechado" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><path d="M17.94 17.94A10.94 10.94 0 0 1 12 19c-7 0-11-7-11-7a18.6 18.6 0 0 1 4.22-5.06M9.9 4.24A10.94 10.94 0 0 1 12 5c7 0 11 7 11 7a18.6 18.6 0 0 1-2.16 3.19M14.12 14.12a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+                    </span>
+                </div>
+
+                <button class="btn-login" id="btn-entrar" onclick="validarAcessoSeguro()">
+                    <span id="spinner-login" class="spinner-border spinner-border-sm" style="display:none; margin-right:8px;"></span><span id="texto-btn-login">ENTRAR NO COFRE</span>
+                </button>
+            </form>
+
+            <div id="area-bloqueio" class="erro-box">
+                <p><strong>⛔ Acesso Negado.</strong> <span data-erro-msg>Credenciais inválidas.</span></p>
+                <a href="cadastro-cliente.html" style="color:#fff; text-decoration:underline;">Não tenho cadastro &rarr;</a>
+            </div>
+        </section>
+
+        <section id="dashboard-area" class="dashboard-wrapper">
+            
+            <div class="dash-header-card">
+                <div class="user-welcome">
+                    <h2>Olá, <span id="nome-cliente-display">Cliente</span>.</h2>
+                    <span class="user-id">PROTOCOLO: <span id="user-id-display">...</span></span>
+                </div>
+                <div style="text-align:right;">
+                    <button onclick="location.reload()" style="background:transparent; border:1px solid #666; color:#aaa; padding:8px 20px; border-radius:50px; font-size:0.8rem; cursor:pointer; transition:0.3s;" onmouseover="this.style.borderColor='#fff';this.style.color='#fff'" onmouseout="this.style.borderColor='#666';this.style.color='#aaa'">SAIR COM SEGURANÇA</button>
+                </div>
+            </div>
+
+            <div class="dash-grid">
+                <div class="action-card">
+                    <span class="action-icon">📂</span>
+                    <h4 class="action-title">MEUS DOCUMENTOS</h4>
+                    <p class="action-desc">Visualize petições, contratos e decisões judiciais do seu processo.</p>
+                    <button class="btn-action" onclick="solicitarPDF()">SOLICITAR CÓPIA</button>
+                </div>
+
+                <div class="action-card">
+                    <span class="action-icon">💲</span>
+                    <h4 class="action-title">FINANCEIRO</h4>
+                    <p class="action-desc">Emissão de boletos, recibos de honorários e prestação de contas.</p>
+                    <button class="btn-action" onclick="alert('✅ Seu status financeiro está REGULAR.')">VERIFICAR STATUS</button>
+                </div>
+
+                <div class="action-card">
+                    <span class="action-icon">💬</span>
+                    <h4 class="action-title">FALE COM O DOUTOR</h4>
+                    <p class="action-desc">Canal direto para dúvidas urgentes ou envio de provas.</p>
+                    <a href="https://wa.me/5531989420094" target="_blank" class="btn-action">ABRIR WHATSAPP</a>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="codeleicivel/civel-core.js?v=20261008"></script>
+    <script src="codeleicivel/civel-api-config.js?v=20261008"></script>
+    <script src="codeleicivel/civel-painel-auth.js?v=20261008"></script>
+
+    <script>
+        function solicitarPDF() {
+            const id = document.getElementById('user-id-display').innerText;
+            window.open(`https://wa.me/5531989420094?text=📄 Olá (Cível). Sou o cliente ID: ${id}. Solicito atualização do processo via PDF.`, '_blank');
+        }
+    </script>
+
+</body>
+</html>

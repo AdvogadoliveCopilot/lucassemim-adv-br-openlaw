@@ -1,0 +1,12 @@
+BACKUP DO SERVIDOR ANTES DA ATUALIZACAO No 14 (16/10/2026)
+=============================================================
+O que e: copia, feita pelo FileZilla, dos arquivos que estavam NO SERVIDOR
+(/public_html) antes de a atualizacao no 14 ser enviada. Pastas copiadas:
+css, js, news, o-que-fazer-agora, legal-tech, defesa-criminal e os arquivos da raiz
+sw.js, politica-privacidade.html, portal-investidor.html, projeto-anjo.html.
+
+Como reverter (se algo der errado): no FileZilla, abra esta pasta no lado esquerdo e a
+pasta correspondente do servidor no lado direito, selecione o(s) arquivo(s) e use
+"Enviar" (Upload) escolhendo "Substituir". Nunca use sincronizacao.
+
+Esta pasta fica so no seu PC (nao enviar ao servidor).

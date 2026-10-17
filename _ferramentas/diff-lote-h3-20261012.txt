@@ -1,0 +1,46 @@
+LOTE H3 - sitemap.xml final - 12/10/2026
+Antes: sitemap.xml do Lote B (11.724 bytes, 73 enderecos). Depois: 11.854 bytes, 74 enderecos.
+O que muda: (1) home com lastmod 2026-10-10; (2) novo endereco /advogado-criminalista/ (indice das cidades), lastmod 2026-10-09, prioridade 0.95;
+(3) as 17 cidades com lastmod 2026-10-09. Todo o resto fica byte a byte igual (fim de linha CRLF mantido, sem BOM).
+
+--- antes/sitemap.xml
++++ depois/sitemap.xml
+@@ -6 +6 @@
+-        <lastmod>2026-04-21</lastmod>
++        <lastmod>2026-10-10</lastmod>
+@@ -23,17 +23,18 @@
+-    <url><loc>https://lucassemim.adv.br/advogado-criminalista/barreiro.html</loc><lastmod>2026-04-21</lastmod><priority>0.95</priority></url>
+-    <url><loc>https://lucassemim.adv.br/advogado-criminalista/belohorizonte.html</loc><lastmod>2026-04-21</lastmod><priority>0.95</priority></url>
+-    <url><loc>https://lucassemim.adv.br/advogado-criminalista/betim.html</loc><lastmod>2026-04-21</lastmod><priority>0.85</priority></url>
+-    <url><loc>https://lucassemim.adv.br/advogado-criminalista/brumadinho.html</loc><lastmod>2026-04-21</lastmod><priority>0.85</priority></url>
+-    <url><loc>https://lucassemim.adv.br/advogado-criminalista/caete.html</loc><lastmod>2026-04-21</lastmod><priority>0.80</priority></url>
+-    <url><loc>https://lucassemim.adv.br/advogado-criminalista/contagem.html</loc><lastmod>2026-04-21</lastmod><priority>0.90</priority></url>
+-    <url><loc>https://lucassemim.adv.br/advogado-criminalista/esmeraldas.html</loc><lastmod>2026-04-21</lastmod><priority>0.80</priority></url>
+-    <url><loc>https://lucassemim.adv.br/advogado-criminalista/ibirite.html</loc><lastmod>2026-04-21</lastmod><priority>0.85</priority></url>
+-    <url><loc>https://lucassemim.adv.br/advogado-criminalista/igarape.html</loc><lastmod>2026-04-21</lastmod><priority>0.80</priority></url>
+-    <url><loc>https://lucassemim.adv.br/advogado-criminalista/lagoasanta.html</loc><lastmod>2026-04-21</lastmod><priority>0.85</priority></url>
+-    <url><loc>https://lucassemim.adv.br/advogado-criminalista/neves.html</loc><lastmod>2026-04-21</lastmod><priority>0.85</priority></url>
+-    <url><loc>https://lucassemim.adv.br/advogado-criminalista/novalima.html</loc><lastmod>2026-04-21</lastmod><priority>0.85</priority></url>
+-    <url><loc>https://lucassemim.adv.br/advogado-criminalista/pedroleopoldo.html</loc><lastmod>2026-04-21</lastmod><priority>0.80</priority></url>
+-    <url><loc>https://lucassemim.adv.br/advogado-criminalista/sabara.html</loc><lastmod>2026-04-21</lastmod><priority>0.95</priority></url>
+-    <url><loc>https://lucassemim.adv.br/advogado-criminalista/santaluzia.html</loc><lastmod>2026-04-21</lastmod><priority>0.90</priority></url>
+-    <url><loc>https://lucassemim.adv.br/advogado-criminalista/saojosedalapa.html</loc><lastmod>2026-04-21</lastmod><priority>0.80</priority></url>
+-    <url><loc>https://lucassemim.adv.br/advogado-criminalista/vespasiano.html</loc><lastmod>2026-04-21</lastmod><priority>0.85</priority></url>
++    <url><loc>https://lucassemim.adv.br/advogado-criminalista/</loc><lastmod>2026-10-09</lastmod><priority>0.95</priority></url>
++    <url><loc>https://lucassemim.adv.br/advogado-criminalista/barreiro.html</loc><lastmod>2026-10-09</lastmod><priority>0.95</priority></url>
++    <url><loc>https://lucassemim.adv.br/advogado-criminalista/belohorizonte.html</loc><lastmod>2026-10-09</lastmod><priority>0.95</priority></url>
++    <url><loc>https://lucassemim.adv.br/advogado-criminalista/betim.html</loc><lastmod>2026-10-09</lastmod><priority>0.85</priority></url>
++    <url><loc>https://lucassemim.adv.br/advogado-criminalista/brumadinho.html</loc><lastmod>2026-10-09</lastmod><priority>0.85</priority></url>
++    <url><loc>https://lucassemim.adv.br/advogado-criminalista/caete.html</loc><lastmod>2026-10-09</lastmod><priority>0.80</priority></url>
++    <url><loc>https://lucassemim.adv.br/advogado-criminalista/contagem.html</loc><lastmod>2026-10-09</lastmod><priority>0.90</priority></url>
++    <url><loc>https://lucassemim.adv.br/advogado-criminalista/esmeraldas.html</loc><lastmod>2026-10-09</lastmod><priority>0.80</priority></url>
++    <url><loc>https://lucassemim.adv.br/advogado-criminalista/ibirite.html</loc><lastmod>2026-10-09</lastmod><priority>0.85</priority></url>
++    <url><loc>https://lucassemim.adv.br/advogado-criminalista/igarape.html</loc><lastmod>2026-10-09</lastmod><priority>0.80</priority></url>
++    <url><loc>https://lucassemim.adv.br/advogado-criminalista/lagoasanta.html</loc><lastmod>2026-10-09</lastmod><priority>0.85</priority></url>
++    <url><loc>https://lucassemim.adv.br/advogado-criminalista/neves.html</loc><lastmod>2026-10-09</lastmod><priority>0.85</priority></url>
++    <url><loc>https://lucassemim.adv.br/advogado-criminalista/novalima.html</loc><lastmod>2026-10-09</lastmod><priority>0.85</priority></url>
++    <url><loc>https://lucassemim.adv.br/advogado-criminalista/pedroleopoldo.html</loc><lastmod>2026-10-09</lastmod><priority>0.80</priority></url>
++    <url><loc>https://lucassemim.adv.br/advogado-criminalista/sabara.html</loc><lastmod>2026-10-09</lastmod><priority>0.95</priority></url>
++    <url><loc>https://lucassemim.adv.br/advogado-criminalista/santaluzia.html</loc><lastmod>2026-10-09</lastmod><priority>0.90</priority></url>
++    <url><loc>https://lucassemim.adv.br/advogado-criminalista/saojosedalapa.html</loc><lastmod>2026-10-09</lastmod><priority>0.80</priority></url>
++    <url><loc>https://lucassemim.adv.br/advogado-criminalista/vespasiano.html</loc><lastmod>2026-10-09</lastmod><priority>0.85</priority></url>

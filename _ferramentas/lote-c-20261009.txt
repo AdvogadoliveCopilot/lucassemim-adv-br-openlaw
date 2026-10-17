@@ -1,0 +1,55 @@
+LOTE C - guia novo + correcoes nos guias "O Que Fazer Agora" + ferramentas dos agentes - 09/10/2026
+====================================================================================================
+Nada foi subido ainda. Tudo abaixo ja esta gravado na sua pasta do site (C:\Users\adm\Desktop\lucassemim.adv.br).
+Os guias novos vieram dos agentes (criminal e civel); eu revisei, corrigi e testei antes de gravar.
+
+O QUE MUDOU
+- o-que-fazer-agora\fui-convidado-para-delacao-premiada-o-que-fazer.html   GUIA NOVO (agente criminal)
+      Texto conferido contra a Lei 12.850/2013 (arts. 3o-A, 3o-B, 3o-C, 4o, 6o). Corrigidas afirmacoes categoricas
+      do rascunho do agente. Entrou: aviso do Provimento 205/2021, 3 guias relacionados, resumo do advogado sem a
+      palavra "especialista", description mais curta.
+- o-que-fazer-agora\index.html   indice com 29 guias (cartao novo + dados estruturados). Ja estava na pasta.
+- 21 guias antigos (corrigidos):
+      * aviso de conformidade (Provimento 205/2021) no fim do texto: faltava em 21 dos 28 guias que ja estavam no ar
+      * acabei-de-ser-preso-em-flagrante: erro de digitacao "constitutional" -> "constitucional"; data da Sumula 676
+        igualada nos dados estruturados do FAQ ("no final de 2024")
+      * fui-levado-para-delegacia-mas-nao-fui-preso, fui-preso-maria-da-penha, fui-preso-por-furto-ou-roubo:
+        dados estruturados do FAQ alinhados ao texto que aparece na pagina (aspas e pergunta mais curta)
+      Nada mais mudou nessas paginas (conferido linha a linha contra o original).
+- sitemap-urgencia.xml   30 URLs; entrada do guia novo + datas (lastmod) atualizadas. So as datas mudaram nas demais.
+- civel\guia-holding-familiar-vale-a-pena.html   GUIA NOVO (agente civel), frase sobre o ITCMD de MG com data de conferencia
+- civel\sitemap.xml   41 URLs (ja estava na pasta, feito pelo agente)
+- _ferramentas\validar_guia_v3.py       confere uma pagina nova antes de entregar (JSON-LD, FAQ = texto visivel, telefone,
+                                         links, conformidade OAB, texto copiado). Os agentes passam a usar.
+- _ferramentas\adicionar_guia_hub.py    coloca o guia novo no indice sem estragar CRLF
+- _ferramentas\adicionar_url_sitemap.py coloca a URL nova no sitemap-urgencia.xml sem estragar CRLF
+
+ORDEM SEGURA DE ENVIO (FileZilla: pasta local -> servidor). Se for subir o Lote B tambem, suba o B primeiro.
+  1) o-que-fazer-agora\  as 21 paginas corrigidas + fui-convidado-para-delacao-premiada-o-que-fazer.html   -> /public_html/o-que-fazer-agora
+  2) o-que-fazer-agora\index.html                                                                          -> /public_html/o-que-fazer-agora
+  3) sitemap-urgencia.xml                                                                                   -> /public_html
+  4) civel\guia-holding-familiar-vale-a-pena.html  e  civel\sitemap.xml                                    -> site do civel (como voce ja faz)
+  NAO enviar: _ferramentas, agentes, civel\_content-plan.md, civel\Advogado Live.json.
+  (as 21 corrigidas: todas as paginas da pasta o-que-fazer-agora, EXCETO as 7 que ja tinham o aviso:
+   agi-em-legitima-defesa, fui-acusado-de-ameaca, fui-acusado-de-perseguicao-stalking, preso-nao-consigo-pagar-fianca,
+   progressao-de-regime-atrasada, recebi-medida-protetiva, tornozeleira-eletronica-descarregou)
+
+BACKUP DOS ORIGINAIS
+  _ferramentas\backups\lote-c-antes-20261009-140929.zip   (as 21 paginas e o sitemap-urgencia.xml como estavam no ar)
+  _ferramentas\backups\lote-agentes-antes-20261009-135018.zip   (rascunhos originais dos agentes)
+
+COMO VOLTAR ATRAS
+  Abra o zip de backup (botao direito > Extrair tudo) e envie de volta os arquivos extraidos, substituindo.
+
+CONFERIR NO AR DEPOIS DE ENVIAR (o site da Hostinger bloqueia as minhas checagens automaticas)
+  /o-que-fazer-agora/                         (cartao "Fui Convidado para Delacao Premiada" no grupo de intimados)
+  /o-que-fazer-agora/fui-convidado-para-delacao-premiada-o-que-fazer.html
+  /o-que-fazer-agora/acabei-de-ser-preso-em-flagrante.html   (aviso pequeno no fim do texto, antes do bloco do WhatsApp)
+  /sitemap-urgencia.xml                       (abrir no navegador: 30 URLs, datas de 08 e 09/10)
+  civel: guia-holding-familiar-vale-a-pena.html
+
+PARA VOCE CONFIRMAR
+  - "Especialista": 22 guias usam a palavra (no resumo do advogado e em alguns botoes/textos). O Provimento 205/2021
+    (art. 3o, III) so permite anunciar especialidade com titulo certificado. Se voce tem o titulo, mantemos; se nao,
+    troco em lote por "atuacao em".
+  - Os agentes agora entregam rascunhos na sua pasta; quem sobe e voce.

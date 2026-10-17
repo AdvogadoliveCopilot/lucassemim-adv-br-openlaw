@@ -1,0 +1,33 @@
+LOTE "O QUE FAZER AGORA" - novo design persuasivo - 09/10/2026
+================================================================
+
+O QUE MUDOU
+- 28 guias + indice (pasta o-que-fazer-agora) com o novo molde de conversao:
+  botoes WhatsApp/Ligar logo no topo, card fixo no computador, barra fixa no celular,
+  "Como funciona", compromissos do escritorio, faixa de acao e fechamento.
+- Textos, titulos, meta tags, H1, FAQ e dados estruturados (schema) dos guias foram PRESERVADOS.
+  O indice passou a listar os 28 guias (antes listava 12).
+- Nestas 29 paginas ficam ocultos os banners automaticos do smart-cta e a faixa vermelha do rodape.
+- Botao da pagina da embriaguez: "FALAR NO WHATSAPP E VERIFICAR A FIANCA" (sem promessa de resultado).
+
+ARQUIVOS NOVOS
+  css\oqfa-v3.css
+  js\oqfa-v3.js
+  img\lucas-semim-avatar-192.jpg
+  _ferramentas\aplicar_oqfa_v3.py
+ARQUIVOS ALTERADOS
+  js\page-v2.js   (so uma guarda: nas paginas novas nao duplica blocos; as demais paginas continuam iguais)
+  o-que-fazer-agora\*.html  (28 guias + index.html)
+
+BACKUP DOS ORIGINAIS
+  _ferramentas\backups\oqfa-antes-20261008-221232.zip
+  (29 paginas originais + js\page-v2.js original)
+
+COMO VOLTAR ATRAS
+  1) Na pasta _ferramentas, rode:  python aplicar_oqfa_v3.py --desfazer backups\oqfa-antes-20261008-221232.zip
+     (restaura as 29 paginas na pasta o-que-fazer-agora)
+  2) Envie de novo as 29 paginas para a pasta /public_html/o-que-fazer-agora pelo FileZilla.
+  (js\page-v2.js pode ficar como esta: e compativel com as paginas antigas.)
+
+TOKEN DE CACHE: ?v=20261009 (css, js e page-v2). Se mexer no CSS/JS depois, use:
+  python aplicar_oqfa_v3.py --atualizar-versao NOVO_TOKEN --aplicar

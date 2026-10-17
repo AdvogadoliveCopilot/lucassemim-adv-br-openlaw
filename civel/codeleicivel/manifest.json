@@ -1,0 +1,25 @@
+{
+  "name": "Lucas Semim | Advocacia Cível",
+  "short_name": "LS Cível",
+  "id": "/index.html",
+  "start_url": "https://civel.lucassemim.adv.br/index.html",
+  "scope": "https://civel.lucassemim.adv.br/",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#d4af37",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "img/favicon.ico",
+      "type": "image/x-icon",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "img/favicon.ico",
+      "type": "image/x-icon",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ]
+}

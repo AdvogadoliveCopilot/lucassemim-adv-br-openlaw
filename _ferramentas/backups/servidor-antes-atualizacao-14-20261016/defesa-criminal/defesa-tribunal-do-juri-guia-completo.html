@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Tribunal do Júri: A Defesa da Vida | Dr. Lucas Semim</title>
+    <meta name="description" content="A defesa estratégica em Plenário. Do Inquérito ao Veredito. Roteiro completo de atuação no Tribunal do Júri.">
+    <link rel="canonical" href="https://lucassemim.adv.br/defesa-criminal/defesa-tribunal-do-juri-guia-completo.html" />
+    
+    <meta property="og:title" content="Tribunal do Júri: A Defesa da Vida | Dr. Lucas Semim">
+    <meta property="og:description" content="A defesa estratégica em Plenário. Roteiro completo do indiciamento à Impronúncia. Acione nossa equipe especializada.">
+    <meta property="og:image" content="https://lucassemim.adv.br/img/efesa-tribunal-do-juri-guia-completo.png">
+    <meta property="og:url" content="https://lucassemim.adv.br/defesa-criminal/defesa-tribunal-do-juri-guia-completo.html">
+    <meta property="og:type" content="website">
+    
+    <link rel="stylesheet" href="mapa.css?v=20261009"> 
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Teko:wght@400;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- THEATER OF JUSTICE THEME --- */
+        :root {
+            --cor-ouro-destaque: #d4af37;
+            --cor-sangue: #8a0a0a; /* Red for Life/Drama */
+            --cor-fundo-escuro: #050505;
+            --cor-vidro: rgba(20, 20, 20, 0.8);
+        }
+
+        body {
+            background-color: var(--cor-fundo-escuro);
+            color: #f0f0f0;
+            overflow-x: hidden;
+        }
+
+        /* 1. CINEMATIC HERO */
+        .hero-juri {
+            position: relative;
+            height: 80vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), #050505), url('img/defesa-tribunal-do-juri-guia-completo.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Parallax Effect */
+            border-bottom: 5px solid var(--cor-sangue);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            padding: 20px;
+        }
+        .hero-juri h1 {
+            font-family: 'Teko', sans-serif;
+            font-size: 6rem;
+            color: #fff;
+            margin: 0;
+            line-height: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.9);
+        }
+        .hero-juri span {
+            color: var(--cor-sangue);
+            display: block;
+            font-size: 3rem;
+        }
+        .hero-juri p {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.5rem;
+            margin-top: 20px;
+            color: #ccc;
+        }
+
+        /* 2. THE WAR ROOM (STRATEGY) */
+        .war-room-section {
+            padding: 80px 20px;
+            background-color: #0a0a0a;
+            position: relative;
+        }
+        .war-room-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        .war-room-text h2 {
+            font-family: 'Teko', sans-serif;
+            font-size: 3.5rem;
+            color: var(--cor-ouro-destaque);
+            margin-bottom: 20px;
+        }
+        .war-room-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #bbb;
+            margin-bottom: 20px;
+        }
+        .war-room-card {
+            background: var(--cor-vidro);
+            border: 1px solid #333;
+            border-left: 4px solid var(--cor-sangue);
+            padding: 30px;
+            border-radius: 0 10px 10px 0;
+            box-shadow: 0 0 30px rgba(138, 10, 10, 0.1);
+        }
+
+        /* 3. THE TIMELINE (JOURNEY) */
+        .timeline-juri {
+            position: relative;
+            padding: 100px 20px;
+            background: linear-gradient(180deg, #0a0a0a 0%, #111 50%, #0a0a0a 100%);
+        }
+        .timeline-title {
+            text-align: center;
+            font-family: 'Teko', sans-serif;
+            font-size: 3rem;
+            color: #fff;
+            margin-bottom: 60px;
+        }
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 200px;
+            bottom: 100px;
+            width: 2px;
+            background: var(--cor-ouro-destaque);
+            transform: translateX(-50%);
+        }
+        .timeline-step {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 60px;
+            position: relative;
+            opacity: 0; /* Hidden for animation */
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .timeline-step.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .step-card {
+            width: 45%;
+            background: rgba(255,255,255,0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 10px;
+            position: relative;
+            transition: transform 0.3s;
+        }
+        .step-card:hover {
+            transform: scale(1.02);
+            border-color: var(--cor-ouro-destaque);
+            background: rgba(255,255,255,0.05);
+        }
+        
+        .timeline-step:nth-child(odd) .step-card {
+            margin-right: auto;
+            text-align: right;
+            border-right: 4px solid var(--cor-ouro-destaque);
+        }
+        .timeline-step:nth-child(even) .step-card {
+            margin-left: auto;
+            text-align: left;
+            border-left: 4px solid var(--cor-ouro-destaque);
+        }
+        
+        .step-number {
+            font-family: 'Teko';
+            font-size: 4rem;
+            color: rgba(255,255,255,0.1);
+            position: absolute;
+            top: -20px;
+            z-index: 0;
+        }
+        .timeline-step:nth-child(odd) .step-number { right: 20px; }
+        .timeline-step:nth-child(even) .step-number { left: 20px; }
+
+        .step-content { position: relative; z-index: 1; }
+        .step-content h3 {
+            font-family: 'Teko';
+            font-size: 2rem;
+            color: var(--cor-ouro-destaque);
+            margin: 0 0 10px 0;
+        }
+
+        /* 4. DOSSIÊ FORM (GLASS) */
+        .dossie-section {
+            padding: 60px 20px;
+            background-image: url('img/background-noise.png'); /* Textura opcional */
+        }
+        .dossie-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(15, 15, 15, 0.9);
+            border: 1px solid #333;
+            border-top: 5px solid var(--cor-sangue);
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+        }
+        .dossie-header h2 {
+            font-family: 'Teko';
+            font-size: 2.5rem;
+            text-align: center;
+            margin: 0 0 20px 0;
+            color: #fff;
+        }
+        
+        /* Form Styles */
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .input-dossie {
+            width: 100%; padding: 15px;
+            background: #000; border: 1px solid #333;
+            color: #fff; border-radius: 4px;
+        }
+        .full-width { grid-column: span 2; }
+        
+        .btn-war-room {
+            width: 100%;
+            padding: 20px;
+            background: var(--cor-sangue);
+            color: #fff;
+            font-family: 'Teko';
+            font-size: 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .btn-war-room:hover {
+            background: #a00;
+            box-shadow: 0 0 20px rgba(160, 0, 0, 0.6);
+        }
+
+        /* 5. TEAM SECTION */
+        .team-link {
+            text-align: center;
+            padding: 60px 0;
+            border-top: 1px solid #222;
+        }
+        .btn-team {
+            color: var(--cor-ouro-destaque);
+            text-decoration: none;
+            font-size: 1.2rem;
+            border-bottom: 1px solid var(--cor-ouro-destaque);
+            transition: all 0.3s;
+        }
+        .btn-team:hover { color: #fff; border-color: #fff; }
+
+        @media(max-width: 900px) {
+            .war-room-container { grid-template-columns: 1fr; }
+            .hero-juri h1 { font-size: 4rem; }
+            .timeline-line { left: 20px; }
+            .timeline-step { justify-content: flex-start; padding-left: 40px; }
+            .step-card { width: 100%; text-align: left !important; border-right: none !important; border-left: 4px solid var(--cor-ouro-destaque) !important; }
+            .step-number { right: 20px !important; left: auto !important; }
+            .form-grid { grid-template-columns: 1fr; }
+            .full-width { grid-column: span 1; }
+        }
+    </style>
+<link rel="stylesheet" href="https://lucassemim.adv.br/css/lucas-v2-article.css?v=20261009">
+<script>document.documentElement.classList.add('v2a')</script>
+</head>
+
+<body data-exit-intent="true">
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        
+        <section class="hero-juri">
+            <div class="hero-content">
+                <h1>A DEFESA DA <span>VIDA</span></h1>
+                <p>"No Plenário, não há espaço para o erro. A liberdade é conquistada na mente dos jurados."</p>
+            </div>
+        </section>
+
+        <section class="war-room-section">
+            <div class="war-room-container">
+                <div class="war-room-text">
+                    <h2>A Guerra Começa Antes do Plenário</h2>
+                    <p>
+                        Muitos advogados esperam o dia do julgamento. Nós começamos a vencer meses antes. 
+                        O Método Live aplica **Inteligência de Dados** e **Psicologia Forense** para mapear o perfil dos jurados e desconstruir a tese da acusação peça por peça.
+                    </p>
+                    <p>
+                        Não jogamos com a sorte. Jogamos com **Roteiros de Vitória**.
+                    </p>
+                </div>
+                <div class="war-room-card">
+                    <h3 style="color:#fff; font-family:'Teko'; font-size:1.8rem; margin-top:0;">NOSSO ARSENAL:</h3>
+                    <ul style="color:#ccc; line-height:1.8;">
+                        <li>✅ Investigação Defensiva (Produção de Prova Própria)</li>
+                        <li>✅ Perícia Criminal Privada (Assistentes Técnicos)</li>
+                        <li>✅ Simulação de Plenário (Mock Trial)</li>
+                        <li>✅ Estudo Sociológico do Conselho de Sentença</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="timeline-juri">
+            <h2 class="timeline-title">O ROTEIRO DA BATALHA</h2>
+            <div class="timeline-line"></div>
+
+            <div class="timeline-step reveal">
+                <div class="step-card">
+                    <span class="step-number">01</span>
+                    <div class="step-content">
+                        <h3>SUMÁRIO DE CULPA</h3>
+                        <p>A primeira fase. O objetivo aqui é evitar o Júri. Trabalhamos pela **Impronúncia** (falta de provas) ou **Absolvição Sumária** (Legítima Defesa clara).</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-step reveal">
+                <div class="step-card">
+                    <span class="step-number">02</span>
+                    <div class="step-content">
+                        <h3>PREPARAÇÃO DE PLENÁRIO</h3>
+                        <p>Se pronunciado, entramos na "Sala de Guerra". Estudamos cada jurado, treinamos o interrogatório e preparamos a oratória de impacto.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-step reveal">
+                <div class="step-card">
+                    <span class="step-number">03</span>
+                    <div class="step-content">
+                        <h3>O JULGAMENTO</h3>
+                        <p>O dia D. Debates orais, confronto de testemunhas e a desconstrução do Promotor. Aqui, a técnica encontra a emoção para convencer.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="dossie-section">
+            <div class="dossie-wrapper">
+                <div class="dossie-header">
+                    <div style="color: var(--cor-sangue); font-family: 'Fira Code'; font-size: 0.9rem; margin-bottom: 10px;">// PROTOCOLO DE DEFESA DA VIDA</div>
+                    <h2>ACIONAR EQUIPE DE JÚRI</h2>
+                </div>
+
+                <form onsubmit="return false;">
+                    <div class="form-grid">
+                        <div class="form-grupo">
+                            <label>NOME DO ACUSADO</label>
+                            <input type="text" id="juri-nome" class="input-dossie" required>
+                        </div>
+                        <div class="form-grupo">
+                            <label>Nº DO PROCESSO (SE HOUVER)</label>
+                            <input type="text" id="juri-processo" class="input-dossie">
+                        </div>
+                        <div class="form-grupo">
+                            <label>LOCAL (COMARCA)</label>
+                            <input type="text" id="juri-local" class="input-dossie" required>
+                        </div>
+                        <div class="form-grupo">
+                            <label>FASE ATUAL</label>
+                            <select id="juri-fase" class="input-dossie">
+                                <option value="Investigação">Investigação (Delegacia)</option>
+                                <option value="1ª Fase (Audiências)">1ª Fase (Audiências)</option>
+                                <option value="Plenário (Júri Marcado)">Plenário (Júri Marcado)</option>
+                                <option value="Recurso">Recurso (Após Condenação)</option>
+                            </select>
+                        </div>
+                        <div class="form-grupo full-width">
+                            <label>RESUMO DO FATO</label>
+                            <textarea id="juri-relato" class="input-dossie" rows="3" placeholder="Descreva o caso brevemente..."></textarea>
+                        </div>
+                    </div>
+
+                    <button class="btn-war-room" onclick="acionarWarRoom()">
+                        ATIVAR DEFESA DE PLENÁRIO
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <div class="team-link">
+            <p style="color:#666; margin-bottom: 10px;">O Júri é um trabalho de equipe.</p>
+            <a href="https://lucassemim.adv.br/sobre-mim.html" class="btn-team">CONHEÇA NOSSOS ESPECIALISTAS TÁTICOS &rarr;</a>
+        </div>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Animação de Scroll (Reveal)
+        window.addEventListener('scroll', () => {
+            const reveals = document.querySelectorAll('.reveal');
+            const windowHeight = window.innerHeight;
+            const elementVisible = 100;
+
+            reveals.forEach((reveal) => {
+                const elementTop = reveal.getBoundingClientRect().top;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveal.classList.add('visible');
+                }
+            });
+        });
+
+        // Ação do Dossiê
+        function acionarWarRoom() {
+            const nome = document.getElementById('juri-nome').value;
+            const processo = document.getElementById('juri-processo').value;
+            const local = document.getElementById('juri-local').value;
+            const fase = document.getElementById('juri-fase').value;
+            const relato = document.getElementById('juri-relato').value;
+
+            if (!nome || !local) {
+                alert("Preencha os dados para análise.");
+                return;
+            }
+
+            const btn = document.querySelector('.btn-war-room');
+            btn.innerHTML = "PROCESSANDO ESTRATÉGIA...";
+            
+            setTimeout(() => {
+                const texto = `⚖️ *WAR ROOM (TRIBUNAL DO JÚRI)* ⚖️%0A%0A` +
+                              `*Acusado:* ${encodeURIComponent(nome)}%0A` +
+                              `*Local:* ${encodeURIComponent(local)}%0A` +
+                              `*Fase:* ${encodeURIComponent(fase)}%0A` +
+                              `*Processo:* ${encodeURIComponent(processo || 'N/A')}%0A%0A` +
+                              `*RELATO:* ${encodeURIComponent(relato)}%0A%0A` +
+                              `*STATUS:* Solicito análise imediata da equipe.`;
+
+                window.open(`https://wa.me/5531989420094?text=${texto}`, '_blank');
+                btn.innerHTML = "ATIVAR DEFESA DE PLENÁRIO";
+            }, 1500);
+        }
+    </script>
+    
+
+    <script src="../codelei/analytics.js?v=20261009"></script>
+    <script src="../js/header-elite.js?v=20261009"></script>
+    <script src="../js/footer-seo.js?v=20261009"></script>
+    <script src="../js/google-ai-brain.js?v=20261009"></script>
+
+<script src="https://lucassemim.adv.br/js/article-v2.js?v=20261009" defer></script>
+</body>
+</html>

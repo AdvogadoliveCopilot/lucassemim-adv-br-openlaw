@@ -1,0 +1,82 @@
+LOTE E - scripts compartilhados (conformidade e privacidade) + Central do Caso + llms.txt + ajuste do cabecalho - 09/10/2026
+================================================================================================================
+Nada foi subido ainda. Os arquivos deste lote ja estao gravados na sua pasta do site (C:\Users\adm\Desktop\lucassemim.adv.br).
+Sao novas versoes de arquivos que ja existem; o backup dos originais esta em _ferramentas\backups\lote-e-antes-*.zip.
+
+POR QUE ESTE LOTE
+Os scripts compartilhados rodam em 50 a 190 paginas cada um. Eles injetavam textos e dados estruturados que o Provimento 205/2021
+(OAB) nao permite em publicidade (gratuito/gratis, promessa de resposta imediata, "especialista", faixa de preco, nota de avaliacao,
+frases de captacao agressiva) e duplicavam dados estruturados que as paginas ja tem. Limpando nos scripts, a correcao vale para o
+site todo sem mexer pagina por pagina. Tambem corrigi tres defeitos reais que apareceram nos testes.
+
+O QUE MUDOU (por arquivo)
+js\ai-neural-seo.js (148 paginas)
+    Deixou de injetar blocos de FAQ, passo a passo (HowTo), busca por voz e "guia para IAs" com texto generico igual em todas as
+    paginas. Saiu faixa de preco, telefone 0800 e o link da OAB em "sameAs". O escritorio passa a ser LegalService + LocalBusiness,
+    com descricoes neutras e links de Wikidata corrigidos.
+js\google-ai-brain.js (176 paginas)
+    Saiu nota de avaliacao (aggregateRating), faixa de preco, caixa de busca (SearchAction) e o gerador de FAQ. Nao duplica mais um
+    tipo de dado estruturado que a pagina ja tem. Mensagens de depuracao so aparecem com ?ai-debug=1 no endereco.
+js\chat-elite.js (47 paginas)
+    Frases de abertura neutras em todos os temas (sem promessa e sem urgencia artificial). Aviso de privacidade no rodape do chat
+    ("Nao escreva nome completo, CPF, numero de processo ou dados sensiveis..."). A estatistica envia so o tamanho da pergunta, nunca o texto.
+    DEFEITO CORRIGIDO: com o chat fechado, a janela invisivel ainda "pegava" toques no canto da tela por cima da pagina.
+js\smart-cta.js (81 paginas)   Botoes sem "gratis/gratuito", sem "Tropa de Choque" e sem numeros de tese; selo "PLANTAO CRIMINAL 24H".
+js\ads-intelligence.js (49)     Textos neutros; titulo para anuncios "ADVOGADO CRIMINALISTA EM SABARA E BH"; sem urgencia artificial.
+js\return-lead.js (home e emergencia)
+    So aparece se a pessoa aceitou cookies de estatistica; textos neutros; aviso de privacidade com link para a Politica; no celular
+    nao cobre mais o botao do chat; o nome da pessoa nao vai mais para a IA.
+js\central-caso.js e js\diagnostico.js
+    Textos neutros. O rascunho guardado no navegador tem so as escolhas de navegacao (nunca nome, WhatsApp, e-mail, CPF, numero de
+    processo ou relato); ao recarregar a pagina o formulario volta ao passo de contato, sem dados.
+js\page-v2.js e js\article-v2.js (47 e 189 paginas)   O selo "Resposta rapida" virou "Atendimento humano".
+js\header-elite.js (129 paginas)
+    Faixa vermelha agora diz "PLANTAO CRIMINAL 24H - Atendimento para flagrante e custodia". E o ajuste do cabecalho abaixo (paginas antigas).
+css\header-lux.css (48 paginas com o visual novo: home, cidades, guias)
+    DEFEITO CORRIGIDO: em notebooks (1240 a 1440 px de largura) o botao vermelho "PLANTAO 24H" saia da tela, cortado na borda direita;
+    nas paginas com o selo "PLANTAO ATIVO" (cidades, flagrante) o corte era maior. O menu ficou um pouco mais compacto, a linha
+    "Advocacia criminal - OAB/MG" so aparece a partir de 1300 px e o selo de contexto saiu do cabecalho (repetia o relogio e o botao).
+    O que NAO mudou: celular, menu hamburguer, telefone, relogio do plantao, cores. So acrescenta uma secao no fim do arquivo.
+diagnostico.html (Central do Caso)
+    Saiu "Gratuito/Gratis/Analise gratuita" do titulo, descricao, palavras-chave, dados estruturados e da pergunta do FAQ
+    ("Enviar o caso contrata o escritorio?"); saiu a oferta "preco 0" dos dados estruturados; Consent Mode v2 (padrao negado) antes do
+    Google Tag Manager, igual a pagina inicial; versoes dos scripts 20261010 nos que mudaram.
+llms.txt   Trocou "especializado/Especialista" por "atua em" e deixou o resumo neutro.
+
+COMO FICOU O TESTE (feito aqui, com dados ficticios; nada foi enviado para fora)
+  - Testes automaticos no navegador: 115 verificacoes ok, 0 erros e 13 avisos (todos itens antigos das proprias paginas - como o priceRange escrito na home e em Sabara -
+    ou dependentes de confirmacao sua - como o plantao 24h), em celular e computador, com a Central do Caso, o chat, o pop-up de
+    retorno, os botoes, os dados estruturados e os cookies.
+  - Sintaxe de todos os scripts conferida (node --check); nenhum erro novo de JavaScript.
+  - Cabecalho: 130 enderecos do site (home, cidades, guias, artigos, noticias, presidios) em 13 larguras de tela, de 992 a 1920 px
+    (1.742 conferencias): o botao PLANTAO 24H fica inteiro dentro do cabecalho em todos, sem sobrepor a marca nem o menu. Unica
+    excecao: noticias.html, que tem rolagem lateral propria (a faixa de filtros passa da tela), problema antigo e sem relacao com o cabecalho.
+  - Consent Mode: antes do aceite nenhum pedido de coleta do Google e enviado; texto digitado no chat nao vai para o dataLayer e so
+    vai para o proxy do proprio site; rascunho da Central do Caso sem dados pessoais.
+
+ORDEM SEGURA DE ENVIO (FileZilla: pasta local -> servidor). Se for subir os outros lotes tambem: B, depois C, depois D, depois E.
+  1) js\  os 11 scripts deste lote              -> /public_html/js
+  2) css\header-lux.css                          -> /public_html/css
+  3) diagnostico.html e llms.txt                 -> /public_html
+  (diagnostico.html chama js\lgpd.js e js\footer-seo.js com versao 20261009: eles vem do Lote D. Suba o Lote D antes.)
+  NAO enviar: _ferramentas, agentes.
+  Os arquivos js\ mantem o mesmo nome. O site tem cache de 1 ano, mas o service worker (sw.js v13) revalida os scripts e estilos do proprio
+  site; por isso quem ja visitou recebe a versao nova na visita seguinte. Se quiser forcar, e so abrir o site com Ctrl+F5.
+
+COMO VOLTAR ATRAS
+  Abra o zip _ferramentas\backups\lote-e-antes-*.zip (botao direito > Extrair tudo) e envie de volta os arquivos extraidos,
+  mantendo as pastas js\ e css\.
+
+CONFERIR NO AR DEPOIS DE ENVIAR (o site da Hostinger bloqueia as minhas checagens automaticas)
+  1) Pagina inicial em tela de notebook (1366 px): botao vermelho PLANTAO 24H inteiro, no canto direito do cabecalho.
+  2) /diagnostico.html: titulo sem "Gratis"; botao do chat abre com frase neutra e aviso de privacidade no rodape.
+  3) Um guia de /o-que-fazer-agora/ no celular: toque no canto inferior direito com o chat fechado nao abre nada por engano.
+  4) Pagina de cidade (Sabara) em notebook: cabecalho sem selo "PLANTAO ATIVO" e botao inteiro.
+
+PARA VOCE CONFIRMAR (nao mudei; dependem de voce)
+  - Plantao 24h em todos os dias, inclusive feriados: o site diz "24h" em varios lugares (cabecalho, relogio "PLANTAO - hora atual",
+    guias e dados estruturados). Se houver horarios sem atendimento, me diga que ajusto os textos.
+  - Endereco oficial do escritorio: os scripts tinham dois CEPs e duas coordenadas diferentes; mantive os que ja estavam.
+  - Nome "Semim & Associados"/"Advogado Live" e a marca "Metodo Live": se o escritorio nao e sociedade, trocamos em lote.
+  - Titulo de especialista: se voce tem titulo certificado, posso reintroduzir a palavra; sem titulo o Provimento 205 nao permite.
+  - Pagina inicial (index.html): ainda tem "gratuito/gratis", "em ate 15 minutos", "Resposta media" etc. Proponho o Lote F para isso.

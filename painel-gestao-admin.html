@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel de Gestão | Semim &amp; Associados</title>
+<meta name="robots" content="noindex, nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lato:wght@400;600;700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#08090a; --bg-card:#111214; --bg-elev:#17181b;
+    --border:#2a2b2f; --gold:#d4af37; --gold-dim:#9c7a1e;
+    --text:#e7e7ea; --text-muted:#9a9aa2; --danger:#e05a5a; --ok:#3fae6a;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--bg); color:var(--text); font-family:'Lato',sans-serif; padding-block:24px;}
+  body{padding-left:16px; padding-right:16px;}
+  h1,h2,h3{font-family:'Playfair Display',serif; margin:0;}
+  .wrap{max-width:1100px; margin:0 auto;}
+
+  /* ---------- LOGIN ---------- */
+  #tela-login{min-height:80vh; display:flex; align-items:center; justify-content:center;}
+  .login-card{background:var(--bg-card); border:1px solid var(--border); border-top:3px solid var(--gold);
+    border-radius:10px; padding:40px 36px; width:100%; max-width:380px; text-align:center;}
+  .login-card h1{font-size:1.5rem; color:var(--gold); margin-bottom:6px;}
+  .login-card p{color:var(--text-muted); font-size:.9rem; margin:0 0 24px;}
+  .login-card input{width:100%; padding:12px 14px; border-radius:8px; border:1px solid var(--border);
+    background:var(--bg-elev); color:var(--text); font-size:1rem; margin-bottom:14px;}
+  .login-card input:focus{outline:none; border-color:var(--gold);}
+  .btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; width:100%; padding:12px 16px;
+    border-radius:8px; border:none; background:var(--gold); color:#1a1400; font-weight:700; font-size:1rem;
+    cursor:pointer; transition:.2s;}
+  .btn:hover{background:#e6c358;}
+  .btn:disabled{opacity:.6; cursor:default;}
+  .erro-msg{color:var(--danger); font-size:.85rem; margin-top:10px; min-height:1.2em;}
+
+  /* ---------- APP ---------- */
+  #tela-app{display:none;}
+  header.topo{display:flex; justify-content:space-between; align-items:center; margin-bottom:24px; flex-wrap:wrap; gap:12px;}
+  header.topo h1{font-size:1.6rem; color:var(--gold);}
+  header.topo .sub{color:var(--text-muted); font-size:.85rem; font-family:'Fira Code',monospace;}
+  .btn-sec{background:transparent; border:1px solid var(--border); color:var(--text); padding:9px 16px;
+    border-radius:8px; cursor:pointer; font-size:.85rem;}
+  .btn-sec:hover{border-color:var(--gold); color:var(--gold);}
+
+  .toolbar{display:flex; gap:12px; margin-bottom:16px; flex-wrap:wrap;}
+  .toolbar input{flex:1; min-width:200px; padding:10px 14px; border-radius:8px; border:1px solid var(--border);
+    background:var(--bg-card); color:var(--text);}
+  .btn-novo{background:var(--gold); color:#1a1400; border:none; padding:10px 18px; border-radius:8px;
+    font-weight:700; cursor:pointer; white-space:nowrap;}
+
+  .tabela-card{background:var(--bg-card); border:1px solid var(--border); border-radius:10px; overflow:hidden;}
+  table{width:100%; border-collapse:collapse; font-size:.9rem;}
+  thead th{text-align:left; padding:12px 14px; background:var(--bg-elev); color:var(--text-muted);
+    font-size:.75rem; text-transform:uppercase; letter-spacing:.05em; font-weight:600;}
+  tbody td{padding:12px 14px; border-top:1px solid var(--border);}
+  tbody tr{cursor:pointer; transition:.15s;}
+  tbody tr:hover{background:rgba(212,175,55,.06);}
+  .nome-cli{font-weight:700;}
+  .cnj{font-family:'Fira Code',monospace; font-size:.8rem; color:var(--text-muted);}
+  .prazo-pill{display:inline-block; padding:2px 10px; border-radius:20px; font-size:.75rem; font-weight:700;}
+  .prazo-ok{background:rgba(63,174,106,.15); color:var(--ok);}
+  .prazo-vazio{color:var(--text-muted);}
+  .msg-vazio{padding:40px; text-align:center; color:var(--text-muted);}
+
+  /* ---------- MODAL ---------- */
+  .overlay{display:none; position:fixed; inset:0; background:rgba(0,0,0,.6); z-index:50;
+    align-items:flex-start; justify-content:center; padding:40px 16px; overflow-y:auto;}
+  .overlay.aberto{display:flex;}
+  .modal{background:var(--bg-card); border:1px solid var(--border); border-top:3px solid var(--gold);
+    border-radius:10px; width:100%; max-width:560px; padding:28px;}
+  .modal h2{color:var(--gold); font-size:1.25rem; margin-bottom:18px;}
+  .campo{margin-bottom:14px;}
+  .campo label{display:block; font-size:.78rem; color:var(--text-muted); margin-bottom:5px; text-transform:uppercase; letter-spacing:.03em;}
+  .campo input, .campo select{width:100%; padding:10px 12px; border-radius:7px; border:1px solid var(--border);
+    background:var(--bg-elev); color:var(--text); font-size:.95rem; font-family:inherit;}
+  .campo input:focus, .campo select:focus{outline:none; border-color:var(--gold);}
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  .modal-acoes{display:flex; gap:10px; margin-top:20px;}
+  .modal-acoes .btn{flex:1;}
+  .modal-acoes .btn-sec{flex:0 0 auto;}
+  .salvo-msg{font-size:.85rem; margin-top:12px; min-height:1.2em;}
+  .salvo-ok{color:var(--ok);}
+  .salvo-erro{color:var(--danger);}
+
+  @media(max-width:640px){ .grid2{grid-template-columns:1fr;} thead th:nth-child(3), tbody td:nth-child(3){display:none;} }
+</style>
+</head>
+<body>
+
+<div id="tela-login">
+  <div class="login-card">
+    <h1>Painel de Gestão</h1>
+    <p>Acesso exclusivo &mdash; Semim &amp; Associados</p>
+    <input type="password" id="senha-admin" placeholder="Senha" autocomplete="current-password">
+    <button class="btn" id="btn-login-admin">Entrar</button>
+    <div class="erro-msg" id="erro-login"></div>
+  </div>
+</div>
+
+<div id="tela-app">
+  <div class="wrap">
+    <header class="topo">
+      <div>
+        <h1>Painel de Gestão</h1>
+        <div class="sub">Clientes &amp; Processos &middot; Dashboard Principal</div>
+      </div>
+      <button class="btn-sec" id="btn-sair-admin">Sair</button>
+    </header>
+
+    <div class="toolbar">
+      <input type="text" id="busca" placeholder="Buscar por nome, CNJ ou classe...">
+      <button class="btn-novo" id="btn-novo-cliente">+ Novo Cliente</button>
+    </div>
+
+    <div class="tabela-card">
+      <table>
+        <thead>
+          <tr>
+            <th>Cliente</th>
+            <th>Classe</th>
+            <th>CNJ</th>
+            <th>Fase</th>
+            <th>Prazo</th>
+          </tr>
+        </thead>
+        <tbody id="corpo-tabela">
+          <tr><td colspan="5" class="msg-vazio">Carregando processos...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="overlay-modal">
+  <div class="modal">
+    <h2 id="modal-titulo">Editar Cliente / Processo</h2>
+    <input type="hidden" id="f-linha">
+    <div class="campo"><label>Nome do cliente</label><input type="text" id="f-nome"></div>
+    <div class="grid2">
+      <div class="campo"><label>E-mail</label><input type="email" id="f-email"></div>
+      <div class="campo"><label>Classe processual</label><input type="text" id="f-classe"></div>
+    </div>
+    <div class="grid2">
+      <div class="campo"><label>Número CNJ</label><input type="text" id="f-cnj"></div>
+      <div class="campo"><label>Prazo fatal</label><input type="date" id="f-prazo"></div>
+    </div>
+    <div class="campo"><label>Parte contrária</label><input type="text" id="f-parte-contraria"></div>
+    <div class="campo"><label>Próxima ação / estratégia</label><input type="text" id="f-proxima-acao"></div>
+    <div class="grid2">
+      <div class="campo"><label>Juízo / Vara</label><input type="text" id="f-juizo"></div>
+      <div class="campo"><label>Fase processual</label><input type="text" id="f-fase"></div>
+    </div>
+    <div class="campo"><label>Valor da causa</label><input type="text" id="f-valor"></div>
+    <div class="modal-acoes">
+      <button class="btn-sec" id="btn-fechar-modal">Cancelar</button>
+      <button class="btn" id="btn-salvar-modal">Salvar</button>
+    </div>
+    <div class="salvo-msg" id="salvo-msg"></div>
+  </div>
+</div>
+
+<script>
+// =========================================================================
+// Painel de Gestao Admin -- uso exclusivo do Dr. Lucas Renan Semim.
+// Fala com o mesmo backend Apps Script "Advogado Live" que ja alimenta o
+// Portal do Cliente (civel.lucassemim.adv.br), rotas novas em
+// 25_Painel_Admin.gs (loginAdmin / listarProcessosAdmin / buscarProcessoAdmin
+// / salvarProcessoAdmin). Criado 12/09/2026 -- V1: modulo Clientes+Processos.
+// Autoconteudo (sem depender dos bundles de marketing do site publico).
+// =========================================================================
+const ADMIN_API_URL = (window.LS_CONFIG && window.LS_CONFIG.apiUrlAdmin) || "https://script.google.com/macros/s/AKfycbxNkBiodBFUxvDK-kfBuSLjBDxTcbhyWfllEv87-wFJlhCO3_d1H2CO_zDPjb_Qs2BK/exec";
+// Fonte única de URL (orientação 3.6 de 14/10): preferir ls-api-config.js; o fallback
+// hardcoded é transitório até a configuração ser atualizada.
+
+let TOKEN_ADMIN = sessionStorage.getItem("admin_token") || "";
+let PROCESSOS_CACHE = [];
+
+function $(id){ return document.getElementById(id); }
+
+// Utilitário único de chamada (orientação 4.1 de 14/10): POST sempre (nunca
+// senha/token em URL), timeout de 40 s via AbortController, mensagem de erro
+// de rede padronizada. Mesmo padrão do call() do portal do cliente.
+function apiAdmin(payload){
+  const ctl = new AbortController();
+  const to = setTimeout(() => ctl.abort(), 40000);
+  return fetch(ADMIN_API_URL, { method: "POST", body: JSON.stringify(payload), signal: ctl.signal })
+    .then(r => { clearTimeout(to); return r.json(); })
+    .catch(e => {
+      clearTimeout(to);
+      const tempo = e && e.name === "AbortError";
+      return Promise.reject(new Error(tempo ? "A conexão demorou demais. Tente de novo." : "Não foi possível conectar agora. Tente novamente."));
+    });
+}
+
+// Escreve mensagem em um elemento SEM innerHTML (anti-XSS, orientação 3.4)
+function say(el, txt, kind){ el.textContent = txt || ""; el.className = kind ? (el.className.split(" ")[0] + " " + kind) : el.className.split(" ")[0]; }
+
+function mostrarApp(){
+  $("tela-login").style.display = "none";
+  $("tela-app").style.display = "block";
+  carregarProcessos();
+}
+
+function tentarLoginSalvo(){
+  if (TOKEN_ADMIN) mostrarApp();
+}
+
+$("btn-login-admin").addEventListener("click", fazerLogin);
+$("senha-admin").addEventListener("keydown", e => { if (e.key === "Enter") fazerLogin(); });
+
+function fazerLogin(){
+  const senha = $("senha-admin").value;
+  const erroBox = $("erro-login");
+  erroBox.textContent = "";
+  if (!senha){ erroBox.textContent = "Digite a senha."; return; }
+
+  const btn = $("btn-login-admin");
+  btn.disabled = true; btn.textContent = "Entrando...";
+
+  // Orientação 3.1 de 14/10: login por POST com corpo JSON (a senha NUNCA
+  // mais vai em parâmetro de URL — vazamento em histórico/log/Referer).
+  apiAdmin({ acao: "loginAdmin", senha: senha })
+    .then(data => {
+      btn.disabled = false; btn.textContent = "Entrar";
+      if (data && data.sucesso){
+        TOKEN_ADMIN = data.token;
+        sessionStorage.setItem("admin_token", TOKEN_ADMIN);
+        mostrarApp();
+      } else {
+        erroBox.textContent = (data && data.mensagem) || "Senha incorreta.";
+      }
+    })
+    .catch(e => {
+      btn.disabled = false; btn.textContent = "Entrar";
+      erroBox.textContent = e.message;
+    });
+}
+
+$("btn-sair-admin").addEventListener("click", () => {
+  // Orientação 3.3 de 14/10: logout também no servidor (revoga a sessão).
+  // Melhor esforço: mesmo que falhe, o estado local é limpo e a sessão
+  // expira sozinha depois. Sem enviar token em URL.
+  if (TOKEN_ADMIN) apiAdmin({ acao: "logoutAdmin", token: TOKEN_ADMIN }).catch(() => {});
+  sessionStorage.removeItem("admin_token");
+  TOKEN_ADMIN = "";
+  $("tela-app").style.display = "none";
+  $("tela-login").style.display = "flex";
+  $("senha-admin").value = "";
+});
+
+function carregarProcessos(){
+  const corpo = $("corpo-tabela");
+  corpo.innerHTML = '<tr><td colspan="5" class="msg-vazio">Carregando processos...</td></tr>';
+
+  // Orientação 3.1 de 14/10: token por POST no corpo (nunca em URL)
+  apiAdmin({ acao: "listarProcessosAdmin", token: TOKEN_ADMIN })
+    .then(data => {
+      if (!data || !data.sucesso){
+        if (data && data.expirou){
+          $("btn-sair-admin").click();
+          return;
+        }
+        // Orientação 3.4 de 14/10: mensagem do servidor como TEXTO (anti-XSS)
+        const vazio = document.createElement("td");
+        vazio.colSpan = 5; vazio.className = "msg-vazio";
+        vazio.textContent = (data && data.mensagem) || "Erro ao carregar.";
+        const tr = document.createElement("tr"); tr.appendChild(vazio);
+        corpo.innerHTML = ""; corpo.appendChild(tr);
+        return;
+      }
+      PROCESSOS_CACHE = data.processos || [];
+      renderizarTabela(PROCESSOS_CACHE);
+    })
+    .catch(e => {
+      const vazio = document.createElement("td");
+      vazio.colSpan = 5; vazio.className = "msg-vazio";
+      vazio.textContent = e.message;
+      const tr = document.createElement("tr"); tr.appendChild(vazio);
+      corpo.innerHTML = ""; corpo.appendChild(tr);
+    });
+}
+
+function renderizarTabela(lista){
+  const corpo = $("corpo-tabela");
+  if (!lista.length){
+    corpo.innerHTML = '<tr><td colspan="5" class="msg-vazio">Nenhum cliente encontrado.</td></tr>';
+    return;
+  }
+  corpo.innerHTML = "";
+  lista.forEach(p => {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td class="nome-cli">${escaparHtml(p.nome || "(sem nome)")}</td>
+      <td>${escaparHtml(p.classe || "-")}</td>
+      <td class="cnj">${escaparHtml(p.cnj || "-")}</td>
+      <td>${escaparHtml(p.fase || "-")}</td>
+      <td>${p.prazo ? '<span class="prazo-pill prazo-ok">' + formatarDataBr(p.prazo) + '</span>' : '<span class="prazo-vazio">-</span>'}</td>
+    `;
+    tr.addEventListener("click", () => abrirModalEdicao(p.linha));
+    corpo.appendChild(tr);
+  });
+}
+
+function formatarDataBr(iso){
+  const partes = String(iso).split("-");
+  if (partes.length !== 3) return iso;
+  return partes[2] + "/" + partes[1] + "/" + partes[0];
+}
+
+function escaparHtml(txt){
+  const d = document.createElement("div");
+  d.textContent = txt;
+  return d.innerHTML;
+}
+
+$("busca").addEventListener("input", () => {
+  const termo = $("busca").value.toLowerCase().trim();
+  if (!termo){ renderizarTabela(PROCESSOS_CACHE); return; }
+  renderizarTabela(PROCESSOS_CACHE.filter(p =>
+    (p.nome || "").toLowerCase().includes(termo) ||
+    (p.cnj || "").toLowerCase().includes(termo) ||
+    (p.classe || "").toLowerCase().includes(termo)
+  ));
+});
+
+function limparModal(){
+  ["f-linha","f-nome","f-email","f-classe","f-cnj","f-prazo","f-parte-contraria","f-proxima-acao","f-juizo","f-fase","f-valor"]
+    .forEach(id => $(id).value = "");
+  $("salvo-msg").textContent = "";
+  $("salvo-msg").className = "salvo-msg";
+}
+
+function abrirModalEdicao(linha){
+  limparModal();
+  $("modal-titulo").textContent = "Carregando...";
+  $("overlay-modal").classList.add("aberto");
+
+  apiAdmin({ acao: "buscarProcessoAdmin", token: TOKEN_ADMIN, linha: linha })
+    .then(data => {
+      if (!data || !data.sucesso){
+        if (data && data.expirou){ $("btn-sair-admin").click(); return; }
+        $("modal-titulo").textContent = "Erro";
+        $("salvo-msg").textContent = (data && data.mensagem) || "Não foi possível carregar.";
+        $("salvo-msg").className = "salvo-msg salvo-erro";
+        return;
+      }
+      const p = data.processo;
+      $("modal-titulo").textContent = "Editar Cliente / Processo";
+      $("f-linha").value = p.linha;
+      $("f-nome").value = p.nome || "";
+      $("f-email").value = p.email || "";
+      $("f-classe").value = p.classe || "";
+      $("f-cnj").value = p.cnj || "";
+      $("f-prazo").value = p.prazo || "";
+      $("f-parte-contraria").value = p.parteContraria || "";
+      $("f-proxima-acao").value = p.proximaAcao || "";
+      $("f-juizo").value = p.juizo || "";
+      $("f-fase").value = p.fase || "";
+      $("f-valor").value = p.valor || "";
+    })
+    .catch(e => {
+      $("modal-titulo").textContent = "Erro";
+      $("salvo-msg").textContent = e.message;
+      $("salvo-msg").className = "salvo-msg salvo-erro";
+    });
+}
+
+$("btn-novo-cliente").addEventListener("click", () => {
+  limparModal();
+  $("modal-titulo").textContent = "Novo Cliente";
+  $("overlay-modal").classList.add("aberto");
+});
+
+$("btn-fechar-modal").addEventListener("click", () => {
+  $("overlay-modal").classList.remove("aberto");
+});
+$("overlay-modal").addEventListener("click", e => {
+  if (e.target.id === "overlay-modal") $("overlay-modal").classList.remove("aberto");
+});
+
+$("btn-salvar-modal").addEventListener("click", () => {
+  const nome = $("f-nome").value.trim();
+  const msg = $("salvo-msg");
+  if (!nome){
+    msg.textContent = "O nome do cliente é obrigatório.";
+    msg.className = "salvo-msg salvo-erro";
+    return;
+  }
+
+  const payload = {
+    acao: "salvarProcessoAdmin",
+    token: TOKEN_ADMIN,
+    linha: $("f-linha").value || null,
+    dados: {
+      nome: nome,
+      email: $("f-email").value.trim(),
+      classe: $("f-classe").value.trim(),
+      cnj: $("f-cnj").value.trim(),
+      prazo: $("f-prazo").value,
+      parteContraria: $("f-parte-contraria").value.trim(),
+      proximaAcao: $("f-proxima-acao").value.trim(),
+      juizo: $("f-juizo").value.trim(),
+      fase: $("f-fase").value.trim(),
+      valor: $("f-valor").value.trim()
+    }
+  };
+
+  const btn = $("btn-salvar-modal");
+  btn.disabled = true; btn.textContent = "Salvando...";
+
+  apiAdmin(payload)
+    .then(data => {
+      btn.disabled = false; btn.textContent = "Salvar";
+      if (data && data.sucesso){
+        msg.textContent = "Salvo com sucesso!";
+        msg.className = "salvo-msg salvo-ok";
+        carregarProcessos();
+        setTimeout(() => { $("overlay-modal").classList.remove("aberto"); }, 700);
+      } else {
+        if (data && data.expirou){ $("btn-sair-admin").click(); return; }
+        msg.textContent = (data && data.mensagem) || "Erro ao salvar.";
+        msg.className = "salvo-msg salvo-erro";
+      }
+    })
+    .catch(e => {
+      btn.disabled = false; btn.textContent = "Salvar";
+      msg.textContent = e.message;
+      msg.className = "salvo-msg salvo-erro";
+    });
+});
+
+tentarLoginSalvo();
+</script>
+</body>
+</html>

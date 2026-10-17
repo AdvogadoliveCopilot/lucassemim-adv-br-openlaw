@@ -1,0 +1,18 @@
+# Temporários
+_tmp_*
+*.log
+
+# Editor / sistema
+.vscode/
+Thumbs.db
+.DS_Store
+
+# Credenciais e dados sensíveis (nunca subir)
+*.env
+*.env.*
+credentials*
+secrets*
+node_modules/
+
+# Chave local do site
+api/.claude-config.local.php

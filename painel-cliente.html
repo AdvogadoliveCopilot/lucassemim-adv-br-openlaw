@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área do Cliente | Painel de Inteligência Processual | Dr. Lucas Semim</title>
+    
+    <meta name="description" content="Acesse o status do seu processo. Painel exclusivo para clientes Advocacia Live. Segurança, transparência e canal direto.">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <link rel="icon" href="Favicon-lucassemim.png" type="image/png">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="mapa.css?v=20261008">
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;600&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- TEMA: QUANTUM DASHBOARD --- */
+        :root {
+            --cor-ouro: #d4af37;
+            --cor-fundo: #050505;
+            --cor-neon-azul: #00f3ff;
+            --cor-valid: #2ecc71;
+            --cor-error: #e74c3c;
+            --cor-vidro: rgba(20, 20, 20, 0.85);
+        }
+
+        body {
+            background-color: var(--cor-fundo);
+            color: #fff;
+            font-family: 'Roboto', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            /* Fundo Imersivo */
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.95)), url('img/painel-cliente-adv.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* HEADER TRANSPARENTE */
+        #header-placeholder header {
+            background: rgba(10, 10, 10, 0.8) !important;
+            backdrop-filter: blur(10px) !important;
+        }
+
+        /* MAIN CENTRALIZADO */
+        main {
+            flex: 1;
+            padding: 120px 20px 60px 20px;
+            display: flex; align-items: center; justify-content: center;
+        }
+
+        /* --- 1. TELA DE LOGIN (PORTAL) --- */
+        .login-card {
+            width: 100%; max-width: 450px;
+            background: var(--cor-vidro);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 4px solid var(--cor-neon-azul);
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.9);
+            animation: zoomIn 0.5s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+        /* Scan Effect */
+        .login-card::after {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px;
+            background: var(--cor-neon-azul);
+            box-shadow: 0 0 20px var(--cor-neon-azul);
+            animation: scanDown 3s infinite ease-in-out; opacity: 0.5;
+        }
+        @keyframes scanDown { 0% { top: 0; opacity: 0; } 50% { opacity: 1; } 100% { top: 100%; opacity: 0; } }
+
+        .login-icon { font-size: 3rem; color: var(--cor-ouro); margin-bottom: 15px; }
+        .login-title { font-family: 'Teko'; font-size: 2.5rem; margin: 0; color: #fff; }
+        .login-sub { font-family: 'Fira Code'; font-size: 0.8rem; color: #888; margin-bottom: 30px; letter-spacing: 1px; }
+
+        .input-group-login { position: relative; margin-bottom: 15px; text-align: left; }
+        .input-login {
+            width: 100%; padding: 15px 15px 15px 45px;
+            background: rgba(0,0,0,0.6); border: 1px solid #444;
+            color: var(--cor-ouro); border-radius: 6px;
+            font-family: 'Fira Code'; font-size: 1.1rem;
+            transition: 0.3s;
+        }
+        .input-login:focus { outline: none; border-color: var(--cor-neon-azul); box-shadow: 0 0 15px rgba(0, 243, 255, 0.2); }
+        .input-icon { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #666; }
+
+        .btn-login {
+            width: 100%; padding: 15px;
+            background: linear-gradient(45deg, var(--cor-ouro), #b8860b);
+            color: #000; font-family: 'Teko'; font-size: 1.6rem; font-weight: bold;
+            border: none; border-radius: 6px; cursor: pointer;
+            margin-top: 10px; transition: 0.3s;
+        }
+        .btn-login:hover { transform: scale(1.02); background: #fff; box-shadow: 0 0 20px rgba(255,255,255,0.4); }
+
+        .erro-box {
+            background: rgba(231, 76, 60, 0.1); border: 1px solid var(--cor-error);
+            color: #ffcccc; padding: 15px; border-radius: 6px; margin-top: 20px;
+            font-size: 0.9rem; display: none; animation: shake 0.4s;
+        }
+        @keyframes shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-10px); } 75% { transform: translateX(10px); } }
+
+        /* --- 2. DASHBOARD (ÁREA LOGADA) --- */
+        .dashboard-wrapper {
+            display: none; /* Escondido até logar */
+            width: 100%; max-width: 1100px;
+            animation: fadeIn 0.8s;
+        }
+        
+        .dash-header-card {
+            background: var(--cor-vidro);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-left: 5px solid var(--cor-valid);
+            padding: 30px; border-radius: 12px;
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 40px; flex-wrap: wrap; gap: 20px;
+        }
+        .user-welcome h2 { font-family: 'Teko'; font-size: 2.5rem; margin: 0; color: #fff; }
+        .user-welcome span { color: var(--cor-ouro); }
+        .user-id { font-family: 'Fira Code'; color: #888; font-size: 0.9rem; }
+        .status-indicator {
+            display: flex; align-items: center; gap: 10px;
+            background: rgba(46, 204, 113, 0.1); padding: 8px 20px; border-radius: 50px;
+            border: 1px solid var(--cor-valid); color: var(--cor-valid); font-weight: bold;
+        }
+        .pulse-dot { width: 10px; height: 10px; background: var(--cor-valid); border-radius: 50%; animation: pulse 2s infinite; }
+
+        /* Grid de Ações */
+        .dash-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        
+        .action-card {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px; padding: 30px;
+            text-align: center; transition: 0.3s;
+            position: relative; overflow: hidden;
+        }
+        .action-card:hover { transform: translateY(-5px); border-color: var(--cor-neon-azul); background: rgba(20,20,20,0.9); }
+        
+        .action-icon { font-size: 3rem; margin-bottom: 15px; display: block; color: var(--cor-neon-azul); }
+        .action-title { font-family: 'Teko'; font-size: 1.8rem; color: #fff; margin: 0 0 10px 0; }
+        .action-desc { color: #ccc; font-size: 0.9rem; margin-bottom: 20px; min-height: 40px; }
+        
+        .btn-action {
+            display: inline-block; padding: 10px 25px;
+            border: 1px solid var(--cor-ouro); color: var(--cor-ouro);
+            border-radius: 6px; text-decoration: none; font-weight: bold;
+            font-family: 'Teko'; font-size: 1.2rem; transition: 0.3s; cursor: pointer; background: transparent;
+        }
+        .btn-action:hover { background: var(--cor-ouro); color: #000; }
+
+        /* Modal */
+        .modal-overlay {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.95); z-index: 10000;
+            justify-content: center; align-items: center; backdrop-filter: blur(10px);
+        }
+        .modal-box {
+            background: #111; border: 1px solid var(--cor-ouro); padding: 40px;
+            border-radius: 15px; width: 90%; max-width: 500px; text-align: center; position: relative;
+        }
+        .btn-close { position: absolute; top: 15px; right: 15px; font-size: 1.5rem; cursor: pointer; color: #666; }
+        .btn-close:hover { color: #fff; }
+
+        .tribunal-list a {
+            display: block; padding: 15px; background: #222; color: #fff;
+            margin-bottom: 10px; border-radius: 6px; text-decoration: none;
+            border: 1px solid #333; transition: 0.2s;
+        }
+        .tribunal-list a:hover { border-color: var(--cor-ouro); background: #333; }
+
+        @keyframes zoomIn { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        @media(max-width: 768px) {
+            .dash-header-card { flex-direction: column; text-align: center; }
+            .login-card { padding: 30px 20px; }
+        }
+    </style>
+</head>
+
+<body data-exit-intent="true">
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        
+        <section id="login-area" class="login-card tilt-effect">
+            <div class="login-icon">🛡️</div>
+            <h1 class="login-title">ACESSO AO SISTEMA</h1>
+            <p class="login-sub">// INSIRA SUAS CREDENCIAIS DE CLIENTE</p>
+            
+            <form onsubmit="return false;">
+                <div class="input-group-login">
+                    <span class="input-icon">👤</span>
+                    <input type="text" id="cliente-cpf" class="input-login" placeholder="CPF (Apenas números)" maxlength="14" oninput="mascaraCPF(this)">
+                </div>
+
+                <div class="input-group-login">
+                    <span class="input-icon">🔑</span>
+                    <input type="password" id="cliente-senha" class="input-login" placeholder="Senha de Acesso (Token)">
+                </div>
+                
+                <button class="btn-login" onclick="validarAcessoSeguro()">
+                    ENTRAR NO PAINEL
+                </button>
+            </form>
+            
+            <div id="area-bloqueio" class="erro-box">
+                <p><strong>🚫 Acesso Negado.</strong></p>
+                <p>Credenciais inválidas ou cadastro pendente.</p>
+                <a href="cadastro-cliente.html" style="color: #fff; text-decoration: underline; display: block; margin-top: 10px;">
+                    Solicitar Cadastro / Senha &rarr;
+                </a>
+            </div>
+
+            <p style="margin-top: 20px; font-size: 0.8rem; color: #666;">
+                Esqueceu a senha? <a href="https://wa.me/5531989420094" target="_blank" style="color:#888;">Fale com o Suporte</a>.
+            </p>
+        </section>
+
+        <section id="dashboard-area" class="dashboard-wrapper">
+            
+            <div class="dash-header-card">
+                <div class="dash-user-info">
+                    <h3>BEM-VINDO, <span id="nome-cliente-display">CLIENTE VIP</span></h3>
+                    <span class="user-id">ID DE ACESSO: <span id="user-id-display">...</span></span>
+                </div>
+                <div class="status-indicator">
+                    <div class="pulse-dot"></div> MONITORAMENTO ATIVO
+                </div>
+            </div>
+
+            <div class="dash-grid">
+                
+                <div class="action-card tilt-effect">
+                    <span class="action-icon">⚖️</span>
+                    <h4 class="action-title">CONSULTA OFICIAL</h4>
+                    <p class="action-desc">Acesse a movimentação pública do seu processo direto na fonte (Tribunal).</p>
+                    <button class="btn-action" onclick="abrirModalTribunal()">SELECIONAR TRIBUNAL</button>
+                </div>
+
+                <div class="action-card tilt-effect">
+                    <span class="action-icon">📄</span>
+                    <h4 class="action-title">COPIAR ANDAMENTO</h4>
+                    <p class="action-desc">Solicite o PDF da última decisão ou peça processual via WhatsApp.</p>
+                    <button class="btn-action" onclick="solicitarPDF()">SOLICITAR PDF</button>
+                </div>
+
+                <div class="action-card tilt-effect">
+                    <span class="action-icon">✍️</span>
+                    <h4 class="action-title">REQUERIMENTO</h4>
+                    <p class="action-desc">Envie pedidos específicos (visita, trabalho, saída) para a equipe jurídica.</p>
+                    <button class="btn-action" onclick="abrirModalReq()">NOVO PEDIDO</button>
+                </div>
+
+                <div class="action-card tilt-effect">
+                    <span class="action-icon">💬</span>
+                    <h4 class="action-title">PLANTÃO JURÍDICO</h4>
+                    <p class="action-desc">Dúvida urgente sobre o caso? Fale diretamente com o Dr. Lucas.</p>
+                    <a href="https://wa.me/5531989420094" target="_blank" class="btn-action">CHAMAR AGORA</a>
+                </div>
+
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <button onclick="sairDoPainel()" style="background: none; border: 1px solid #444; color: #666; padding: 10px 30px; border-radius: 50px; cursor: pointer;">SAIR DO SISTEMA</button>
+            </div>
+
+        </section>
+
+    </main>
+
+    <div id="modal-req" class="modal-overlay">
+        <div class="modal-box">
+            <span class="btn-close" onclick="fecharModais()">✕</span>
+            <h3 style="color: #fff; margin-top: 0;">NOVO REQUERIMENTO</h3>
+            <textarea id="texto-req" rows="5" style="width: 100%; background: #000; border: 1px solid #333; color: #fff; padding: 10px; margin: 15px 0;"></textarea>
+            <button class="btn-login" onclick="enviarRequerimento()">ENVIAR PEDIDO</button>
+        </div>
+    </div>
+
+    <div id="modal-tribunal" class="modal-overlay">
+        <div class="modal-box">
+            <span class="btn-close" onclick="fecharModais()">✕</span>
+            <h3 style="color: var(--cor-ouro); margin-top: 0;">SELECIONE O TRIBUNAL</h3>
+            <div class="tribunal-list">
+                <a href="https://pje-consulta-publica.tjmg.jus.br/" target="_blank">TJMG (Justiça Estadual)</a>
+                <a href="https://eproc.trf6.jus.br/eproc/" target="_blank">TRF-6 (Justiça Federal)</a>
+                <a href="https://processo.stj.jus.br/processo/pesquisa/" target="_blank">STJ (Brasília)</a>
+                <a href="#" onclick="naoSeiTribunal()">❓ Não sei onde está meu processo</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/header-elite.js?v=20261008"></script>
+    <script src="js/footer-seo.js?v=20261008"></script>
+    <script src="codelei/clientes-vip.js?v=20261008" defer></script> <script>
+        // Máscara CPF
+        function mascaraCPF(i){
+            let v = i.value.replace(/\D/g,"");
+            v = v.replace(/(\d{3})(\d)/,"$1.$2");
+            v = v.replace(/(\d{3})(\d)/,"$1.$2");
+            v = v.replace(/(\d{3})(\d{1,2})$/,"$1-$2");
+            i.value = v;
+        }
+
+        // Ações do Painel
+        function solicitarPDF() {
+            const id = document.getElementById('user-id-display').innerText;
+            window.open(`https://wa.me/5531989420094?text=📄 Olá, sou o cliente ID: ${id}. Gostaria do PDF do último andamento.`, '_blank');
+        }
+        function abrirModalReq() { document.getElementById('modal-req').style.display = 'flex'; }
+        function abrirModalTribunal() { document.getElementById('modal-tribunal').style.display = 'flex'; }
+        function fecharModais() { document.querySelectorAll('.modal-overlay').forEach(m => m.style.display = 'none'); }
+        
+        function enviarRequerimento() {
+            const id = document.getElementById('user-id-display').innerText;
+            const req = document.getElementById('texto-req').value;
+            if(!req) { alert("Digite o pedido."); return; }
+            window.open(`https://wa.me/5531989420094?text=✍️ *REQUERIMENTO (${id})*:%0A%0A${encodeURIComponent(req)}`, '_blank');
+            fecharModais();
+        }
+        function naoSeiTribunal() {
+            window.open('https://wa.me/5531989420094?text=🔍 Preciso de ajuda para localizar meu processo.', '_blank');
+        }
+        function sairDoPainel() {
+            location.reload();
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,182 @@
+/* =====================================================================
+   LUCAS SEMIM — PÁGINAS LOCAIS (comarcas) · complemento do núcleo V3
+   Depende de css/lucas-core.css (variáveis --lc-*, botões, cards, FAQ).
+   Visual: preto + ouro, Playfair (títulos), Teko (ações), Lato (texto).
+   Sem JavaScript tudo continua visível e navegável.
+   ===================================================================== */
+
+/* ---------- trilha de navegação (igual ao BreadcrumbList do JSON-LD) ---------- */
+.lc-crumbs{margin:0 0 18px;font-size:.82rem;line-height:1.4;color:var(--lc-muted)}
+.lc-crumbs ol{display:flex;flex-wrap:wrap;align-items:center;gap:2px 8px;list-style:none;margin:0;padding:0}
+.lc-crumbs li{display:inline-flex;align-items:center;gap:8px}
+.lc-crumbs li+li::before{content:"\203A";color:var(--lc-gold);font-size:1.05rem;line-height:1}
+.lc-crumbs a{display:inline-block;padding:4px 0;color:#d4cfc2;text-decoration:none;border-bottom:1px solid rgba(212,175,55,.38)}
+.lc-crumbs a:hover{color:#fff;border-bottom-color:var(--lc-gold)}
+.lc-crumbs [aria-current]{color:#ece8dc}
+
+/* ---------- cabeçalho de seção ---------- */
+.lc-head{max-width:46em;margin:0 0 30px}
+.lc-head .lc-sub{margin-bottom:0}
+
+/* ---------- painel de atendimento (herói) ---------- */
+.lc-help{position:relative;overflow:hidden;border-color:var(--lc-line-2);
+  background:radial-gradient(120% 70% at 100% 0,rgba(212,175,55,.2),transparent 60%),linear-gradient(170deg,#141109,#090909 62%)}
+.lc-help .lc-live{margin-bottom:14px}
+.lc-who{display:flex;align-items:center;gap:14px;margin:0 0 14px}
+.lc-who img{flex:0 0 auto;width:68px;height:68px;border-radius:50%;object-fit:cover;border:2px solid var(--lc-gold);box-shadow:0 0 0 4px rgba(212,175,55,.15),0 0 24px rgba(212,175,55,.28)}
+.lc-who b{display:block;font:700 1.12rem/1.2 'Playfair Display',serif;color:#fff}
+.lc-who span{display:block;margin-top:3px;font-size:.8rem;line-height:1.35;color:#c4c0b6}
+.lc-help__q{margin:0 0 12px;font:600 1.9rem/1.02 'Teko',sans-serif;letter-spacing:.7px;text-transform:uppercase;color:#fff;text-wrap:balance}
+.lc-help .lc-cta{margin-bottom:6px}
+.lc-help .lc-central{margin:10px 0 0}
+.lc-help__note{margin:16px 0 0;padding-top:13px;border-top:1px solid rgba(255,255,255,.09);font-size:.78rem;line-height:1.55;color:var(--lc-muted)}
+.lc-help__note i{color:var(--lc-gold);margin-right:6px}
+
+/* provas curtas no herói: quebram em colunas no celular */
+.lc-hero .lc-proof{margin:0 0 6px}
+
+/* ---------- cartões de situação: o link do título cobre o cartão inteiro ---------- */
+.lc-sit{position:relative}
+.lc-sit h3{text-wrap:balance}
+.lc-sit h3 a{color:inherit;text-decoration:none}
+.lc-sit h3 a::after{content:"";position:absolute;inset:0;border-radius:16px}
+.lc-sit h3 a:focus-visible{outline:none}
+.lc-sit:focus-within{border-color:var(--lc-gold-hi);box-shadow:0 0 0 3px rgba(212,175,55,.35)}
+.lc-sit:hover h3 a,.lc-sit:focus-within h3 a{color:var(--lc-gold-hi)}
+.lc-sit__go{display:inline-flex;align-items:center;gap:8px;margin-top:12px;font:800 .78rem/1.2 'Lato',sans-serif;letter-spacing:1.1px;text-transform:uppercase;color:var(--lc-gold-hi)}
+.lc-sit__go i{transition:transform .25s var(--lc-ease)}
+.lc-sit:hover .lc-sit__go i,.lc-sit:focus-within .lc-sit__go i{transform:translateX(5px)}
+
+/* ---------- lista de links em pílulas (outros temas, cidades vizinhas) ---------- */
+.lc-links-t{margin:34px 0 12px;font:600 1.15rem/1.1 'Teko',sans-serif;letter-spacing:2.4px;text-transform:uppercase;color:var(--lc-gold)}
+.lc-links{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.lc-links a{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:9px 16px;border-radius:50px;border:1px solid rgba(255,255,255,.16);
+  background:rgba(255,255,255,.05);color:#ececec;font:700 .85rem/1.2 'Lato',sans-serif;text-decoration:none;
+  transition:border-color .2s,background .2s,color .2s}
+.lc-links a:hover{border-color:var(--lc-gold);background:rgba(212,175,55,.12);color:var(--lc-gold-hi)}
+.lc-links i{color:var(--lc-gold)}
+
+/* ---------- faixa de ação: linha de apoio ---------- */
+.lc-band__s{margin:0 0 14px;max-width:56em;font-size:.93rem;line-height:1.6;color:var(--lc-soft)}
+.lc-band__s b{color:#fff}
+
+/* ---------- linha do tempo: aviso final ---------- */
+.lc-tl-note{margin:26px 0 0;padding:14px 16px;border-left:3px solid var(--lc-gold);border-radius:0 12px 12px 0;background:rgba(255,255,255,.035);font-size:.9rem;line-height:1.6;color:var(--lc-soft)}
+.lc-tl-note b{color:#fff}
+
+/* ---------- regionais de Belo Horizonte ---------- */
+.lc-reg{padding:18px 18px 16px;border:1px solid var(--lc-line);border-radius:14px;background:linear-gradient(170deg,var(--lc-ink-3),var(--lc-ink-2))}
+.lc-reg h3{display:flex;align-items:center;gap:9px;margin:0 0 7px;font:600 1.55rem/1 'Teko',sans-serif;letter-spacing:.9px;text-transform:uppercase;color:#fff}
+.lc-reg h3 i{color:var(--lc-gold);font-size:.95rem}
+.lc-reg p{margin:0;font-size:.92rem;line-height:1.55;color:var(--lc-soft)}
+.lc-reg p b{color:var(--lc-gold-hi);font-weight:700}
+
+/* quadro com o fato local (central de custódia, varas, etc.) */
+.lc-fact{display:grid;gap:12px;margin:26px 0 0;padding:20px 20px 18px;border:1px solid var(--lc-line-2);border-radius:16px;
+  background:linear-gradient(135deg,rgba(212,175,55,.11),rgba(10,10,10,.95) 72%)}
+.lc-fact h3{margin:0;display:flex;align-items:center;gap:10px;font:700 1.22rem/1.25 'Playfair Display',serif;color:#fff}
+.lc-fact h3 i{color:var(--lc-gold);font-size:1.05rem}
+.lc-fact p{margin:0;font-size:.97rem;line-height:1.65;color:var(--lc-soft)}
+.lc-fact p b{color:#fff}
+.lc-fact .lc-src{font-size:.78rem;line-height:1.5;color:var(--lc-muted)}
+
+/* ---------- quem atende ---------- */
+.lc-split{display:grid;gap:34px;align-items:center}
+@media(min-width:992px){.lc-split{grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:60px}}
+.lc-bio .lc-h2{margin-bottom:14px}
+.lc-bio p{margin:0 0 14px;font-size:1.04rem;line-height:1.7;color:var(--lc-soft);max-width:40em}
+.lc-bio p b{color:#fff}
+.lc-bio a.lc-more{display:inline-flex;align-items:center;gap:8px;min-height:44px;font:800 .8rem/1.2 'Lato',sans-serif;letter-spacing:1.1px;text-transform:uppercase;color:var(--lc-gold-hi);text-decoration:none;border-bottom:1px solid rgba(212,175,55,.5)}
+.lc-bio a.lc-more:hover{color:#fff;border-bottom-color:var(--lc-gold)}
+.lc-bio .lc-cred{margin-top:4px;font-size:.84rem;line-height:1.55;color:var(--lc-muted)}
+.lc-bio .lc-cred a{color:#d4cfc2}
+
+/* promessas de atuação (o que esperar) */
+.lc-pledge{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+@media(min-width:640px){.lc-pledge{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:992px){.lc-pledge{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.lc-pledge li{padding:20px 18px 18px;border:1px solid var(--lc-line);border-radius:16px;background:linear-gradient(170deg,var(--lc-ink-3),var(--lc-ink-2))}
+.lc-pledge i{display:grid;place-items:center;width:42px;height:42px;margin-bottom:12px;border-radius:12px;background:rgba(212,175,55,.1);border:1px solid var(--lc-line);color:var(--lc-gold);font-size:1.05rem}
+.lc-pledge b{display:block;margin-bottom:6px;font:700 1.12rem/1.25 'Playfair Display',serif;color:#fff}
+.lc-pledge span{display:block;font-size:.93rem;line-height:1.6;color:var(--lc-soft)}
+
+/* ---------- FAQ da página ---------- */
+.lc-faq{width:min(900px,100% - 32px);margin-inline:auto}
+.lc-faq .lc-head{margin-bottom:22px}
+
+/* ---------- base legal ---------- */
+.lc-base{margin:18px 0 0;font-size:.8rem;line-height:1.65;color:var(--lc-muted);max-width:68em}
+
+/* ---------- ajustes de layout ---------- */
+.lc-col{max-width:860px}
+.lc-h2--sp{margin-top:60px}
+.lc-reg a.lc-more{display:inline-flex;align-items:center;min-height:32px;margin-top:6px;font:800 .74rem/1.2 'Lato',sans-serif;letter-spacing:1px;text-transform:uppercase;color:var(--lc-gold-hi);text-decoration:none;border-bottom:1px solid rgba(212,175,55,.5)}
+.lc-reg a.lc-more:hover{color:#fff;border-bottom-color:var(--lc-gold)}
+
+/* ---------- correções de especificidade do núcleo (.lc-card p) ---------- */
+.lc-card p.lc-card__tag{margin:0 0 6px;font:600 1.05rem/1.1 'Teko',sans-serif;letter-spacing:1.5px;text-transform:uppercase;color:var(--lc-gold-hi)}
+.lc-card p.lc-card__base{margin:auto 0 0;padding-top:12px;border-top:1px solid rgba(255,255,255,.08);font-size:.78rem;line-height:1.45;color:var(--lc-muted)}
+.lc-bio .lc-eyebrow{margin:0 0 14px;max-width:none;font:500 1.05rem/1 'Teko',sans-serif;letter-spacing:3px;color:var(--lc-gold)}
+
+/* ---------- celular: cartões e regionais mais compactos ---------- */
+.lc-grid--reg{display:grid;gap:10px;grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(min-width:640px){.lc-grid--reg{gap:14px;grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:639px){
+  .lc-reg{padding:14px 13px 13px}
+  .lc-reg h3{font-size:1.35rem}
+  .lc-reg p{font-size:.86rem;line-height:1.5}
+  .lc-sit{display:grid;grid-template-columns:44px minmax(0,1fr);column-gap:14px;align-content:start;padding:18px 16px 16px}
+  .lc-sit .lc-card__ic{grid-row:1 / span 5;width:44px;height:44px;margin:0}
+  .lc-sit>:not(.lc-card__ic){grid-column:2}
+  .lc-sit h3{font-size:1.15rem}
+}
+
+/* ---------- como funciona + o que esperar: duas colunas no desktop ---------- */
+.lc-duo{display:grid;gap:48px}
+@media(min-width:992px){.lc-duo{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:start}.lc-duo .lc-pledge{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.lc-h2--duo{margin:0 0 22px}
+@media(max-width:991px){.lc-h2--duo{margin-top:12px}}
+@media(min-width:992px){.lc-duo>div+div{padding-top:33px}}
+
+/* ---------- Método Live: quatro frentes (L · I · V · E) ---------- */
+.lc-fases{list-style:none;margin:0;padding:0;display:grid;gap:12px;counter-reset:fase}
+@media(min-width:640px){.lc-fases{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}}
+@media(min-width:992px){.lc-fases{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.lc-fases li{display:grid;grid-template-columns:58px minmax(0,1fr);column-gap:16px;align-items:start;padding:20px 18px;border:1px solid var(--lc-line);border-radius:16px;
+  background:linear-gradient(170deg,var(--lc-ink-3),var(--lc-ink-2))}
+.lc-fase__l{display:grid;place-items:center;width:58px;height:58px;border-radius:14px;border:1.5px solid var(--lc-gold);background:radial-gradient(circle at 30% 25%,#2c230a,#0b0b0b 72%);
+  font:600 2.5rem/1 'Teko',sans-serif;color:var(--lc-gold-hi);box-shadow:0 0 0 4px rgba(212,175,55,.08)}
+.lc-fases h3{margin:2px 0 6px;font:700 1.15rem/1.25 'Playfair Display',serif;color:#fff}
+.lc-fases p{margin:0;font-size:.94rem;line-height:1.6;color:var(--lc-soft)}
+@media(min-width:992px){
+  .lc-fases li{display:block;padding:22px 20px}
+  .lc-fase__l{margin-bottom:14px}
+}
+
+/* ---------- Lote F: grade da seção "Onde a defesa atua" conforme o número de cartões ---------- */
+.lc-grid--reg.lc-n1{grid-template-columns:minmax(0,1fr)}
+@media(max-width:639px){
+  .lc-grid--reg[class*="lc-n"]{grid-template-columns:minmax(0,1fr)}
+  .lc-grid--reg[class*="lc-n"] .lc-reg{padding:16px 16px 15px}
+  .lc-grid--reg[class*="lc-n"] .lc-reg h3{font-size:1.5rem}
+  .lc-grid--reg[class*="lc-n"] .lc-reg p{font-size:.92rem;line-height:1.6}
+}
+@media(min-width:640px){
+  .lc-grid--reg.lc-n2,.lc-grid--reg.lc-n4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .lc-grid--reg.lc-n5{grid-template-columns:repeat(6,minmax(0,1fr))}
+  .lc-grid--reg.lc-n5>.lc-reg{grid-column:span 2}
+  .lc-grid--reg.lc-n5>.lc-reg:nth-child(n+4){grid-column:span 3}
+}
+.lc-fact .lc-src a{color:inherit;text-decoration:underline;text-underline-offset:2px;text-decoration-color:rgba(212,175,55,.55)}
+.lc-fact .lc-src a:hover{color:var(--lc-gold-hi)}
+
+/* ---------- Lote F: faixa "como funciona" compacta dentro de "Quem atende" ---------- */
+.lc-mini-wrap{margin-top:46px}
+.lc-mini__t{margin:0 0 16px;font:600 1.55rem/1.1 'Teko',sans-serif;letter-spacing:1.2px;text-transform:uppercase;color:var(--lc-gold-hi)}
+.lc-mini{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+@media(min-width:768px){.lc-mini{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}}
+.lc-mini li{display:grid;grid-template-columns:44px minmax(0,1fr);column-gap:14px;align-items:start;padding:18px 18px 16px;border:1px solid var(--lc-line);border-radius:16px;
+  background:linear-gradient(170deg,var(--lc-ink-3),var(--lc-ink-2))}
+.lc-mini__i{display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:rgba(212,175,55,.1);border:1px solid var(--lc-line);color:var(--lc-gold);font-size:1.05rem}
+.lc-mini strong{display:block;margin:2px 0 4px;font:700 1.08rem/1.25 'Playfair Display',serif;color:#fff}
+.lc-mini p{margin:0;font-size:.92rem;line-height:1.55;color:var(--lc-soft)}

@@ -1,0 +1,58 @@
+﻿Anistia Disfarçada? Nova Lei da Dosimetria pode reduzir penas do 8 de Janeiro em até 60% na próxima semana
+
+https://lucassemim.adv.br/news/nova-lei-dosimetria-8-janeiro-reducao-pena.html
+
+
+ O Relógio está correndo em Brasília
+Enquanto a maioria dos brasileiros retoma a rotina após as festas de fim de ano, os corredores do Palácio do Planalto vivem dias de tensão máxima. O motivo tem nome e número: o Projeto de Lei 2.162/2023, aprovado pelo Senado em uma votação histórica no dia 17 de dezembro de 2025.
+A proposta, que altera profundamente as regras de cálculo de pena para crimes contra o Estado Democrático de Direito, foi remetida imediatamente para sanção presidencial. E aqui a matemática joga contra o silêncio: o Presidente da República tem o prazo constitucional de 15 dias úteis para vetar ou sancionar o texto.
+A Data Fatal: Esse prazo se encerra na próxima segunda-feira, 12 de janeiro de 2026.
+O cenário jurídico é de "tudo ou nada". Se o Presidente não se manifestar até o fim do dia 12, ocorre o fenômeno da Sanção Tácita. Isso significa que o silêncio do Executivo é interpretado como concordância, e o projeto vira Lei automaticamente, devendo ser promulgado pelo Presidente do Senado.
+Líderes do governo no Congresso, como o senador Randolfe Rodrigues, já sinalizaram que a tendência é de veto total, sob o argumento de que a lei geraria impunidade. Porém, nos bastidores, a pressão política é imensa. Se houver veto, a batalha volta para o Congresso, que pode derrubá-lo. Se houver sanção (expressa ou tácita), a liberdade de centenas de condenados do 8 de janeiro pode ser questão de dias.
+Para entender por que esse projeto é tão poderoso, precisamos sair da política e entrar na técnica penal. Não se trata de uma "anistia" escrita com todas as letras, mas de uma mudança inteligente na calculadora da pena.
+
+
+ O Fim do "Concurso Material"?
+Para entender como uma pena de 17 anos pode virar 6 anos da noite para o dia, precisamos olhar para a calculadora do Juiz. A discussão central do PL 2.162/2023 gira em torno de como somamos os crimes cometidos em um mesmo contexto.
+O Cenário Atual (A Mão Pesada do STF)
+Nas condenações do 8 de janeiro, o Supremo Tribunal Federal aplicou a regra do Concurso Material (Art. 69 do Código Penal). Nessa modalidade, o tribunal entende que cada ação (quebrar uma cadeira, invadir o prédio, postar vídeo, pedir intervenção) é um crime autônomo e independente.
+* A Conta: Pena do Crime A + Pena do Crime B + Pena do Crime C + Pena do Crime D.
+* Resultado: Somando Dano Qualificado, Incêndio, Abolição Violenta do Estado Democrático de Direito e Golpe de Estado, as penas ultrapassaram os 14 a 17 anos de reclusão.
+* Consequência: Com pena acima de 8 anos, o regime inicial é obrigatoriamente o FECHADO.
+A Proposta do PL 2.162 (A Unificação das Penas)
+O "pulo do gato" do projeto é obrigar a Justiça a reconhecer que, se os crimes foram cometidos no mesmo contexto fático e temporal, deve-se aplicar uma regra de Unificação de Penas (similar ao Crime Continuado ou Concurso Formal).
+Em vez de somar tudo, aplica-se o sistema da Exasperação:
+1. Pega-se apenas a pena do crime mais grave (ex: Golpe de Estado).
+2. Aumenta-se essa pena em uma fração (geralmente de 1/6 a 2/3), ignorando as penas dos crimes menores.
+A Nova Matemática: De 17 para 6 Anos?
+Vamos simular o impacto prático dessa mudança técnica:
+* Como é hoje: 5 anos (Golpe) + 4 anos (Abolição) + 3 anos (Dano) + etc = 17 Anos (Regime Fechado).
+* Com a Nova Lei: 5 anos (Golpe - crime mais grave) + aumento de 1/2 (pela quantidade de crimes) = 7,5 Anos.
+O Impacto na Liberdade (Regime Semiaberto) Aqui está o ouro para a defesa. Se a pena cai para baixo de 8 anos (como no exemplo de 7,5 anos) e o réu não é reincidente, ele tem direito ao Regime Semiaberto.
+Ou seja, se a lei for sancionada dia 12/01, a base legal que mantém centenas de pessoas no regime fechado deixa de existir. O pedido de Revisão Criminal deve ser imediato para readequar o regime e expedir o alvará de transferência ou soltura (caso já tenha tempo cumprido).
+
+
+ Uma Lei "Sob Medida"?
+A aprovação do PL 2.162/2023 não gerou apenas ruído político, mas uma verdadeira batalha doutrinária. A grande questão que chegará (novamente) ao STF é: uma lei pode ser criada com o objetivo explícito de beneficiar um grupo determinado de réus?
+Para você entender o que está em jogo, separamos os dois principais argumentos que vão dominar os jornais na próxima semana:
+O Argumento da Inconstitucionalidade (A Lei Casuística)
+Juristas contrários ao projeto, incluindo membros do Ministério Público e associações de magistrados, argumentam que a norma padece de um vício insanável: o Casuísmo.
+* O Princípio da Impessoalidade: Pela Constituição, as leis devem ser abstratas e genéricas (valer para todos, sem distinção). Criar uma regra processual "sob medida" apenas para aliviar a situação dos condenados pelos atos de 8 de janeiro feriria o princípio republicano.
+* Violação da Separação de Poderes: Para essa corrente, o Legislativo estaria tentando anular decisões transitadas em julgado do STF por via oblíqua, funcionando como uma "instância revisora" indevida.
+O Argumento da Proporcionalidade (A Correção de Excessos)
+Por outro lado, a defesa do projeto (e dos réus) sustenta que a lei é necessária para restaurar a Razoabilidade das punições.
+* Disparidade Penal: O argumento central é que penas de 17 anos para réus primários, sem antecedentes violentos diretos (nos casos de incitadores), equiparam-se ou superam penas de homicídio qualificado. O PL, portanto, viria para corrigir um "excesso punitivo" do Estado.
+* Competência Legislativa: Defensores alegam que cabe ao Congresso Nacional, e não ao Judiciário, definir a política criminal do país. Se o Congresso entende que a regra do Concurso Material é injusta para crimes conexos, ele tem legitimidade democrática para alterá-la.
+O "Ponto Cego": A Retroatividade para Todos
+Independente da motivação política, há um fato jurídico inegável: se sancionada, a lei não virá com o nome "Lei do 8 de Janeiro". Ela alterará o Código Penal ou o Código de Processo Penal de forma geral.
+Pelo princípio da Retroatividade da Lei Penal Benéfica (Novatio Legis in Mellius), ela não se limitará aos casos políticos. Qualquer réu no Brasil, condenado por múltiplos crimes no mesmo contexto (ex: um furto seguido de dano e invasão), poderá pedir a revisão da pena usando a nova matemática. O impacto no sistema carcerário pode ser muito maior do que se imagina.
+ Segunda-feira será decisiva
+O dia 12 de janeiro de 2026 não é apenas mais uma data no calendário. É o marco que definirá se centenas de pessoas continuarão cumprindo penas de quase duas décadas ou se terão o direito de voltar ao convívio familiar muito antes do esperado.
+Seja pela Sanção Tácita (o silêncio do Presidente) ou pela derrubada de um eventual Veto no Congresso, a possibilidade de o PL 2.162/2023 virar lei é real e iminente.
+Se isso acontecer, a porta da cela se abre não por "favor político", mas pela aplicação estrita da Retroatividade da Lei Penal Benéfica. A nova matemática da pena terá que ser aplicada imediatamente a todos os processos, inclusive os já transitados em julgado.
+Mas lembre-se: o Judiciário não age sozinho. O Juiz da Execução Penal não vai recalcular a pena do seu familiar de ofício no dia seguinte. Será necessário peticionar, demonstrar o novo cálculo e exigir a progressão de regime.
+O Plano de Ação:
+1. Fique Atento: Monitore o Diário Oficial na próxima segunda-feira (12/01) e terça-feira (13/01).
+2. Antecipe-se: Se você tem um familiar condenado por múltiplos crimes no mesmo contexto (seja do 8 de janeiro ou crimes comuns), traga o processo para análise. Já estamos preparando as minutas de Revisão Criminal.
+3. Agilidade: Se a lei passar, haverá uma corrida aos tribunais. Quem pedir primeiro, tende a ser analisado primeiro.
+A lei pode mudar na semana que vem. Sua defesa precisa estar pronta hoje.

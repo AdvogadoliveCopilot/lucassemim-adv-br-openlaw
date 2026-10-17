@@ -1,0 +1,27 @@
+{
+    "acesso_seguro": {
+        "senha": "123",  <-- AQUI VOCÊ DEFINE A SENHA DELE
+        "token_id": "VIP-001"
+    },
+    "cliente": {
+        "nome": "cliente - teste",
+        "cpf": "123.456.789-00",
+        "processo": "5002345-12.2025.8.13.0024",
+        "vara": "II Tribunal do Júri - BH",
+        "juiz": "Dr. Magistrado Exemplo"
+    },
+    "status_atual": {
+        "fase": "Instrução e Julgamento",
+        "cor": "amarelo", 
+        "mensagem": "Aguardando designação de audiência."
+    },
+    "timeline": [
+        {
+            "data": "20/11/2025",
+            "titulo": "Denúncia Recebida",
+            "tipo": "Decisão",
+            "arquivo": "decisao.pdf",
+            "concluido": true
+        }
+    ]
+}

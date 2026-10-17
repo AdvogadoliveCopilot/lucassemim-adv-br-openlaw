@@ -1,0 +1,3 @@
+Lote G - impressao digital (SHA-256, 16 primeiros caracteres) do arquivo que sobe ao servidor
+e705061285405963     68831 B  index.html
+d0dce7010d5c30af     58320 B  _ferramentas\backups\index-antes-lote-g-20261010.html  (so referencia: a home de antes)

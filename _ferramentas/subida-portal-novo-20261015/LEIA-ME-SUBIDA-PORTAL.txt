@@ -1,0 +1,24 @@
+LIGAR O SITE AO PORTAL NOVO — pacote pronto em 15/10/2026
+NADA DISTO FOI ENVIADO AO SERVIDOR. Só sobe com o seu OK.
+
+O que muda no site (só 2 arquivos)
+  js\ls-api-config.js         vai para /public_html/js/      (o de 12/10 + a linha apiUrlPortal com o endereço da "Portal API")
+  portal\painel-cliente.html  vai para /public_html/portal/  (a página do cliente: usa apiUrlPortal; sem ela, usa a API antiga)
+
+Conferência dos arquivos (SHA-256)
+  js\ls-api-config.js         ae6c5e0f95a9ca9a8b585a4f69be8d3309c5dcb3d51040526dda4d9afd45cddb   (1.302 bytes)
+  portal\painel-cliente.html  c8ddec57015cedf7254ccd2525255dbf18153cc070c9342898c00c4c739aadc2   (40.384 bytes)
+
+Ordem (3 minutos)
+  1. Backup: do servidor para _ferramentas\backups\servidor-antes-portal-novo-20261015\ , os dois arquivos atuais
+     (/public_html/js/ls-api-config.js e /public_html/portal/painel-cliente.html).
+  2. Subir primeiro js\ls-api-config.js, depois portal\painel-cliente.html (o config tem o carimbo ?v=20261015 na página).
+  3. Abrir lucassemim.adv.br/portal/painel-cliente.html com Ctrl+F5 e entrar com o acesso de teste
+     (Central de Comandos > Acessos > Acesso de teste; e-mail e senha aparecem uma vez).
+
+Voltar atrás
+  Reenvie os dois arquivos do backup do passo 1. A página antiga volta na hora.
+
+Observação
+  Pelo que você disse em 12/10, ainda não havia cliente real usando o portal; o login de hoje no site depende de uma API
+  que não tem o portal V3 instalado. Se já houver cliente usando o portal antigo, avise antes de subir.

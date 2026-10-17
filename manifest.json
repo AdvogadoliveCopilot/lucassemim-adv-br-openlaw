@@ -1,0 +1,182 @@
+{
+  "$comment": "Semim & Associados PWA Manifest V3 — lucassemim.adv.br",
+  "name": "Dr. Lucas Semim | Advocacia Criminal 24h",
+  "short_name": "LS Criminal",
+  "description": "Plantão criminal 24h em todo o Brasil. Defesa em flagrante, Habeas Corpus, Audiência de Custódia e Sala de Guerra Digital. Dr. Lucas Semim OAB/MG 222.539.",
+  "id": "/",
+  "start_url": "/emergencia.html",
+  "scope": "/",
+  "lang": "pt-BR",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "browser"],
+  "background_color": "#050505",
+  "theme_color": "#8b0000",
+  "orientation": "portrait-primary",
+  "categories": ["legal", "utilities", "business"],
+  "icons": [
+    {
+      "src": "/img/icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/img/icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/img/icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/img/icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/img/icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/img/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/img/icons/icon-192x192-maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/img/icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/img/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/img/icons/icon-512x512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/Favicon-lucassemim.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/img/screenshots/screenshot-mobile-1.jpg",
+      "sizes": "390x844",
+      "type": "image/jpeg",
+      "form_factor": "narrow",
+      "label": "Plantão 24h — Acesse Dr. Lucas imediatamente"
+    },
+    {
+      "src": "/img/screenshots/screenshot-mobile-2.jpg",
+      "sizes": "390x844",
+      "type": "image/jpeg",
+      "form_factor": "narrow",
+      "label": "Sala de Emergência Digital — Videoconferência Imediata"
+    },
+    {
+      "src": "/img/screenshots/screenshot-desktop-1.jpg",
+      "sizes": "1280x800",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "Portal de Advocacia Criminal — Dr. Lucas Semim OAB/MG 222.539"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "🚨 EMERGÊNCIA — Chamar Dr. Lucas",
+      "short_name": "Emergência",
+      "description": "Acesse a Sala de Guerra Digital imediatamente",
+      "url": "/emergencia.html?source=pwa_shortcut",
+      "icons": [
+        {
+          "src": "/img/icons/shortcut-emergencia.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "💬 WhatsApp Plantão 24h",
+      "short_name": "WhatsApp",
+      "description": "Fale com Dr. Lucas pelo WhatsApp agora",
+      "url": "/emergencia.html?action=whatsapp&source=pwa_shortcut",
+      "icons": [
+        {
+          "src": "/img/icons/shortcut-whatsapp.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "📅 Agendar Consulta",
+      "short_name": "Agendar",
+      "description": "Agende uma consulta com Dr. Lucas Semim",
+      "url": "/emergencia.html?action=agendar&source=pwa_shortcut",
+      "icons": [
+        {
+          "src": "/img/icons/shortcut-agendar.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "⚖️ Soluções Criminais",
+      "short_name": "Soluções",
+      "description": "Ver todos os serviços de defesa criminal",
+      "url": "/solucoes.html?source=pwa_shortcut",
+      "icons": [
+        {
+          "src": "/img/icons/shortcut-solucoes.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "share_target": {
+    "action": "/emergencia.html",
+    "method": "GET",
+    "enctype": "application/x-www-form-urlencoded",
+    "params": {
+      "title": "shared_title",
+      "text":  "shared_text",
+      "url":   "shared_url"
+    }
+  },
+  "protocol_handlers": [
+    {
+      "protocol": "tel",
+      "url": "/emergencia.html?tel=%s"
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  }
+}

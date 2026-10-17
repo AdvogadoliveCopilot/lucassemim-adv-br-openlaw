@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Anjo Judicial | Intervenção em Tempo Real</title>
+    
+    <link rel="canonical" href="https://lucassemim.adv.br/projeto-anjo.html">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&family=Teko:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root { --neon-green: #2ecc71; --gold: #d4af37; --bg-dark: #050505; --danger: #e74c3c; }
+        body { background-color: var(--bg-dark); color: #fff; font-family: 'Fira Code', monospace; overflow-x: hidden; }
+        h1, h2, h3, h4 { font-family: 'Teko', sans-serif; letter-spacing: 1px; text-transform: uppercase; }
+        
+        /* HEADER TÁTICO & BOTAO DE LOGIN */
+        .top-bar { border-bottom: 1px solid #333; padding: 15px 0; background: #0a0a0a; display: flex; justify-content: space-between; align-items: center;}
+        
+        /* Novo Botão de Login Premium */
+        .btn-login-anjo { 
+            background: transparent; 
+            color: var(--gold); 
+            text-decoration: none; 
+            font-family: 'Teko'; 
+            font-size: 1.5rem; 
+            border: 1px solid var(--gold);
+            padding: 5px 20px;
+            border-radius: 4px;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+        }
+        .btn-login-anjo:hover { background: var(--gold); color: #000; box-shadow: 0 0 15px rgba(212, 175, 55, 0.5); }
+
+        /* SEÇÃO MISSÃO/VISÃO (BUMPER) */
+        .identity-card { background: rgba(20,20,20,0.8); border: 1px solid #333; padding: 20px; border-radius: 4px; margin-bottom: 30px; }
+        .identity-title { color: var(--gold); font-weight: bold; font-size: 1.2rem; display: block; margin-bottom: 5px; }
+
+        /* RADAR DE SELEÇÃO (ESTILO UBER) */
+        .dispatch-unit { background: #0a0a0a; border: 1px solid var(--neon-green); padding: 20px; border-radius: 8px; box-shadow: 0 0 20px rgba(46, 204, 113, 0.1); margin-bottom: 40px; }
+        .unit-selector { border-bottom: 1px solid #222; padding: 15px 0; transition: 0.3s; cursor: pointer; }
+        .unit-selector:hover { background: rgba(46, 204, 113, 0.05); padding-left: 10px; }
+        .unit-status { color: var(--neon-green); font-size: 0.8rem; font-weight: bold; }
+
+        /* TERMINAL DE DOSSIÊ */
+        .terminal-box { background: #000; border: 1px solid #333; border-left: 4px solid var(--gold); padding: 25px; font-size: 0.9rem; line-height: 1.5; color: #ccc; }
+        .typewriter { overflow: hidden; white-space: pre-wrap; }
+
+        /* BOTÃO DE ACIONAMENTO */
+        .btn-dispatch { background: var(--gold); color: #000; font-family: 'Teko'; font-size: 2rem; border: none; padding: 15px; width: 100%; border-radius: 4px; transition: 0.3s; }
+        .btn-dispatch:hover { background: #fff; box-shadow: 0 0 30px var(--gold); }
+        
+        .fase { display: none; }
+        .fase.active { display: block; animation: fadeIn 0.5s forwards; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .form-hacker { background: #111; border: 1px solid #444; color: var(--gold); padding: 12px; width: 100%; border-radius: 4px; font-family: 'Fira Code'; }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar px-4">
+        <a href="portal-investidor" class="btn-login-anjo"><i class="fas fa-fingerprint me-2"></i> LOGIN DO INVESTIDOR</a>
+        <span class="text-secondary small font-teko fs-5 d-none d-md-block">SISTEMA DE DESPACHO JURÍDICO V1.0</span>
+    </div>
+
+    <div class="container py-5">
+        <div class="text-center mb-5 animate__animated animate__fadeIn">
+            <h1 style="font-size: 4rem; margin-bottom: 0;">PROJETO <span style="color: var(--gold);">ANJO</span></h1>
+            <p class="text-secondary">Onde a Justiça Falha, o Guardião Intervém.</p>
+            
+            <div class="mt-3">
+                <a href="portal-investidor" class="text-gold" style="text-decoration: underline; font-size: 0.9rem;">
+                    <i class="fas fa-lock"></i> Já é um Sócio-Anjo? Acesse seu painel de processos aqui.
+                </a>
+            </div>
+        </div>
+
+        <div class="row g-3 mb-5 text-center">
+            <div class="col-md-4">
+                <div class="identity-card">
+                    <span class="identity-title"><i class="fas fa-bullseye"></i> MISSÃO</span>
+                    <small>Anular flagrantes ilegais e garantir defesa técnica imediata para quem não tem voz.</small>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="identity-card">
+                    <span class="identity-title"><i class="fas fa-eye"></i> VISÃO</span>
+                    <small>Tornar-se o maior radar de proteção contra o esmagamento do Estado no sistema penal.</small>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="identity-card">
+                    <span class="identity-title"><i class="fas fa-balance-scale"></i> VALORES</span>
+                    <small>Transparência radical, Agilidade tática e Solidariedade cirúrgica.</small>
+                </div>
+            </div>
+        </div>
+
+        <div id="fase-1" class="fase active">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="dispatch-unit">
+                        <h3 class="mb-4 text-white"><i class="fas fa-map-marked-alt text-gold me-2"></i> SELECIONE O ALVO DE INTERVENÇÃO</h3>
+                        
+                        <div class="unit-selector" onclick="iniciarDossie('SABARÁ/MG', 'Delegacia de Plantão', 'R$ 250,00')">
+                            <div class="d-flex justify-content-between">
+                                <strong>[ UNIT-01 ] PLANTÃO SABARÁ</strong>
+                                <span class="unit-status">● DISPONÍVEL</span>
+                            </div>
+                            <small class="text-secondary">Distância: Intervenção em 20min. Foco: Relaxamento de Flagrante.</small>
+                        </div>
+
+                        <div class="unit-selector" onclick="iniciarDossie('BELO HORIZONTE', 'CEFLAN 1 / 2', 'R$ 500,00')">
+                            <div class="d-flex justify-content-between">
+                                <strong>[ UNIT-02 ] PLANTÃO BH</strong>
+                                <span class="unit-status text-warning">● ALTA DEMANDA</span>
+                            </div>
+                            <small class="text-secondary">Foco: Audiência de Custódia e Habeas Corpus de Urgência.</small>
+                        </div>
+
+                        <div class="unit-selector" onclick="alert('Funcionalidade de Reserva Central em manutenção.')">
+                            <div class="d-flex justify-content-between">
+                                <strong>[ UNIT-03 ] FUNDO DE FIANÇA</strong>
+                                <span class="unit-status text-info">● SQUAD FUNDING</span>
+                            </div>
+                            <small class="text-secondary">Aportes para Alvarás de Soltura retidos por falta de pagamento.</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="terminal-box" id="terminal-display">
+                        <div class="typewriter" id="typewriter">
+                            > SISTEMA AGUARDANDO SELEÇÃO DE UNIDADE...<br>
+                            > AGUARDANDO COMANDO DO GUARDIÃO...
+                        </div>
+                    </div>
+                    
+                    <div id="area-acao" class="mt-4" style="display: none;">
+                        <button class="btn-dispatch" id="btn-confirmar-missao">
+                            ACIONAR ADVOGADO AGORA <i class="fas fa-bolt"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="fase-2" class="fase">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="identity-card p-5" style="border-top: 4px solid var(--gold);">
+                        <h3 class="text-center text-white mb-4">CONFIRMAR DESPACHO</h3>
+                        <form id="form-missao">
+                            <input type="hidden" id="input-missao" name="nivel_ajuda">
+                            <input type="hidden" id="input-local" name="local">
+                            <input type="hidden" id="input-valor" name="valor">
+                            
+                            <label class="text-gold small mb-2">CODINOME DO ANJO:</label>
+                            <input type="text" name="nome" class="form-hacker mb-3" placeholder="Ex: Guardião Alpha" required>
+                            
+                            <label class="text-gold small mb-2">WHATSAPP (PARA RELATÓRIO):</label>
+                            <input type="tel" name="whatsapp" class="form-hacker mb-4" placeholder="31 9...." required>
+                            
+                            <button type="submit" class="btn-dispatch fs-3">ENVIAR TROPA <i class="fas fa-shield-alt"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyq2ieHuEK6nnpWYa3bibtOEZsP53rw2q41Jx27QfTYr8gTrFh_bZ36mh6NN1CXIH6O/exec";
+
+        function iniciarDossie(local, missao, valor) {
+            const display = document.getElementById('typewriter');
+            const areaAcao = document.getElementById('area-acao');
+            
+            document.getElementById('input-missao').value = missao;
+            document.getElementById('input-local').value = local;
+            document.getElementById('input-valor').value = valor;
+
+            display.innerHTML = `> UNIDADE SELECIONADA: ${local}<br>> MISSÃO: ${missao}<br>> CUSTO DE DILIGÊNCIA: ${valor}<br><br>> STATUS: Advogado de prontidão aguardando autorização para deslocamento imediato...`;
+            areaAcao.style.display = 'block';
+
+            document.getElementById('btn-confirmar-missao').onclick = () => {
+                document.getElementById('fase-1').classList.remove('active');
+                document.getElementById('fase-2').classList.add('active');
+            };
+        }
+
+        document.getElementById('form-missao').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('button');
+            btn.innerHTML = "ACIONANDO SIRENES...";
+            btn.disabled = true;
+
+            const params = new URLSearchParams(new FormData(this));
+
+            fetch(SCRIPT_URL, { method: 'POST', body: params })
+            .then(res => res.json())
+            .then(data => {
+                const nome = this.nome.value;
+                const textoZap = `🛡️ *MISSÃO ANJO ACIONADA!*\n\nOlá Dr. Lucas! Acabo de acionar um despacho.\n\n*Anjo:* ${nome}\n*Destino:* ${document.getElementById('input-local').value}\n\nEnvie o PIX para deslocamento imediato!`;
+                
+                alert("COMANDO ENVIADO! O advogado foi notificado. Você será levado ao WhatsApp para confirmar o despacho.");
+                window.location.href = `https://wa.me/5531989420094?text=${encodeURIComponent(textoZap)}`;
+            })
+            .catch(() => {
+                alert("Erro no rádio! Chame o Dr. Lucas diretamente no WhatsApp.");
+                window.location.href = "https://wa.me/5531989420094";
+            });
+        });
+    </script>
+
+    <script src="js/anjo-game-logic.js?v=20261008"></script>
+<script>
+(function() {
+    'use strict';
+    // ─── REGISTRAR SERVICE WORKER ───
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/sw.js', { scope: '/' })
+                .then(reg => {
+                    console.log('✅ [PWA] Service Worker registrado:', reg.scope);
+                    reg.addEventListener('updatefound', () => {
+                        const newSW = reg.installing;
+                        newSW.addEventListener('statechange', () => {
+                            if (newSW.state === 'installed' && navigator.serviceWorker.controller) {
+                                mostrarBannerAtualizacao(newSW);
+                            }
+                        });
+                    });
+                })
+                .catch(err => console.warn('⚠️ [PWA] Erro no registro do SW:', err));
+
+            let refreshing = false;
+            navigator.serviceWorker.addEventListener('controllerchange', () => {
+                if (!refreshing) {
+                    refreshing = true;
+                    window.location.reload();
+                }
+            });
+        });
+    }
+
+    // ─── BOTÃO DE INSTALAÇÃO DO APP ───
+    let deferredPrompt = null;
+    window.addEventListener('beforeinstallprompt', e => {
+        e.preventDefault();
+        deferredPrompt = e;
+        const btn = document.getElementById('btn-instalar-app');
+        if (btn) {
+            btn.style.display = 'flex';
+            btn.addEventListener('click', async () => {
+                if (!deferredPrompt) return;
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                if (outcome === 'accepted') {
+                    btn.style.display = 'none';
+                }
+                deferredPrompt = null;
+            });
+        }
+    });
+
+    window.addEventListener('appinstalled', () => {
+        const btn = document.getElementById('btn-instalar-app');
+        if (btn) btn.style.display = 'none';
+        deferredPrompt = null;
+    });
+
+    // ─── BANNER DE ATUALIZAÇÃO ───
+    function mostrarBannerAtualizacao(newSW) {
+        const banner = document.createElement('div');
+        banner.id = 'pwa-update-banner';
+        banner.style.cssText = `
+            position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+            background: #0a0a0a; border: 1px solid rgba(212,175,55,0.3);
+            color: #f0ede8; padding: 14px 24px; border-radius: 10px; z-index: 99999;
+            display: flex; align-items: center; gap: 16px; font-family: 'Teko', sans-serif;
+            font-size: 1.2rem; letter-spacing: 1px; box-shadow: 0 8px 30px rgba(0,0,0,0.8);
+            max-width: 90vw; text-align: center;
+        `;
+        banner.innerHTML = `
+            <span>⚡ Nova versão disponível</span>
+            <button onclick="this.closest('#pwa-update-banner').remove(); document.querySelector('[data-sw-update]')?.postMessage({type:'SKIP_WAITING'});" style="background: #d4af37; color: #000; border: none; padding: 8px 18px; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 1rem;">
+                ATUALIZAR
+            </button>
+        `;
+        banner.querySelector('button').setAttribute('data-sw-update', '');
+        document.body.appendChild(banner);
+        setTimeout(() => banner.remove(), 10000);
+    }
+})();
+</script>
+</body>
+</html>

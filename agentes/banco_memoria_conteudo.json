@@ -1,0 +1,81 @@
+{
+  "versao": "2.0",
+  "criado_em": "2026-10-04T21:57:48.867868",
+  "artigos_publicados": [
+    {
+      "id": "audiencia-custodia-bh-prazos",
+      "slug": "audiencia-de-custodia-prazos-direitos-liberdade-provisoria-bh",
+      "titulo": "Audiência de Custódia em Belo Horizonte: Prazos, Direitos e Como Obter a Liberdade",
+      "url": "https://lucassemim.adv.br/defesa-criminal/audiencia-de-custodia-prazos-direitos-liberdade-provisoria-bh.html",
+      "categoria": "Flagrante e Custódia",
+      "palavras_chave": [
+        "audiencia de custodia bh",
+        "ceflan belo horizonte",
+        "liberdade provisoria sem fianca",
+        "advogado flagrante bh",
+        "prazo audiencia custodia"
+      ],
+      "publicado_em": "2026-10-04T21:57:50.274574",
+      "tamanho_bytes": 11806
+    }
+  ],
+  "ciclos_executados": 1,
+  "metricas_monitor": {
+    "ultima_checagem": "2026-10-04T21:57:50.300164",
+    "aprovados": 4,
+    "total": 8
+  },
+  "palavras_chave_cobertas": [
+    "audiencia de custodia bh",
+    "ceflan belo horizonte",
+    "liberdade provisoria sem fianca",
+    "advogado flagrante bh",
+    "prazo audiencia custodia"
+  ],
+  "fila_pendente": [
+    "trafico-privilegiado-stf-stj",
+    "medida-protetiva-whatsapp-descumprimento",
+    "tribunal-juri-teses-defensivas",
+    "busca-apreensao-domicilio-nulidade",
+    "execucao-penal-regressao-tornozeleira",
+    "bafometro-recusa-crime-transito",
+    "bloqueio-contas-investigacao-bets"
+  ],
+  "atualizado_em": "2026-10-17T10:50:07",
+  "rascunhos": [
+    {
+      "id": "acordo-por-whatsapp-vale-na-justica-veja-como-funciona",
+      "slug": "acordo-por-whatsapp-vale-na-justica-veja-como-funciona",
+      "pauta_id": "civel-acordo-firmado-por-whatsapp-tem-validade-juridica",
+      "titulo": "Acordo por WhatsApp vale na justiça? Veja como funciona",
+      "categoria": "Contratos e Negócios",
+      "palavras_chave": [
+        "acordo por whatsapp vale na justica",
+        "prova de contrato whatsapp",
+        "como cobrar acordo whatsapp",
+        "quebra de contrato whatsapp",
+        "validade juridica mensagem"
+      ],
+      "pasta": "2026-10-17_civel-acordo-por-whatsapp-vale-na-justica-veja-como-funciona",
+      "criado_em": "2026-10-17T09:41:58",
+      "status": "aguardando revisão"
+    },
+    {
+      "id": "plano-de-saude-negou-cobertura-saiba-como-agir-legalmente",
+      "slug": "plano-de-saude-negou-cobertura-saiba-como-agir-legalmente",
+      "pauta_id": "plano-de-saude-negou-cobertura-como-contestar",
+      "titulo": "Plano de saúde negou cobertura? Saiba como agir legalmente",
+      "categoria": "Outros",
+      "palavras_chave": [
+        "negativa de plano de saúde",
+        "liminar médica",
+        "direito à saúde",
+        "Sabará",
+        "advogado Belo Horizonte"
+      ],
+      "pasta": "2026-10-17_plano-de-saude-negou-cobertura-saiba-como-agir-legalmente",
+      "criado_em": "2026-10-17T10:50:07",
+      "status": "aguardando revisão"
+    }
+  ]
+}

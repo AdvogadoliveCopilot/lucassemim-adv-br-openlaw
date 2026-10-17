@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abertura de Processo | Cadastro Jurídico | Dr. Lucas Semim</title>
+    <meta name="description" content="Área de cadastro e abertura de processo do escritório Dr. Lucas Semim (OAB/MG 222.539). Preencha a ficha de admissão para iniciar seu atendimento jurídico cível.">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&family=Teko:wght@300;500&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ... (Estilos Mantidos, adicione apenas este extra para os campos dinâmicos) ... */
+        .fade-in { animation: fadeIn 0.5s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+        /* Copie o estilo do arquivo anterior para manter o fundo e layout */
+        /* --- TEMA: PLATINUM REGISTRY --- */
+        :root { --cor-fundo: #08090a; --cor-ouro: #d4af37; --cor-vidro: rgba(15, 15, 20, 0.96); }
+        body {
+            background-color: var(--cor-fundo); color: #e0e0e0; font-family: 'Lato', sans-serif; overflow-x: hidden; min-height: 100vh; display: flex; flex-direction: column;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.85), rgba(0,0,0,0.7)), url('img/cadastro-processo-semim.png'); background-size: cover; background-position: center; background-attachment: fixed;
+        }
+        #header-placeholder { min-height: 80px; }
+        .onboarding-section { flex: 1; display: flex; align-items: center; justify-content: center; padding: 40px 20px; }
+        .wizard-card { width: 100%; max-width: 750px; background: var(--cor-vidro); border: 1px solid #444; border-top: 5px solid var(--cor-ouro); border-radius: 15px; padding: 0; box-shadow: 0 40px 100px rgba(0,0,0,0.9); position: relative; overflow: hidden; transform-style: preserve-3d; }
+        .progress-container { background: #222; height: 4px; width: 100%; }
+        .progress-bar-fill { height: 100%; background: var(--cor-ouro); width: 33%; transition: width 0.5s ease; }
+        .wizard-header { padding: 40px 40px 20px 40px; text-align: center; border-bottom: 1px solid #222; }
+        .wizard-title { font-family: 'Playfair Display'; color: #fff; font-size: 2.2rem; margin: 0; }
+        .wizard-sub { font-family: 'Fira Code'; color: #888; font-size: 0.8rem; letter-spacing: 2px; margin-top: 5px; text-transform: uppercase; }
+        .step-content { padding: 40px; display: none; }
+        .step-content.active { display: block; animation: fadeIn 0.5s; }
+        .form-label { color: #aaa; font-size: 0.8rem; font-weight: bold; display: block; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
+        .input-plat { width: 100%; padding: 15px; background: #0a0a0a; border: 1px solid #444; color: #fff; border-radius: 6px; font-family: 'Lato'; font-size: 1.1rem; margin-bottom: 25px; transition: 0.3s; }
+        .input-plat:focus { border-color: var(--cor-ouro); box-shadow: 0 0 15px rgba(212, 175, 55, 0.1); outline: none; }
+        .selection-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 25px; }
+        .btn-select { background: rgba(255,255,255,0.03); border: 1px solid #444; color: #ccc; padding: 25px; border-radius: 8px; cursor: pointer; transition: 0.3s; text-align: center; font-family: 'Teko'; font-size: 1.3rem; text-transform: uppercase; }
+        .btn-select:hover, .btn-select.selected { background: var(--cor-ouro); color: #000; border-color: var(--cor-ouro); transform: translateY(-2px); box-shadow: 0 5px 20px rgba(212, 175, 55, 0.2); }
+        .nav-buttons { display: flex; justify-content: space-between; margin-top: 30px; }
+        .btn-prev { background: transparent; border: 1px solid #444; color: #888; padding: 10px 30px; border-radius: 50px; cursor: pointer; font-family: 'Teko'; font-size: 1.2rem; transition: 0.3s; }
+        .btn-next { background: var(--cor-ouro); color: #000; border: none; padding: 12px 50px; border-radius: 50px; cursor: pointer; font-family: 'Teko'; font-size: 1.5rem; font-weight: bold; transition: 0.3s; box-shadow: 0 0 20px rgba(212, 175, 55, 0.2); }
+        .btn-next:hover { transform: scale(1.05); background: #fff; }
+        .final-screen { text-align: center; padding: 60px 40px; display: none; }
+        .check-anim { font-size: 5rem; color: #2ecc71; animation: popIn 0.5s; margin-bottom: 20px; }
+        @keyframes popIn { from { transform: scale(0); } to { transform: scale(1); } }
+        @media(max-width: 600px) { .selection-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main class="onboarding-section">
+        <div class="wizard-card" id="wizard-card">
+            <div class="progress-container"><div class="progress-bar-fill" id="progress-bar"></div></div>
+
+            <div class="wizard-header">
+                <h1 class="wizard-title">Abertura de Processo</h1>
+                <p class="wizard-sub">// FICHA DE ADMISSÃO E ANÁLISE JURÍDICA</p>
+            </div>
+
+            <form id="form-cadastro" onsubmit="return false;">
+                
+                <div class="step-content active" id="step-1">
+                    <label class="form-label">Nome Completo (Requerente)</label>
+                    <input type="text" id="cad-nome" class="input-plat" placeholder="Digite nome e sobrenome..." required>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="form-label">CPF ou CNPJ</label>
+                            <input type="text" id="cad-doc" class="input-plat" placeholder="Documento Válido" maxlength="18">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">WhatsApp</label>
+                            <input type="tel" id="cad-tel" class="input-plat" placeholder="(DDD) 9..." maxlength="15">
+                        </div>
+                    </div>
+                    
+                    <label class="form-label">E-mail para Envio do Dossiê PDF</label>
+                    <input type="email" id="cad-email" class="input-plat" placeholder="seuemail@exemplo.com">
+
+                    <div class="nav-buttons" style="justify-content: flex-end;">
+                        <button class="btn-next" onclick="nextStep(2)">AVANÇAR &rarr;</button>
+                    </div>
+                </div>
+
+                <div class="step-content" id="step-2">
+                    <label class="form-label">Qual o Procedimento Jurídico?</label>
+                    <div class="selection-grid">
+                        <div class="btn-select" onclick="selectService(this, 'Procedimento Comum Cível', 'comum')">
+                            📜 PROCEDIMENTO COMUM<br><span style="font-size:0.8rem; color:#888;">(Indenizações, Danos)</span>
+                        </div>
+                        <div class="btn-select" onclick="selectService(this, 'Execução de Título', 'execucao')">
+                            💰 EXECUÇÃO / COBRANÇA<br><span style="font-size:0.8rem; color:#888;">(Cheques, Contratos)</span>
+                        </div>
+                        <div class="btn-select" onclick="selectService(this, 'Notificação Extrajudicial', 'notificacao')">
+                            📢 NOTIFICAÇÃO<br><span style="font-size:0.8rem; color:#888;">(Acordo Amigável)</span>
+                        </div>
+                        <div class="btn-select" onclick="selectService(this, 'Busca de Ativos/Bens', 'busca')">
+                            🔍 BUSCA DE BENS<br><span style="font-size:0.8rem; color:#888;">(Investigação)</span>
+                        </div>
+                    </div>
+                    <input type="hidden" id="cad-servico">
+
+                    <div id="campos-dinamicos"></div>
+
+                    <div class="nav-buttons">
+                        <button class="btn-prev" onclick="prevStep(1)">&larr; VOLTAR</button>
+                        <button class="btn-next" onclick="nextStep(3)">AVANÇAR &rarr;</button>
+                    </div>
+                </div>
+
+                <div class="step-content" id="step-3">
+                    <label class="form-label">Valor Estimado da Causa</label>
+                    <input type="text" id="cad-valor" class="input-plat" placeholder="R$ 0,00">
+
+                    <label class="form-label">Relato dos Fatos (Resumido)</label>
+                    <textarea id="cad-resumo" class="input-plat" rows="3" placeholder="Descreva brevemente o ocorrido..."></textarea>
+                    
+                    <div class="mb-4">
+                        <label class="form-label">Anexar Provas (Opcional)</label>
+                        <input type="file" id="file-upload" class="input-plat" style="padding:10px;">
+                    </div>
+
+                    <div class="nav-buttons">
+                        <button class="btn-prev" onclick="prevStep(2)">&larr; VOLTAR</button>
+                        <button class="btn-next btn-next-final" onclick="submitCadastro()">PROTOCOLAR PEDIDO</button>
+                    </div>
+                </div>
+
+            </form>
+
+            <div id="final-screen" class="final-screen">
+                <div class="check-anim">✅</div>
+                <h2 style="font-family:'Teko'; font-size:3rem; color:#fff;">PROTOCOLO GERADO</h2>
+                <p style="color:#ccc; font-size:1.1rem;">
+                    Sua Ficha de Admissão foi criada com sucesso.<br>
+                    Redirecionando para a <strong>Sala de Conferência</strong>...
+                </p>
+                <div style="margin-top:30px; font-family:'Fira Code'; color:#d4af37;">
+                    Aguarde... <span id="countdown">5</span>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="codeleicivel/civel-core.js?v=20261008"></script>
+    </body>
+</html>

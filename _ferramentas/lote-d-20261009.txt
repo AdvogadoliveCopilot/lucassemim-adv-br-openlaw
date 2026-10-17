@@ -1,0 +1,110 @@
+LOTE D - pagina-modelo "Advogado criminalista em Belo Horizonte" (piloto da persuasao nas paginas locais) - 09/10/2026
+=====================================================================================================================
+Nada foi subido. Tudo esta gravado na sua pasta do site (C:\Users\adm\Desktop\lucassemim.adv.br), so no seu computador.
+Esta e a pagina-modelo. Se voce aprovar, repito o mesmo molde nas outras 16 cidades + indice (cada uma com os seus fatos
+locais conferidos, sem copiar texto igual), como o briefing do CodeGPT pediu: piloto primeiro, expansao depois.
+
+O QUE MUDOU NA PAGINA (advogado-criminalista\belohorizonte.html)
+  ANTES                                              DEPOIS
+  H1 "Sua liberdade nao espera: advocacia ..."       H1 com a busca do cliente: "Advogado criminalista em Belo Horizonte:
+                                                     prisao, delegacia ou processo?" + painel com foto, OAB, WhatsApp, Ligar
+                                                     e Central do Caso ja na primeira tela
+  titulo de ~120 caracteres (cortado no Google)      titulo de 53 e description de 155 caracteres
+  FAQ montada por JavaScript (innerHTML/onclick)     FAQ em HTML (<details>): funciona sem JavaScript e pelo teclado;
+                                                     8 perguntas; texto do Google (FAQPage) = texto que o cliente le
+  priceRange "$$$" nos dados estruturados            removido (nao inferir faixa de honorarios)
+  Tag Manager sem Consent Mode "negado por padrao"   Consent Mode "negado por padrao" ANTES do Tag Manager + aviso de
+                                                     cookies (lgpd.js) carregado na propria pagina
+  blocos "em 2 minutos / com protocolo" (page-v2)    removidos desta pagina (promessa de prazo que nao sei se e cumprida)
+  2 FAQs concorrentes (faq-brain + google-ai-brain)  uma so
+  sem links para os guias                            6 cartoes de situacao -> guias "O que fazer agora" + 14 temas + 15 cidades da Grande BH
+  H4 gerados no JS, sem hierarquia                   hierarquia limpa (1 H1, 9 H2, 28 H3), 1 ponto de entrada por situacao
+  Ordem da pagina agora: topo -> "o que esta acontecendo agora?" (6 situacoes) -> as primeiras 24 horas de uma prisao (CPP/CF/
+  CNJ) -> as 9 regionais de BH com bairros conferidos (fonte PBH) + onde a defesa atua (CEAC-BH/TJMG) + cidades da Grande BH ->
+  quem atende (foto, OAB, consulta no CNA) -> como funciona + o que esperar -> Metodo Live -> FAQ -> chamada final -> rodape.
+  Botoes: WhatsApp (mensagem pronta citando a pagina), Ligar e Central do Caso; no celular, barra fixa WhatsApp/Ligar que
+  aparece ja na 1a tela e some quando os botoes da propria pagina estao visiveis. Cada clique gera o evento lc_cta_click
+  (canal + posicao, sem dado pessoal) para voce ver no Google Analytics o que converte.
+  Sem promessa de resultado, sem depoimento, sem "gratuito", sem "melhor", sem "especialista", sem comparacao
+  (Provimento 205/2021). Quem le tem aviso de que a pagina e informativa e nao substitui a analise do caso.
+
+ARQUIVOS DO LOTE (6)
+  NOVO NO SERVIDOR
+    css\lucas-local.css               estilo das paginas locais (usa o css\lucas-core.css do Lote B)
+  SUBSTITUEM O QUE JA ESTA NO AR
+    advogado-criminalista\belohorizonte.html
+    js\footer-seo.js     (rodape de TODAS as paginas - 5 ajustes, ver abaixo)
+    js\lgpd.js           (aviso de cookies de TODAS as paginas - 1 linha, ver abaixo)
+  JA ESTAVAM NA SUA PASTA (Lote B) E FORAM ATUALIZADOS - suba so uma vez, a versao da pasta:
+    css\lucas-core.css   (+1 regra: faixa de acao recolhe a barra fixa)
+    js\lucas-core.js     (barra fixa passa a olhar os BOTOES, nao o painel inteiro; senao, no celular, nao aparecia
+                          nenhum botao na 1a tela)
+  DEPENDE DO LOTE B: img\lucas-semim-hero-480.jpg/.webp e img\lucas-semim-hero-800.jpg/.webp (foto do Dr. Lucas na pagina)
+  Diferencas linha a linha dos 4 arquivos compartilhados: _ferramentas\diff-lote-d-20261009.txt
+  footer-seo.js (rodape): "Resposta em ate 15min" -> "Sigilo profissional"; "Plantao Ativo - Resposta em ate 15 minutos" ->
+     "Plantao criminal 24h"; slogan "O primeiro escritorio inteligente ... destruimos acusacoes na raiz" -> "Advocacia criminal em
+     Sabara e Belo Horizonte: defesa tecnica em delegacias, audiencias e processos, com sigilo profissional."; retirado o
+     priceRange "$$" dos dados estruturados do rodape; titulos do rodape de H5 para H3 (ordem de titulos correta, o visual
+     nao muda). Isso vale para todas as paginas que carregam o rodape.
+  lgpd.js: o aviso de cookies passa a ficar rente a borda de baixo quando a barra fixa esta escondida (antes sobrava um
+     vao de ~70 px). Uma linha.
+
+BACKUP DOS ORIGINAIS
+  _ferramentas\backups\lote-d-antes-20261009-175842.zip   (belohorizonte.html, footer-seo.js, lgpd.js como estavam; e
+   lucas-core.css/js na versao do Lote B)
+
+ORDEM SEGURA DE ENVIO (FileZilla: pasta local -> /public_html). Se for subir o Lote B tambem, suba o B primeiro.
+  1) css\lucas-core.css e css\lucas-local.css                    -> /public_html/css
+  2) js\lucas-core.js, js\footer-seo.js, js\lgpd.js              -> /public_html/js
+  3) (so se o Lote B ainda nao subiu) os 4 img\lucas-semim-hero-*  -> /public_html/img
+  4) advogado-criminalista\belohorizonte.html                    -> /public_html/advogado-criminalista
+  NAO enviar: _ferramentas, agentes.
+
+COMO VOLTAR ATRAS
+  Abra o zip de backup (botao direito > Extrair tudo) e envie de volta, substituindo, belohorizonte.html (para
+  /public_html/advogado-criminalista) e footer-seo.js e lgpd.js (para /public_html/js). css/js novos podem ficar.
+
+TOKEN DE CACHE: a pagina nova chama os arquivos com ?v=20261009. As outras paginas continuam chamando footer-seo.js e lgpd.js
+  com ?v=20261008: quem ja tem a versao antiga no navegador so ve o rodape novo nessas paginas quando elas trocarem o token
+  (acontece quando eu replicar o molde). Nada quebra no meio tempo (a versao nova e compativel).
+
+TESTES FEITOS (navegador de verdade, celular 390 px e computador 1366 px, sem dados reais)
+  - 0 erros, 4 avisos (a palavra "imediatamente" dentro do texto da lei e "urgentes" - sao corretos)
+  - titulo/description/canonical/H1 unico/hierarquia de titulos; JSON-LD valido; FAQPage = texto visivel (8/8); trilha = JSON-LD
+  - 53 links internos resolvem; 1 telefone so (31 98942-0094); nenhum numero antigo; nenhum termo proibido (gratuito, melhor,
+    especialista, 15 min, destruir, 100%, resposta rapida) no HTML nem no que aparece na tela (com cabecalho e rodape)
+  - Consentimento: o 1o evento do Google e "negado" para os 4 sinais; nenhum pedido ao Google Analytics/Ads antes de aceitar;
+    "Rejeitar" envia a atualizacao correta; nenhum erro de JavaScript
+  - Celular: sem rolagem lateral; botoes de contato na 1a tela (com e sem aviso de cookies); a barra fixa some quando os
+    botoes da pagina aparecem e volta no meio do texto
+  - Teclado: 1o Tab = "Pular para o conteudo"; perguntas abrem/fecham com Enter e Espaco; anel dourado de foco no CSS
+  - Sem JavaScript: H1, botao do WhatsApp, 8 perguntas e 6 guias continuam la
+  - Acessibilidade (axe-core): 0 violacoes no celular e no computador
+  NAO foi possivel: testar no ar (a Hostinger bloqueia as minhas checagens), leitor de tela de verdade, medir velocidade.
+
+CONFERIR NO AR DEPOIS DE ENVIAR
+  /advogado-criminalista/belohorizonte.html  (celular: botoes WhatsApp/Ligar na 1a tela; computador: painel ao lado do titulo)
+  Aviso de cookies na 1a visita (aba anonima) e "Gerenciar cookies" no rodape
+  Uma pagina qualquer que nao seja a nova (ex.: /sabara.html ou a home): rodape com o texto novo e sem erro
+  Google Analytics > tempo real: clicar no WhatsApp da pagina e ver o evento lc_cta_click (so apos aceitar os cookies)
+
+PARA VOCE CONFIRMAR (nao troquei nada disso sozinho)
+  1) "Plantao criminal 24h" / "atende de madrugada, feriados e fins de semana": a home e o rodape ja diziam; a pagina repete.
+     E verdade para todos os dias? Se nao, eu ajusto o texto (a regra da OAB pune anunciar o que nao e entregue).
+  2) Rodape: "SEMIM & ASSOCIADOS" e "Advocacia Criminal Inteligente" (e no (c) do fim). Existe sociedade registrada na OAB com
+     esse nome? "Inteligente" e autoelogio (Provimento 205/2021, art. 3o, IV). Sugestao: "Lucas Semim - Advocacia Criminal".
+  3) Enderecos: o rodape mostra R. Cel. Abilio Pereira, 337 (Sabara). O site tem outros dois enderecos (Comendador Vianna, 214,
+     Sabara, nos guias; Rua dos Timbiras, 3488, Barro Preto, BH, em advogado-criminalista/index.html). A pagina de BH nao
+     mostra endereco. Qual e o oficial (e se ha escritorio fisico em BH)? Isso muda o titulo "atuacao presencial em BH".
+  4) Metodo Live: a sigla muda entre as paginas (artigo: Leitura/Identificacao/Voz/Execucao; paginas locais:
+     Localizacao/Investigacao/Vigilancia/Execucao). Usei a das paginas locais. Qual vale para o site todo?
+  5) Honorarios (ultima pergunta da FAQ): diz que "sao combinados de forma clara, antes da contratacao" e dependem do caso.
+     Nao cita valor, desconto nem gratuidade. Confirma?
+  6) Central do Caso: o texto da pagina diz que o escritorio recebe o que for escrito e usa so para o atendimento (LGPD).
+     Esse e o fluxo real (formulario -> planilha/Apps Script)? Se houver outro tratamento, eu corrijo a frase.
+  7) Foto: usei a foto de perfil do site (lucas-semim-hero). Se preferir outra, troque o arquivo com o mesmo nome.
+
+PROXIMO PASSO (depende do seu OK no modelo)
+  Replicar para: barreiro, betim, brumadinho, caete, contagem, esmeraldas, ibirite, igarape, lagoasanta, neves, novalima,
+  pedroleopoldo, santaluzia, saojosedalapa, sabara, vespasiano + advogado-criminalista\index.html, com modo de simulacao
+  (dry-run), backup, testes por pagina, fatos locais conferidos (comarca, forum, delegacias, bairros) e textos diferentes.

@@ -1,0 +1,63 @@
+ÁREA DO CLIENTE — VERSÃO "APLICATIVO" LIGADA AO PORTAL NOVO — pronto em 15/10/2026
+NADA DISTO FOI ENVIADO AO SERVIDOR. Só sobe com o seu OK.
+
+O QUE É
+  O visual novo do redesign de 14/10 (escuro + dourado, menu lateral no computador, barra de baixo no celular),
+  ajustado para falar com o Portal V3 que já está no ar no Google, e com uma tela nova de DOCUMENTOS LIBERADOS PELO
+  ESCRITÓRIO: o cliente baixa o que você liberar na Central; o link do Drive nunca aparece para ele.
+  Esta versão SUBSTITUI a do pacote "subida-portal-novo-20261015" (visual antigo). Suba UMA ou OUTRA, não as duas.
+  Prints para aprovar: pasta prints\  (comece pelas 3 "folha-*.png").
+
+2 ARQUIVOS
+  js\ls-api-config.js         vai para /public_html/js/       1.606 bytes
+      SHA-256  9a812a4f34adf3f7829ea4bd5bb9886c35a8403380b62999bca830de7bec1ce8
+      (a config de 14/10 do seu computador + a linha apiUrlPortal com o endereço da "Portal API")
+  portal\painel-cliente.html  vai para /public_html/portal/   77.351 bytes
+      SHA-256  1149517891f18b1e834496a6e358f9bd4dd9d99aae671dc57f740163375ec5f0
+
+ORDEM (3 minutos)
+  1. Backup: do servidor para _ferramentas\backups\servidor-antes-portal-app-20261015\ , os dois arquivos que já estão lá
+     (/public_html/js/ls-api-config.js e /public_html/portal/painel-cliente.html).
+  2. Subir primeiro js\ls-api-config.js, depois portal\painel-cliente.html.
+  3. Abrir lucassemim.adv.br/portal/painel-cliente.html com Ctrl+F5.
+     - Sem login, para ver o visual com dados de exemplo:  lucassemim.adv.br/portal/painel-cliente.html#demo
+     - Com login de verdade: Central de Comandos > Acessos > "Acesso de teste" (e-mail e senha aparecem uma vez só).
+  4. Testar no seu celular (Safari ou Chrome): entrar, trocar de tela, baixar um documento, enviar um pedido.
+
+VOLTAR ATRÁS
+  Reenvie os dois arquivos do backup do passo 1. A página antiga volta na hora.
+
+O QUE EU ACHEI E CORRIGI NO REDESIGN DE 14/10 (estava feito para o portal antigo)
+  - A página não carregava o arquivo de configuração: não saberia o endereço da API.
+  - Falava a língua do portal antigo (portal_doc_link, resumo em objeto, notificações). O V3 entrega resumo em texto,
+    próximo passo, andamentos, ações do advogado, documentos recebidos e pedidos: a página agora lê exatamente isso.
+  - Os assuntos de pedido não eram os aceitos pelo servidor (o servidor recusaria). Agora são os 5 do V3.
+  - Mensagem de pedido aceitava 2.000 letras; o servidor aceita 1.200.
+  - Envio de vários arquivos ao mesmo tempo estourava o limite do servidor. Agora sobem em fila, um por vez.
+  - Botão "Entrar" podia travar depois de erro; selo do processo ficava vazio; faltava ajuda para quem esqueceu a senha.
+  - Fonte Lato pedida no peso 600, que não existe (o Google pode recusar o pedido inteiro e a página cair na fonte comum).
+  - Ícone da aba apontava para /img/Favicon-lucassemim.png, que não existe (o arquivo fica na raiz do site).
+  - Acabamentos: avisos repetidos não empilham; fila de envio limpa o que já subiu; no celular o botão redondo não cobre o rodapé.
+
+O QUE O CLIENTE VÊ
+  Início (fase, último andamento, documentos básicos, pedidos em aberto, resumo e próximo passo quando VOCÊ libera),
+  Meu Processo (ficha, barra de 5 etapas, "O que o advogado fez", andamentos), Documentos (checklist, envio, "Enviados por
+  você", biblioteca para baixar), Pedidos (formulário + respostas), Novidades (tudo junto, do mais novo ao mais antigo).
+  Rodapé em todas as telas: informação apenas, sem promessa ou garantia de resultado + seu WhatsApp e OAB.
+  Nada interno aparece: andamento marcado como interno, resumo não liberado e documento escondido ficam fora.
+
+LIMITES CONHECIDOS (não são defeitos, são o que o servidor entrega)
+  - A barra de 5 etapas lê a palavra da "fase" (Inquérito, Instrução, Sentença, Recurso, Execução). Fase com outro texto:
+    a barra some e o texto da fase continua aparecendo.
+  - "Novidades" não marca lido/não lido (o servidor não guarda isso).
+  - Resposta de pedido aparece sem horário (o servidor só informa a data do pedido).
+  - O servidor troca caracteres especiais no nome do arquivo ("–" vira "_"). Dê nomes simples ao liberar documentos.
+  - Testado em Chrome/Edge (Chromium). Safari/iPhone e Firefox NÃO foram testados: por isso o passo 4.
+
+TESTES FEITOS (nada saiu para a internet; dados fictícios)
+  27 de 27 passos no navegador contra o simulador do Portal V3 (o mesmo código do Apps Script instalado), rodado em 2 modos:
+  "API antiga" e "projeto novo" (só o apiUrlPortal responde). Cobre: login certo/errado (mesma mensagem), token só na
+  sessão, painel completo, fase em texto livre, checklist, biblioteca e download byte a byte, documento escondido some,
+  pedido novo, envio de PDF/JPG/PNG (falso, GIF e grande recusados), fila, Novidades, tema claro/escuro, sair, sessão de 6 h,
+  senha trocada, bloqueio, conteúdo malicioso exibido como texto, celular 390 px sem rolagem lateral, modo #demo sem rede.
+  Scripts: portal-v3-projeto-novo-20261015\_testes\test\e2e_cliente_app.js e prints_cliente_app.js

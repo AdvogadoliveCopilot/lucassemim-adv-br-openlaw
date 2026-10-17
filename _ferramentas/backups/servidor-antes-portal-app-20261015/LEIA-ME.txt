@@ -1,0 +1,8 @@
+BACKUP DO SERVIDOR - tirado em 15/10/2026, ANTES de subir a area do cliente "aplicativo".
+
+Estes sao os arquivos que estavam NO AR (copiados do servidor pelo FileZilla):
+  ls-api-config.js     (de /public_html/js/)
+  painel-cliente.html  (de /public_html/portal/)
+
+PARA VOLTAR ATRAS: reenviar estes dois arquivos para as mesmas pastas do servidor (sobrescrever).
+Nao apagar esta pasta.

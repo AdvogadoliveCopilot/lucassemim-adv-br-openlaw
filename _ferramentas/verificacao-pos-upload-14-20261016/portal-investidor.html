@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terminal de Solidariedade | Projeto Anjo Judicial</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&family=Teko:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #050505;
+      --bg-panel: #111;
+      --gold: #d4af37;
+      --green-life: #2ecc71;
+      --danger-red: #e74c3c;
+      --text-gray: #aaa;
+      --blue-cyber: #1a73e8;
+    }
+    
+    body { background-color: var(--bg-dark); color: #fff; font-family: 'Fira Code', monospace; overflow-x: hidden; }
+    h1, h2, h3, h4, h5 { font-family: 'Teko', sans-serif; letter-spacing: 1px; }
+
+    /* ================= AUTH MODO HACKER ================= */
+    #tela-auth { height: 100vh; display: flex; align-items: center; justify-content: center; }
+    .login-box { background: rgba(10,10,10,0.9); border: 1px solid #333; border-top: 4px solid var(--gold); padding: 40px; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.8); width: 100%; max-width: 450px; }
+    .form-control-hacker { background: #000; border: 1px solid #444; color: var(--gold); font-family: 'Fira Code'; font-size: 1.1rem; padding: 12px; border-radius: 4px; margin-bottom: 20px;}
+    .form-control-hacker:focus { border-color: var(--gold); box-shadow: 0 0 10px rgba(212, 175, 55, 0.3); color: var(--gold); outline: none;}
+    .btn-acao-anjo { background: var(--gold); color: #000; font-family: 'Teko'; font-size: 1.8rem; border: none; padding: 10px; border-radius: 4px; font-weight: bold; width: 100%; transition: 0.3s; cursor: pointer;}
+    .btn-acao-anjo:hover { background: #fff; box-shadow: 0 0 20px var(--gold); transform: scale(1.02); }
+
+    /* ================= PAINEL DE COMANDO ================= */
+    #painel-investidor { display: none; }
+    .navbar-vip { background-color: #0a0a0a; border-bottom: 1px solid #333; padding: 15px 0; }
+    .navbar-brand { color: var(--gold) !important; font-size: 1.8rem; }
+    .bg-hero { background: linear-gradient(180deg, #0a0a0a 0%, #050505 100%); padding: 50px 0 60px 0; border-bottom: 1px dashed #333;}
+
+    /* PAINEL DE MÉTRICAS SOCIAIS */
+    .dopamine-panel { background: var(--bg-panel); border: 1px solid #333; border-radius: 8px; padding: 25px; margin-top: -30px; border-top: 3px solid var(--green-life); box-shadow: 0 10px 30px rgba(0,0,0,0.8); }
+    .metric-title { color: var(--text-gray); font-family: 'Teko'; font-size: 1.5rem; letter-spacing: 1px;}
+    .metric-value { font-size: 2.8rem; font-weight: 700; color: #fff; font-family: 'Teko';}
+    .metric-impact { color: var(--green-life); text-shadow: 0 0 15px rgba(46, 204, 113, 0.4); }
+
+    /* CARDS DE MISSÃO (DOSSIÊS) */
+    .card-processo { background: var(--bg-panel); border: 1px solid #333; border-left: 4px solid var(--gold); border-radius: 6px; padding: 20px; transition: 0.3s; height: 100%; position: relative;}
+    .card-processo:hover { border-color: var(--gold); transform: translateY(-5px); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.1); }
+    
+    .timer-custodia { font-family: 'Teko'; font-size: 1.3rem; letter-spacing: 1px; }
+    .timer-active { color: var(--danger-red); animation: pulse 1s infinite; }
+    @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
+
+    .bot-alert { background: rgba(212, 175, 55, 0.05); border-left: 2px solid var(--gold); padding: 15px; font-size: 0.85rem; color: #ddd; margin: 15px 0; line-height: 1.4;}
+    .fase-badge { background: var(--blue-cyber); color: #fff; font-size: 0.7rem; padding: 3px 8px; border-radius: 3px; font-weight: bold; letter-spacing: 1px;}
+    .btn-diligencia { font-family: 'Teko'; font-size: 1.1rem; border-radius: 4px; transition: 0.3s; }
+  </style>
+    <script src="../js/header-elite.js?v=20261015"></script>
+</head>
+<body>
+
+  <div id="tela-auth">
+    <div class="login-box text-center animate__animated animate__fadeIn">
+      <i class="fas fa-shield-heart text-gold fs-1 mb-3"></i>
+      <h2 class="text-white fs-1 mb-4">TERMINAL <span style="color: var(--gold);">ANJO</span></h2>
+      
+      <div id="box-login">
+        <form id="form-login">
+          <input type="email" id="email" class="form-control-hacker" placeholder="E-mail de Acesso" required>
+          <input type="password" id="senha" class="form-control-hacker" placeholder="Chave de Segurança" required>
+          <button type="submit" class="btn-acao-anjo" id="btn-entrar">ACESSAR COMANDO <i class="fas fa-bolt ms-2"></i></button>
+        </form>
+        <button class="btn btn-link text-secondary mt-4 font-teko fs-5 text-decoration-none" onclick="alternarAuth('cadastro')">
+          <i class="fas fa-user-plus me-1"></i> Criar Nova Credencial de Anjo
+        </button>
+      </div>
+
+      <div id="box-cadastro" style="display: none;">
+        <h4 class="text-white font-teko mb-4 border-bottom border-secondary pb-2">NOVA ALIANÇA</h4>
+        <form id="form-cadastro">
+          <input type="hidden" name="acao" value="cadastrarAnjo">
+          <input type="text" name="nome" class="form-control-hacker" placeholder="Nome Completo" required>
+          <input type="email" name="email" class="form-control-hacker" placeholder="E-mail" required>
+          <input type="tel" name="whatsapp" class="form-control-hacker" placeholder="WhatsApp" required>
+          <input type="password" name="senha" class="form-control-hacker" placeholder="Crie sua Chave" required>
+          <button type="submit" class="btn-acao-anjo" id="btn-cadastrar">CONFIRMAR ALIANÇA <i class="fas fa-handshake ms-2"></i></button>
+        </form>
+        <button class="btn btn-link text-secondary mt-4 font-teko fs-5 text-decoration-none" onclick="alternarAuth('login')">Voltar ao Acesso</button>
+      </div>
+      <div id="msg-alerta" class="mt-3 small font-teko fs-5" style="display: none;"></div>
+    </div>
+  </div>
+
+  <div id="painel-investidor">
+    <nav class="navbar navbar-vip">
+      <div class="container">
+        <span class="navbar-brand font-teko"><i class="fas fa-fingerprint me-2"></i> COMANDO ANJO | DR. LUCAS SEMIM</span>
+        <div class="d-flex text-white align-items-center font-teko fs-4">
+          <span class="me-4 text-gold"><i class="fas fa-user-secret me-2"></i> <span id="nome-anjo-tela">Anjo Guardião</span></span>
+          <button class="btn btn-sm btn-outline-danger font-teko fs-5" onclick="location.reload()">DESCONECTAR</button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="bg-hero text-center">
+      <div class="container">
+        <h2 class="fs-1 text-white">CENTRO DE OPERAÇÕES SOCIAIS</h2>
+        <p class="text-gray">Monitoramento de Liberdades e Retorno Estratégico em Tempo Real</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="dopamine-panel d-flex justify-content-around text-center flex-wrap">
+            <div class="p-2">
+              <div class="metric-title">CAUSAS FINANCIADAS</div>
+              <div class="metric-value" id="val-missoes">0</div>
+            </div>
+            <div class="p-2">
+              <div class="metric-title">APORTE ATIVO</div>
+              <div class="metric-value">R$ <span id="val-aportado">0</span></div>
+            </div>
+            <div class="p-2">
+              <div class="metric-title" style="color: var(--gold);">RETORNO PROJETADO (ÊXITO)</div>
+              <div class="metric-value metric-impact" style="color: var(--gold); text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);">R$ <span id="val-lucro">0</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mt-5 mb-5">
+      <h4 class="mb-4 text-white fs-2"><i class="fas fa-folder-open text-gold me-2"></i> DOSSIÊS EM ANDAMENTO</h4>
+      <div class="row g-4" id="cards-container">
+        <div class="col-12 text-center" id="loading-cards">
+            <i class="fas fa-sync fa-spin text-gold fs-1 mt-4"></i>
+            <p class="mt-2 font-teko fs-4 text-secondary">SINCRONIZANDO COM A BASE DE DADOS DO ESCRITÓRIO...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/anjo-core-engine.js?v=20261008"></script>
+  <script src="js/anjo-game-logic.js?v=20261008"></script>
+  
+  <script>
+    // A lógica de interface (frontend) foi mantida para conectar com seu backend
+    document.getElementById('form-cadastro').onsubmit = (e) => processarCadastro(e, e.target);
+    document.getElementById('form-login').onsubmit = (e) => processarLogin(e, e.target);
+
+    // FUNÇÃO QUE DESENHA OS CARDS NA TELA
+    function carregarCasos(email) {
+      // ANJO_CONFIG.url deve apontar para a sua URL do Google Apps Script (Executável Web)
+      const URL_CONSULTA = `${ANJO_CONFIG.url}?acao=buscarCasos&email=${encodeURIComponent(email)}`;
+      
+      fetch(URL_CONSULTA)
+        .then(res => res.json())
+        .then(casos => {
+          const container = document.getElementById('cards-container');
+          container.innerHTML = "";
+          let totalAportado = 0;
+
+          if(!casos || casos.length === 0) {
+            container.innerHTML = "<div class='col-12 text-center text-secondary font-teko fs-3'>NENHUMA MISSÃO VINCULADA À SUA CREDENCIAL NO MOMENTO.</div>";
+            return;
+          }
+
+          casos.forEach((caso, i) => {
+            totalAportado += parseFloat(caso.valorAporte || 0);
+            
+            // Lógica do Relógio (Visual)
+            const dataInicio = caso.dataInicio ? new Date(caso.dataInicio) : new Date();
+            const agora = new Date();
+            const diffHoras = Math.floor((agora - dataInicio) / (1000 * 60 * 60));
+            const isUrgent = diffHoras < 48; // Menos de 48h do início é "Quente"
+
+            // Exibição do Nome (Sigilo)
+            const autorizado = caso.statusDocumentacao === "🟢 PROCESSO ATIVO" || caso.statusDocumentacao === "✅ Kit Completo";
+            const nomeExibicao = autorizado ? caso.nomeCliente : "INVESTIGADO/RÉU SOB SIGILO";
+            
+            // Tratamento do Resumo gerado pela Inteligência Artificial
+            const resumoIA = caso.resumoProcesso ? caso.resumoProcesso : "Análise em andamento pelo corpo jurídico...";
+            const faseAtual = caso.faseProcessual ? caso.faseProcessual : "Fase Pré-Processual";
+
+            container.innerHTML += `
+              <div class="col-md-6 col-lg-4 animate__animated animate__fadeInUp" style="animation-delay: ${i * 0.1}s">
+                <div class="card-processo d-flex flex-column">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="fase-badge"><i class="fas fa-gavel"></i> ${faseAtual}</span>
+                    <span class="badge bg-dark border border-gold text-gold">${caso.classeProcessual || "Diligência"}</span>
+                  </div>
+                  
+                  <h5 class="text-white fs-3 mb-1 mt-2">${nomeExibicao}</h5>
+                  <p class="small text-secondary mb-3"><i class="fas fa-calendar-alt"></i> INÍCIO: ${new Date(dataInicio).toLocaleDateString('pt-BR')}</p>
+
+                  <div class="bot-alert mt-auto">
+                    <strong class="text-gold"><i class="fas fa-brain"></i> RESUMO DA INTELIGÊNCIA JURÍDICA:</strong><br>
+                    <span style="font-family: 'Arial', sans-serif; font-size: 0.9rem;">${resumoIA}</span>
+                  </div>
+
+                  <div class="row g-2 mt-3">
+                    <div class="col-6">
+                      <button class="btn btn-outline-light btn-diligencia w-100" onclick="alert('Área Restrita: Contrato Social de Parceria sendo gerado.')">
+                        <i class="fas fa-file-contract"></i> TERMOS
+                      </button>
+                    </div>
+                    <div class="col-6">
+                      <button class="btn btn-outline-warning btn-diligencia w-100" ${!autorizado ? 'disabled' : ''} onclick="window.open('${caso.linkPasta}')">
+                        <i class="fas fa-folder-open"></i> DOSSIÊ
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="mt-3 pt-3 border-top border-secondary d-flex justify-content-between align-items-center">
+                    <div>
+                      <small class="text-secondary d-block font-teko fs-5">SEU APORTE</small>
+                      <span class="fw-bold text-white fs-4">R$ ${parseFloat(caso.valorAporte || 0).toLocaleString('pt-BR', {minimumFractionDigits: 2})}</span>
+                    </div>
+                    <a href="https://wa.me/5531989420094" target="_blank" class="btn btn-gold btn-sm font-teko fs-5" style="background: var(--gold); color: #000; text-decoration: none; padding: 5px 15px; border-radius: 4px; font-weight: bold;">
+                      <i class="fab fa-whatsapp"></i> SUPORTE
+                    </a>
+                  </div>
+                </div>
+              </div>`;
+          });
+
+          // Projeção de Lucro Fictícia/Didática para o painel (3x o aporte como exemplo)
+          animarNumero("val-missoes", 0, casos.length, 1000);
+          animarNumero("val-aportado", 0, totalAportado, 1500, true);
+          animarNumero("val-lucro", 0, totalAportado * 3, 2000, true); 
+        })
+        .catch(err => {
+            console.error("Erro na comunicação com a Matriz:", err);
+            document.getElementById('cards-container').innerHTML = "<div class='col-12 text-center text-danger font-teko fs-3'>FALHA DE COMUNICAÇÃO COM O SERVIDOR CENTRAL. TENTE NOVAMENTE.</div>";
+        });
+    }
+
+    function animarNumero(id, start, end, duration, money = false) {
+      let obj = document.getElementById(id);
+      let current = start;
+      let range = end - start;
+      if (range <= 0 && end <= 0) { obj.innerHTML = money ? "0,00" : "0"; return; }
+      let step = range / (duration / 20);
+      let timer = setInterval(() => {
+        current += step;
+        if (current >= end) { current = end; clearInterval(timer); }
+        obj.innerHTML = money ? current.toLocaleString('pt-BR', {minimumFractionDigits: 2}) : Math.floor(current);
+      }, 20);
+    }
+  </script>
+<script>
+(function() {
+    'use strict';
+    // ─── REGISTRAR SERVICE WORKER ───
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/sw.js', { scope: '/' })
+                .then(reg => {
+                    console.log('✅ [PWA] Service Worker registrado:', reg.scope);
+                    reg.addEventListener('updatefound', () => {
+                        const newSW = reg.installing;
+                        newSW.addEventListener('statechange', () => {
+                            if (newSW.state === 'installed' && navigator.serviceWorker.controller) {
+                                mostrarBannerAtualizacao(newSW);
+                            }
+                        });
+                    });
+                })
+                .catch(err => console.warn('⚠️ [PWA] Erro no registro do SW:', err));
+
+            let refreshing = false;
+            navigator.serviceWorker.addEventListener('controllerchange', () => {
+                if (!refreshing) {
+                    refreshing = true;
+                    window.location.reload();
+                }
+            });
+        });
+    }
+
+    // ─── BOTÃO DE INSTALAÇÃO DO APP ───
+    let deferredPrompt = null;
+    window.addEventListener('beforeinstallprompt', e => {
+        e.preventDefault();
+        deferredPrompt = e;
+        const btn = document.getElementById('btn-instalar-app');
+        if (btn) {
+            btn.style.display = 'flex';
+            btn.addEventListener('click', async () => {
+                if (!deferredPrompt) return;
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                if (outcome === 'accepted') {
+                    btn.style.display = 'none';
+                }
+                deferredPrompt = null;
+            });
+        }
+    });
+
+    window.addEventListener('appinstalled', () => {
+        const btn = document.getElementById('btn-instalar-app');
+        if (btn) btn.style.display = 'none';
+        deferredPrompt = null;
+    });
+
+    // ─── BANNER DE ATUALIZAÇÃO ───
+    function mostrarBannerAtualizacao(newSW) {
+        const banner = document.createElement('div');
+        banner.id = 'pwa-update-banner';
+        banner.style.cssText = `
+            position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+            background: #0a0a0a; border: 1px solid rgba(212,175,55,0.3);
+            color: #f0ede8; padding: 14px 24px; border-radius: 10px; z-index: 99999;
+            display: flex; align-items: center; gap: 16px; font-family: 'Teko', sans-serif;
+            font-size: 1.2rem; letter-spacing: 1px; box-shadow: 0 8px 30px rgba(0,0,0,0.8);
+            max-width: 90vw; text-align: center;
+        `;
+        banner.innerHTML = `
+            <span>⚡ Nova versão disponível</span>
+            <button onclick="this.closest('#pwa-update-banner').remove(); document.querySelector('[data-sw-update]')?.postMessage({type:'SKIP_WAITING'});" style="background: #d4af37; color: #000; border: none; padding: 8px 18px; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 1rem;">
+                ATUALIZAR
+            </button>
+        `;
+        banner.querySelector('button').setAttribute('data-sw-update', '');
+        document.body.appendChild(banner);
+        setTimeout(() => banner.remove(), 10000);
+    }
+})();
+</script>
+</body>
+</html>

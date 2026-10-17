@@ -1,0 +1,23 @@
+  ...conferidas 40 paginas
+  ...conferidas 80 paginas
+  ...conferidas 120 paginas
+  ...conferidas 160 paginas
+MODO: APLICAR
+Paginas que recebem o molde: 189 {'defesa-criminal': 47, 'news': 142}
+Numero de versao dos arquivos do site: 2043 trocas para ?v=20261009
+  extra: footer-seo.js: aviso de transicao removido (2153 bytes a menos)
+  extra: sw.js: CACHE_VERSION v12 -> v13
+
+Backup: C:\Users\adm\Desktop\lucassemim.adv.br\_ferramentas\backups\artigos-antes-20261008-202355.zip (191 arquivos)
+  ...gravadas 40 paginas
+  ...gravadas 80 paginas
+  ...gravadas 120 paginas
+  ...gravadas 160 paginas
+  ...conferidas 40 paginas gravadas
+  ...conferidas 80 paginas gravadas
+  ...conferidas 120 paginas gravadas
+  ...conferidas 160 paginas gravadas
+  extra gravado: footer-seo.js: aviso de transicao removido (2153 bytes a menos)
+  extra gravado: sw.js: CACHE_VERSION v12 -> v13
+Gravadas: 189 | conferencia final com problema: 0 []
+Lista para subir ao servidor: C:\Users\adm\Desktop\lucassemim.adv.br\_ferramentas\lote-artigos-20261009.txt

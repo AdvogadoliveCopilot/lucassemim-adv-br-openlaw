@@ -1,0 +1,125 @@
+RELEASE 04/10/2026 — CACHE + ESCUDO DE SEGURANCA (Lucas Semim)
+==============================================================
+
+ONDE ESTA CADA COISA
+  Esta pasta (Claude outputs\release-20261004) so tem documentos, o codigo do Escudo,
+  o .htaccess novo e os arquivos ORIGINAIS (para voltar atras).
+  Os arquivos do site ja foram gravados nos caminhos de verdade do Desktop:
+    - 254 paginas do site principal + 45 paginas do civel com o carimbo ?v=20261004
+    - js\central-caso.js, js\header-elite.js, sw.js, api\claude-chat.php
+    - civel\.htaccess e civel\Claude outputs\.htaccess (travas novas)
+  NADA foi enviado ao servidor. O .htaccess da raiz do Desktop continua o ANTIGO
+  (o novo fica aqui como htaccess.novo e so entra na hora do envio).
+  NUNCA suba a pasta "Claude outputs" para o servidor.
+
+STATUS
+  Apps Script (projeto "Advogado Live")  -> ESCUDO JA ESTA SALVO NO EDITOR e passou nos testes
+                                            ("Todos os testes do Escudo passaram").
+                                            Falta so publicar a NOVA VERSAO da implantacao.
+  Piloto automatico                      -> continua DESLIGADO (nada aqui mexe nele).
+
+ACHADO URGENTE (verificado em 04/10/2026; so leitura de cabecalhos, nada foi baixado)
+  https://civel.lucassemim.adv.br/Advogado%20Live.json esta PUBLICO hoje: responde 200,
+  application/json, com Access-Control-Allow-Origin "*" (qualquer site consegue ler) e
+  X-Robots-Tag "index, follow" (o Google pode indexar). Data do arquivo no servidor: 12/09/2026.
+  Ele e a exportacao do projeto Apps Script: traz o codigo-fonte e a chave do Gemini em texto
+  puro. CONSIDERE A CHAVE COMPROMETIDA e troque (passos em "PENDENTE", mais abaixo).
+  Quem serve o arquivo e o Apache (ETag com "-gzip" e Expires do mod_expires), portanto o
+  .htaccess consegue barrar. O civel tambem herda o .htaccess da raiz (os cabecalhos HSTS, XFO
+  e CORS dele aparecem nas respostas do civel), entao o .htaccess novo da raiz tambem fecha o
+  arquivo. Mesmo assim, o primeiro envio deve ser o civel\.htaccess (1 KB, sem risco).
+  Tambem confirmado: _content-plan.md e "Claude outputs" NAO estao no servidor (404). Bom.
+
+A) APPS SCRIPT (feito no editor)
+   28_Escudo_Seguranca.gs   arquivo novo (copia nesta pasta)
+   Ligacoes (8 pontos):
+     - processarCentralCaso     -> escudoPortao_('central_caso')   (urgente tem corte maior)
+     - processarCentralCivel    -> escudoPortao_('central_civel')
+     - processarRetornoCivel    -> escudoPortao_('retorno_civel')
+     - doPost (cadastro generico, usado por facebook.html e outros) -> escudoPortaoLegado_
+     - loginAdmin               -> trava de 15 erros em 15 min
+     - loginClientePortal (portal antigo) -> trava por e-mail + mensagem unica
+       (nao revela quem e cliente cadastrado)
+     - Menu da planilha: "Escudo de Seguranca" (auditoria, proteger planilha, backup diario,
+       ver quarentena, testes)
+   PUBLICAR: Implantar > Gerenciar implantacoes > lapis na implantacao principal
+             (a que termina em ...Qs2BK) > Versao: "Nova versao" > Implantar.
+             A URL nao muda.
+
+B) CACHE (site)
+   paginas .html               carimbo ?v=20261004 em todo JS/CSS proprio (principal e civel)
+   sw.js                       service worker v11 (revalida JS/CSS; apaga os caches v10)
+   js\header-elite.js          registra o service worker em todas as paginas do site principal
+   bump-cache.py               repete o carimbo a cada atualizacao (precisa de Python):
+                               python3 bump-cache.py PASTA_DO_SITE 20261005
+
+C) SEGURANCA (site)
+   js\central-caso.js          envia tempoMs (robo preenche em menos de 4 s)
+   api\claude-chat.php         proxy de IA: sem Origin = bloqueado, modelo travado,
+                               tetos diarios, IP confiavel, regras fixas do servidor
+   htaccess.novo               renomear para .htaccess no envio. Bloqueia .git/.env,
+                               codigo-fonte (.gs .md .py .sql .zip ...), apps-script\, clientes\,
+                               backup do projeto (Advogado Live*.json), qualquer .json que nao seja
+                               manifest/noticias/seo-intelligence/version, scanners, TRACK/DEBUG,
+                               query string maliciosa; paginas privadas com noindex; CSP minima.
+   civel\.htaccess             mesmas travas para o subdominio civel (so FilesMatch; nao mexe
+                               nas regras de reescrita)
+   civel\Claude outputs\.htaccess   nega tudo na pasta de trabalho
+
+TESTES FEITOS (nada tocou no site real)
+   - Apps Script: 60+ cenarios do Escudo em simulador + testes no proprio editor.
+   - .htaccess novo: Apache 2.4.58 de teste, 68 requisicoes. Paginas, JS, sitemap, manifest,
+     .well-known, utm/fbclid abrem normal; .git, .env, .gs, .md, .sql, .bak, clientes\,
+     Advogado Live.json, wp-login, phpmyadmin, sqlmap, ../ e <script> na URL dao 403.
+     Unico limite conhecido: o Apache nao deixa o .htaccess barrar o metodo TRACE
+     (risco baixo; so o servidor da hospedagem resolve).
+   - civel\.htaccess testado nos dois cenarios (raiz herdada e nao herdada).
+   - Central do Caso aberta em navegador de teste: 0 erro de JS, envio gerou o pacote
+     esperado, e o pacote passou no Escudo com nota 0.
+   - claude-chat.php em servidor PHP de teste: 403 sem origem, 413 gigante, 400 invalido,
+     429 no teto diario. O chat do civel continua funcionando (cabecalho CORS "*" do
+     .htaccess nao quebra a chamada).
+
+ORDEM SEGURA DE PUBLICACAO (cada passo so com OK do Lucas)
+   0. URGENTE: enviar so o civel\.htaccess para a pasta do civel no servidor. Em seguida abrir
+      https://civel.lucassemim.adv.br/Advogado%20Live.json — tem que aparecer "Forbidden" (403).
+      Depois o Lucas apaga o "Advogado Live.json" do servidor (eu nao apago arquivos) e troca a
+      chave do Gemini. Se o Google tiver indexado a URL, pedir remocao no Search Console.
+   1. Apps Script: publicar a nova versao (passo A).
+   2. Site: js\central-caso.js primeiro.
+   3. Site: sw.js, js\header-elite.js e as paginas (principal e civel).
+   4. Site: api\claude-chat.php.
+   5. Por ultimo o .htaccess da raiz (gravar htaccess.novo como .htaccess no Desktop e enviar).
+      Testar a home e uma pagina de noticia logo depois; se der erro 500,
+      reenviar originais\htaccess-ANTIGO.txt como .htaccess.
+   Se um arquivo causar problema: todos os originais estao em "originais\" (sufixo -ANTIGO).
+   NAO enviar: pasta "Claude outputs", apps-script\, clientes\ (so dados de teste),
+   arquivos .gs/.md/.py e "Advogado Live.json".
+
+EFEITO COLATERAL DO .htaccess NOVO (avisar antes de subir)
+   O painel velho da raiz (painel-cliente.html + codelei\clientes-vip.js + seguranca-painel.js)
+   le clientes\CPF\dados.json e guarda senhas em arquivo publico; so existem 2 clientes de teste
+   nele. Com o .htaccess novo, clientes\ passa a dar 403 (de proposito). O menu novo do site
+   (header-elite.js) ja aponta para /portal/painel-cliente.html; ainda apontam para o painel
+   velho: index.html, templates\menu.html e templates\footer.html (sugestao: trocar para o portal).
+
+COMO O ESCUDO DECIDE (resumo)
+   Nota de 0 a 100+. Menos de 30 = passa limpo. 30 a 59 = passa, mas fica anotado na aba
+   QUARENTENA como "ACEITO - REVISAR". 60 ou mais = quarentena (nao cria pasta no Drive,
+   nao chama a IA; o robo ve "sucesso"). Em CASO URGENTE o corte e 90, para nunca barrar
+   familia de preso. Telefone invalido e excesso de envios mostram mensagem clara.
+   Limites: 5 envios/hora e 8 em 6 h por WhatsApp, e-mail ou CPF; 40/hora no total;
+   12 urgencias/hora no total.
+
+PENDENTE DE DECISAO DO LUCAS
+   - Publicar a nova versao do Apps Script (ativa o Escudo).
+   - Rodar no menu da planilha: "Proteger planilha" e "Instalar rotinas" (backup diario as 3h).
+   - TROCAR A CHAVE DO GEMINI (o JSON estava publico, ver ACHADO): 1) AI Studio > criar nova chave;
+     2) Apps Script > Configuracoes do projeto > Propriedades do script > GEMINI_API_KEY = nova;
+     3) avisar o Claude para tirar a chave velha do codigo (00_Config_Menu); 4) so entao
+     apagar a chave antiga no AI Studio e conferir o consumo dos ultimos dias.
+   - Apagar "Advogado Live.json" do servidor (FileZilla) depois de enviar o civel\.htaccess.
+   - Arquivar as implantacoes antigas do script sem uso (v3, v6, v7, v8).
+   - Portal antigo do cliente: manter com trava de tentativas ou desativar.
+   - Cloudflare Turnstile (anti-robo extra): precisa de conta gratis; so ligar o segredo
+     depois que o widget estiver no formulario.

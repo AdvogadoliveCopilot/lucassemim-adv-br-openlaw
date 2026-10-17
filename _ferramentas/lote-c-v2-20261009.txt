@@ -1,0 +1,45 @@
+LOTE C v2 - limpeza de conformidade nos 22 guias de "O Que Fazer Agora" - 09/10/2026
+====================================================================================
+Nada foi subido ainda. Os 22 guias abaixo ja estao gravados na sua pasta do site (C:\Users\adm\Desktop\lucassemim.adv.br\o-que-fazer-agora)
+e SUBSTITUEM os do Lote C (que ainda nao tinham ido para o ar). Quem for subir o Lote C sobe estes arquivos, ja na versao v2.
+Esta v2 faz o que eu tinha deixado em aberto na nota do Lote C ("especialista": troco em lote por "atuacao em").
+
+O QUE MUDOU (igual nos 22 guias; sao 5 a 9 linhas por arquivo, o resto da pagina ficou identico)
+  1) Botoes do WhatsApp: "Resposta rapida - sigilo profissional" (88 botoes) -> "Atendimento humano - sigilo profissional".
+  2) Cartao do advogado: "Plantao ativo agora" -> "Plantao 24h".
+  3) Dados estruturados do escritorio: saiu a faixa de preco ("$$$") - o Provimento 205/2021 (art. 3o, I) nao permite indicar valores.
+  4) "Especialista": o resumo do advogado ("Especialista em defesa criminal, ...") virou "Atuacao em defesa criminal, ...";
+     9 links "advogado criminalista especialista" -> "advogado criminalista"; "um advogado especialista" -> "um advogado";
+     "Defesa Tecnica Especializada" -> "Defesa Tecnica". (Mantive "Delegacia Especializada (CIA/BH)": e o nome da unidade policial.)
+  5) Frases que soavam como promessa ou afirmacao absoluta:
+       Audiencia de custodia (titulo): "Para Aumentar as Chances de Soltura" -> "Para Preparar a Defesa"
+       Preso preventivamente: "maior a chance de reverter a prisao rapidamente" -> "mais cedo e possivel analisar a prisao e os pedidos cabiveis"
+       Mandado de prisao: "e a estrategia com maior taxa de sucesso" -> "e a providencia que a defesa tecnica deve avaliar com urgencia"
+       Intimado para depor: "e a unica blindagem real" -> "permite avaliar os riscos antes do depoimento e orientar a postura adequada ao caso"
+       Preso em flagrante (FAQ): "Sim, com absoluta certeza ... garante que seus direitos sejam respeitados" -> "Sim. ... acompanha o ato para que seus direitos sejam respeitados"
+       Acidente de transito (FAQ): "evita ... e garante que qualquer acordo..." -> "ajuda a evitar ... e a conduzir qualquer acordo..."
+     (nos dois FAQ o texto e o mesmo nos dados estruturados e na pagina.)
+  NAO mudou: layout, fotos, links, telefone, textos juridicos, citacoes de lei e prazos da lei. "Em ate 24 horas" (audiencia de custodia,
+  art. 306 do CPP) e prazo legal, nao promessa do escritorio.
+
+TESTES (feitos aqui; nada foi enviado para fora)
+  - Cada troca teve contagem exata conferida antes de gravar (88, 22, 16, 9, 4, 3 ... e 22 faixas de preco); se uma contagem nao batesse, nada era gravado.
+  - validar_guia_v3.py nas 22 paginas: 0 erros; os avisos de "especialista" sumiram (88 -> 72 avisos restantes, todos de revisao editorial:
+    prazos da lei, "sempre/nunca" em orientacoes e poucos links para outros guias).
+  - Dados estruturados validos em todas as paginas e FAQ dos dados estruturados igual ao texto da pagina.
+  - Prints em celular (390 px) e notebook/desktop conferidos; nenhum erro de JavaScript novo.
+
+ORDEM SEGURA DE ENVIO (FileZilla: pasta local -> servidor)
+  1) o-que-fazer-agora\  as 22 paginas deste lote (todas listadas em _ferramentas\diffs-v2\)  -> /public_html/o-que-fazer-agora
+  2) o resto do Lote C (indice o-que-fazer-agora\index.html e sitemap-urgencia.xml) segue como esta na nota do Lote C.
+  Se for subir o Lote E tambem, suba o Lote E primeiro: ele corrige os scripts que estes guias usam (chat, botoes, cabecalho).
+  NAO enviar: _ferramentas, agentes.
+
+COMO VOLTAR ATRAS
+  _ferramentas\backups\lote-c-v2-antes-*.zip tem os 22 guias como estavam no Lote C (antes desta v2).
+  _ferramentas\backups\lote-c-antes-20261009-140929.zip tem os originais que estao hoje no ar.
+
+PARA VOCE CONFIRMAR
+  - "Plantao 24h" aparece nestes guias e nos dados estruturados (horario 00:00-23:59, todos os dias). Se houver horario sem atendimento, me avise.
+  - 15 guias ainda tem menos de 3 links para outros guias do indice (bom para busca e para o cliente nao parar no primeiro guia).
+    Proponho um lote proprio de links internos; nao mexi agora para nao crescer este lote.

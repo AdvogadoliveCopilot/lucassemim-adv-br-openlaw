@@ -1,0 +1,19 @@
+VERIFICACAO POS-UPLOAD - ATUALIZACAO N 14 (15/10/2026)
+
+O que e esta pasta:
+  Copia, baixada DE VOLTA do servidor (via FileZilla) logo depois do envio,
+  usada so para conferir que o que esta no ar e identico ao que foi enviado.
+
+RESULTADO (conferido pelo Claude, comparacao SHA-256):
+  - 172 de 172 arquivos enviados: identicos ao manifesto (hash e tamanho).
+    0 divergencias, 0 ausentes, nenhuma conversao de quebra de linha.
+  - 109 de 109 arquivos vizinhos (css, js, news, o-que-fazer-agora,
+    defesa-criminal, legal-tech), baixados do servidor: identicos ao backup de
+    ANTES do envio. Ou seja, so os 172 arquivos enviados mudaram.
+
+Onde estao os outros documentos:
+  - Manifesto (172 linhas: arquivo, bytes, sha256): _ferramentas\upload-atualizacao-14-20261016\manifesto-sha256.csv
+  - Relatorio completo da atualizacao: _ferramentas\relatorio-atualizacao-14-20261016.md
+  - Ponto de retorno (servidor ANTES do envio): _ferramentas\backups\servidor-antes-atualizacao-14-20261016\
+
+Pode apagar esta pasta quando quiser. Nao faz parte do site e NAO deve ser enviada ao servidor.

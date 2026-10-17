@@ -1,0 +1,3 @@
+CONFERENCIA - 15/10/2026, logo depois de subir a area do cliente "aplicativo".
+Aqui ficam copias baixadas DO SERVIDOR depois do envio, so para comparar com o pacote
+(mesmo tamanho e mesmo SHA-256 = enviou certo). Nao sobe para o servidor. Pode apagar quando quiser.

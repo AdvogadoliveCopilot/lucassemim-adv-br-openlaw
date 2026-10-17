@@ -1,0 +1,9 @@
+C:\Users\adm\Desktop\lucassemim.adv.br\_ferramentas\aplicar_v2_artigos.py:6: SyntaxWarning: invalid escape sequence '\ '
+  O que faz em cada p�gina (defesa-criminal\ e news\):
+MODO: SO MOSTRAR (dry-run)
+Páginas que recebem o molde: 1 {'defesa-criminal': 1}
+  puladas (conferencia-falhou): 188  defesa-criminal/advocacia-execucao-penal-estrategia-defesa.html, defesa-criminal/arrependimento-posterior.html, defesa-criminal/audiencia-custodia.html, defesa-criminal/audiencia-de-custodia-guia-defesa-advogado.html, defesa-criminal/audiencia-instrucao.html, defesa-criminal/autoria-coautoria-participacao-concurso-de-pessoas.html ...
+  extra: footer-seo.js: aviso de transição removido (2153 bytes a menos)
+  extra: sw.js: versão já é 12 (nada alterado)
+
+Nada foi gravado. Para gravar: python _ferramentas\aplicar_v2_artigos.py --aplicar

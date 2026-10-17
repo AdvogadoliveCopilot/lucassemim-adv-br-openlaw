@@ -1,0 +1,201 @@
+﻿LOTE F - o que cada página de cidade afirma sobre a comarca (texto publicado + fonte), para você conferir
+Regra do lote: "sem fonte, sem fato". Cada dado abaixo tem a fonte pública indicada e foi conferido em 09/10/2026.
+Se algo estiver diferente do que você vê na prática, me diga a cidade e a linha: eu corrijo ou tiro da página.
+====================================================================================================
+
+SABARÁ
+  Comarca e fórum: Sabará é sede de comarca, a Comarca de Sabará, do Tribunal de Justiça de Minas
+      Gerais. Endereço do fórum: Fórum Ministro Orozimbo Nonato, Praça Melo Viana, 71, Centro.
+  Varas criminais: Entre as varas do fórum, o Guia Judiciário do TJMG lista a Vara Criminal.
+  Polícia Civil: A 4ª Delegacia Regional de Polícia Civil tem sede no Centro de Sabará, perto do
+      fórum e do Ministério Público, em prédio inaugurado em 23/08/2023.
+  Fonte: Guia Judiciário do TJMG (Sabará) -> https://www8.tjmg.jus.br/servicos/gj/guia/primeira_instancia/consulta.do?linesByPage=10&codigoMunp=0567&codigoComposto=MG_0567&opcConsulta=1
+  Fonte: Agência Minas (23/08/2023) -> https://www.agenciaminas.mg.gov.br/noticia/policia-civil-inaugura-nova-sede-de-delegacia-regional-em-sabara
+
+BARREIRO (BH)
+  Comarca e fórum: O Barreiro é uma das nove regionais de Belo Horizonte e pertence à Comarca de
+      Belo Horizonte, do Tribunal de Justiça de Minas Gerais. O Guia Judiciário do TJMG lista as
+      varas criminais abaixo no Fórum Lafayette (Avenida Augusto de Lima, 1549, Barro Preto).
+  Varas criminais: Entre as varas do fórum com competência criminal, o Guia Judiciário do TJMG
+      lista: 10ª Vara Criminal; 1ª Vara de Tóxicos, Organização Criminosa e Lavagem de Bens e
+      Valores; 1ª Vara Especializada em Crimes contra a Criança e o Adolescente.
+  Bairros: Bairros de referência da regional: Barreiro, Milionários, Tirol e Diamante.
+  Fonte: Guia Judiciário do TJMG (Belo Horizonte) -> https://www8.tjmg.jus.br/servicos/gj/guia/primeira_instancia/pesquisa.do
+
+BETIM
+  Comarca e fórum: Betim é sede de comarca, a Comarca de Betim, do Tribunal de Justiça de Minas
+      Gerais. Endereço do fórum: Rua Professor Osvaldo Franco, 55, Centro.
+  Varas criminais: Entre as varas do fórum, o Guia Judiciário do TJMG lista a 3ª Vara Criminal.
+  Unidades prisionais: Em Betim consta a unidade Ceresp Betim (Centro de Remanejamento do Sistema
+      Prisional), na relação da Secretaria de Justiça e Segurança Pública (Sejusp). O advogado
+      conversa com o cliente preso na própria unidade.
+  Fonte: Guia Judiciário do TJMG (Betim) -> https://www8.tjmg.jus.br/servicos/gj/guia/primeira_instancia/pesquisa.do
+  Fonte: Resolução Sejusp nº 735/2022 (unidades do Depen-MG) -> https://www.pesquisalegislativa.mg.gov.br/LegislacaoCompleta.aspx?cod=201796
+  Fonte: Portal MG: Ceresp (Betim) -> https://www.mg.gov.br/instituicao_unidade/centro-de-remanejamento-do-sistema-prisional
+
+BRUMADINHO
+  Comarca e fórum: Brumadinho é sede de comarca, a Comarca de Brumadinho, do Tribunal de Justiça de
+      Minas Gerais. Endereço do fórum: Fórum José Altivo do Amaral, Rua Governador Valadares, 271,
+      Centro.
+  Varas criminais: Entre as varas do fórum com competência criminal, o Guia Judiciário do TJMG
+      lista: 1ª Vara Cível, Criminal e da Infância e da Juventude; 2ª Vara Cível, Criminal e de
+      Execuções Penais.
+  Fonte: Guia Judiciário do TJMG (Brumadinho) -> https://www8.tjmg.jus.br/servicos/gj/guia/primeira_instancia/consulta.do?linesByPage=10&codigoMunp=0090&codigoComposto=MG_0090&opcConsulta=1
+
+CAETÉ
+  Comarca e fórum: Caeté é sede de comarca, a Comarca de Caeté, do Tribunal de Justiça de Minas
+      Gerais. Endereço do fórum: Fórum Desembargador Barcellos Corrêa, Rua José Cerqueira, 180,
+      Centro.
+  Varas criminais: Entre as varas do fórum com competência criminal, o Guia Judiciário do TJMG
+      lista: 1ª Vara Cível, Criminal e de Execuções Penais; 2ª Vara Cível, Criminal e da Infância e
+      da Juventude.
+  Unidades prisionais: Em Caeté consta a unidade Presídio de Caeté, na relação da Secretaria de
+      Justiça e Segurança Pública (Sejusp). O advogado conversa com o cliente preso na própria
+      unidade.
+  Fonte: Guia Judiciário do TJMG (Caeté) -> https://www8.tjmg.jus.br/servicos/gj/guia/primeira_instancia/consulta.do?linesByPage=10&codigoMunp=0045&codigoComposto=MG_0045&opcConsulta=1
+  Fonte: Resolução Sejusp nº 735/2022 (unidades do Depen-MG) -> https://www.pesquisalegislativa.mg.gov.br/LegislacaoCompleta.aspx?cod=201796
+
+CONTAGEM
+  Comarca e fórum: Contagem é sede de comarca, a Comarca de Contagem, do Tribunal de Justiça de
+      Minas Gerais. Endereço do fórum: Fórum Doutor Pedro Aleixo, Avenida Maria da Glória Rocha,
+      425, Centro.
+  Varas criminais: Entre as varas do fórum com competência criminal, o Guia Judiciário do TJMG
+      lista: Vara do Tribunal do Júri e Inquéritos Policiais; 1ª Vara Criminal; 2ª Vara Criminal; 3ª
+      Vara Criminal; 4ª Vara Criminal.
+  Unidades prisionais: Em Contagem constam Complexo Penitenciário Nelson Hungria e Ceresp Contagem
+      (Centro de Remanejamento do Sistema Prisional), na relação da Secretaria de Justiça e
+      Segurança Pública (Sejusp). O advogado conversa com o cliente preso na própria unidade.
+  Fonte: Guia Judiciário do TJMG (Contagem) -> https://www8.tjmg.jus.br/servicos/gj/guia/primeira_instancia/pesquisa.do
+  Fonte: Resolução Sejusp nº 735/2022 (unidades do Depen-MG) -> https://www.pesquisalegislativa.mg.gov.br/LegislacaoCompleta.aspx?cod=201796
+  Fonte: Portal MG: Ceresp Contagem -> https://www.mg.gov.br/instituicao_unidade/centro-de-remanejamento-do-sistema-prisional-contagem
+
+ESMERALDAS
+  Comarca e fórum: Esmeraldas é sede de comarca, a Comarca de Esmeraldas, do Tribunal de Justiça de
+      Minas Gerais. Endereço do fórum: Fórum Presidente Melo Viana, Praça Getúlio Vargas, 60,
+      Centro.
+  Varas criminais: Entre as varas do fórum com competência criminal, o Guia Judiciário do TJMG
+      lista: 1ª Vara Cível, Criminal e de Execuções Penais; 2ª Vara Cível, Criminal e da Infância e
+      da Juventude.
+  Fonte: Guia Judiciário do TJMG (Esmeraldas) -> https://www8.tjmg.jus.br/servicos/gj/guia/primeira_instancia/consulta.do?linesByPage=10&codigoMunp=0241&codigoComposto=MG_0241&opcConsulta=1
+
+IBIRITÉ
+  Comarca e fórum: Ibirité é sede de comarca, a Comarca de Ibirité, do Tribunal de Justiça de Minas
+      Gerais. Endereço do fórum: Fórum Doutor Arthur Campos, Rodovia Renato Brandão Azeredo, 821,
+      bairro Piratininga.
+  Varas criminais: Entre as varas do fórum com competência criminal, o Guia Judiciário do TJMG
+      lista: 1ª Vara Criminal, da Infância e da Juventude e de Cartas Precatórias Criminais; 2ª Vara
+      Criminal e de Execuções Penais.
+  Unidades prisionais: Em Ibirité consta a unidade Presídio de Ibirité, na relação da Secretaria de
+      Justiça e Segurança Pública (Sejusp). O advogado conversa com o cliente preso na própria
+      unidade.
+  Fonte: Guia Judiciário do TJMG (Ibirité) -> https://www8.tjmg.jus.br/servicos/gj/guia/primeira_instancia/consulta.do?linesByPage=10&codigoMunp=0114&codigoComposto=MG_0114&opcConsulta=1
+  Fonte: Resolução Sejusp nº 735/2022 (unidades do Depen-MG) -> https://www.pesquisalegislativa.mg.gov.br/LegislacaoCompleta.aspx?cod=201796
+  Fonte: Portal MG: Presídio de Ibirité -> https://www.mg.gov.br/instituicao_unidade/presidio-de-ibirite
+
+IGARAPÉ
+  Comarca e fórum: Igarapé é sede de comarca, a Comarca de Igarapé, do Tribunal de Justiça de Minas
+      Gerais. Endereço do fórum: Fórum Doutor Sebastião Patrus de Souza, Rua Manoel Franco Amaral,
+      450, bairro Cidade Jardim.
+  Varas criminais: Entre as varas do fórum com competência criminal, o Guia Judiciário do TJMG
+      lista: Vara Criminal; Vara de Execuções Penais; 2ª Vara Cível, da Infância e da Juventude e
+      Juizado Especial Criminal.
+  Fonte: Guia Judiciário do TJMG (Igarapé) -> https://www8.tjmg.jus.br/servicos/gj/guia/primeira_instancia/consulta.do?linesByPage=10&codigoMunp=0301&codigoComposto=MG_0301&opcConsulta=1
+
+LAGOA SANTA
+  Comarca e fórum: Lagoa Santa é sede de comarca, a Comarca de Lagoa Santa, do Tribunal de Justiça
+      de Minas Gerais. Endereço do fórum: Fórum Desembargador Edésio Fernandes, Alameda Doutora
+      Vilma Edelweiss Santos, 65, bairro Lundcéia.
+  Varas criminais: Entre as varas do fórum, o Guia Judiciário do TJMG lista a Vara Criminal, de
+      Execuções Penais e da Infância e da Juventude.
+  Unidades prisionais: Em Lagoa Santa consta a unidade Presídio de Lagoa Santa, na relação da
+      Secretaria de Justiça e Segurança Pública (Sejusp). O advogado conversa com o cliente preso na
+      própria unidade.
+  Fonte: Guia Judiciário do TJMG (Lagoa Santa) -> https://www8.tjmg.jus.br/servicos/gj/guia/primeira_instancia/consulta.do?linesByPage=10&codigoMunp=0148&codigoComposto=MG_0148&opcConsulta=1
+  Fonte: Resolução Sejusp nº 735/2022 (unidades do Depen-MG) -> https://www.pesquisalegislativa.mg.gov.br/LegislacaoCompleta.aspx?cod=201796
+  Fonte: Portal MG: Presídio de Lagoa Santa -> https://www.mg.gov.br/instituicao_unidade/presidio-de-lagoa-santa
+
+RIBEIRÃO DAS NEVES
+  Comarca e fórum: Ribeirão das Neves é sede de comarca, a Comarca de Ribeirão das Neves, do
+      Tribunal de Justiça de Minas Gerais. Endereço do fórum: Fórum Desembargador Assis Santiago,
+      Rua Vera Lúcia de Oliveira Andrade, 85, Vila Esplanada.
+  Varas criminais: Entre as varas do fórum com competência criminal, o Guia Judiciário do TJMG
+      lista: 1ª Vara Criminal e do Tribunal do Júri; 2ª Vara Criminal; 3ª Vara Criminal e de
+      Violência Doméstica e Familiar contra a Mulher; Vara de Execuções Criminais.
+  Unidades prisionais: Em Ribeirão das Neves constam as unidades Penitenciária José Maria Alkimim;
+      Presídio Antônio Dutra Ladeira; Presídio Inspetor José Martinho Drumond; Presídio José
+      Abranches Gonçalves; Complexo Público-Privado (PPP), na relação da Secretaria de Justiça e
+      Segurança Pública (Sejusp). O advogado conversa com o cliente preso na própria unidade.
+  Fonte: Guia Judiciário do TJMG (Ribeirão das Neves) -> https://www8.tjmg.jus.br/servicos/gj/guia/primeira_instancia/consulta.do?linesByPage=10&codigoMunp=0231&codigoComposto=MG_0231&opcConsulta=1
+  Fonte: Resolução Sejusp nº 735/2022 (unidades do Depen-MG) -> https://www.pesquisalegislativa.mg.gov.br/LegislacaoCompleta.aspx?cod=201796
+  Fonte: Portal MG: Penitenciária José Maria Alkimim -> https://www.mg.gov.br/instituicao_unidade/penitenciaria-jose-maria-alkimim
+  Fonte: Portal MG: Presídio Antônio Dutra Ladeira -> https://www.mg.gov.br/instituicao_unidade/presidio-antonio-dutra-ladeira
+
+NOVA LIMA
+  Comarca e fórum: Nova Lima é sede de comarca, a Comarca de Nova Lima, do Tribunal de Justiça de
+      Minas Gerais. Endereço do fórum: Fórum Augusto de Lima, Avenida José Bernardo de Barros,
+      bairro Oswaldo Barbosa Pena II.
+  Varas criminais: Entre as varas do fórum com competência criminal, o Guia Judiciário do TJMG
+      lista: 1ª Vara Criminal e da Infância e da Juventude; 2ª Vara Criminal e de Execuções Penais.
+  Unidades prisionais: Em Nova Lima consta a unidade Presídio de Nova Lima, na relação da Secretaria
+      de Justiça e Segurança Pública (Sejusp). O advogado conversa com o cliente preso na própria
+      unidade.
+  Fonte: Guia Judiciário do TJMG (Nova Lima) -> https://www8.tjmg.jus.br/servicos/gj/guia/primeira_instancia/consulta.do?linesByPage=10&codigoMunp=0188&codigoComposto=MG_0188&opcConsulta=1
+  Fonte: Resolução Sejusp nº 735/2022 (unidades do Depen-MG) -> https://www.pesquisalegislativa.mg.gov.br/LegislacaoCompleta.aspx?cod=201796
+  Fonte: Portal MG: Presídio de Nova Lima -> https://www.mg.gov.br/instituicao_unidade/presidio-de-nova-lima
+
+PEDRO LEOPOLDO
+  Comarca e fórum: Pedro Leopoldo é sede de comarca, a Comarca de Pedro Leopoldo, do Tribunal de
+      Justiça de Minas Gerais. Endereço do fórum: Fórum Doutor Roberto Belisário Viana, Rua Anílio
+      Caldas, 424, bairro Dona Júlia.
+  Varas criminais: Entre as varas do fórum com competência criminal, o Guia Judiciário do TJMG
+      lista: 1ª Vara Cível, Criminal e da Infância e da Juventude; 2ª Vara Cível, Criminal e de
+      Execuções Penais.
+  Unidades prisionais: Em Pedro Leopoldo consta a unidade Presídio de Pedro Leopoldo, na relação da
+      Secretaria de Justiça e Segurança Pública (Sejusp). O advogado conversa com o cliente preso na
+      própria unidade.
+  Fonte: Guia Judiciário do TJMG (Pedro Leopoldo) -> https://www8.tjmg.jus.br/servicos/gj/guia/primeira_instancia/consulta.do?linesByPage=10&codigoMunp=0210&codigoComposto=MG_0210&opcConsulta=1
+  Fonte: Resolução Sejusp nº 735/2022 (unidades do Depen-MG) -> https://www.pesquisalegislativa.mg.gov.br/LegislacaoCompleta.aspx?cod=201796
+  Fonte: Portal MG: Presídio de Pedro Leopoldo -> https://www.mg.gov.br/instituicao_unidade/presidio-de-pedro-leopoldo
+
+SANTA LUZIA
+  Comarca e fórum: Santa Luzia é sede de comarca, a Comarca de Santa Luzia, do Tribunal de Justiça
+      de Minas Gerais. Endereço do fórum: Fórum Desembargador Pedro Viana, Avenida das Indústrias,
+      210, Vila Olga.
+  Varas criminais: Entre as varas do fórum, o Guia Judiciário do TJMG lista a 1ª Vara Criminal e de
+      Execuções Penais.
+  Unidades prisionais: Em Santa Luzia consta a unidade Presídio de Santa Luzia, na relação da
+      Secretaria de Justiça e Segurança Pública (Sejusp). O advogado conversa com o cliente preso na
+      própria unidade.
+  Fonte: Guia Judiciário do TJMG (Santa Luzia) -> https://www8.tjmg.jus.br/servicos/gj/guia/primeira_instancia/consulta.do?linesByPage=10&codigoMunp=0245&codigoComposto=MG_0245&opcConsulta=1
+  Fonte: Resolução Sejusp nº 735/2022 (unidades do Depen-MG) -> https://www.pesquisalegislativa.mg.gov.br/LegislacaoCompleta.aspx?cod=201796
+
+SÃO JOSÉ DA LAPA
+  Comarca e fórum: São José da Lapa não é sede de comarca. Segundo notícia de 27/05/2026, o novo
+      fórum de Vespasiano atende a população de Vespasiano e de São José da Lapa. Endereço do fórum:
+      Fórum Júlio Garcia, Rua São Paulo, 1225, bairro Célvia.
+  Varas criminais: Entre as varas do fórum com competência criminal, o Guia Judiciário do TJMG
+      lista: 1ª Vara Criminal e da Infância e da Juventude; 2ª Vara Criminal e de Execuções Penais.
+  Fonte: Guia Judiciário do TJMG (Vespasiano) -> https://www8.tjmg.jus.br/servicos/gj/guia/primeira_instancia/consulta.do?linesByPage=10&codigoMunp=0290&codigoComposto=MG_0290&opcConsulta=1
+  Fonte: Rede MG News (27/05/2026) -> https://www.portalmgnews.com/novo-forum-e-inaugurado-na-comarca-de-vespasiano
+  Fonte: TJMG: lista de comarcas -> https://www8.tjmg.jus.br/juridico/comarcas.html
+
+VESPASIANO
+  Comarca e fórum: Vespasiano é sede de comarca, a Comarca de Vespasiano, do Tribunal de Justiça de
+      Minas Gerais. Endereço do fórum: Fórum Júlio Garcia, Rua São Paulo, 1225, bairro Célvia. O
+      fórum funciona em prédio novo, inaugurado em 26/05/2026 (notícia de 27/05/2026).
+  Varas criminais: Entre as varas do fórum com competência criminal, o Guia Judiciário do TJMG
+      lista: 1ª Vara Criminal e da Infância e da Juventude; 2ª Vara Criminal e de Execuções Penais.
+  Unidades prisionais: Em Vespasiano constam Presídio de Vespasiano e Centro de Referência à
+      Gestante Privada de Liberdade, na relação da Secretaria de Justiça e Segurança Pública
+      (Sejusp). O advogado conversa com o cliente preso na própria unidade.
+  Fonte: Guia Judiciário do TJMG (Vespasiano) -> https://www8.tjmg.jus.br/servicos/gj/guia/primeira_instancia/consulta.do?linesByPage=10&codigoMunp=0290&codigoComposto=MG_0290&opcConsulta=1
+  Fonte: Rede MG News (27/05/2026) -> https://www.portalmgnews.com/novo-forum-e-inaugurado-na-comarca-de-vespasiano
+  Fonte: Resolução Sejusp nº 735/2022 (unidades do Depen-MG) -> https://www.pesquisalegislativa.mg.gov.br/LegislacaoCompleta.aspx?cod=201796
+  Fonte: Agência Minas (28/02/2024) -> https://www.agenciaminas.mg.gov.br/noticia/estado-conclui-obras-de-melhorias-e-revitalizacao-no-presidio-de-vespasiano
+  Fonte: Portal MG: Centro de Referência à Gestante Privada de Liberdade -> https://www.mg.gov.br/instituicao_unidade/centro-de-referencia-gestante-privada-de-liberdade
+
+====================================================================================================
+NAO ENTRARAM nas páginas (por falta de fonte pública confiável e atual):
+  - delegacias / plantões por cidade (as páginas oficiais do Portal MG estão desatualizadas: 2021);
+  - Presídio de Sabará e Presídio de Brumadinho (não constam da Resolução Sejusp 735/2022 que usei como lista);
+  - Sete Lagoas (o Guia Judiciário do TJMG não respondeu corretamente às minhas consultas): aparece só no índice, com link do plantão.

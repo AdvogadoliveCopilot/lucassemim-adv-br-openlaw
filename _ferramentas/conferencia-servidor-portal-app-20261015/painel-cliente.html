@@ -1,0 +1,2307 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-tema="escuro">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Área do Cliente | Lucas Semim Advocacia Criminal</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#08090a">
+  <link rel="icon" href="https://lucassemim.adv.br/Favicon-lucassemim.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lato:wght@400;700;900&family=Fira+Code:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* ============================================================
+   Área do Cliente V2 — redesign 14/10/2026
+   Converge com o painel de gestão (dourado + escuro).
+   App autocontido: sem dependência de bundles de marketing.
+   Segue _ferramentas/orientacoes-claude-code-redesign-drive-20261014.md
+   ============================================================ */
+    :root {
+      --bg: #08090a;
+      --bg-card: #111214;
+      --bg-elev: #17181b;
+      --bg-hover: #1d1e22;
+      --border: #2a2b2f;
+      --border-soft: #1f2024;
+      --gold: #d4af37;
+      --gold-strong: #e6c358;
+      --gold-soft: rgba(212, 175, 55, .12);
+      --text: #e7e7ea;
+      --muted: #9a9aa2;
+      --faint: #6d6d75;
+      --danger: #e05a5a;
+      --ok: #3fae6a;
+      --info: #5a8fd4;
+      --warn: #e8b339;
+      --shadow: 0 8px 30px rgba(0, 0, 0, .35);
+      --r: 12px;
+    }
+
+    html[data-tema="claro"] {
+      --bg: #f4f2ec;
+      --bg-card: #ffffff;
+      --bg-elev: #f0eee7;
+      --bg-hover: #e8e5dc;
+      --border: #dcd8cd;
+      --border-soft: #e6e2d8;
+      --gold: #a3821f;
+      --gold-strong: #8a6c15;
+      --gold-soft: rgba(163, 130, 31, .10);
+      --text: #1d1c18;
+      --muted: #5d5a52;
+      --faint: #8f8b81;
+      --danger: #c0392b;
+      --ok: #1e7d46;
+      --info: #2c6bb0;
+      --warn: #b07d1a;
+      --shadow: 0 8px 30px rgba(60, 55, 30, .12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Lato', sans-serif;
+      font-size: 15px;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Playfair Display', serif;
+      margin: 0;
+      line-height: 1.25;
+    }
+
+    .mono {
+      font-family: 'Fira Code', monospace;
+    }
+
+    a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
+    /* ---------- LOGIN ---------- */
+    #telaLogin {
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(600px 300px at 80% -10%, rgba(212, 175, 55, .10), transparent 60%),
+        radial-gradient(500px 300px at 10% 110%, rgba(212, 175, 55, .06), transparent 60%),
+        var(--bg);
+    }
+
+    .login-card {
+      width: 100%;
+      max-width: 400px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--gold);
+      border-radius: 14px;
+      padding: 40px 34px;
+      box-shadow: var(--shadow);
+    }
+
+    .login-marca {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.9rem;
+      color: var(--gold);
+      text-align: center;
+    }
+
+    .login-sub {
+      text-align: center;
+      color: var(--muted);
+      font-size: .85rem;
+      margin: 6px 0 28px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .field {
+      margin-bottom: 14px;
+      position: relative;
+    }
+
+    .field label {
+      display: block;
+      font-size: .72rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 9px;
+      border: 1px solid var(--border);
+      background: var(--bg-elev);
+      color: var(--text);
+      font-size: 1rem;
+      font-family: inherit;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px var(--gold-soft);
+    }
+
+    .eye {
+      position: absolute;
+      right: 8px;
+      bottom: 6px;
+      width: 38px;
+      height: 38px;
+      background: none;
+      border: 0;
+      color: var(--muted);
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border-radius: 9px;
+      border: none;
+      cursor: pointer;
+      background: var(--gold);
+      color: #171302;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: .18s;
+    }
+
+    .btn:hover {
+      background: var(--gold-strong);
+    }
+
+    .btn:disabled {
+      opacity: .55;
+      cursor: default;
+    }
+
+    .btn-sec {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 10px 16px;
+      border-radius: 9px;
+      cursor: pointer;
+      font-size: .88rem;
+      transition: .18s;
+    }
+
+    .btn-sec:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .msg-erro {
+      color: var(--danger);
+      font-size: .85rem;
+      margin-top: 10px;
+      min-height: 1.2em;
+      text-align: center;
+    }
+
+    .login-demo {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px dashed var(--border);
+      text-align: center;
+      color: var(--faint);
+      font-size: .78rem;
+    }
+
+    .login-demo code {
+      font-family: 'Fira Code', monospace;
+      color: var(--gold);
+      cursor: pointer;
+      text-decoration: underline dotted;
+    }
+
+    .login-rodape {
+      margin-top: 22px;
+      text-align: center;
+      color: var(--faint);
+      font-size: .75rem;
+    }
+
+    /* ---------- SHELL DO APP ---------- */
+    #app {
+      display: none;
+      min-height: 100vh;
+      min-height: 100dvh;
+    }
+
+    #app.on {
+      display: block;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 238px 1fr;
+      min-height: 100vh;
+      min-height: 100dvh;
+    }
+
+    /* sidebar */
+    .sidebar {
+      background: var(--bg-card);
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      position: sticky;
+      top: 0;
+      height: 100dvh;
+    }
+
+    .marca {
+      padding: 22px 20px 18px;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .marca .nome {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      color: var(--gold);
+    }
+
+    .marca .tipo {
+      font-size: .68rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      margin-top: 3px;
+    }
+
+    nav.menu {
+      flex: 1;
+      padding: 14px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    nav.menu button {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      background: none;
+      border: 0;
+      color: var(--muted);
+      cursor: pointer;
+      padding: 11px 14px;
+      border-radius: 9px;
+      font-size: .92rem;
+      font-weight: 600;
+      text-align: left;
+      transition: .15s;
+    }
+
+    nav.menu button i {
+      width: 20px;
+      text-align: center;
+      font-size: .95rem;
+    }
+
+    nav.menu button:hover {
+      background: var(--bg-elev);
+      color: var(--text);
+    }
+
+    nav.menu button.ativo {
+      background: var(--gold-soft);
+      color: var(--gold);
+    }
+
+    nav.menu button .badge-conta {
+      margin-left: auto;
+      background: var(--gold);
+      color: #171302;
+      font-size: .68rem;
+      font-weight: 700;
+      border-radius: 20px;
+      padding: 1px 8px;
+      min-width: 20px;
+      text-align: center;
+    }
+
+    .sidebar-rodape {
+      padding: 14px;
+      border-top: 1px solid var(--border-soft);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--gold-soft);
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      flex-shrink: 0;
+      border: 1px solid var(--border);
+    }
+
+    .avatar-inicial {
+      font-size: .95rem;
+    }
+
+    .dados-cli {
+      min-width: 0;
+      flex: 1;
+    }
+
+    .dados-cli .n {
+      font-weight: 700;
+      font-size: .86rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .dados-cli .e {
+      font-size: .72rem;
+      color: var(--muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .btn-sair-mini {
+      background: none;
+      border: 0;
+      color: var(--muted);
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 8px;
+      font-size: .9rem;
+    }
+
+    .btn-sair-mini:hover {
+      color: var(--danger);
+      background: var(--bg-elev);
+    }
+
+    /* conteúdo */
+    .principal {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .topo {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: color-mix(in srgb, var(--bg) 88%, transparent);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 26px;
+    }
+
+    .topo h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+
+    .topo .badge-caso {
+      font-family: 'Fira Code', monospace;
+      font-size: .72rem;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 3px 12px;
+      white-space: nowrap;
+    }
+
+    .topo-acoes {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .ic-btn {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      color: var(--muted);
+      cursor: pointer;
+      font-size: .95rem;
+      position: relative;
+      transition: .15s;
+    }
+
+    .ic-btn:hover {
+      color: var(--gold);
+      border-color: var(--gold);
+    }
+
+    .ic-btn .ponto {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--danger);
+      border: 2px solid var(--bg-card);
+      display: none;
+    }
+
+    .ic-btn .ponto.on {
+      display: block;
+    }
+
+    .conteudo {
+      padding: 26px;
+      max-width: 1320px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .vista {
+      display: none;
+    }
+
+    .vista.on {
+      display: block;
+      animation: surge .18s ease;
+    }
+
+    @keyframes surge {
+      from {
+        opacity: 0;
+        transform: translateY(6px);
+      }
+
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    /* ---------- COMPONENTES ---------- */
+    .cartao {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 20px;
+    }
+
+    .cartao-titulo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .cartao-titulo h3 {
+      font-size: 1.02rem;
+    }
+
+    .cartao-titulo i {
+      color: var(--gold);
+      font-size: .9rem;
+    }
+
+    .grid-dash {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .stat {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 18px;
+    }
+
+    .stat .rotulo {
+      font-size: .72rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      font-weight: 700;
+    }
+
+    .stat .valor {
+      font-size: 1.5rem;
+      font-weight: 900;
+      margin-top: 6px;
+    }
+
+    .stat .det {
+      font-size: .76rem;
+      color: var(--faint);
+      margin-top: 4px;
+    }
+
+    .stat.destaque {
+      border-top: 3px solid var(--gold);
+    }
+
+    .stat.destaque .valor {
+      color: var(--gold);
+    }
+
+    .dia-2 {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr;
+      gap: 16px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 3px 11px;
+      border-radius: 20px;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .02em;
+    }
+
+    .pill-novo {
+      background: var(--gold-soft);
+      color: var(--gold);
+    }
+
+    .pill-andamento {
+      background: rgba(90, 143, 212, .14);
+      color: var(--info);
+    }
+
+    .pill-respondido {
+      background: rgba(63, 174, 106, .14);
+      color: var(--ok);
+    }
+
+    .pill-prazo-ok {
+      background: rgba(63, 174, 106, .14);
+      color: var(--ok);
+    }
+
+    .pill-prazo-hoje {
+      background: rgba(232, 179, 57, .16);
+      color: var(--warn);
+    }
+
+    .pill-prazo-urgente {
+      background: rgba(224, 90, 90, .14);
+      color: var(--danger);
+    }
+
+    .pill-fase {
+      background: var(--bg-elev);
+      color: var(--muted);
+      border: 1px solid var(--border);
+    }
+
+    /* linha do tempo */
+    .tl {
+      position: relative;
+      padding-left: 22px;
+      margin: 0;
+    }
+
+    .tl::before {
+      content: '';
+      position: absolute;
+      left: 6px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: var(--border);
+    }
+
+    .tl-item {
+      position: relative;
+      padding: 0 0 18px 12px;
+    }
+
+    .tl-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .tl-item::before {
+      content: '';
+      position: absolute;
+      left: -20px;
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--bg-card);
+      border: 2px solid var(--gold);
+    }
+
+    .tl-item.primeiro::before {
+      background: var(--gold);
+    }
+
+    .tl-data {
+      font-family: 'Fira Code', monospace;
+      font-size: .74rem;
+      color: var(--faint);
+    }
+
+    .tl-titulo {
+      font-weight: 700;
+      font-size: .92rem;
+      margin: 2px 0;
+    }
+
+    .tl-texto {
+      font-size: .86rem;
+      color: var(--muted);
+    }
+
+    /* barra de fases do processo */
+    .fases {
+      display: flex;
+      gap: 0;
+      margin-top: 14px;
+    }
+
+    .fase {
+      flex: 1;
+      text-align: center;
+      position: relative;
+    }
+
+    .fase::before {
+      content: '';
+      position: absolute;
+      top: 9px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--border);
+      z-index: 0;
+    }
+
+    .fase:first-child::before {
+      left: 50%;
+    }
+
+    .fase:last-child::before {
+      right: 50%;
+    }
+
+    .fase.passo::before {
+      background: var(--gold);
+    }
+
+    .fase .bola {
+      position: relative;
+      z-index: 1;
+      width: 20px;
+      height: 20px;
+      margin: 0 auto;
+      border-radius: 50%;
+      background: var(--bg-card);
+      border: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .6rem;
+      color: var(--faint);
+    }
+
+    .fase.passo .bola {
+      border-color: var(--gold);
+      color: var(--gold);
+      background: var(--gold-soft);
+    }
+
+    .fase .nome-fase {
+      font-size: .7rem;
+      color: var(--muted);
+      margin-top: 7px;
+    }
+
+    .fase.passo .nome-fase {
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    /* skeleton */
+    .skel {
+      background: linear-gradient(90deg, var(--bg-elev) 25%, var(--bg-hover) 50%, var(--bg-elev) 75%);
+      background-size: 200% 100%;
+      animation: brilho 1.3s infinite;
+      border-radius: 8px;
+    }
+
+    @keyframes brilho {
+      from {
+        background-position: 200% 0;
+      }
+
+      to {
+        background-position: -200% 0;
+      }
+    }
+
+    .skel-l {
+      height: 14px;
+      margin-bottom: 10px;
+    }
+
+    .skel-l.c {
+      width: 60%;
+    }
+
+    /* vazio */
+    .vazio {
+      text-align: center;
+      padding: 44px 20px;
+      color: var(--muted);
+    }
+
+    .vazio i {
+      font-size: 1.8rem;
+      color: var(--faint);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .vazio .tt {
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .vazio .btn {
+      margin-top: 16px;
+    }
+
+    /* toast */
+    #toasts {
+      position: fixed;
+      bottom: 22px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 200;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .toast {
+      background: var(--bg-card);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--gold);
+      border-radius: 10px;
+      padding: 12px 18px;
+      font-size: .88rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      animation: surge .2s ease;
+      max-width: 90vw;
+    }
+
+    .toast.ok {
+      border-left-color: var(--ok);
+    }
+
+    .toast.ok i {
+      color: var(--ok);
+    }
+
+    .toast.erro {
+      border-left-color: var(--danger);
+    }
+
+    .toast.erro i {
+      color: var(--danger);
+    }
+
+    /* upload */
+    .dropzone {
+      border: 2px dashed var(--border);
+      border-radius: var(--r);
+      padding: 30px;
+      text-align: center;
+      color: var(--muted);
+      cursor: pointer;
+      transition: .15s;
+    }
+
+    .dropzone:hover,
+    .dropzone.sobre {
+      border-color: var(--gold);
+      background: var(--gold-soft);
+      color: var(--text);
+    }
+
+    .dropzone i {
+      font-size: 1.6rem;
+      color: var(--gold);
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .barra-fila {
+      margin-top: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .arq-fila {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--bg-elev);
+      border: 1px solid var(--border-soft);
+      border-radius: 8px;
+      padding: 9px 12px;
+      font-size: .85rem;
+    }
+
+    .arq-fila .nm {
+      flex: 1;
+      min-width: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .arq-fila .st {
+      font-size: .74rem;
+      font-weight: 700;
+    }
+
+    .arq-fila .st.ok {
+      color: var(--ok);
+    }
+
+    .arq-fila .st.erro {
+      color: var(--danger);
+    }
+
+    .arq-fila .st.enviando {
+      color: var(--muted);
+    }
+
+    .progresso {
+      height: 5px;
+      background: var(--bg-hover);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 6px;
+    }
+
+    .progresso>div {
+      height: 100%;
+      background: var(--gold);
+      width: 0;
+      transition: width .3s;
+    }
+
+    /* lista de documentos */
+    .doc-linha {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 4px;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .doc-linha:last-child {
+      border-bottom: 0;
+    }
+
+    .doc-icone {
+      width: 38px;
+      height: 38px;
+      border-radius: 9px;
+      background: var(--bg-elev);
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .doc-nm {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .doc-nm .nm {
+      font-weight: 600;
+      font-size: .9rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .doc-nm .mt {
+      font-size: .73rem;
+      color: var(--faint);
+    }
+
+    .doc-acoes {
+      display: flex;
+      gap: 6px;
+    }
+
+    .mini-btn {
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 7px 11px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: .78rem;
+      transition: .15s;
+    }
+
+    .mini-btn:hover {
+      color: var(--gold);
+      border-color: var(--gold);
+    }
+
+    /* pedidos */
+    .pedido {
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 16px;
+      margin-bottom: 12px;
+      background: var(--bg-card);
+    }
+
+    .pedido-topo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .pedido-proto {
+      font-family: 'Fira Code', monospace;
+      font-size: .76rem;
+      color: var(--faint);
+    }
+
+    .pedido-msg {
+      margin-top: 8px;
+      font-size: .9rem;
+    }
+
+    .pedido-resp {
+      margin-top: 10px;
+      background: var(--gold-soft);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 8px 8px 0;
+      padding: 10px 14px;
+      font-size: .86rem;
+    }
+
+    /* notificações */
+    .notif {
+      display: flex;
+      gap: 12px;
+      padding: 14px 4px;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .notif:last-child {
+      border-bottom: 0;
+    }
+
+    .notif i {
+      color: var(--gold);
+      margin-top: 3px;
+    }
+
+    .notif .quando {
+      font-family: 'Fira Code', monospace;
+      font-size: .72rem;
+      color: var(--faint);
+    }
+
+    /* mobile: barra inferior + FAB */
+    .fab {
+      display: none;
+    }
+
+    .bottom-nav {
+      display: none;
+    }
+
+    @media(max-width:960px) {
+      .grid-dash {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .dia-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .conteudo {
+        padding: 18px 16px 96px;
+      }
+
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        display: none;
+      }
+
+      .topo {
+        padding: 12px 16px;
+      }
+
+      .topo h2 {
+        font-size: 1rem;
+      }
+
+      .topo .badge-caso {
+        display: none;
+      }
+
+      .fab {
+        display: flex;
+        position: fixed;
+        right: 18px;
+        bottom: 86px;
+        z-index: 60;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        background: var(--gold);
+        color: #171302;
+        font-size: 1.15rem;
+        box-shadow: var(--shadow);
+        align-items: center;
+        justify-content: center;
+      }
+
+      .bottom-nav {
+        display: flex;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 60;
+        background: var(--bg-card);
+        border-top: 1px solid var(--border);
+        padding: 6px 4px calc(6px + env(safe-area-inset-bottom));
+      }
+
+      .bottom-nav button {
+        flex: 1;
+        background: none;
+        border: 0;
+        color: var(--muted);
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3px;
+        font-size: .62rem;
+        font-weight: 700;
+        padding: 7px 2px;
+        min-height: 48px;
+        position: relative;
+      }
+
+      .bottom-nav button i {
+        font-size: 1.05rem;
+      }
+
+      .bottom-nav button.ativo {
+        color: var(--gold);
+      }
+
+      .fases .nome-fase {
+        font-size: .58rem;
+      }
+    }
+
+    @media(min-width:1200px) {
+      .conteudo {
+        padding: 30px 40px;
+      }
+    }
+
+    /* ============================================================
+   Ajustes para o Portal V3 (15/10/2026): mesmas cores e formas do
+   redesign de 14/10; só componentes novos para o que o V3 entrega
+   (resumo e próximo passo, ações do advogado, documentos recebidos,
+   biblioteca para baixar, novidades).
+   ============================================================ */
+    [hidden] {
+      display: none !important;
+    }
+
+    .msg-ok {
+      color: var(--ok);
+    }
+
+    .login-rodape a {
+      color: var(--gold);
+      text-decoration: underline;
+    }
+
+    .login-rodape .mini {
+      display: block;
+      margin-top: 8px;
+      font-size: .7rem;
+    }
+
+    .pill-pendente {
+      background: rgba(232, 179, 57, .16);
+      color: var(--warn);
+    }
+
+    /* ficha do processo */
+    .ficha-linha {
+      display: flex;
+      gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border-soft);
+      align-items: baseline;
+    }
+
+    .ficha-linha:last-child {
+      border-bottom: 0;
+    }
+
+    .ficha-linha .k {
+      min-width: 150px;
+      color: var(--muted);
+      font-size: .78rem;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+
+    .ficha-linha .v {
+      flex: 1;
+      min-width: 0;
+      font-weight: 600;
+      overflow-wrap: anywhere;
+    }
+
+    .nota-fase {
+      margin: 14px 0 0;
+      font-size: .74rem;
+      color: var(--faint);
+    }
+
+    /* resumo do caso */
+    .resumo-texto {
+      margin: 0;
+      font-size: .95rem;
+      white-space: pre-line;
+    }
+
+    .proximo {
+      margin-top: 14px;
+      padding: 12px 14px;
+      background: var(--gold-soft);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 8px 8px 0;
+      font-size: .9rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      white-space: pre-line;
+    }
+
+    .proximo b {
+      font-size: .7rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .aguardando {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      margin: 0;
+      font-size: .9rem;
+      color: var(--muted);
+    }
+
+    .aguardando i {
+      color: var(--gold);
+      margin-top: 4px;
+    }
+
+    /* documentos recebidos pelo escritório */
+    .chk {
+      list-style: none;
+      margin: 0 0 16px;
+      padding: 0;
+      display: grid;
+      gap: 8px;
+    }
+
+    .chk li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 12px;
+      background: var(--bg-elev);
+      border: 1px solid var(--border-soft);
+      border-radius: 8px;
+      font-size: .88rem;
+    }
+
+    .chk li>i {
+      color: var(--faint);
+    }
+
+    .chk li.sim>i {
+      color: var(--ok);
+    }
+
+    .chk li .pill {
+      margin-left: auto;
+    }
+
+    .sub-titulo {
+      margin: 20px 0 6px;
+      font-weight: 700;
+      font-size: .8rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .nota {
+      margin: 12px 0 0;
+      font-size: .8rem;
+      color: var(--muted);
+    }
+
+    .arq-fila {
+      flex-wrap: wrap;
+    }
+
+    .arq-fila .st {
+      text-align: right;
+    }
+
+    .doc-linha .mini-btn[disabled] {
+      opacity: .6;
+      cursor: default;
+    }
+
+    .a-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      text-decoration: none;
+    }
+
+    .tl-titulo .pill {
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    .rodape-aviso {
+      margin: 30px 0 0;
+      padding-top: 16px;
+      border-top: 1px solid var(--border-soft);
+      font-size: .74rem;
+      line-height: 1.55;
+      color: var(--faint);
+    }
+
+    .ic-btn.girando i {
+      animation: gira .9s linear infinite;
+    }
+
+    @keyframes gira {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .vista.on,
+      .toast {
+        animation: none;
+      }
+
+      .ic-btn.girando i {
+        animation: none;
+      }
+    }
+
+    @media(max-width:960px) {
+
+      /* o botão redondo de "Enviar documento" fica por cima do fim da página: dá folga para o rodapé rolar acima dele */
+      .conteudo {
+        padding-bottom: 160px;
+      }
+
+      .ficha-linha {
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .ficha-linha .k {
+        min-width: 0;
+      }
+
+      .bottom-nav button {
+        font-size: .6rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ==================== TELA DE LOGIN ==================== -->
+  <div id="telaLogin">
+    <div class="login-card">
+      <div class="login-marca">Lucas Semim</div>
+      <div class="login-sub">Advocacia Criminal · Área do Cliente</div>
+      <form id="fLogin" novalidate>
+        <div class="field">
+          <label for="lgEmail">E-mail</label>
+          <input type="email" id="lgEmail" name="username" autocomplete="username" inputmode="email" autocapitalize="off"
+            spellcheck="false" placeholder="seu@email.com">
+        </div>
+        <div class="field">
+          <label for="lgSenha">Senha</label>
+          <input type="password" id="lgSenha" name="password" autocomplete="current-password" placeholder="Sua senha">
+          <button type="button" class="eye" id="btnOlho" aria-label="Mostrar senha"><i class="fas fa-eye"></i></button>
+        </div>
+        <button type="submit" class="btn" id="btnEntrar" style="width:100%"><i class="fas fa-right-to-bracket"></i>
+          Entrar</button>
+        <div class="msg-erro" id="lgMsg" role="alert" aria-live="assertive"></div>
+      </form>
+      <div class="login-demo" id="demoBox" hidden>
+        Modo demonstração ativo — dados fictícios. <code id="sairDemo">sair do modo demo</code>
+      </div>
+      <div class="login-rodape">
+        Use o e-mail e a senha que o escritório enviou para você.<br>
+        Primeiro acesso ou esqueceu a senha? <a id="lgAjuda" href="#" target="_blank" rel="noopener noreferrer">Fale com
+          o escritório</a>
+        <span class="mini">Conexão protegida · a sessão expira em 6 horas</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== SHELL DO APP ==================== -->
+  <div id="app">
+    <div class="layout">
+
+      <aside class="sidebar">
+        <div class="marca">
+          <div class="nome">Lucas Semim</div>
+          <div class="tipo">Advocacia Criminal</div>
+        </div>
+        <nav class="menu" id="menuLateral" aria-label="Menu do painel">
+          <button type="button" data-vista="inicio" class="ativo"><i class="fas fa-house"></i> Início</button>
+          <button type="button" data-vista="processo"><i class="fas fa-scale-balanced"></i> Meu Processo</button>
+          <button type="button" data-vista="documentos"><i class="fas fa-folder-open"></i> Documentos</button>
+          <button type="button" data-vista="pedidos"><i class="fas fa-paper-plane"></i> Pedidos</button>
+          <button type="button" data-vista="novidades"><i class="fas fa-bell"></i> Novidades</button>
+        </nav>
+        <div class="sidebar-rodape">
+          <div class="avatar"><span class="avatar-inicial" id="avInicial">–</span></div>
+          <div class="dados-cli">
+            <div class="n" id="cliNome">–</div>
+            <div class="e" id="cliEmail">–</div>
+          </div>
+          <button type="button" class="btn-sair-mini" id="btnSair" title="Sair" aria-label="Sair"><i
+              class="fas fa-right-from-bracket"></i></button>
+        </div>
+      </aside>
+
+      <div class="principal">
+        <header class="topo">
+          <h2 id="topoTitulo">Início</h2>
+          <span class="badge-caso" id="topoCaso" hidden></span>
+          <div class="topo-acoes">
+            <button type="button" class="ic-btn" id="btnTema" title="Alternar claro/escuro"
+              aria-label="Alternar claro e escuro"><i class="fas fa-moon"></i></button>
+            <button type="button" class="ic-btn" id="btnAtualizar" title="Atualizar" aria-label="Atualizar"><i
+                class="fas fa-rotate"></i></button>
+            <button type="button" class="ic-btn" id="btnSairTopo" title="Sair" aria-label="Sair"><i
+                class="fas fa-right-from-bracket"></i></button>
+          </div>
+        </header>
+
+        <main class="conteudo">
+
+          <!-- ===== VISTA: INÍCIO ===== -->
+          <section class="vista on" id="vInicio">
+            <div class="grid-dash" id="dashStats">
+              <div class="stat destaque">
+                <div class="rotulo">Fase do processo</div>
+                <div class="valor" id="stFase" style="font-size:1.25rem">–</div>
+                <div class="det" id="stFaseDet">–</div>
+              </div>
+              <div class="stat">
+                <div class="rotulo">Último andamento</div>
+                <div class="valor" id="stUltimo" style="font-size:1.05rem">–</div>
+                <div class="det" id="stUltimoDet">–</div>
+              </div>
+              <div class="stat">
+                <div class="rotulo">Documentos básicos</div>
+                <div class="valor" id="stDocs">–</div>
+                <div class="det" id="stDocsDet">–</div>
+              </div>
+              <div class="stat">
+                <div class="rotulo">Pedidos em aberto</div>
+                <div class="valor" id="stPed">–</div>
+                <div class="det" id="stPedDet">–</div>
+              </div>
+            </div>
+            <div class="cartao" style="margin-bottom:16px">
+              <div class="cartao-titulo"><i class="fas fa-comment-dots"></i>
+                <h3>Resumo do seu caso</h3>
+              </div>
+              <div id="boxResumo"></div>
+            </div>
+            <div class="dia-2">
+              <div class="cartao">
+                <div class="cartao-titulo"><i class="fas fa-timeline"></i>
+                  <h3>Últimos andamentos</h3>
+                </div>
+                <div id="tlHome"></div>
+              </div>
+              <div class="cartao">
+                <div class="cartao-titulo"><i class="fas fa-bolt"></i>
+                  <h3>Acesso rápido</h3>
+                </div>
+                <button type="button" class="btn" style="width:100%; margin-bottom:10px" data-ir="documentos"><i
+                    class="fas fa-upload"></i> Enviar documento</button>
+                <button type="button" class="btn-sec" style="width:100%; margin-bottom:10px" data-ir="pedidos"><i
+                    class="fas fa-paper-plane"></i> Abrir pedido</button>
+                <button type="button" class="btn-sec" style="width:100%; margin-bottom:10px" data-ir="processo"><i
+                    class="fas fa-scale-balanced"></i> Ver meu processo</button>
+                <a class="btn-sec a-btn" id="wppRapido" href="#" target="_blank" rel="noopener noreferrer"><i
+                    class="fab fa-whatsapp"></i> Chamar no WhatsApp</a>
+              </div>
+            </div>
+          </section>
+
+          <!-- ===== VISTA: MEU PROCESSO ===== -->
+          <section class="vista" id="vProcesso">
+            <div class="cartao" style="margin-bottom:16px">
+              <div class="cartao-titulo"><i class="fas fa-scale-balanced"></i>
+                <h3>Ficha do processo</h3>
+              </div>
+              <div id="fichaProcesso"></div>
+              <div class="fases" id="fasesBarra"></div>
+              <p class="nota-fase" id="notaFase" hidden>A fase é informada pelo escritório e pode mudar ao longo do caso.
+              </p>
+            </div>
+            <div class="cartao" style="margin-bottom:16px">
+              <div class="cartao-titulo"><i class="fas fa-person-walking"></i>
+                <h3>O que o advogado fez</h3>
+              </div>
+              <div id="tlDilig"></div>
+            </div>
+            <div class="cartao">
+              <div class="cartao-titulo"><i class="fas fa-timeline"></i>
+                <h3>Andamentos</h3>
+              </div>
+              <div id="tlCompleta"></div>
+            </div>
+          </section>
+
+          <!-- ===== VISTA: DOCUMENTOS ===== -->
+          <section class="vista" id="vDocumentos">
+            <div class="cartao" style="margin-bottom:16px">
+              <div class="cartao-titulo"><i class="fas fa-cloud-arrow-up"></i>
+                <h3>Enviar documento ao escritório</h3>
+              </div>
+              <ul class="chk" id="listChk" aria-label="Documentos básicos do caso"></ul>
+              <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Enviar arquivo">
+                <i class="fas fa-file-arrow-up"></i>
+                Arraste um arquivo aqui ou <b>toque para escolher</b><br>
+                <span style="font-size:.75rem">PDF, JPG ou PNG · até 6 MB · RG, comprovante, receitas, laudos…</span>
+              </div>
+              <input type="file" id="inputArquivo" accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png" multiple hidden>
+              <div class="barra-fila" id="filaUpload" aria-live="polite"></div>
+              <div id="boxEnviados"></div>
+            </div>
+            <div class="cartao">
+              <div class="cartao-titulo"><i class="fas fa-folder-open"></i>
+                <h3>Documentos liberados pelo escritório</h3>
+              </div>
+              <div id="listaDocs"></div>
+            </div>
+          </section>
+
+          <!-- ===== VISTA: PEDIDOS ===== -->
+          <section class="vista" id="vPedidos">
+            <div class="cartao" style="margin-bottom:16px">
+              <div class="cartao-titulo"><i class="fas fa-paper-plane"></i>
+                <h3>Fale com o escritório</h3>
+              </div>
+              <form id="fPedido" novalidate>
+                <div class="field">
+                  <label for="pdTipo">Assunto</label>
+                  <select id="pdTipo"></select>
+                </div>
+                <div class="field">
+                  <label for="pdMsg">Mensagem</label>
+                  <textarea id="pdMsg" rows="4" maxlength="1200"
+                    placeholder="Escreva com suas palavras o que você precisa."></textarea>
+                </div>
+                <button type="submit" class="btn" id="btnPedido"><i class="fas fa-paper-plane"></i> Enviar pedido</button>
+                <div class="msg-erro" id="pdMsgOut" role="status" aria-live="polite" style="text-align:left"></div>
+              </form>
+              <p class="nota">Em caso de urgência, não espere a resposta aqui: <a id="wppPedidos" href="#"
+                  target="_blank" rel="noopener noreferrer">chame no WhatsApp</a>.</p>
+            </div>
+            <div class="cartao">
+              <div class="cartao-titulo"><i class="fas fa-list"></i>
+                <h3>Meus pedidos</h3>
+              </div>
+              <div id="listaPedidos"></div>
+            </div>
+          </section>
+
+          <!-- ===== VISTA: NOVIDADES ===== -->
+          <section class="vista" id="vNovidades">
+            <div class="cartao">
+              <div class="cartao-titulo"><i class="fas fa-bell"></i>
+                <h3>Novidades do seu caso</h3>
+              </div>
+              <div id="listaNovidades"></div>
+            </div>
+          </section>
+
+          <p class="rodape-aviso">As informações deste painel têm caráter informativo e não representam promessa ou
+            garantia de resultado. Em caso de urgência, ligue ou chame no WhatsApp: (31) 98942-0094. Lucas Renan Semim ·
+            OAB/MG 222.539.</p>
+        </main>
+      </div>
+    </div>
+
+    <button type="button" class="fab" id="fab" title="Enviar documento" aria-label="Enviar documento"><i
+        class="fas fa-cloud-arrow-up"></i></button>
+    <nav class="bottom-nav" id="bottomNav" aria-label="Menu do painel">
+      <button type="button" data-vista="inicio" class="ativo"><i class="fas fa-house"></i> Início</button>
+      <button type="button" data-vista="processo"><i class="fas fa-scale-balanced"></i> Processo</button>
+      <button type="button" data-vista="documentos"><i class="fas fa-folder-open"></i> Docs</button>
+      <button type="button" data-vista="pedidos"><i class="fas fa-paper-plane"></i> Pedidos</button>
+      <button type="button" data-vista="novidades"><i class="fas fa-bell"></i> Novidades</button>
+    </nav>
+  </div>
+
+  <div id="toasts" role="status" aria-live="polite"></div>
+
+  <script src="/js/ls-api-config.js?v=20261015"></script>
+  <script>
+    /* =====================================================================
+       Área do Cliente — lógica do app (V3, 15/10/2026)
+       Visual: redesign de 14/10. Dados: Portal API do projeto novo
+       (portal_login, portal_painel, portal_docs, portal_doc_baixar,
+       portal_pedido, portal_upload, portal_logout).
+       Regras: POST sempre no corpo (nunca credencial em URL), token só em
+       sessionStorage, timeout de 40 s, tudo que vem do servidor entra como
+       TEXTO (nunca innerHTML), modo #demo com dados fictícios e zero rede.
+       ===================================================================== */
+    (function () {
+      "use strict";
+      var CFG = window.LS_CONFIG || {};
+      var API = CFG.apiUrlPortal || CFG.apiUrl || '';   // apiUrlPortal = "Portal API" do projeto novo; sem ela, usa a API antiga
+      var WPP = String(CFG.whatsapp || '5531989420094').replace(/\D/g, '') || '5531989420094';
+      var DEMO = /(^|[#&])demo\b/.test(location.hash);
+      var TIPOS_PEDIDO = ['Pedir visita ao preso', 'Cópia de decisão ou peça', 'Retorno do advogado', 'Enviar informação nova', 'Outro assunto'];
+      var ETAPAS = [
+        // a fase é texto livre do advogado: vale a etapa mais avançada citada (ex.: "Instrução, custódia feita" = Instrução)
+        { nome: 'Inquérito', re: /\b(inquerito|delegacia|flagrante|custodia|investigacao)\b/ },
+        { nome: 'Instrução', re: /\b(instrucao|denuncia|citacao|resposta a acusacao|pronuncia|juri|alegacoes finais|memoriais)\b/ },
+        { nome: 'Sentença', re: /\b(sentenca)\b/ },
+        { nome: 'Recurso', re: /\b(recurso|recursos|apelacao|agravo)\b/ },
+        { nome: 'Execução', re: /\b(execucao|cumprimento de pena|progressao|livramento)\b/ }
+      ];
+      var TITULOS = { inicio: 'Início', processo: 'Meu Processo', documentos: 'Documentos', pedidos: 'Pedidos', novidades: 'Novidades' };
+      var token = '';
+      var DADOS = null;
+      var ocupado = false;
+      var filaUp = [], filaRodando = false, filaEnviou = false, geracaoFila = 0;
+
+      function $(id) { return document.getElementById(id); }
+      function load(k) { try { return sessionStorage.getItem(k) || ''; } catch (e) { return ''; } }
+      function save(k, v) { try { sessionStorage.setItem(k, v); } catch (e) { } }
+      function del(k) { try { sessionStorage.removeItem(k); } catch (e) { } }
+
+      // constrói elementos sem innerHTML: tudo que vem do servidor entra como texto
+      function h(tag, attrs, kids) {
+        var n = document.createElement(tag);
+        if (attrs) Object.keys(attrs).forEach(function (k) {
+          if (k === 'class') n.className = attrs[k];
+          else if (k === 'text') n.textContent = attrs[k];
+          else n.setAttribute(k, attrs[k]);
+        });
+        (kids || []).forEach(function (c) { if (c) n.appendChild(typeof c === 'string' ? document.createTextNode(c) : c); });
+        return n;
+      }
+      function icone(cls) { var i = h('i', { class: cls }); i.setAttribute('aria-hidden', 'true'); return i; }
+      function limpar(n) { while (n && n.firstChild) n.removeChild(n.firstChild); }
+      function vazio(ic, titulo, texto) {
+        return h('div', { class: 'vazio' }, [icone('fas ' + ic), h('div', { class: 'tt', text: titulo }), texto ? h('div', { text: texto }) : null]);
+      }
+      function semAcento(s) { return String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase(); }
+      function ts(s) {   // "dd/MM/aaaa" ou "dd/MM/aaaa HH:mm" -> milissegundos (0 se não entender)
+        var m = /^(\d{2})\/(\d{2})\/(\d{4})(?:\s+(\d{2}):(\d{2}))?/.exec(String(s || ''));
+        return m ? Date.UTC(+m[3], +m[2] - 1, +m[1], +(m[4] || 0), +(m[5] || 0)) : 0;
+      }
+
+      function toast(txt, tipo) {
+        var box = $('toasts'), i, t;
+        txt = String(txt || '');
+        // mesma mensagem já na tela: só renova o tempo (evita uma pilha de avisos iguais se a pessoa clicar várias vezes)
+        for (i = 0; i < box.children.length; i++) {
+          t = box.children[i];
+          if (t.getAttribute('data-txt') === txt) {
+            clearTimeout(t._fim); t._fim = setTimeout(function (x) { if (x.parentNode) x.parentNode.removeChild(x); }, 4200, t);
+            return;
+          }
+        }
+        t = h('div', { class: 'toast ' + (tipo || ''), 'data-txt': txt }, [
+          icone('fas ' + (tipo === 'ok' ? 'fa-circle-check' : tipo === 'erro' ? 'fa-circle-exclamation' : 'fa-circle-info')),
+          h('span', { text: txt })
+        ]);
+        box.appendChild(t);
+        while (box.children.length > 3) box.removeChild(box.firstChild);   // no máximo 3 avisos ao mesmo tempo
+        t._fim = setTimeout(function (x) { if (x.parentNode) x.parentNode.removeChild(x); }, 4200, t);
+      }
+
+      /* ---------- chamada de API (POST no corpo, timeout, erro normalizado) ---------- */
+      function call(payload) {
+        if (DEMO) return callDemo(payload);
+        if (!API) return Promise.reject(new Error('Serviço indisponível no momento.'));
+        var ctl = new AbortController();
+        var to = setTimeout(function () { ctl.abort(); }, 40000);
+        // corpo em texto simples: evita pré-verificação CORS no Apps Script
+        return fetch(API, { method: 'POST', body: JSON.stringify(payload), signal: ctl.signal })
+          .then(function (r) { clearTimeout(to); return r.json(); })
+          .catch(function (e) {
+            clearTimeout(to);
+            throw new Error(e && e.name === 'AbortError'
+              ? 'A conexão demorou demais. Tente de novo.'
+              : 'Não foi possível conectar agora. Tente novamente.');
+          });
+      }
+
+      /* ---------- TEMA ---------- */
+      function aplicarTema() {
+        var pref = null;
+        try { pref = localStorage.getItem('ls_portal_tema'); } catch (e) { }
+        if (pref !== 'claro' && pref !== 'escuro') pref = 'escuro';
+        document.documentElement.setAttribute('data-tema', pref);
+        var ic = $('btnTema').querySelector('i');
+        if (ic) ic.className = pref === 'escuro' ? 'fas fa-sun' : 'fas fa-moon';
+      }
+      $('btnTema').addEventListener('click', function () {
+        var atual = document.documentElement.getAttribute('data-tema') || 'escuro';
+        try { localStorage.setItem('ls_portal_tema', atual === 'escuro' ? 'claro' : 'escuro'); } catch (e) { }
+        aplicarTema();
+      });
+      aplicarTema();
+
+      /* ---------- LOGIN ---------- */
+      function dizLogin(txt, tipo) {
+        var m = $('lgMsg');
+        m.textContent = txt || '';
+        m.className = 'msg-erro' + (tipo === 'ok' ? ' msg-ok' : '');
+      }
+      function botaoEntrar(carregando) {
+        var b = $('btnEntrar');
+        b.disabled = !!carregando;
+        limpar(b);
+        b.appendChild(icone(carregando ? 'fas fa-spinner fa-spin' : 'fas fa-right-to-bracket'));
+        b.appendChild(document.createTextNode(carregando ? ' Entrando...' : ' Entrar'));
+      }
+      $('btnOlho').addEventListener('click', function () {
+        var s = $('lgSenha');
+        var ver = s.type === 'password';
+        s.type = ver ? 'text' : 'password';
+        this.setAttribute('aria-label', ver ? 'Ocultar senha' : 'Mostrar senha');
+        this.querySelector('i').className = ver ? 'fas fa-eye-slash' : 'fas fa-eye';
+      });
+
+      $('fLogin').addEventListener('submit', function (ev) {
+        ev.preventDefault();
+        if ($('btnEntrar').disabled) return;
+        var email = $('lgEmail').value.trim(), senha = $('lgSenha').value;
+        dizLogin('');
+        if (!email || !senha) { dizLogin('Preencha e-mail e senha.', 'erro'); return; }
+        botaoEntrar(true);
+        call({ acao: 'portal_login', email: email, senha: senha })
+          .then(function (j) {
+            if (!j || !j.sucesso) {
+              botaoEntrar(false);
+              dizLogin((j && j.mensagem) || 'Não foi possível entrar. Verifique os dados.', 'erro');
+              return;
+            }
+            token = j.token;
+            if (!DEMO) save('ls_pt', token);
+            return carregarTudo().then(function (ok) { if (ok) botaoEntrar(false); });
+          })
+          .catch(function (e) {
+            var t = token; token = ''; del('ls_pt');
+            if (t && !DEMO) call({ acao: 'portal_logout', token: t }).catch(function () { });   // não deixa sessão aberta no servidor
+            botaoEntrar(false);
+            dizLogin(e.message, 'erro');
+          });
+      });
+
+      /* ---------- SAIR ---------- */
+      function limparTela() {
+        ['fichaProcesso', 'fasesBarra', 'tlHome', 'tlCompleta', 'tlDilig', 'listChk', 'boxEnviados', 'listaDocs', 'listaPedidos',
+          'listaNovidades', 'boxResumo', 'filaUpload'].forEach(function (id) { limpar($(id)); });
+        ['stFase', 'stFaseDet', 'stUltimo', 'stUltimoDet', 'stDocs', 'stDocsDet', 'stPed', 'stPedDet', 'cliNome', 'cliEmail', 'avInicial']
+          .forEach(function (id) { $(id).textContent = '–'; });
+        $('topoCaso').hidden = true; $('topoCaso').textContent = '';
+        $('pdMsg').value = ''; dizPedido('', '');
+        $('notaFase').hidden = true;
+        irPara('inicio');
+      }
+      // opc.semAviso = a sessão já morreu no servidor (não precisa avisar de novo)
+      function sair(opc) {
+        opc = opc || {};
+        var t = token;
+        if (t && !DEMO && !opc.semAviso) call({ acao: 'portal_logout', token: t }).catch(function () { });
+        del('ls_pt');
+        token = ''; DADOS = null; filaUp = []; filaRodando = false; filaEnviou = false; geracaoFila++;
+        limparTela();
+        $('app').classList.remove('on');
+        $('telaLogin').style.display = 'flex';
+        $('lgSenha').value = '';
+        botaoEntrar(false);
+        dizLogin(opc.msg || '', opc.tipo);
+      }
+      $('btnSair').addEventListener('click', function () { sair({ msg: 'Você saiu com segurança.', tipo: 'ok' }); });
+      $('btnSairTopo').addEventListener('click', function () { sair({ msg: 'Você saiu com segurança.', tipo: 'ok' }); });
+      function expirou(j) { sair({ msg: (j && j.mensagem) || 'Sessão expirada. Entre novamente.', tipo: 'erro', semAviso: true }); }
+
+      /* ---------- NAVEGAÇÃO ---------- */
+      function irPara(vista) {
+        document.querySelectorAll('.vista').forEach(function (s) { s.classList.remove('on'); });
+        var alvo = $('v' + vista.charAt(0).toUpperCase() + vista.slice(1));
+        if (alvo) alvo.classList.add('on');
+        document.querySelectorAll('[data-vista]').forEach(function (b) {
+          var on = b.getAttribute('data-vista') === vista;
+          b.classList.toggle('ativo', on);
+          if (on) b.setAttribute('aria-current', 'page'); else b.removeAttribute('aria-current');
+        });
+        $('topoTitulo').textContent = TITULOS[vista] || vista;
+        window.scrollTo(0, 0);
+      }
+      document.querySelectorAll('[data-vista]').forEach(function (b) {
+        b.addEventListener('click', function () { irPara(b.getAttribute('data-vista')); });
+      });
+      document.querySelectorAll('[data-ir]').forEach(function (b) {
+        b.addEventListener('click', function () { irPara(b.getAttribute('data-ir')); });
+      });
+      $('fab').addEventListener('click', function () { irPara('documentos'); });
+
+      /* ---------- CARREGAMENTO ---------- */
+      // Devolve uma promessa: true = painel carregado; false = sessão expirada (já voltou ao login); rejeita em erro de rede.
+      function carregarTudo() {
+        if (!token) return Promise.resolve(false);
+        var pDocs = call({ acao: 'portal_docs', token: token }).catch(function (e) { return { sucesso: false, mensagem: e.message }; });
+        return call({ acao: 'portal_painel', token: token }).then(function (j) {
+          if (!j) throw new Error('Resposta vazia. Tente de novo.');
+          if (j.expirou) { expirou(j); return false; }
+          if (!j.sucesso) throw new Error(j.mensagem || 'Não foi possível carregar o painel.');
+          DADOS = j;
+          mostrar();
+          return pDocs.then(function (d) {
+            if (d && d.expirou) { expirou(d); return false; }
+            desenharBiblioteca(d);
+            return true;
+          });
+        });
+      }
+      function atualizar() {
+        var b = $('btnAtualizar');
+        if (b.classList.contains('girando') || !token) return;
+        b.classList.add('girando');
+        carregarTudo()
+          .then(function (ok) { if (ok) toast('Painel atualizado.', 'ok'); })
+          .catch(function (e) { toast(e.message, 'erro'); })
+          .then(function () { b.classList.remove('girando'); });
+      }
+      $('btnAtualizar').addEventListener('click', atualizar);
+
+      /* ---------- RENDER ---------- */
+      function mostrar() {
+        if (!DADOS) return;
+        var nome = (DADOS.cliente && DADOS.cliente.nome) || 'Cliente';
+        $('cliNome').textContent = nome;
+        $('cliEmail').textContent = (DADOS.cliente && DADOS.cliente.email) || '';
+        $('avInicial').textContent = nome.trim().charAt(0).toUpperCase() || 'C';
+        var p = DADOS.processo || {};
+        if (p.numero) { $('topoCaso').textContent = 'Processo ' + p.numero; $('topoCaso').hidden = false; }
+        else { $('topoCaso').textContent = ''; $('topoCaso').hidden = true; }
+        desenharInicio();
+        desenharProcesso();
+        desenharDocumentos();
+        desenharPedidos();
+        desenharNovidades();
+        $('app').classList.add('on');
+        $('telaLogin').style.display = 'none';
+      }
+
+      function itemTempo(data, titulo, texto, primeiro, pill) {
+        var tit = h('div', { class: 'tl-titulo' }, [titulo || '']);
+        if (pill) tit.appendChild(pill);
+        return h('div', { class: 'tl-item' + (primeiro ? ' primeiro' : '') }, [
+          h('div', { class: 'tl-data', text: data || '' }), tit, texto ? h('div', { class: 'tl-texto', text: texto }) : null
+        ]);
+      }
+      function listaTempo(destino, itens, vazioTitulo, vazioTexto, max) {
+        limpar(destino);
+        if (!itens.length) { destino.appendChild(vazio('fa-timeline', vazioTitulo, vazioTexto)); return; }
+        var tl = h('div', { class: 'tl' });
+        itens.slice(0, max || 999).forEach(function (it, i) { tl.appendChild(itemTempo(it.data, it.titulo, it.texto, i === 0, it.pill)); });
+        destino.appendChild(tl);
+      }
+      function pillStatusDilig(st) {
+        var s = String(st || '');
+        if (!s) return null;
+        var cls = s === 'Feito' ? 'pill-respondido' : /andamento/i.test(s) ? 'pill-andamento' : 'pill-pendente';
+        return h('span', { class: 'pill ' + cls, text: s });
+      }
+      function movsDoServidor() {
+        return (DADOS.movimentacoes || []).map(function (m) { return { data: m.data, titulo: m.titulo || m.evento || '', texto: m.descricao || m.texto || '' }; });
+      }
+
+      function desenharInicio() {
+        var p = DADOS.processo || {}, doc = DADOS.documentos || {}, peds = DADOS.pedidos || [], movs = movsDoServidor();
+        $('stFase').textContent = p.fase || 'Em andamento';
+        $('stFaseDet').textContent = p.classe || '';
+        $('stUltimo').textContent = movs.length ? (movs[0].data || '—') : '—';
+        $('stUltimoDet').textContent = movs.length ? movs[0].titulo : 'Sem andamentos ainda';
+        var recebidos = [doc.contrato, doc.procuracao, doc.declaracao].filter(Boolean).length;
+        $('stDocs').textContent = recebidos + ' de 3';
+        $('stDocsDet').textContent = recebidos === 3 ? 'Todos recebidos pelo escritório' : 'Contrato, procuração e declaração';
+        var abertos = peds.filter(function (x) { return x.status !== 'Respondido'; }).length;
+        $('stPed').textContent = String(abertos);
+        $('stPedDet').textContent = abertos ? (abertos === 1 ? 'aguardando resposta' : 'aguardando resposta do escritório') : (peds.length ? 'Todos respondidos' : 'Nenhum pedido ainda');
+
+        var box = $('boxResumo'); limpar(box);
+        if (DADOS.resumo || DADOS.proximoPasso) {
+          if (DADOS.resumo) box.appendChild(h('p', { class: 'resumo-texto', text: DADOS.resumo }));
+          if (DADOS.proximoPasso) box.appendChild(h('div', { class: 'proximo' }, [h('b', { text: 'Próximo passo' }), h('span', { text: DADOS.proximoPasso })]));
+        } else {
+          box.appendChild(h('p', { class: 'aguardando' }, [icone('fas fa-hourglass-half'),
+            h('span', { text: 'O Dr. Lucas está conferindo o resumo do seu caso. Assim que ele liberar, aparece aqui, em linguagem simples.' })]));
+        }
+        listaTempo($('tlHome'), movs, 'Nenhum andamento ainda', 'Assim que houver novidade no processo, aparece aqui.', 3);
+      }
+
+      function etapaAtual(fase) {
+        var f = semAcento(fase), idx = -1;
+        ETAPAS.forEach(function (e, i) { if (e.re.test(f)) idx = i; });
+        return idx;
+      }
+      function desenharProcesso() {
+        var p = DADOS.processo || {};
+        var ficha = $('fichaProcesso'); limpar(ficha);
+        [['Número do processo', p.numero, 'mono'], ['Tipo de processo', p.classe], ['Onde tramita', p.juizo], ['Fase atual', p.fase], ['Atualizado em', p.atualizadoEm]]
+          .forEach(function (l) {
+            ficha.appendChild(h('div', { class: 'ficha-linha' }, [h('span', { class: 'k', text: l[0] }), h('span', { class: 'v' + (l[2] ? ' ' + l[2] : ''), text: l[1] || '—' })]));
+          });
+        var barra = $('fasesBarra'); limpar(barra);
+        var idx = etapaAtual(p.fase);
+        barra.hidden = $('notaFase').hidden = idx < 0;
+        if (idx >= 0) {
+          ETAPAS.forEach(function (e, i) {
+            barra.appendChild(h('div', { class: 'fase' + (i <= idx ? ' passo' : '') }, [
+              h('div', { class: 'bola' }, [i < idx ? icone('fas fa-check') : String(i + 1)]),
+              h('div', { class: 'nome-fase', text: e.nome })
+            ]));
+          });
+        }
+        var dil = (DADOS.diligencias || []).map(function (x) { return { data: x.data, titulo: x.tipo || 'Ação do advogado', texto: x.texto, pill: pillStatusDilig(x.status) }; });
+        listaTempo($('tlDilig'), dil, 'Nada registrado ainda', 'Visitas, petições e contatos feitos pelo advogado no seu caso aparecem aqui, com a data.');
+        listaTempo($('tlCompleta'), movsDoServidor(), 'Nenhum andamento registrado', 'Ainda não há andamentos para o seu processo.');
+      }
+
+      function desenharDocumentos() {
+        var doc = DADOS.documentos || {};
+        var chk = $('listChk'); limpar(chk);
+        [['contrato', 'Contrato de honorários'], ['procuracao', 'Procuração'], ['declaracao', 'Declaração']].forEach(function (a) {
+          var ok = !!doc[a[0]];
+          chk.appendChild(h('li', { class: ok ? 'sim' : 'nao' }, [
+            icone(ok ? 'fas fa-circle-check' : 'far fa-circle'), h('span', { text: a[1] }),
+            h('span', { class: 'pill ' + (ok ? 'pill-respondido' : 'pill-pendente'), text: ok ? 'Recebido' : 'Pendente' })
+          ]));
+        });
+        var box = $('boxEnviados'); limpar(box);
+        var env = doc.enviados || [];
+        if (env.length) {
+          box.appendChild(h('div', { class: 'sub-titulo', text: 'Enviados por você' }));
+          env.forEach(function (f) {
+            box.appendChild(h('div', { class: 'doc-linha' }, [
+              h('div', { class: 'doc-icone' }, [icone('fas fa-file-circle-check')]),
+              h('div', { class: 'doc-nm' }, [h('div', { class: 'nm', text: f.nome }), h('div', { class: 'mt', text: f.data || '' })])
+            ]));
+          });
+        }
+      }
+
+      // ---------- biblioteca: arquivos que o escritório liberou para este cliente ----------
+      function iconeArquivo(mime) {
+        return /pdf/i.test(mime) ? 'fa-file-pdf' : /^image\//i.test(mime) ? 'fa-file-image' : /word/i.test(mime) ? 'fa-file-word' : /sheet|excel/i.test(mime) ? 'fa-file-excel' : 'fa-file-lines';
+      }
+      function desenharBiblioteca(j) {
+        var lista = $('listaDocs'); limpar(lista);
+        if (!j || !j.sucesso) {
+          lista.appendChild(vazio('fa-folder-open', 'Não consegui carregar esta lista agora', (j && j.mensagem) || 'Toque em atualizar (a seta no topo) para tentar de novo.'));
+          return;
+        }
+        if (!j.total) {
+          lista.appendChild(vazio('fa-folder-open', 'Nenhum documento liberado ainda', 'Quando o escritório liberar um documento para você, ele aparece aqui para baixar.'));
+          return;
+        }
+        lista.appendChild(h('div', { class: 'nota', style: 'margin:0 0 6px', text: j.total + (j.total === 1 ? ' arquivo liberado para você.' : ' arquivos liberados para você.') }));
+        (j.pastas || []).forEach(function (pa) {
+          lista.appendChild(h('div', { class: 'sub-titulo', text: pa.nome }));
+          (pa.arquivos || []).forEach(function (a) {
+            var btn = h('button', { type: 'button', class: 'mini-btn' }, [icone('fas fa-download'), ' Baixar']);
+            btn.addEventListener('click', function () { baixarDoc(a, btn); });
+            lista.appendChild(h('div', { class: 'doc-linha' }, [
+              h('div', { class: 'doc-icone' }, [icone('fas ' + iconeArquivo(a.tipo))]),
+              h('div', { class: 'doc-nm' }, [h('div', { class: 'nm', text: a.nome }), h('div', { class: 'mt', text: [a.tamanho, a.atualizadoEm].filter(Boolean).join(' · ') })]),
+              h('div', { class: 'doc-acoes' }, [btn])
+            ]));
+          });
+        });
+      }
+      function baixarDoc(a, btn) {
+        if (btn.disabled) return;
+        btn.disabled = true; limpar(btn); btn.appendChild(icone('fas fa-spinner fa-spin')); btn.appendChild(document.createTextNode(' Baixando…'));
+        var volta = function () { btn.disabled = false; limpar(btn); btn.appendChild(icone('fas fa-download')); btn.appendChild(document.createTextNode(' Baixar')); };
+        call({ acao: 'portal_doc_baixar', token: token, id: a.id })
+          .then(function (j) {
+            if (j && j.expirou) { expirou(j); return; }
+            if (!j || !j.sucesso || !j.data) { toast((j && j.mensagem) || 'Não foi possível baixar o documento.', 'erro'); return; }
+            salvarBase64(j.data, j.nome || a.nome, j.mimeType);
+            toast('Documento baixado.', 'ok');
+          })
+          .catch(function (e) { toast(e.message, 'erro'); })
+          .then(volta);
+      }
+      function salvarBase64(b64, nome, mime) {
+        var bin = atob(b64), n = bin.length, bytes = new Uint8Array(n);
+        for (var i = 0; i < n; i++) bytes[i] = bin.charCodeAt(i);
+        var url = URL.createObjectURL(new Blob([bytes], { type: mime || 'application/octet-stream' }));
+        var a = h('a', { href: url, download: nome || 'documento' });
+        a.style.display = 'none';
+        document.body.appendChild(a); a.click();
+        setTimeout(function () { if (a.parentNode) a.parentNode.removeChild(a); URL.revokeObjectURL(url); }, 60000);
+      }
+
+      /* ---------- PEDIDOS ---------- */
+      function pillPedido(st) {
+        var s = String(st || '');
+        if (s === 'Respondido') return ['pill-respondido', 'Respondido'];
+        if (/an[aá]lise/i.test(s)) return ['pill-andamento', 'Em análise'];
+        if (!s || s === 'Pendente') return ['pill-pendente', 'Recebido'];
+        return ['pill-fase', s];
+      }
+      function desenharPedidos() {
+        var lista = $('listaPedidos'); limpar(lista);
+        var pedidos = DADOS.pedidos || [];
+        if (!pedidos.length) { lista.appendChild(vazio('fa-paper-plane', 'Nenhum pedido ainda', 'Envie o primeiro pedido ao escritório pelo formulário acima.')); return; }
+        pedidos.forEach(function (pd) {
+          var cls = pillPedido(pd.status);
+          lista.appendChild(h('div', { class: 'pedido' }, [
+            h('div', { class: 'pedido-topo' }, [
+              h('strong', { text: pd.tipo || 'Pedido' }),
+              h('span', { class: 'pill ' + cls[0], text: cls[1] }),
+              h('span', { style: 'margin-left:auto; font-size:.75rem; color:var(--faint)', text: pd.data || '' })
+            ]),
+            h('div', { class: 'pedido-proto', style: 'margin-top:4px', text: 'Protocolo ' + (pd.protocolo || '') }),
+            pd.mensagem ? h('div', { class: 'pedido-msg', text: pd.mensagem }) : null,
+            pd.resposta ? h('div', { class: 'pedido-resp' }, [h('b', { text: 'Resposta do escritório: ' }), pd.resposta]) : null
+          ]));
+        });
+      }
+      function dizPedido(txt, tipo) {
+        var m = $('pdMsgOut');
+        m.textContent = txt || '';
+        m.className = 'msg-erro' + (tipo === 'ok' ? ' msg-ok' : '');
+        m.style.textAlign = 'left';
+      }
+      TIPOS_PEDIDO.forEach(function (t) { $('pdTipo').appendChild(h('option', { value: t, text: t })); });
+      $('fPedido').addEventListener('submit', function (ev) {
+        ev.preventDefault();
+        if (ocupado) return;
+        var txt = $('pdMsg').value.trim();
+        dizPedido('');
+        if (txt.length < 5) { dizPedido('Escreva uma mensagem curta explicando o pedido (mínimo de 5 letras).', 'erro'); return; }
+        ocupado = true; $('btnPedido').disabled = true; dizPedido('Enviando…');
+        call({ acao: 'portal_pedido', token: token, tipo: $('pdTipo').value, mensagem: txt })
+          .then(function (j) {
+            if (j && j.expirou) { expirou(j); return; }
+            if (!j || !j.sucesso) { dizPedido((j && j.mensagem) || 'Não foi possível enviar.', 'erro'); return; }
+            $('pdMsg').value = '';
+            dizPedido('Pedido enviado. Protocolo ' + (j.protocolo || '') + '. O escritório responde por aqui e por e-mail.', 'ok');
+            toast('Pedido enviado — protocolo ' + (j.protocolo || ''), 'ok');
+            carregarTudo().catch(function () { toast('Pedido enviado, mas não consegui atualizar a lista. Toque em atualizar.', 'erro'); });
+          })
+          .catch(function (e) { dizPedido(e.message, 'erro'); })
+          .then(function () { ocupado = false; $('btnPedido').disabled = false; });
+      });
+
+      /* ---------- NOVIDADES: andamentos + ações do advogado + pedidos, do mais novo ao mais antigo ---------- */
+      function desenharNovidades() {
+        var itens = [];
+        (DADOS.movimentacoes || []).forEach(function (m) {
+          itens.push({ t: ts(m.data), data: m.data, ic: 'fa-timeline', titulo: 'Andamento do processo', texto: m.titulo || m.evento || '' });
+        });
+        (DADOS.diligencias || []).forEach(function (x) {
+          itens.push({ t: ts(x.data), data: x.data, ic: 'fa-person-walking', titulo: x.tipo || 'Ação do advogado', texto: (x.texto || '') + (x.status ? ' (' + x.status + ')' : '') });
+        });
+        (DADOS.pedidos || []).forEach(function (pd) {
+          // o servidor só informa quando o PEDIDO foi feito, não quando foi respondido: na resposta não mostramos um horário que não é o dela
+          var dia = (/^\d{2}\/\d{2}\/\d{4}/.exec(String(pd.data || '')) || [''])[0];
+          if (pd.resposta) itens.push({ t: ts(pd.data), data: '', ic: 'fa-reply', titulo: 'O escritório respondeu ao seu pedido', texto: (pd.tipo || '') + (dia ? ' · pedido de ' + dia : '') + ' · protocolo ' + (pd.protocolo || '') });
+          else itens.push({ t: ts(pd.data), data: pd.data, ic: 'fa-paper-plane', titulo: 'Pedido enviado ao escritório', texto: (pd.tipo || '') + ' · protocolo ' + (pd.protocolo || '') });
+        });
+        itens.sort(function (a, b) { return b.t - a.t; });
+        var lista = $('listaNovidades'); limpar(lista);
+        if (!itens.length) { lista.appendChild(vazio('fa-bell', 'Nada de novo por enquanto', 'Andamentos, ações do advogado e respostas do escritório aparecem aqui.')); return; }
+        itens.slice(0, 30).forEach(function (n) {
+          lista.appendChild(h('div', { class: 'notif' }, [icone('fas ' + n.ic), h('div', {}, [
+            n.data ? h('div', { class: 'quando', text: n.data }) : null, h('div', { style: 'font-weight:700', text: n.titulo }), n.texto ? h('div', { text: n.texto }) : null
+          ])]));
+        });
+      }
+
+      /* ---------- UPLOAD (um arquivo por vez, para não estourar o limite do servidor) ---------- */
+      var dz = $('dropzone');
+      dz.addEventListener('click', function () { $('inputArquivo').click(); });
+      dz.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); $('inputArquivo').click(); } });
+      ['dragenter', 'dragover'].forEach(function (ev) {
+        dz.addEventListener(ev, function (e) { e.preventDefault(); dz.classList.add('sobre'); });
+      });
+      ['dragleave', 'drop'].forEach(function (ev) {
+        dz.addEventListener(ev, function (e) { e.preventDefault(); dz.classList.remove('sobre'); });
+      });
+      dz.addEventListener('drop', function (e) {
+        if (e.dataTransfer && e.dataTransfer.files.length) enfileirar(e.dataTransfer.files);
+      });
+      $('inputArquivo').addEventListener('change', function () { enfileirar(this.files); this.value = ''; });
+
+      function tipoArquivo(arq) {   // alguns celulares não informam o tipo: vale a extensão (o servidor confere o conteúdo de qualquer forma)
+        if (/^(application\/pdf|image\/jpeg|image\/png)$/.test(arq.type)) return arq.type;
+        var m = /\.([a-z0-9]+)$/i.exec(arq.name || '');
+        var ext = m ? m[1].toLowerCase() : '';
+        return ext === 'pdf' ? 'application/pdf' : (ext === 'jpg' || ext === 'jpeg') ? 'image/jpeg' : ext === 'png' ? 'image/png' : '';
+      }
+      function enfileirar(arquivos) {
+        var fila = $('filaUpload');
+        if (!filaRodando && !filaUp.length) { limpar(fila); geracaoFila++; }   // lote novo: some o resultado do lote anterior
+        Array.prototype.forEach.call(arquivos, function (arq) {
+          var st = h('span', { class: 'st enviando', text: 'Na fila…' });
+          var ic = icone('fas fa-file'); ic.style.color = 'var(--gold)';
+          fila.appendChild(h('div', { class: 'arq-fila' }, [ic, h('span', { class: 'nm', text: arq.name }), st]));
+          filaUp.push({ arq: arq, st: st });
+        });
+        rodarFila();
+      }
+      function rodarFila() {
+        if (filaRodando) return;
+        if (!filaUp.length) {
+          if (filaEnviou && token) {
+            filaEnviou = false;
+            var g = geracaoFila;
+            carregarTudo().catch(function () { }).then(function () {
+              // o que foi enviado já aparece em "Enviados por você": tira da fila depois de um instante e deixa só o que falhou
+              setTimeout(function () {
+                if (g !== geracaoFila) return;
+                Array.prototype.slice.call($('filaUpload').children).forEach(function (linha) {
+                  if (linha.querySelector('.st.ok') && linha.parentNode) linha.parentNode.removeChild(linha);
+                });
+              }, 1800);
+            });
+          }
+          return;
+        }
+        filaRodando = true;
+        var it = filaUp.shift();
+        enviarUm(it.arq, it.st).then(function () { filaRodando = false; rodarFila(); });
+      }
+      function enviarUm(arq, st) {
+        var mostra = function (cls, txt) { st.className = 'st ' + cls; st.textContent = txt; };
+        return new Promise(function (resolve) {
+          var mime = tipoArquivo(arq);
+          if (!mime) { mostra('erro', 'Só PDF, JPG ou PNG'); return resolve(); }
+          if (!arq.size) { mostra('erro', 'Arquivo vazio'); return resolve(); }
+          if (arq.size > 6 * 1024 * 1024) { mostra('erro', 'Maior que 6 MB'); return resolve(); }
+          mostra('enviando', 'Enviando…');
+          var rd = new FileReader();
+          rd.onerror = function () { mostra('erro', 'Não consegui ler o arquivo'); resolve(); };
+          rd.onload = function () {
+            var b64 = String(rd.result).split(',')[1] || '';
+            call({ acao: 'portal_upload', token: token, nome: arq.name, mimeType: mime, data: b64 })
+              .then(function (j) {
+                if (j && j.expirou) { expirou(j); return; }
+                if (!j || !j.sucesso) { mostra('erro', (j && j.mensagem) || 'Falhou'); return; }
+                mostra('ok', 'Enviado ✓'); filaEnviou = true;
+                toast('Documento enviado. O escritório foi avisado.', 'ok');
+              })
+              .catch(function (e) { mostra('erro', e.message); })
+              .then(resolve);
+          };
+          rd.readAsDataURL(arq);
+        });
+      }
+
+      /* ---------- WhatsApp ---------- */
+      $('lgAjuda').href = 'https://wa.me/' + WPP + '?text=' + encodeURIComponent('Olá, Dr. Lucas. Preciso do meu acesso à Área do Cliente.');
+      $('wppRapido').href = 'https://wa.me/' + WPP + '?text=' + encodeURIComponent('Olá, Dr. Lucas. Sou cliente e estou no painel do cliente.');
+      $('wppPedidos').href = $('wppRapido').href;
+
+      /* ---------- DEMONSTRAÇÃO (#demo): dados fictícios, sem rede ---------- */
+      var demoPedidos = [
+        { protocolo: 'PC-261001-AB12', tipo: 'Pedir visita ao preso', mensagem: 'Exemplo: gostaria de saber o dia da próxima visita.', status: 'Respondido', data: '01/10/2026 10:30', resposta: 'Exemplo: a visita será na quinta-feira. Avisamos a família por aqui e por e-mail.' },
+        { protocolo: 'PC-260928-CD34', tipo: 'Cópia de decisão ou peça', mensagem: 'Exemplo: preciso de uma cópia da decisão.', status: 'Pendente', data: '28/09/2026 15:02', resposta: '' }
+      ];
+      function callDemo(p) {
+        return new Promise(function (res) {
+          setTimeout(function () {
+            if (p.acao === 'portal_login') return res({ sucesso: true, token: 'd'.repeat(64), nome: 'Maria Aparecida de Souza' });
+            if (p.acao === 'portal_painel') return res({
+              sucesso: true,
+              cliente: { nome: 'Maria Aparecida de Souza', email: 'cliente@exemplo.com' },
+              processo: { numero: '0000000-00.2026.8.13.0000', classe: 'Ação Penal (exemplo)', juizo: '1ª Vara Criminal (exemplo)', fase: 'Instrução', atualizadoEm: '02/10/2026' },
+              resumo: 'Exemplo: o processo está na fase de instrução. Isso significa que o juiz está reunindo as provas e ouvindo as testemunhas antes de decidir.',
+              proximoPasso: 'Exemplo: aguardar a data da audiência e reunir os documentos que o advogado pediu.',
+              movimentacoes: [
+                { data: '02/10/2026', evento: 'Audiência designada (exemplo)', titulo: 'Audiência designada (exemplo)', descricao: '' },
+                { data: '28/09/2026', evento: 'Juntada de petição da defesa (exemplo)', titulo: 'Juntada de petição da defesa (exemplo)', descricao: '' },
+                { data: '15/09/2026', evento: 'Citação realizada (exemplo)', titulo: 'Citação realizada (exemplo)', descricao: '' }
+              ],
+              diligencias: [
+                { data: '01/10/2026', tipo: 'Visita ao presídio', texto: 'Exemplo: visita ao assistido para explicar a fase do processo e ouvir as dúvidas da família.', status: 'Feito' },
+                { data: '29/09/2026', tipo: 'Petição protocolada', texto: 'Exemplo: pedido de revogação da prisão preventiva protocolado.', status: 'Em andamento' }
+              ],
+              documentos: { contrato: true, procuracao: true, declaracao: false, enviados: [{ nome: 'comprovante-residencia.pdf', data: '30/09/2026' }], escritorio: 2 },
+              pedidos: demoPedidos.slice()
+            });
+            if (p.acao === 'portal_docs') return res({
+              sucesso: true, total: 2,
+              pastas: [
+                { id: 'Decisões e peças', nome: 'Decisões e peças', arquivos: [{ id: 'D-AAAAA1', nome: 'Decisão da audiência (exemplo).txt', tamanho: '1 KB', atualizadoEm: '02/10/2026', tipo: 'text/plain' }] },
+                { id: 'Orientações do escritório', nome: 'Orientações do escritório', arquivos: [{ id: 'D-AAAAA2', nome: 'Como será a audiência (exemplo).txt', tamanho: '1 KB', atualizadoEm: '30/09/2026', tipo: 'text/plain' }] }
+              ]
+            });
+            if (p.acao === 'portal_doc_baixar') return res({ sucesso: true, nome: 'documento-de-exemplo.txt', mimeType: 'text/plain', data: btoa('Documento de exemplo do modo demonstracao. Nenhum dado real.') });
+            if (p.acao === 'portal_pedido') {
+              var pr = 'PC-DEMO-' + String(Date.now()).slice(-4);
+              demoPedidos.unshift({ protocolo: pr, tipo: p.tipo, mensagem: p.mensagem, status: 'Pendente', data: 'agora', resposta: '' });
+              return res({ sucesso: true, protocolo: pr });
+            }
+            if (p.acao === 'portal_upload') return res({ sucesso: true, nome: p.nome });
+            res({ sucesso: true });
+          }, 450);
+        });
+      }
+      if (DEMO) {
+        $('demoBox').hidden = false;
+        $('lgEmail').value = 'cliente@exemplo.com';
+        $('lgSenha').value = 'demonstracao';
+      }
+      $('sairDemo').addEventListener('click', function () { location.hash = ''; location.reload(); });
+
+      /* ---------- retomar sessão (aba aberta) ---------- */
+      var salvo = DEMO ? '' : load('ls_pt');
+      if (/^[a-f0-9]{64}$/.test(salvo)) {
+        token = salvo;
+        carregarTudo().catch(function (e) { sair({ msg: e.message, tipo: 'erro', semAviso: true }); });
+      }
+    })();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+# ================================================================== #
+# CIVEL (civel.lucassemim.adv.br) — TRAVAS DE SEGURANCA 04/10/2026   #
+# Usa so <FilesMatch> e Options: NAO mexe nas regras de reescrita    #
+# (www, https, URL amigavel) do .htaccess da raiz do site.           #
+# Funciona sozinho ou somado ao .htaccess da raiz.                   #
+# ================================================================== #
+
+# Codigo-fonte, logs, copias e pacotes nunca saem pela web
+<FilesMatch "(?i)\.(gs|md|log|ini|sh|py|bak|old|orig|swp|sql|zip|tar|gz|7z|rar)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# Exportacao/backup do projeto Apps Script (traz codigo-fonte e pode trazer a chave da IA)
+<FilesMatch "(?i)^Advogado.Live.*\.json$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# Sem listagem de pastas
+Options -Indexes

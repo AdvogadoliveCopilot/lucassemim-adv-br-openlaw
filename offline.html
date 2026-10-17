@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sem Conexão | Dr. Lucas Semim — Advocacia Criminal 24h</title>
+    <meta name="theme-color" content="#8b0000">
+    <style>
+        /* === CSS COMPLETO INLINE — ZERO DEPENDÊNCIAS === */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: #030303;
+            color: #f0ede8;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        /* Fundo grade sutil */
+        body::before {
+            content: '';
+            position: fixed; inset: 0;
+            background-image:
+                linear-gradient(rgba(212,175,55,0.015) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(212,175,55,0.015) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+        }
+        .offline-card {
+            background: rgba(10,10,10,0.95);
+            border: 1px solid rgba(212,175,55,0.25);
+            border-top: 4px solid #cc0000;
+            border-radius: 16px;
+            padding: 48px 32px;
+            max-width: 480px;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+        /* ÍCONE WIFI OFF */
+        .wifi-icon {
+            width: 64px; height: 64px;
+            background: rgba(204,0,0,0.1);
+            border: 1px solid rgba(204,0,0,0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 2rem;
+        }
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .offline-sub {
+            color: #555;
+            font-size: 0.9rem;
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+        .offline-divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(212,175,55,0.3), transparent);
+            margin: 24px 0;
+        }
+        .emergency-label {
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            color: #555;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        .phone-display {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #d4af37;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+        .oab-badge {
+            font-size: 0.72rem;
+            color: #555;
+            letter-spacing: 2px;
+            margin-bottom: 28px;
+        }
+        /* BOTÃO LIGAR — MAIOR PARA POLEGAR TRÊMULO */
+        .btn-ligar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            background: linear-gradient(135deg, #cc0000, #8b0000);
+            color: #fff;
+            text-decoration: none;
+            padding: 18px;
+            border-radius: 10px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 14px;
+            border: 1px solid rgba(255,77,77,0.3);
+            transition: opacity 0.2s;
+            min-height: 60px;
+        }
+        .btn-ligar:hover, .btn-ligar:active { opacity: 0.85; }
+        .btn-whatsapp {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            background: rgba(37,211,102,0.12);
+            color: #25d366;
+            text-decoration: none;
+            padding: 16px;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 14px;
+            border: 1px solid rgba(37,211,102,0.25);
+            transition: opacity 0.2s;
+            min-height: 56px;
+        }
+        .btn-whatsapp:hover, .btn-whatsapp:active { opacity: 0.85; }
+        .btn-retry {
+            background: transparent;
+            color: #555;
+            border: 1px solid #222;
+            border-radius: 8px;
+            padding: 12px;
+            width: 100%;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .btn-retry:hover { border-color: #444; color: #888; }
+        .offline-footer {
+            margin-top: 24px;
+            font-size: 0.72rem;
+            color: #333;
+            letter-spacing: 1px;
+        }
+        /* ANIMAÇÃO PULSE no botão de ligar */
+        @keyframes pulse-btn {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(204,0,0,0.5); }
+            60%       { box-shadow: 0 0 0 12px rgba(204,0,0,0); }
+        }
+        .btn-ligar { animation: pulse-btn 2.5s infinite; }
+    </style>
+</head>
+<body>
+    <div class="offline-card">
+        <!-- ÍCONE DE SEM SINAL -->
+        <div class="wifi-icon">📵</div>
+        <h1>Sem Conexão</h1>
+        <p class="offline-sub">
+            Você está sem internet no momento.<br>
+            Mas a defesa criminal não espera —<br>
+            <strong style="color: #f0ede8;">ligue para o Dr. Lucas agora.</strong>
+        </p>
+        <div class="offline-divider"></div>
+        <p class="emergency-label">⚖️ Plantão Criminal 24h</p>
+        <div class="phone-display">(31) 98942-0094</div>
+        <p class="oab-badge">DR. LUCAS RENAN SEMIM · OAB/MG 222.539</p>
+        <!-- LIGAR DIRETAMENTE -->
+        <a href="tel:+5531989420094" class="btn-ligar">
+            📞 LIGAR AGORA — 24h
+        </a>
+        <!-- WHATSAPP (abre quando sinal voltar) -->
+        <a href="https://wa.me/5531989420094?text=Preciso%20de%20atendimento%20urgente."
+           class="btn-whatsapp">
+            💬 WHATSAPP
+        </a>
+        <!-- TENTAR NOVAMENTE -->
+        <button class="btn-retry" onclick="window.location.reload()">
+            🔄 Tentar novamente
+        </button>
+        <p class="offline-footer">
+            Sabará & Comarca de Belo Horizonte/MG<br>
+            Todo o Brasil — Atendimento Digital
+        </p>
+    </div>
+    
+    <script>
+        // Monitorar retorno de conexão
+        window.addEventListener('online', () => {
+            document.querySelector('.btn-retry').textContent = '✅ Internet voltou! Recarregando...';
+            setTimeout(() => window.location.reload(), 1500);
+        });
+        // Indicar se ainda está offline
+        setInterval(() => {
+            if (!navigator.onLine) {
+                document.querySelector('.btn-retry').textContent =
+                    '🔄 Sem internet · Tentando reconectar...';
+            }
+        }, 5000);
+        // Shortcut: pwa_shortcut=whatsapp abre WhatsApp direto
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('action') === 'whatsapp') {
+            window.location.href = 'https://wa.me/5531989420094';
+        }
+    </script>
+</body>
+</html>

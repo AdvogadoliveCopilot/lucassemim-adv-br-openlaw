@@ -1,0 +1,137 @@
+﻿LOTE H1 - registro dos testes - 12/10/2026
+====================================================================================================
+Teste feito no navegador de verdade (Chromium), em 390 px (celular) e 1366 px (computador), com o aviso de cookies em "so necessarios",
+o chat do site fechado (ele abre sozinho em tela cheia no celular e atrapalha o teste de clique) e so com dados ficticios.
+"Antes" = os 31 arquivos como estao hoje na sua pasta (conferidos byte a byte com a copia que li do seu computador).
+"Depois" = os 31 arquivos deste lote. A raiz de teste usa os pacotes B, C, D, E, F e G por baixo (cabecalho, rodape, chat, SEO).
+
+1) RESUMO (62 medicoes = 31 paginas x 2 larguras)
+
+                                                                 ANTES   DEPOIS
+   termos proibidos no texto final da tela (depois do JavaScript)      322       64
+     - tipos diferentes de termo                                    12        2
+   rolagem lateral (pagina mais larga que a tela)                    0        0
+   FAQ que nao abriu ao clicar na 1a pergunta (celular e PC)         0        0
+   arquivos locais chamados pela pagina que nao existem              0        0
+   medicoes com erro de JavaScript                                  62       62
+     (o unico erro e "Cal is not defined", igual antes e depois: o agendamento Cal.com e chamado antes de carregar; ja existia; entra no Lote H)
+   medicoes sem exatamente 1 H1 por pagina                           0        0
+
+   O que ainda aparece depois (64 ocorrencias):
+      62 x  advocacia criminal inteligente -> rodape "Semim & Associados - Advocacia Criminal Inteligente": vem de js/footer-seo.js (Lote D), arquivo compartilhado do site todo. Entra no Lote H2, junto com o nome oficial do escritorio.
+       2 x  não é qualquer -> FALSO ALARME no guia novo: a frase e "Fundada suspeita nao e qualquer impressao" (conceito juridico), nao e autoelogio. Mantida.
+
+   O que saiu (ANTES -> DEPOIS, ocorrencias nas 62 medicoes):
+      62 ->  62  advocacia criminal inteligente
+      62 ->   0  atendimento imediato
+      62 ->   0  advocacia criminal estrat
+      60 ->   0  método live
+      24 ->   0  especialista
+      16 ->   0  resposta rápida
+      16 ->   0  pricerange
+      12 ->   0  resposta imediata
+       2 ->   0  melhor defesa
+       2 ->   0  defesa criminal estrat
+       2 ->   2  não é qualquer
+       2 ->   0  atendimento estrat
+
+2) INTEGRIDADE DOS ARQUIVOS (31 arquivos)
+   - fim de linha (CRLF/LF) igual ao original: 31 de 31   |   BOM igual ao original: 31 de 31
+   - blocos JSON-LD (dados estruturados) leem sem erro: 31 de 31   |   FAQPage = texto visivel da pagina: todos
+   - linhas alteradas no total: +252 / -260 (6 a 18 por pagina; detalhe em diff-lote-h1-20261012.txt)
+   - sitemap-urgencia.xml: 31 enderecos = 30 guias + indice, sem repeticao, todos com lastmod 2026-10-12, CRLF mantido, XML valido
+   - cada troca de texto tem numero exato esperado (31 regras + 11 do guia novo); se um numero nao batesse, o script abortava sem gravar nada. Todas bateram.
+
+3) REGRAS APLICADAS (feito = esperado)
+
+   A1 selo CTA: Resposta rapida                                       31     31 
+   A2 pilula: Plantao ativo agora                                      8      8 
+   A3 resumo: Especialista em                                          6      6 
+   A4 link: criminalista especialista                                  6      6 
+   B1 aria-label cartao lateral                                       31     31 
+   B2 comentario: Bloco Resposta Imediata                             60     60 
+   B2b comentario CSS: Tom Estrategico                                 1      1 
+   B3a titulo: RESPOSTA IMEDIATA                                       6      6 
+   B3b titulo: DEFESA NA HORA                                          1      1 
+   B3c titulo: RESPOSTA ESTRATEGICA                                    1      1 
+   B4a assinatura: Atendimento Plantao 24h                            24     24 
+   B4b assinatura: Atendimento de Plantao 24h                          1      1 
+   B4c assinatura: Acompanhamento em Delegacias                        1      1 
+   B4d assinatura: Defesa Criminal Estrategica                         1      1 
+   B4e assinatura: Custodias                                           1      1 
+   B4f assinatura: Flagrantes                                          1      1 
+   B4g assinatura: Atendimento Estrategico 24h                         1      1 
+   B5 JSON-LD: nome do escritorio                                     31     31 
+   B6a FAQ Defensoria: pergunta                                        2      2 
+   B6b FAQ Defensoria: resposta                                        2      2 
+   B7 passo: irá imediatamente à delegacia                             1      1 
+   B8 melhor defesa                                                    1      1 
+   B9a og:title: Guia Estrategico 24h                                  1      1 
+   B9b description: Guia estrategico                                   1      1 
+   B9c FAQ: medida estrategica indispensavel (JSON-LD + pagina)        2      2 
+   B9d titulo: 5 passos estrategicos                                   1      1 
+   B10 guia estrategico (porte de arma)                                1      1 
+   B11a agi: maior a chance (JSON-LD + pagina)                         2      2 
+   B11b tornozeleira: maior a chance                                   1      1 
+   B12 resumo: interrogatorio estrategico                              1      1 
+   C1 destaque: so e valida quando ha fundada suspeita                 1      1 
+   C2 passo 1: resistir ou tentar fugir = crime                        1      1 
+   C3 passo 2: direito de saber e identificar                          1      1 
+   C4 corpo: duas situacoes / a lei exige                              1      1 
+   C5 corpo: nervosismo costuma ser tratado igual                      1      1 
+   C6a FAQ 1: independe de mandado (JSON-LD + pagina)                  2      2 
+   C6b FAQ 2: exigencia legal (JSON-LD + pagina)                       2      2 
+   C6c FAQ 2 pagina: nervosismo isolado                                1      1 
+   C6d FAQ 2 JSON-LD: nervosismo isolado                               1      1 
+   C7a FAQ 6: abuso de autoridade (JSON-LD + pagina)                   2      2 
+   C7b corpo: abuso de autoridade                                      1      1 
+   A5 JSON-LD: priceRange                                              8      8 
+
+4) VALIDADOR DE GUIAS (validar_guia_v3.py, o mesmo dos lotes anteriores; copia completa em validador-lote-h1-20261012.txt)
+   ANTES: 30 guias, 0 erros, 101 avisos   |   DEPOIS: 30 guias, 0 erros, 91 avisos
+   O guia novo (revista pessoal): 0 erros e 0 avisos (indice e sitemap conferidos).
+   Avisos que restam (todos conferidos e aceitos): C07 prazos de 24 h que sao prazos da LEI (art. 306 e 310 do CPP), nao promessa do escritorio;
+   C08 valores em R$ dentro de casos de tribunal citados (ex.: furto de R$ 285, fianca de R$ 1.000 no STJ) e a frase "sem contrato nem recibo de
+   honorarios" (alerta ao leitor contra golpe) - nao e anuncio de preco; C09 "sempre/nunca" em frases de lei ou de jurisprudencia; S01/S04 tamanho de
+   titulo/description e poucos links entre guias (Lote H: links internos).
+
+5) POR PAGINA (celular 390 px; o computador deu o mesmo)
+
+   pagina                                                         antes B depois B  +lin  -lin  termos   FAQ
+   acabei-de-ser-preso-em-flagrante.html                            45283    45235     7     7   5>1    abre
+   acidente-de-transito-com-vitima-o-que-fazer.html                 47799    47750     6     6   4>1    abre
+   agi-em-legitima-defesa-o-que-fazer.html                          47680    47660    13    14   8>1    abre
+   conta-bloqueada-processo-criminal-o-que-fazer.html               47307    47261     6     6   4>1    abre
+   estou-preso-preventivamente-o-que-fazer.html                     47881    47835     6     6   4>1    abre
+   fui-acusado-calunia-difamacao-injuria-o-que-fazer.html           48632    48586     6     6   4>1    abre
+   fui-acusado-de-ameaca-o-que-fazer.html                           48185    48093    11    12   8>1    abre
+   fui-acusado-de-perseguicao-stalking-o-que-fazer.html             49192    49100    11    12   8>1    abre
+   fui-convidado-para-delacao-premiada-o-que-fazer.html             48563    48517     6     6   4>1    abre
+   fui-intimado-para-depor-na-delegacia.html                        46257    46200     6     6   4>1    abre
+   fui-levado-para-delegacia-mas-nao-fui-preso.html                 48526    48480     6     6   4>1    abre
+   fui-notificado-crime-eleitoral-redes-sociais-o-que-fazer.html    47622    47574     8     8   6>1    abre
+   fui-notificado-investigado-apostas-ilegais-bets.html             50384    50328     6     6   5>1    abre
+   fui-preso-acusado-trafico-drogas.html                            47334    47286     7     7   5>1    abre
+   fui-preso-boca-de-urna-o-que-fazer.html                          49092    49045     7     7   5>1    abre
+   fui-preso-maria-da-penha.html                                    48235    48190     7     7   5>1    abre
+   fui-preso-por-furto-ou-roubo-o-que-fazer.html                    45273    45227     6     6   4>1    abre
+   fui-preso-porte-ilegal-de-arma.html                              45651    45581     7     7   4>1    abre
+   fui-pronunciado-tribunal-do-juri-o-que-fazer.html                48734    48688     6     6   4>1    abre
+   index.html                                                       43153    43110     4     5   5>1       -
+   mandado-de-busca-e-apreensao-o-que-fazer.html                    47038    46992     6     6   4>1    abre
+   meu-filho-foi-preso.html                                         44162    44598    11    11   4>1    abre
+   preso-embriaguez-ao-volante-como-sair-da-delegacia.html          46354    46308     6     6   4>1    abre
+   preso-nao-consigo-pagar-fianca-o-que-fazer.html                  46830    46756    10    11   7>1    abre
+   progressao-de-regime-atrasada-o-que-fazer.html                   47779    47688    11    12   8>1    abre
+   recebi-medida-protetiva-o-que-fazer.html                         48039    47947    11    12   8>1    abre
+   revista-pessoal-abordagem-policial-o-que-fazer.html              49894    50879    18    18   5>2    abre
+   tenho-audiencia-de-custodia-o-que-fazer.html                     47354    47308     6     6   4>1    abre
+   tenho-audiencia-de-instrucao-o-que-fazer.html                    48733    48669     7     7   4>1    abre
+   tenho-mandado-de-prisao-o-que-fazer.html                         47274    47186    12    12   5>1    abre
+   tornozeleira-eletronica-descarregou-o-que-fazer.html             49142    49077    12    13   8>1    abre
+   (antes B / depois B = tamanho do arquivo em bytes; termos = ocorrencias proibidas no texto final da tela, antes>depois; "-" = o indice nao tem FAQ)
+
+6) NAO FOI POSSIVEL / FICA PARA O LOTE H
+   - Testar no ar: a Hostinger bloqueia as minhas checagens; confira depois de enviar (item 11 das anotacoes).
+   - Leitor de tela de verdade e velocidade (PageSpeed).
+   - "Cal is not defined" (agendamento Cal.com carregando antes de ser pedido), rodape "Inteligente", links entre guias e cidades: Lote H.

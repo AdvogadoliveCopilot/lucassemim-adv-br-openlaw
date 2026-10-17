@@ -1,0 +1,178 @@
+/* =====================================================================
+   CÍVEL — DESIGN V2 "CONFIANÇA + CLAREZA"
+   Camada por cima do CSS de cada página (preto + dourado, agora com
+   azul-petróleo de apoio). Não troca textos nem estrutura.
+   Carregar DEPOIS do <style> da página.
+   ===================================================================== */
+:root{
+  --c2-gold:#d4af37; --c2-gold-hi:#f6e7a6; --c2-gold-lo:#9a7a16;
+  --c2-teal:#2aa6a0; --c2-teal-hi:#8ae8dd; --c2-teal-deep:#0c3f45;
+  --c2-line:rgba(212,175,55,.24); --c2-line-teal:rgba(42,166,160,.34);
+  --c2-ease:cubic-bezier(.2,.7,.2,1);
+  /* legibilidade: o cinza antigo (#696969) tinha contraste baixo no preto */
+  --txt-muted:#a9a9a9;
+}
+html{scroll-behavior:smooth}
+::selection{background:var(--c2-gold);color:#000}
+body{overflow-x:hidden}
+
+/* ---------- barra de leitura (ouro → petróleo) ---------- */
+.c2-progress{position:fixed;top:0;left:0;height:3px;width:100%;z-index:99998;pointer-events:none;
+  background:linear-gradient(90deg,var(--c2-teal),var(--c2-gold-hi),var(--c2-gold));
+  transform-origin:0 50%;transform:scaleX(0);box-shadow:0 0 12px rgba(212,175,55,.6)}
+
+/* ---------- revelar ao rolar (só abaixo da dobra) ---------- */
+.c2-reveal{opacity:0;transform:translateY(22px);transition:opacity .7s var(--c2-ease),transform .7s var(--c2-ease);transition-delay:var(--c2-d,0s)}
+.c2-reveal.c2-in{opacity:1;transform:none}
+
+/* ---------- HERO: corrige estouro no celular e compacta ---------- */
+.hero__title,[class^="hero-"][class$="__title"],[class*="hero"][class$="__title"]{text-wrap:balance;overflow-wrap:break-word}
+.hero__title .shimmer-ouro{display:inline-block;max-width:100%}
+.hero__badge,[class*="hero"][class$="__badge"]{border-radius:50px!important;border-color:var(--c2-line)!important;
+  box-shadow:0 0 0 0 rgba(212,175,55,.4);animation:c2Ring 3s ease-out infinite}
+@keyframes c2Ring{0%{box-shadow:0 0 0 0 rgba(212,175,55,.4)}70%,100%{box-shadow:0 0 0 14px rgba(212,175,55,0)}}
+@media(max-width:768px){
+  .hero{min-height:auto!important}
+  .hero__inner{padding:96px 0 44px!important}
+  [class^="hero-"][class$="__inner"],[class*="hero"][class$="__inner"]{padding-top:92px!important;padding-bottom:44px!important}
+  [class*="hero"][class$="__title"],.hero__title{font-size:clamp(1.85rem,8.4vw,3rem)!important;line-height:1.08!important;margin-bottom:16px!important}
+  .hero__badge,[class*="hero"][class$="__badge"]{font-size:.62rem!important;letter-spacing:1.4px!important;padding:7px 14px!important;margin-bottom:20px!important}
+  [class*="hero"][class*="__sub"]{font-size:1rem!important;line-height:1.65!important;margin-bottom:22px!important}
+  .hero__creds{margin-bottom:26px!important}
+  .hero__scroll{display:none}
+  .hero__ctas,[class*="hero"][class$="__ctas"]{flex-direction:column;align-items:stretch}
+  .hero__ctas>a,[class*="hero"][class$="__ctas"]>a{text-align:center}
+}
+
+/* ---------- botões ---------- */
+.btn-ouro{position:relative;overflow:hidden;border-radius:10px!important;
+  background:linear-gradient(135deg,#f6e7a6 0%,#d4af37 48%,#b8901f 100%)!important;color:#111!important;
+  box-shadow:0 12px 34px rgba(212,175,55,.32),inset 0 1px 0 rgba(255,255,255,.5);
+  transition:transform .25s var(--c2-ease),box-shadow .25s,letter-spacing .25s!important}
+.hero .btn-ouro,[class*="hero"] .btn-ouro,.cta-final .btn-ouro{animation:c2Pulse 2.6s ease-in-out infinite}
+.btn-ouro::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;pointer-events:none;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.4),transparent);transform:skewX(-20deg);animation:c2Sweep 4s ease-in-out infinite}
+.btn-ouro:hover{transform:translateY(-3px);box-shadow:0 18px 46px rgba(212,175,55,.5)}
+.btn-prata{border-radius:10px!important;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);transition:transform .25s var(--c2-ease),background .25s,border-color .25s!important}
+.btn-prata:hover{transform:translateY(-3px);border-color:var(--c2-teal-hi)!important;color:#fff!important}
+@keyframes c2Pulse{0%,100%{box-shadow:0 12px 34px rgba(212,175,55,.32),0 0 0 0 rgba(212,175,55,.5)}50%{box-shadow:0 12px 34px rgba(212,175,55,.32),0 0 0 12px rgba(212,175,55,0)}}
+@keyframes c2Sweep{0%,55%{left:-60%}100%{left:130%}}
+
+/* ---------- cartões e seções ---------- */
+.caso-card,.caso-mini,.depo-card,.passo,.passo-card,.sinal-card,[class*="sinais-"] > div,.stats__item{transition:transform .3s var(--c2-ease),border-color .3s,box-shadow .3s}
+.caso-card:hover,.depo-card:hover,.passo-card:hover{transform:translateY(-5px);border-color:var(--c2-line-teal)!important;box-shadow:0 18px 44px rgba(42,166,160,.14)}
+.caso-card__icon{filter:drop-shadow(0 4px 14px rgba(212,175,55,.3))}
+.sec-titulo,.sec-sub{text-wrap:balance}
+.hr-ouro{background:linear-gradient(90deg,transparent,var(--c2-gold),var(--c2-teal),transparent)!important;height:2px!important;border:0!important}
+.accordion-item,.faq-item{border-radius:12px!important;overflow:hidden}
+.accordion-button:not(.collapsed),.faq-q[aria-expanded="true"]{box-shadow:inset 3px 0 0 var(--c2-teal)}
+.tag-sistema{border-color:var(--c2-line-teal)!important;color:var(--c2-teal-hi)!important}
+a:focus-visible,button:focus-visible,.btn-ouro:focus-visible,.btn-prata:focus-visible{outline:2px solid var(--c2-teal-hi);outline-offset:3px}
+
+/* ---------- selos de confiança (injetados) ---------- */
+.c2-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin:0 auto 22px;padding:0;list-style:none;max-width:680px}
+.c2-chips li{font-size:.68rem!important;line-height:1!important;margin:0!important;display:inline-flex;align-items:center;gap:7px;padding:6px 11px;border-radius:50px;
+  font:700 .68rem/1 'Lato',sans-serif;letter-spacing:1px;text-transform:uppercase;color:#e8f6f4;
+  background:rgba(42,166,160,.10);border:1px solid var(--c2-line-teal);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.c2-chips li i{color:var(--c2-teal-hi)}
+
+/* ---------- bloco "Central do Caso Cível" (injetado) ---------- */
+.c2-cc{position:relative;max-width:1080px;margin:34px auto;width:calc(100% - 32px);padding:24px 22px 20px;border-radius:18px;overflow:hidden;
+  background:linear-gradient(150deg,rgba(42,166,160,.16),rgba(10,10,12,.97) 52%,rgba(212,175,55,.10));
+  border:1px solid var(--c2-line-teal);box-shadow:0 20px 56px rgba(0,0,0,.6)}
+.c2-cc::before{content:"";position:absolute;inset:-35% -8% auto auto;width:55%;height:130%;pointer-events:none;
+  background:radial-gradient(closest-side,rgba(212,175,55,.2),transparent)}
+.c2-cc-kicker{position:relative;font:600 .95rem/1 'Teko',sans-serif;letter-spacing:2.5px;text-transform:uppercase;color:var(--c2-teal-hi);margin:0 0 6px}
+.c2-cc-title{position:relative;font:600 clamp(1.8rem,5.4vw,2.5rem)/1.05 'Teko',sans-serif;text-transform:uppercase;letter-spacing:.5px;color:#fff;margin:0 0 6px;text-wrap:balance}
+.c2-cc-sub{position:relative;margin:0 0 16px;color:#cfd6d6;font-size:.96rem;line-height:1.55;max-width:62ch}
+.c2-cc-grid{position:relative;display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:10px}
+.c2-cc-btn{display:flex;flex-direction:column;gap:3px;padding:15px 15px 14px;border-radius:12px;text-decoration:none!important;
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.16);color:#fff!important;
+  transition:transform .25s var(--c2-ease),border-color .25s,background .25s}
+.c2-cc-btn b{font:600 1.32rem/1.05 'Teko',sans-serif;letter-spacing:.8px;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+.c2-cc-btn span{font-size:.8rem;color:#b9c3c3;line-height:1.35}
+.c2-cc-btn:hover{transform:translateY(-3px);border-color:var(--c2-teal-hi);background:rgba(42,166,160,.12)}
+.c2-cc-btn.main{background:linear-gradient(135deg,#f6e7a6,#d4af37 48%,#b8901f);border:0;color:#111!important;
+  box-shadow:0 12px 32px rgba(212,175,55,.35);animation:c2Pulse 2.6s ease-in-out infinite;position:relative;overflow:hidden}
+.c2-cc-btn.main span{color:#2b2208}
+.c2-cc-btn.main::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.4),transparent);transform:skewX(-20deg);animation:c2Sweep 4s ease-in-out infinite}
+.c2-cc-btn.main:hover{background:linear-gradient(135deg,#f6e7a6,#d4af37 48%,#b8901f)}
+.c2-cc-foot{position:relative;margin:14px 0 0;font-size:.78rem;color:#9fb0b0;display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center}
+.c2-cc-foot i{color:var(--c2-teal-hi);margin-right:5px}
+.c2-cc-foot a{color:var(--c2-gold-hi);margin-left:auto;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:700px){.c2-cc-grid{grid-template-columns:1fr}.c2-cc-btn{flex-direction:row;align-items:center;justify-content:space-between}
+  .c2-cc-btn span{display:none}.c2-cc{padding:20px 16px 18px}.c2-cc-foot a{margin-left:0}}
+
+/* ---------- barra fixa inferior no celular ---------- */
+.c2-dock{position:fixed;left:0;right:0;bottom:0;z-index:9990;display:none;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+  background:linear-gradient(180deg,rgba(5,5,5,0),rgba(5,5,5,.95) 30%);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.c2-dock a{display:flex;align-items:center;justify-content:center;gap:8px;min-height:52px;border-radius:12px;text-decoration:none!important;
+  font:600 1.2rem/1 'Teko',sans-serif;letter-spacing:1px;text-transform:uppercase}
+.c2-dock .a1{flex:1 1 auto;color:#111!important;background:linear-gradient(135deg,#f6e7a6,#d4af37 50%,#b8901f);box-shadow:0 10px 28px rgba(212,175,55,.4)}
+.c2-dock .a2{flex:0 0 auto;padding:0 16px;color:#fff!important;background:#12a05a;box-shadow:0 10px 28px rgba(37,211,102,.3)}
+@media(max-width:768px){.c2-dock{display:flex}body{padding-bottom:84px}.wa-fab{display:none!important}}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .c2-reveal{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+
+/* =====================================================================
+   AJUSTES DA HOME (03/10/2026) — ritmo, densidade no celular, links de cartão
+   ===================================================================== */
+.caso-card__link{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 14px;border:1px solid rgba(212,175,55,.28);border-radius:50px;
+  background:rgba(212,175,55,.06);transition:background .25s,border-color .25s,color .25s,transform .25s var(--c2-ease)!important}
+.caso-card__link:hover,.caso-card__link:focus-visible{background:rgba(212,175,55,.16);border-color:rgba(212,175,55,.6);color:var(--c2-gold-hi)!important;transform:translateX(3px)}
+.caso-mini{border-radius:12px;transition:transform .25s var(--c2-ease),border-color .25s,background .25s}
+.caso-mini:hover{transform:translateY(-2px);background:rgba(42,166,160,.08);border-color:var(--c2-line-teal)!important}
+.stats{background:linear-gradient(180deg,rgba(42,166,160,.06),rgba(8,8,8,0))!important}
+.stats__num{text-shadow:0 0 26px rgba(212,175,55,.25)}
+.depo-card,.caso-card,.passo{border-radius:14px}
+.formulario{scroll-margin-top:90px}
+
+@media(max-width:767px){
+  /* a home no celular tinha ~16.000px: seções e cartões mais compactos */
+  .casos,.processo,.depos,.faq,.sobre,.formulario{padding-top:60px!important;padding-bottom:60px!important}
+  .caso-card{padding:22px 18px!important}
+  .caso-card__icon{font-size:1.8rem!important;margin-bottom:10px!important}
+  .caso-card h3{font-size:1.4rem!important;margin-bottom:8px!important}
+  .caso-card p{font-size:.9rem!important;line-height:1.62!important;margin-bottom:14px!important}
+  .depo-card{padding:24px 18px!important}
+  .passo{padding:26px 20px!important}
+  .sec-titulo{font-size:clamp(1.9rem,8vw,2.6rem)!important}
+  .stats__num{font-size:2.3rem!important}
+  .accordion-button{font-size:.98rem!important;padding:16px!important}
+}
+
+/* =====================================================================
+   ÍCONES DE LINHA (03/10/2026) — substituem os emojis da home
+   ===================================================================== */
+.ic{width:1em;height:1em;flex:none;display:inline-block;vertical-align:-.14em}
+.caso-card__icon{
+  position:relative;display:inline-flex!important;align-items:center;justify-content:center;
+  width:56px;height:56px;margin-bottom:18px!important;font-size:1rem!important;line-height:1;
+  color:var(--c2-gold-hi);border-radius:16px;filter:none!important;
+  background:linear-gradient(145deg,rgba(212,175,55,.14),rgba(42,166,160,.08) 70%,rgba(0,0,0,.2));
+  border:1px solid var(--c2-line);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 8px 22px rgba(0,0,0,.35);
+  transition:transform .35s var(--c2-ease),color .3s,border-color .3s,box-shadow .35s}
+.caso-card__icon .ic{width:28px;height:28px;stroke-width:1.4}
+.caso-card:hover .caso-card__icon{transform:translateY(-3px) rotate(-3deg);color:var(--c2-teal-hi);border-color:var(--c2-line-teal);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 12px 28px rgba(42,166,160,.22)}
+.caso-mini__txt{display:inline-flex;align-items:center;justify-content:center;gap:10px}
+.ic--mini{width:20px;height:20px;color:var(--c2-gold);stroke-width:1.5;transition:color .25s}
+.caso-mini:hover .ic--mini{color:var(--c2-teal-hi)}
+.ic--inline{width:1.05em;height:1.05em;margin-right:.45em;color:var(--c2-gold);vertical-align:-.17em}
+.privacy-note{display:flex;align-items:center;justify-content:center;gap:2px}
+.authority{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px 26px}
+.authority__i{display:inline-flex;align-items:center;white-space:nowrap}
+@media(max-width:767px){
+  .caso-card__icon{width:46px;height:46px;border-radius:13px;margin-bottom:12px!important}
+  .caso-card__icon .ic{width:23px;height:23px}
+  .authority{gap:4px 16px;font-size:.78rem}
+}
+
+/* ---------- busca flutuante (⌘) removida: o chat ocupa o lugar ---------- */
+.btn-search-float{display:none!important}
+.authority .ic--inline{color:currentColor;opacity:.75}

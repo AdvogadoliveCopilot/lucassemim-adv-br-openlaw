@@ -1,0 +1,9 @@
+# Pasta dos agentes: NUNCA deve ficar acessivel pela internet (e tambem nao deve ser enviada ao servidor).
+# Este arquivo e so uma trava extra, caso alguem suba a pasta por engano.
+<IfModule mod_authz_core.c>
+    Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+</IfModule>

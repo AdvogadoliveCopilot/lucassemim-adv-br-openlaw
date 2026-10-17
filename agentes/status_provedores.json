@@ -1,0 +1,40 @@
+{
+  "testado_em": "2026-10-17T10:44:48",
+  "combos": [
+    {
+      "combo": "auto/best-fast",
+      "ok": true,
+      "ms": 4874,
+      "usado": "gemini-3.5-flash",
+      "erro": ""
+    },
+    {
+      "combo": "auto/coding",
+      "ok": true,
+      "ms": 5284,
+      "usado": "gemini-3.5-flash",
+      "erro": ""
+    },
+    {
+      "combo": "auto/free",
+      "ok": true,
+      "ms": 4444,
+      "usado": "gemini-3.5-flash-lite",
+      "erro": ""
+    },
+    {
+      "combo": "auto/legal-writer",
+      "ok": true,
+      "ms": 4801,
+      "usado": "gemini-3.6-flash",
+      "erro": ""
+    },
+    {
+      "combo": "auto/smart",
+      "ok": true,
+      "ms": 4795,
+      "usado": "gemini-3.5-flash",
+      "erro": ""
+    }
+  ]
+}

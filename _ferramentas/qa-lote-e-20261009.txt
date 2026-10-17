@@ -1,0 +1,236 @@
+erros de JS que já existem no site atual: {'/o-que-fazer-agora/acabei-de-ser-preso-em-flagrante.html': ['Cal is not defined'], '/o-que-fazer-agora/tenho-audiencia-de-custodia-o-que-fazer.html': ['Cal is not defined'], '/o-que-fazer-agora/tornozeleira-eletronica-descarregou-o-que-fazer.html': ['Cal is not defined'], '/o-que-fazer-agora/estou-preso-preventivamente-o-que-fazer.html': ['Cal is not defined'], '/o-que-fazer-agora/fui-preso-acusado-trafico-drogas.html': ['Cal is not defined'], '/o-que-fazer-agora/fui-preso-maria-da-penha.html': ['Cal is not defined'], '/o-que-fazer-agora/progressao-de-regime-atrasada-o-que-fazer.html': ['Cal is not defined'], '/advogado-criminalista/plantao-flagrante.html': ['feather is not defined'], '/noticias.html': ["Unexpected token '.'"]}
+
+[1] diagnostico.html — 1ª visita, celular
+  ok    dataLayer[0] = consent default (4 sinais negados), antes do GTM
+  ok    nenhuma coleta GA/Ads antes do consentimento
+  ok    aviso de cookies aparece na 1ª visita
+  ok    Central do Caso montada (3 caminhos)
+  ok    sem erros de JavaScript
+  ok    texto renderizado de diagnostico.html sem termos proibidos
+        JSON-LD no DOM: ['WebPage', 'WebApplication', 'FAQPage', 'Person', 'WebPage', 'LegalService', 'LocalBusiness', 'LegalService']
+  ok    JSON-LD sem aggregateRating/priceRange/EmergencyService/estimatedCost/price
+  ok    1 WebPage completo (+ o nó "speakable", que já existia)
+  ok    1 FAQPage
+  ok    FAQ do JSON-LD (6) = perguntas visíveis (6)
+  ok    FAQ do JSON-LD idêntico ao texto visível
+
+[2] Central do Caso — rascunho no navegador (dados fictícios)
+        opções de relação: ['proprio', 'familiar', 'amigo', 'outro']
+        etapa 2: MONTE O SEU CASO
+        rascunho: {"d":{"modo":"processo","crimes":[],"buscas":[],"relacao":"familiar","fase":"flagrante"},"s":"docs"}
+  ok    nenhum dado pessoal fictício foi guardado em sessionStorage/localStorage
+  ok    rascunho guarda só chaves de navegação: ['buscas', 'crimes', 'fase', 'modo', 'relacao']
+        após recarregar — título: QUEM ESTÁ FALANDO? | nome='' whats=''
+  ok    após recarregar o formulário volta para "Quem está falando" sem dados preenchidos
+  ok    sem erros de JavaScript
+  ok    nenhum envio (POST) durante o teste
+  ok    textos do modo urgência da Central do Caso (todas as etapas) sem termos proibidos
+  ok    sem erros de JavaScript (modo urgência)
+
+[3] chat — textos de abertura de todos os contextos, aviso de privacidade, falha da IA
+        34 mensagens de abertura em 17 contextos
+  ok    mensagens de abertura de todos os contextos do chat sem termos proibidos
+        /diagnostico.html | contexto=default | status='Assistente virtual'
+           > ⚖️ Plantão criminal 24h.
+           > O tempo é importante na defesa criminal. Conte, em poucas palavras, a sua situação.
+  ok    chat em /diagnostico.html (contexto default) sem termos proibidos
+  ok    aviso de privacidade presente
+  ok    sem erros de JavaScript novos
+  ok    aviso fica abaixo do campo, dentro da janela do chat e da tela
+  ok    falha da IA mostra o texto novo (sem "imediata/de plantão agora")
+  ok    mensagens após falha da IA sem termos proibidos
+  ok    texto digitado não aparece no dataLayer
+  ok    texto digitado só foi para o proxy do próprio site (POST ['http://127.0.0.1:34763/api/claude-chat.php'])
+        /o-que-fazer-agora/acabei-de-ser-preso-em-flagrante.html | contexto=flagrante | status='Assistente virtual'
+           > 🚨 PLANTÃO CRIMINAL 24H.
+           > Se alguém foi preso, o tempo importa para a defesa no flagrante e na audiência de custódia. Conte, em poucas palavras, o que aconteceu.
+  ok    chat em /o-que-fazer-agora/acabei-de-ser-preso-em-flagrante.html (contexto flagrante) sem termos proibidos
+  ok    aviso de privacidade presente
+  ok    sem erros de JavaScript novos
+  ok    aviso fica abaixo do campo, dentro da janela do chat e da tela
+        /o-que-fazer-agora/tenho-audiencia-de-custodia-o-que-fazer.html | contexto=emergencia | status='Assistente virtual'
+           > 🚨 EMERGÊNCIA CRIMINAL — PLANTÃO 24H.
+           > Para urgências, fale com o plantão pelo WhatsApp. Se preferir, conte aqui, em poucas palavras, o que aconteceu.
+  ok    chat em /o-que-fazer-agora/tenho-audiencia-de-custodia-o-que-fazer.html (contexto emergencia) sem termos proibidos
+  ok    aviso de privacidade presente
+  ok    sem erros de JavaScript novos
+  ok    aviso fica abaixo do campo, dentro da janela do chat e da tela
+        /o-que-fazer-agora/tornozeleira-eletronica-descarregou-o-que-fazer.html | contexto=audiencia | status='Assistente virtual'
+           > ⏱️ Audiência de custódia.
+           > O Dr. Lucas Semim atua na defesa nessas audiências, em que o juiz decide entre relaxar a prisão, conceder liberdade provisória ou converter em preventiva. Conte, em pouca
+  ok    chat em /o-que-fazer-agora/tornozeleira-eletronica-descarregou-o-que-fazer.html (contexto audiencia) sem termos proibidos
+  ok    aviso de privacidade presente
+  ok    sem erros de JavaScript novos
+  ok    aviso fica abaixo do campo, dentro da janela do chat e da tela
+        /o-que-fazer-agora/estou-preso-preventivamente-o-que-fazer.html | contexto=habeas | status='Assistente virtual'
+           > ⚖️ Habeas Corpus é urgente.
+           > O Dr. Lucas Semim atua em habeas corpus no TJMG, STJ e STF. Conte, em poucas palavras, a situação do preso.
+  ok    chat em /o-que-fazer-agora/estou-preso-preventivamente-o-que-fazer.html (contexto habeas) sem termos proibidos
+  ok    aviso de privacidade presente
+  ok    sem erros de JavaScript novos
+  ok    aviso fica abaixo do campo, dentro da janela do chat e da tela
+        /o-que-fazer-agora/fui-preso-acusado-trafico-drogas.html | contexto=flagrante | status='Assistente virtual'
+           > 🚨 PLANTÃO CRIMINAL 24H.
+           > Se alguém foi preso, o tempo importa para a defesa no flagrante e na audiência de custódia. Conte, em poucas palavras, o que aconteceu.
+  ok    chat em /o-que-fazer-agora/fui-preso-acusado-trafico-drogas.html (contexto flagrante) sem termos proibidos
+  ok    aviso de privacidade presente
+  ok    sem erros de JavaScript novos
+  ok    aviso fica abaixo do campo, dentro da janela do chat e da tela
+        /o-que-fazer-agora/fui-preso-maria-da-penha.html | contexto=maria_penha | status='Assistente virtual'
+           > 🛡️ Dúvida sobre a Lei Maria da Penha?
+           > Maria da Penha não admite fiança, mas falsas acusações geram responsabilidade criminal. O Dr. Lucas Semim atua nessa defesa. Descreva o caso.
+  ok    chat em /o-que-fazer-agora/fui-preso-maria-da-penha.html (contexto maria_penha) sem termos proibidos
+  ok    aviso de privacidade presente
+  ok    sem erros de JavaScript novos
+  ok    aviso fica abaixo do campo, dentro da janela do chat e da tela
+        /o-que-fazer-agora/progressao-de-regime-atrasada-o-que-fazer.html | contexto=habeas | status='Assistente virtual'
+           > ⚖️ Habeas Corpus é urgente.
+           > O Dr. Lucas Semim atua em habeas corpus no TJMG, STJ e STF. Conte, em poucas palavras, a situação do preso.
+  ok    chat em /o-que-fazer-agora/progressao-de-regime-atrasada-o-que-fazer.html (contexto habeas) sem termos proibidos
+  ok    aviso de privacidade presente
+  ok    sem erros de JavaScript novos
+  ok    aviso fica abaixo do campo, dentro da janela do chat e da tela
+        /advogado-criminalista/plantao-flagrante.html | contexto=flagrante | status='Assistente virtual'
+           > 🚨 PLANTÃO CRIMINAL 24H.
+           > Se alguém foi preso, o tempo importa para a defesa no flagrante e na audiência de custódia. Conte, em poucas palavras, o que aconteceu.
+  ok    chat em /advogado-criminalista/plantao-flagrante.html (contexto flagrante) sem termos proibidos
+  ok    aviso de privacidade presente
+  ok    sem erros de JavaScript novos
+  ok    aviso fica abaixo do campo, dentro da janela do chat e da tela
+
+[3b] janela fechada do chat não pode capturar toques (novo)
+  ok    /o-que-fazer-agora/acabei-de-ser-preso-em-flagrante.html (celular): 16 pontos da área da janela fechada deixam o toque passar para a página (visibility=hidden)
+  ok    /o-que-fazer-agora/acabei-de-ser-preso-em-flagrante.html (computador): 16 pontos da área da janela fechada deixam o toque passar para a página (visibility=hidden)
+  ok    /index.html (celular): 16 pontos da área da janela fechada deixam o toque passar para a página (visibility=hidden)
+  ok    /index.html (computador): 16 pontos da área da janela fechada deixam o toque passar para a página (visibility=hidden)
+  ok    toque no botão abre a janela do chat ({'open': True, 'vis': 'visible', 'op': '1'})
+  ok    campo de digitação aceita texto com a janela aberta
+  ok    botão fechar fecha a janela ({'open': False, 'vis': 'hidden'})
+
+[4] smart-cta e ads-intelligence — textos criados pelos scripts
+        19 entradas no banco de CTAs
+  ok    banco de CTAs do smart-cta (todas as entradas) sem termos proibidos
+        /news/reincidencia-generica-especifica-calculo-pena-stj.html | 1 CTA(s) | CÁLCULO DE PENA NO SEEU | O cálculo da pena e da progressão no SEEU deve ser conferido. Envie o atestado de pena e o advogado verifica se há erro de c
+  ok    CTA criado pelo smart-cta em /news/reincidencia-generica-especifica-calculo-pena-stj.html sem termos proibidos
+  ok    sem erros de JavaScript novos
+        /news/fui-intimado-medida-protetiva-o-que-fazer-prisao.html | 1 CTA(s) | ACUSADO EM CASO DE VIOLÊNCIA DOMÉSTICA? | Quem responde a medida protetiva ou a processo da Lei Maria da Penha tem direito à ampla defesa. O Dr. Lucas
+  ok    CTA criado pelo smart-cta em /news/fui-intimado-medida-protetiva-o-que-fazer-prisao.html sem termos proibidos
+  ok    sem erros de JavaScript novos
+        /news/operacao-policia-federal-gaeco-busca-apreensao-prefeitos-empresarios.html | 1 CTA(s) | INVESTIGADO EM OPERAÇÃO DO GAECO? | Denúncia genérica, sem individualização da conduta, pode ser questionada. O Dr. Lucas Semim analisa a investigação
+  ok    CTA criado pelo smart-cta em /news/operacao-policia-federal-gaeco-busca-apreensao-prefeitos-empresarios.html sem termos proibidos
+  ok    sem erros de JavaScript novos
+        /news/emprestou-chave-pix-cpf-bloqueado-crime-estelionato-art-171.html | 1 CTA(s) | INVESTIGADO POR CRIME DIGITAL? | Provas digitais precisam ser obtidas dentro da lei e, em regra, com ordem judicial. O Dr. Lucas Semim verifica a lega
+  ok    CTA criado pelo smart-cta em /news/emprestou-chave-pix-cpf-bloqueado-crime-estelionato-art-171.html sem termos proibidos
+  ok    sem erros de JavaScript novos
+        /news/quebrou-medida-protetiva-whatsapp-prisao-preventiva.html | 1 CTA(s) | 🔴 URGENTE | URGÊNCIA: ALGUÉM FOI PRESO AGORA? | O tempo importa na Audiência de Custódia. Fale com o Plantão Criminal do Dr. Lucas Semim para saber se
+  ok    CTA criado pelo smart-cta em /news/quebrou-medida-protetiva-whatsapp-prisao-preventiva.html sem termos proibidos
+  ok    sem erros de JavaScript novos
+        /noticias.html | 1 CTA(s) | 🔴 URGENTE | HABEAS CORPUS CONTRA PRISÃO ILEGAL | O habeas corpus é a medida cabível contra prisão ilegal ou abuso de poder (CF, art. 5º, LXVIII). O Dr
+  ok    CTA criado pelo smart-cta em /noticias.html sem termos proibidos
+  ok    sem erros de JavaScript novos
+  aviso /noticias.html: erro de JavaScript que já existia antes do Lote E: ["Unexpected token '.'"]
+        /sobre-mim.html | 1 CTA(s) | 🔴 URGENTE | URGÊNCIA: ALGUÉM FOI PRESO AGORA? | O tempo importa na Audiência de Custódia. Fale com o Plantão Criminal do Dr. Lucas Semim para saber se
+  ok    CTA criado pelo smart-cta em /sobre-mim.html sem termos proibidos
+  ok    sem erros de JavaScript novos
+        /artigos.html | 1 CTA(s) | ADVOGADO CRIMINAL PERTO DE VOCÊ | O Dr. Lucas Semim atende em Sabará, Belo Horizonte e na Grande BH, com plantão criminal 24h. Se alguém foi preso na 
+  ok    CTA criado pelo smart-cta em /artigos.html sem termos proibidos
+  ok    sem erros de JavaScript novos
+        selo de urgência (madrugada): '× | ⚡ PLANTÃO CRIMINAL 24H | Descreva a situação pelo WhatsApp e o escritório retorna o contato.'
+  ok    selo de urgência (madrugada) sem termos proibidos
+        selo de urgência (manhã): '× | ⚡ PLANTÃO CRIMINAL 24H | Descreva a situação pelo WhatsApp e o escritório retorna o contato.'
+  ok    selo de urgência (manhã) sem termos proibidos
+        selo de urgência (tarde): '× | ⚡ PLANTÃO CRIMINAL 24H | Descreva a situação pelo WhatsApp e o escritório retorna o contato.'
+  ok    selo de urgência (tarde) sem termos proibidos
+        título da home com utm_term: 'ADVOGADO TORNOZELEIRA SABARA\nADVOGADO CRIMINALISTA EM SABARÁ E BH'
+  ok    título dinâmico (Camaleão) sem termos proibidos
+  ok    Camaleão não escreve mais "ESPECIALISTA EM"
+
+[5] return-lead — consentimento e aviso de privacidade
+  ok    sem cookies de análise: pop-up não é criado
+  ok    sem cookies de análise: contador de visitas não mexe (count=3)
+  ok    com cookies de análise: pop-up aparece para visitante recorrente
+  ok    pop-up de retorno não cobre o botão do chat no celular
+        passo 3: 📝 |  | Quase lá — dois dados rápidos: |  | Usamos seu nome e WhatsApp apenas para retornar o seu contato. Não escreva dados sensíveis. Política de privacidade |  | 🔍 Analisar meu caso
+  ok    passo 3 mostra o aviso de privacidade: 'Usamos seu nome e WhatsApp apenas para retornar o seu contato. Não escreva dados sensíveis'
+  ok    link da política de privacidade: http://127.0.0.1:34763/politica-privacidade.html
+  ok    textos do pop-up de retorno (passos 1 a 3) sem termos proibidos
+        passo 4: ⚖️ |  | Teste Ficticio, aqui está a orientação: |  | O Dr. Lucas Semim pode analisar o seu caso. Entre em contato pelo WhatsApp. |  | 🔒 Atendimento sigiloso — amparado pelo Estatuto da OAB |  | Falar com Dr. Lucas agora | Fechar
+  ok    passo 4 do pop-up (resposta de contingência) sem termos proibidos
+  ok    a chamada à IA não carrega o nome informado (pedido ao proxy do próprio site)
+  ok    sem erros de JavaScript
+
+[7] cabeçalho (faixa), blocos de convite e textos injetados nos guias/artigos
+  ok    texto criado por scripts em /defesa-criminal/habeas-corpus-guia-impetracao-liminar.html sem termos proibidos
+  aviso conteúdo antigo escrito no próprio HTML de /defesa-criminal/habeas-corpus-guia-impetracao-liminar.html: {'especialista': 1, 'imediat': 5}
+  ok    sem erros de JavaScript novos
+        faixa de emergência do cabeçalho: '⚡ PLANTÃO CRIMINAL 24H — Atendimento para flagrante e custódia — (31) 98942-0094'
+  ok    faixa de emergência com o texto novo
+  ok    faixa de emergência sem termos proibidos
+  ok    texto criado por scripts em /o-que-fazer-agora/tenho-audiencia-de-custodia-o-que-fazer.html sem termos proibidos
+  aviso conteúdo escrito no HTML de /o-que-fazer-agora/tenho-audiencia-de-custodia-o-que-fazer.html: {'\\bmelhor(es)?\\b': 1, 'imediat': 6}
+  ok    sem erros de JavaScript novos
+  ok    texto criado por scripts em /o-que-fazer-agora/fui-preso-acusado-trafico-drogas.html sem termos proibidos
+  aviso conteúdo escrito no HTML de /o-que-fazer-agora/fui-preso-acusado-trafico-drogas.html: {'imediat': 6}
+  ok    sem erros de JavaScript novos
+
+[6] dados estruturados — antes x depois (DOM final)
+   /defesa-criminal/audiencia-de-custodia-guia-defesa-advogado.html
+        antes : ['Article', 'BreadcrumbList', 'FAQPage', 'LegalService', 'LegalService', 'LocalBusiness', 'ProfessionalService', 'Person', 'WebSite', 'BreadcrumbList', 'FAQPage']
+        depois: ['Article', 'BreadcrumbList', 'FAQPage', 'LegalService', 'LegalService', 'LocalBusiness', 'ProfessionalService', 'Person', 'WebSite']
+  ok    /defesa-criminal/audiencia-de-custodia-guia-defesa-advogado.html: JSON-LD novo válido, sem duplicados e sem campos proibidos
+   /defesa-criminal/habeas-corpus-guia-impetracao-liminar.html
+        antes : ['Article', 'BreadcrumbList', 'FAQPage', 'LegalService', 'LegalService', 'LocalBusiness', 'ProfessionalService', 'Person', 'WebSite', 'BreadcrumbList', 'FAQPage']
+        depois: ['Article', 'BreadcrumbList', 'FAQPage', 'LegalService', 'LegalService', 'LocalBusiness', 'ProfessionalService', 'Person', 'WebSite']
+  ok    /defesa-criminal/habeas-corpus-guia-impetracao-liminar.html: JSON-LD novo válido, sem duplicados e sem campos proibidos
+   /o-que-fazer-agora/tenho-audiencia-de-custodia-o-que-fazer.html
+        antes : ['LegalService', 'Article', 'FAQPage', 'Person', 'WebPage', 'LegalService', 'LocalBusiness', 'EmergencyService', 'HowTo', 'FAQPage', 'Service', 'Person', 'LegalService']
+        depois: ['LegalService', 'Article', 'FAQPage', 'Person', 'WebPage', 'LegalService', 'LocalBusiness', 'Service', 'LegalService']
+  aviso /o-que-fazer-agora/tenho-audiencia-de-custodia-o-que-fazer.html: descrição do plantão diz "24 horas por dia, 7 dias por semana, inclusive feriados" — depende da sua confirmação
+  ok    /o-que-fazer-agora/tenho-audiencia-de-custodia-o-que-fazer.html: JSON-LD novo válido, sem duplicados e sem campos proibidos
+  aviso /o-que-fazer-agora/tenho-audiencia-de-custodia-o-que-fazer.html: erro de JavaScript que já existia antes do Lote E (['Cal is not defined'])
+   /noticias.html
+        antes : ['CollectionPage', 'BreadcrumbList', 'Person', 'FAQPage', 'WebPage', 'LegalService', 'LocalBusiness', 'EmergencyService', 'HowTo', 'FAQPage', 'Service', 'Person', 'LegalService', 'ItemList']
+        depois: ['CollectionPage', 'BreadcrumbList', 'Person', 'WebPage', 'LegalService', 'LocalBusiness', 'Service', 'LegalService', 'ItemList']
+  aviso /noticias.html: descrição do plantão diz "24 horas por dia, 7 dias por semana, inclusive feriados" — depende da sua confirmação
+  ok    /noticias.html: JSON-LD novo válido, sem duplicados e sem campos proibidos
+  aviso /noticias.html: erro de JavaScript que já existia antes do Lote E (["Unexpected token '.'"])
+   /index.html
+        antes : ['LegalService', 'WebSite', 'Person', 'FAQPage', 'WebPage', 'LegalService', 'LocalBusiness', 'EmergencyService', 'HowTo', 'FAQPage', 'WebSite', 'Service', 'Person', 'LegalService']
+        depois: ['LegalService', 'WebSite', 'Person', 'WebPage', 'LegalService', 'LocalBusiness', 'WebSite', 'Service', 'LegalService']
+  aviso /index.html: o JSON-LD escrito na própria página contém priceRange (não vem dos scripts)
+  aviso /index.html: "$$" vem do JSON-LD escrito na página
+  aviso /index.html: descrição do plantão diz "24 horas por dia, 7 dias por semana, inclusive feriados" — depende da sua confirmação
+  ok    /index.html: JSON-LD novo válido, sem duplicados e sem campos proibidos
+   /faq.html
+        antes : ['FAQPage', 'BreadcrumbList', 'Person', 'WebPage', 'LegalService', 'LocalBusiness', 'EmergencyService', 'HowTo', 'FAQPage', 'Service', 'Person', 'LegalService']
+        depois: ['FAQPage', 'BreadcrumbList', 'LegalService']
+  ok    /faq.html: JSON-LD novo válido, sem duplicados e sem campos proibidos
+   /sobre-mim.html
+        antes : ['ProfilePage', 'Person', 'LegalService', 'BreadcrumbList', 'Person', 'FAQPage', 'WebPage', 'LegalService', 'LocalBusiness', 'EmergencyService', 'FAQPage', 'Person', 'LegalService']
+        depois: ['ProfilePage', 'Person', 'LegalService', 'BreadcrumbList', 'Person', 'WebPage', 'LegalService', 'LocalBusiness', 'LegalService']
+  ok    /sobre-mim.html: JSON-LD novo válido, sem duplicados e sem campos proibidos
+   /advogado-criminalista/sabara.html
+        antes : ['LegalService', 'LocalBusiness', 'FAQPage', 'BreadcrumbList', 'LegalService', 'LegalService', 'LocalBusiness', 'ProfessionalService', 'Person', 'WebSite', 'BreadcrumbList', 'FAQPage']
+        depois: ['LegalService', 'LocalBusiness', 'FAQPage', 'BreadcrumbList', 'LegalService', 'LegalService', 'LocalBusiness', 'ProfessionalService', 'Person', 'WebSite']
+  aviso /advogado-criminalista/sabara.html: o JSON-LD escrito na própria página contém priceRange (não vem dos scripts)
+  aviso /advogado-criminalista/sabara.html: "$$" vem do JSON-LD escrito na página
+  ok    /advogado-criminalista/sabara.html: JSON-LD novo válido, sem duplicados e sem campos proibidos
+   /diagnostico.html
+        antes : ['WebPage', 'WebApplication', 'FAQPage', 'Person', 'WebPage', 'LegalService', 'LocalBusiness', 'EmergencyService', 'FAQPage', 'Person', 'LegalService']
+        depois: ['WebPage', 'WebApplication', 'FAQPage', 'Person', 'WebPage', 'LegalService', 'LocalBusiness', 'LegalService']
+  ok    /diagnostico.html: JSON-LD novo válido, sem duplicados e sem campos proibidos
+
+RESULTADO: 115 ok, 0 erro(s), 13 aviso(s)
+  AVISO: /noticias.html: erro de JavaScript que já existia antes do Lote E: ["Unexpected token '.'"]
+  AVISO: conteúdo antigo escrito no próprio HTML de /defesa-criminal/habeas-corpus-guia-impetracao-liminar.html: {'especialista': 1, 'imediat': 5}
+  AVISO: conteúdo escrito no HTML de /o-que-fazer-agora/tenho-audiencia-de-custodia-o-que-fazer.html: {'\\bmelhor(es)?\\b': 1, 'imediat': 6}
+  AVISO: conteúdo escrito no HTML de /o-que-fazer-agora/fui-preso-acusado-trafico-drogas.html: {'imediat': 6}
+  AVISO: /o-que-fazer-agora/tenho-audiencia-de-custodia-o-que-fazer.html: descrição do plantão diz "24 horas por dia, 7 dias por semana, inclusive feriados" — depende da sua confirmação
+  AVISO: /o-que-fazer-agora/tenho-audiencia-de-custodia-o-que-fazer.html: erro de JavaScript que já existia antes do Lote E (['Cal is not defined'])
+  AVISO: /noticias.html: descrição do plantão diz "24 horas por dia, 7 dias por semana, inclusive feriados" — depende da sua confirmação
+  AVISO: /noticias.html: erro de JavaScript que já existia antes do Lote E (["Unexpected token '.'"])
+  AVISO: /index.html: o JSON-LD escrito na própria página contém priceRange (não vem dos scripts)
+  AVISO: /index.html: "$$" vem do JSON-LD escrito na página
+  AVISO: /index.html: descrição do plantão diz "24 horas por dia, 7 dias por semana, inclusive feriados" — depende da sua confirmação
+  AVISO: /advogado-criminalista/sabara.html: o JSON-LD escrito na própria página contém priceRange (não vem dos scripts)
+  AVISO: /advogado-criminalista/sabara.html: "$$" vem do JSON-LD escrito na página

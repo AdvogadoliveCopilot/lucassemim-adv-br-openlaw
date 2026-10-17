@@ -1,0 +1,19 @@
+<!-- Lote F: trocar a data (lastmod) destas 17 linhas em sitemap.xml para 2026-10-09 e acrescentar a linha do indice -->
+    <url><loc>https://lucassemim.adv.br/advogado-criminalista/</loc><lastmod>2026-10-09</lastmod><priority>0.95</priority></url>
+    <url><loc>https://lucassemim.adv.br/advogado-criminalista/barreiro.html</loc><lastmod>2026-10-09</lastmod><priority>0.95</priority></url>
+    <url><loc>https://lucassemim.adv.br/advogado-criminalista/betim.html</loc><lastmod>2026-10-09</lastmod><priority>0.85</priority></url>
+    <url><loc>https://lucassemim.adv.br/advogado-criminalista/brumadinho.html</loc><lastmod>2026-10-09</lastmod><priority>0.85</priority></url>
+    <url><loc>https://lucassemim.adv.br/advogado-criminalista/caete.html</loc><lastmod>2026-10-09</lastmod><priority>0.80</priority></url>
+    <url><loc>https://lucassemim.adv.br/advogado-criminalista/contagem.html</loc><lastmod>2026-10-09</lastmod><priority>0.90</priority></url>
+    <url><loc>https://lucassemim.adv.br/advogado-criminalista/esmeraldas.html</loc><lastmod>2026-10-09</lastmod><priority>0.80</priority></url>
+    <url><loc>https://lucassemim.adv.br/advogado-criminalista/ibirite.html</loc><lastmod>2026-10-09</lastmod><priority>0.85</priority></url>
+    <url><loc>https://lucassemim.adv.br/advogado-criminalista/igarape.html</loc><lastmod>2026-10-09</lastmod><priority>0.80</priority></url>
+    <url><loc>https://lucassemim.adv.br/advogado-criminalista/lagoasanta.html</loc><lastmod>2026-10-09</lastmod><priority>0.85</priority></url>
+    <url><loc>https://lucassemim.adv.br/advogado-criminalista/neves.html</loc><lastmod>2026-10-09</lastmod><priority>0.85</priority></url>
+    <url><loc>https://lucassemim.adv.br/advogado-criminalista/novalima.html</loc><lastmod>2026-10-09</lastmod><priority>0.85</priority></url>
+    <url><loc>https://lucassemim.adv.br/advogado-criminalista/pedroleopoldo.html</loc><lastmod>2026-10-09</lastmod><priority>0.80</priority></url>
+    <url><loc>https://lucassemim.adv.br/advogado-criminalista/sabara.html</loc><lastmod>2026-10-09</lastmod><priority>0.95</priority></url>
+    <url><loc>https://lucassemim.adv.br/advogado-criminalista/santaluzia.html</loc><lastmod>2026-10-09</lastmod><priority>0.90</priority></url>
+    <url><loc>https://lucassemim.adv.br/advogado-criminalista/saojosedalapa.html</loc><lastmod>2026-10-09</lastmod><priority>0.80</priority></url>
+    <url><loc>https://lucassemim.adv.br/advogado-criminalista/vespasiano.html</loc><lastmod>2026-10-09</lastmod><priority>0.85</priority></url>
+    <!-- belohorizonte.html tambem: lastmod 2026-10-09 (Lote D) -->

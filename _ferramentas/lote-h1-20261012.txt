@@ -1,0 +1,143 @@
+﻿LOTE H1 - Guias "O que fazer agora" (30 guias + índice) dentro do Provimento 205/2021, e guia novo da revista pessoal revisado - 12/10/2026
+=====================================================================================================================================
+Nada foi subido ao site. Este lote é rascunho para você aprovar.
+ESTADO: gravado na sua pasta do site em 12/10/2026 (31 HTML em o-que-fazer-agora\ e sitemap-urgencia.xml, com trava de data: nada que você tenha mudado foi sobrescrito; conferi byte a byte depois de gravar). O backup dos originais está em _ferramentas\backups\o-que-fazer-agora-antes-lote-h1-20261012\. NÃO foi enviado ao servidor: o envio é pelo FileZilla, depois do seu OK.
+
+1) O QUE ESTE LOTE FAZ
+   Os guias de /o-que-fazer-agora/ são as páginas que chamam o cliente. No Lote C v2 eu limpei 22 deles; este lote leva a mesma limpeza aos
+   outros 7 guias e ao índice, faz uma segunda passada nos 22 (restos que o Lote C v2 não pegou: "Atendimento imediato", "Resposta imediata",
+   "Método Live™", "Advocacia Criminal Estratégica", priceRange e algumas frases) e revisa o guia novo que o seu agente gerou hoje
+   (revista pessoal / abordagem policial). O visual escuro e dourado e a urgência (plantão 24h, WhatsApp e ligação na primeira tela)
+   NÃO mudaram. São 31 arquivos HTML + o sitemap-urgencia.xml; só texto e dados estruturados mudam (4 a 18 linhas por página).
+
+2) ANTES x DEPOIS (resumo; linha a linha em _ferramentas\diff-lote-h1-20261012.txt)
+   ANTES                                                              DEPOIS
+   selo dos botões "Resposta rápida · sigilo profissional"            "Atendimento humano · sigilo profissional"
+   etiqueta "Plantão ativo agora"                                     "Plantão 24h"
+   "Especialista em defesa criminal" / "advogado criminalista         "Atuação em defesa criminal" / "advogado criminalista"
+   especialista" (links e resumos)                                    (a OAB só aceita "especialista" com título de especialista)
+   dados estruturados com priceRange "$$$" (8 páginas)                priceRange removido (é referência a preço)
+   nome nos dados estruturados "Advocacia Criminal Estratégica"       "Dr. Lucas Semim - Advocacia Criminal" (31 páginas)
+   texto para leitor de tela "Atendimento imediato"                   "Contato com o advogado" (31 páginas)
+   títulos "RESPOSTA IMEDIATA..." (6) e "RESPOSTA ESTRATÉGICA..."     "RESPOSTA DIRETA..." ; "...DEFESA NA HORA" -> "...DEFESA TÉCNICA"
+   assinatura sob a foto "OAB/MG 222.539 • Método Live™ •            "OAB/MG 222.539 • Plantão criminal 24h em Sabará e Belo Horizonte"
+   Atendimento Plantão 24h em ..." (30 guias, 7 variações)            (e variações equivalentes: delegacias, custódias, flagrantes...)
+   comentários do código "Bloco Resposta Imediata" (60)               "Bloco de abertura" (não aparece na tela; limpa o código-fonte,
+                                                                      que qualquer pessoa pode ler)
+   Ajustes pontuais:
+   - meu-filho-foi-preso: a pergunta "Quem devo chamar primeiro: Advogado ou Defensoria Pública?" e a resposta (a Defensoria "atende um
+     volume expressivo de demandas"; o advogado particular "garante atuação imediata") comparavam serviços e prometiam atuação: viraram
+     "A pessoa presa pode ter advogado de sua escolha ou a Defensoria Pública?", com a base legal (CF art. 5º, LXIII e LXXIV; CPP art. 306,
+     § 1º). O passo "o advogado irá imediatamente à delegacia" virou o direito do advogado de falar a sós com o preso (Estatuto, art. 7º, III).
+   - tenho-mandado-de-prisao: "Guia Estratégico 24h", "5 passos estratégicos" e "medida estratégica indispensável... fortalecendo pedidos"
+     foram suavizados ("Guia de Urgência", "5 passos importantes", "medida que a defesa costuma avaliar... pode ser considerado").
+   - agi-em-legitima-defesa e tornozeleira: "maior a chance de corrigir/reverter" (probabilidade de resultado) virou "mais cedo é possível
+     analisar/avaliar..." (a mesma frase no texto e no FAQ dos dados estruturados).
+   - crime eleitoral: "apresentar a melhor defesa" -> "apresentar defesa técnica"; porte de arma: "nosso guia estratégico" -> "nosso guia";
+     audiência de instrução: "interrogatório estratégico, cross-examination" -> "interrogatório, inquirição de testemunhas".
+
+3) O GUIA NOVO (revista-pessoal-abordagem-policial-o-que-fazer.html) - o que ajustei
+   O texto do agente estava bom e já citava a decisão pendente do STJ. Ajustei só o que estava impreciso ou perigoso (11 trocas, todas com
+   número exato conferido; a mesma redação vai para o texto visível e para o FAQ dos dados estruturados):
+   a) "A busca pessoal pode ser feita sem mandado judicial em duas situações" -> "entre outros casos": o art. 244 do CPP tem uma terceira (quando a medida
+      é determinada no curso de busca domiciliar). O aviso do topo agora diz "Em regra, ... exige fundada suspeita".
+   b) "a lei exige que o motivo seja descrito objetivamente pelos próprios policiais" -> "segundo a jurisprudência do STJ": isso vem da
+      jurisprudência, não do texto do art. 244.
+   c) NERVOSISMO. O guia dizia que o nervosismo isolado "costuma ser tratado da mesma forma pela jurisprudência" e, no FAQ, que o STJ "já decidiu"
+      que ele não configura fundada suspeita. Hoje isso está em disputa: há decisões do STJ em sentidos diferentes (a 6ª Turma, em
+      16/09/2025, validou uma abordagem motivada por nervosismo, por 3 a 2, mudando a linha de 2022), a 3ª Seção afetou o tema como recurso
+      repetitivo (Tema 1.439: parâmetros objetivos de fundada suspeita e se o aparente nervosismo basta; ainda sem tese firmada) e o HC 1.004.953
+      está suspenso por pedido de vista. O texto agora diz isso: "atitude suspeita" genérica não basta (isso o STJ já decidiu); o peso do
+      nervosismo é ponto em debate, com Tema 1.439 pendente; enquanto não houver tese, o resultado varia de caso para caso.
+   d) "Resistir ou tentar fugir pode configurar novo crime (art. 329)" -> o art. 329 exige violência ou ameaça; fugir sozinho não é esse crime.
+      Agora: "Reagir com violência ou ameaça pode configurar... e tentar fugir costuma reforçar a suspeita".
+   e) "Você tem o direito de saber por que está sendo parado e de identificar quem conduz a abordagem" -> não é um direito expresso para a
+      abordagem comum (o direito à identificação dos responsáveis é do preso, CF art. 5º, LXIV). Agora é uma orientação prática.
+   f) Abuso de autoridade (Lei 13.869/2019, art. 13, II): o crime exige constranger pessoa PRESA ou DETIDA, mediante violência, grave ameaça ou
+      redução da capacidade de resistência. Texto e FAQ agora dizem isso, e que depende dos fatos de cada caso.
+   Conferido em 12/10/2026: texto do art. 13 da Lei 13.869 (Planalto); Tema 1.439 "afetado, ainda não julgado, sem tese firmada" (Trilhante/TRF3
+   e ConJur de 02/08/2026 para o HC suspenso); a notícia da 6ª Turma (Jornal de Brasília, 17/09/2025). Fontes no fim.
+   IMPORTANTE: o parágrafo do Tema 1.439 envelhece quando o STJ fixar a tese. Antes de subir, olhe o andamento do tema (ou me peça); se já tiver
+   tese, eu reescrevo o parágrafo e o FAQ.
+
+4) O QUE NÃO MUDOU NESTE LOTE (de propósito)
+   - Rodapé "Semim & Associados - Advocacia Criminal Inteligente" (js/footer-seo.js, Lote D) e o catálogo "Serviços de Urgência e Estratégicos"
+     (js/ai-neural-seo.js, Lote E): são arquivos compartilhados do site todo. "Inteligente" e "Estratégicos" podem ser lidos como autoelogio.
+     Mexo neles no Lote H2, com o nome oficial do escritório (item 11, nº 3).
+   - A tag <meta name="author"> "SEMIM ASSOCIADOS | Dr. Lucas Renan Semim & Advogados" e o publisher "Advogado Lucas Semim Consultoria Jurídica" dos
+     dados estruturados: dependem do nome oficial do escritório (Lote H2).
+   - Botões e chamadas (Falar com o Dr. Lucas, Ligar agora, Plantão 24h) e passos como "Acione um advogado criminalista imediatamente" (5 guias):
+     são orientação, genérica ("um advogado"), e mantêm a urgência que você quer. Mantive.
+   - Agendamento Cal.com carregando antes de ser pedido (erro "Cal is not defined" no console, em todas as páginas do site): Lote H.
+   - Links entre guias, cidades e índice, e os artigos de /news/ que tratam de abordagem e nervosismo
+     (preso-em-flagrante-abordagem-ilegal-nervosismo-stj.html, revista-abusiva-stj-atitude-suspeita-anula-flagrante.html): podem apresentar o
+     nervosismo como tema pacificado; entram na revisão editorial do Lote H.
+
+5) ARQUIVOS DO LOTE (32 para o servidor)
+   SUBSTITUEM O QUE ESTÁ NO AR (ou NOVOS):   /public_html/o-que-fazer-agora/   <- os 31 .html da pasta o-que-fazer-agora\ (30 guias + index.html)
+                                             /public_html/sitemap-urgencia.xml
+   Se o guia da revista pessoal (revista-pessoal-abordagem-policial-o-que-fazer.html) ainda não estiver no ar, este lote o publica pela primeira vez;
+   os outros 30 guias e o índice já existem e são substituídos.
+   NÃO enviar: _ferramentas, agentes.
+   Somas de verificação: _ferramentas\somas-lote-h1.txt   |   Diferenças: _ferramentas\diff-lote-h1-20261012.txt   |   Testes: _ferramentas\qa-lote-h1-20261012.txt
+   ESTE LOTE SUBSTITUI os HTML dos guias que estão nos Lotes C v2 (22 guias), no pacote dos 7 guias antigos e no índice do agente. Suba ESTE no lugar
+   deles, nunca os dois (se o do Lote C subisse depois, desfaria a limpeza). O sitemap-urgencia.xml deste lote (31 endereços) também substitui o do Lote C (30).
+
+6) ORDEM SEGURA DE ENVIO
+   Os 31 HTML chamam 17 arquivos de css/js com versão (?v=20261008 ou ?v=20261009): codelei/analytics.js, css/header-lux.css, css/lucas-v2-pages.css,
+   css/oqfa-v3.css, js/ads-intelligence.js, js/ai-neural-seo.js, js/chat-elite.js, js/diagnostico.js, js/footer-seo.js, js/header-elite.js, js/lgpd.js,
+   js/oqfa-v3.js, js/page-v2.js, js/smart-cta.js, js/tradutor-global.js, js/vcard-smart.js, js/vlibras-plugin.js. Eles vêm dos Lotes B, C v2, D e E (e do
+   pacote da troca de telefone, no caso do analytics.js). O servidor guarda css/js por 1 ano: se o HTML subir antes e o visitante carregar a versão
+   antiga sob o nome novo, ele só trocaria daqui a um ano. Portanto: B, C v2 (só css/js), D e E primeiro; ESTE LOTE depois; F e, por último, G.
+   Passo a passo: (1) opcional: _ferramentas\fazer-backup-antes-lote-h1.bat; (2) ver no computador (item 7); (3) FileZilla: pasta o-que-fazer-agora\ ->
+   /public_html/o-que-fazer-agora/ e sitemap-urgencia.xml -> /public_html/.
+
+7) COMO VER NO SEU COMPUTADOR ANTES DE SUBIR
+   Dois cliques em _ferramentas\ver-site-local.bat (já está na sua pasta; usa o Python) e abra http://127.0.0.1:8080/o-que-fazer-agora/ . No aviso de
+   cookies, clique em "Rejeitar". Se algo parecer antigo, Ctrl+Shift+R. Celular: F12 e o ícone de celular. O chat do site abre sozinho em tela cheia
+   no celular depois de alguns segundos (é o Lote E); feche-o no X para continuar olhando a página.
+
+8) BACKUP E COMO VOLTAR ATRÁS
+   _ferramentas\backups\o-que-fazer-agora-antes-lote-h1-20261012\ = os 31 arquivos de antes (cópia exata do que estava na sua pasta hoje, conferida
+   byte a byte) + o sitemap-urgencia.xml de antes. Se gravar à mão: ANTES de copiar, dois cliques em _ferramentas\fazer-backup-antes-lote-h1.bat (precisa do
+   .ps1 ao lado). Voltar atrás: copiar os arquivos do backup de volta para o-que-fazer-agora\ e reenviar pelo FileZilla.
+
+9) SITEMAP E GOOGLE
+   sitemap-urgencia.xml: 31 endereços, todos com lastmod 2026-10-12 (todas as páginas mudaram). Confirme que o robots.txt/sitemap principal apontam para ele.
+   Search Console: depois de subir, Inspeção de URL > Solicitar indexação do índice /o-que-fazer-agora/ e do guia novo. O título da aba e o resultado do Google
+   não mudam em nenhuma página; só mudam o og:title (prévia do link) e a description dos dados estruturados de tenho-mandado-de-prisao.
+
+10) TESTES FEITOS (navegador de verdade, celular 390 px e computador 1366 px; dados fictícios) - registro em _ferramentas\qa-lote-h1-20261012.txt
+   - Termos que o Provimento 205/2021 não aceita, no texto final da tela (depois do JavaScript): 322 -> 64; os 64 são 62 do slogan do rodapé (item 4) e
+     2 falsos alarmes ("não é qualquer impressão", conceito jurídico). No HTML dos 31 arquivos (texto, atributos, dados estruturados e comentários): 0 dos termos da lista.
+   - Validador de guias (o mesmo dos lotes anteriores): 30 guias, 0 erros; avisos 101 -> 91 (restam prazos de lei, jurisprudência citada e tamanho de título).
+   - 0 rolagem lateral; FAQ abre por clique nas 30 páginas que têm FAQ; 1 H1 por página; 0 arquivos locais ausentes; 31 JSON-LD válidos; FAQPage = texto visível.
+   - Integridade: fim de linha (CRLF/LF) e BOM de cada arquivo iguais ao original; só mudam as linhas listadas no diff.
+   Não foi possível: testar no ar (a Hostinger bloqueia as minhas checagens), leitor de tela de verdade, velocidade.
+
+11) PARA VOCÊ CONFIRMAR (não decidi nada disso sozinho)
+   1) "Plantão 24h" no selo (no lugar de "Plantão ativo agora"): existe plantão todos os dias, inclusive madrugada e feriados? Anunciar o que não é
+      entregue pode ser lido como induzir a erro (mesma pergunta dos Lotes F e G).
+   2) "Método Live™" saiu das assinaturas sob a foto (30 guias), para ficar igual às páginas das cidades e à home, onde ele não aparece. Se a marca é sua e
+      quer mantê-la ali, é uma troca simples; a decisão é sua.
+   3) Nome do escritório nos dados estruturados: "Dr. Lucas Semim - Advocacia Criminal" (saiu "Estratégica"). Qual é o nome oficial (registro na OAB / contrato social)?
+      Hoje o site usa "Dr. Lucas Semim", "Semim & Associados" e "Advogado Lucas Semim Consultoria Jurídica". Com a resposta eu harmonizo rodapé,
+      meta author e publisher no Lote H2.
+   4) FAQ da Defensoria em "meu-filho-foi-preso": a versão nova é neutra e com base legal. Fica assim?
+   5) Guia da revista pessoal: o parágrafo do Tema 1.439 (item 3-c) fica como está até o STJ fixar a tese? Me avise quando fixar.
+   6) Seu agente gerou esse guia com os mesmos vícios que eu acabei de tirar dos outros (Método Live™, "Estratégica", "Atendimento imediato"...). Posso
+      ajustar o molde e as regras do agente (pasta agentes\) para os próximos guias já saírem limpos? Se sim, me diga e eu olho a pasta.
+
+12) PRÓXIMOS PASSOS (depois do seu OK)
+   - Você sobe os lotes na ordem do item 6 (ou eu monto o "pacote de subida" único, com a lista arquivo por arquivo). Nenhum foi enviado ao servidor.
+   - Lote H2: nome do escritório e rodapé "Inteligente" no site todo, F/G/D/news, após a sua resposta do item 11, nº 3.
+   - Lote H: painel antigo da raiz (login no JavaScript), links entre guias/cidades/índice, noticias.html, plantão-flagrante.html, presídios, artigos,
+     endereço/CEP/coordenadas, agendamento sob demanda (Cal.com), 320 px, versão ?v nas páginas antigas.
+   - Painel do cliente -> "software jurídico": primeiro a arquitetura (papéis, autorização por caso no servidor, sessão curta, 2 etapas, auditoria).
+
+FONTES (conferidas em 12/10/2026)
+   Lei 13.869/2019, art. 13 e art. 1º, § 1º: https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/l13869.htm
+   Tema Repetitivo 1.439 (STJ), situação: https://informativos.trilhante.com.br/temas-stj/tema-repetitivo-1439-stj
+   TRF3 - decisão de afetação do Tema 1.439: https://www.trf3.jus.br/documentos/nuge/DR/STJ/2026/Decisa_o-Tema_-1439-STJ.pdf
+   Migalhas, "3ª Seção do STJ analisa se nervosismo justifica busca pessoal": https://www.migalhas.com.br/quentes/455461/3ª-secao-do-stj-analisa-se-nervosismo-justifica-busca-pessoal
+   Jornal de Brasília, 17/09/2025, "STJ valida nervosismo como razão para abordagem e busca policial": https://jornaldebrasilia.com.br/noticias/brasil/stj-valida-nervosismo-como-razao-para-abordagem-e-busca-policial/

@@ -1,0 +1,150 @@
+﻿PACOTE DE SUBIDA - 12/10/2026 - lucassemim.adv.br
+==================================================
+ESTADO: pronto, NADA foi enviado ao servidor. Combinado: só sobe depois do seu OK aqui no chat.
+Esta pasta (_ferramentas\subida-20261012) é uma CÓPIA ORGANIZADA do que ficou pronto desde o pacote do telefone (08/10). Os mesmos
+arquivos já estão nos caminhos de verdade da sua pasta do site (conferi byte a byte), então dá para enviar por aqui, grupo a grupo
+(mais fácil), ou direto da pasta do site: o resultado é o mesmo.
+NUNCA suba a pasta _ferramentas. Você sobe só o CONTEÚDO de cada grupo (pastas 1 a 5).
+
+
+0) RESUMO
+   109 arquivos em 5 grupos, 4,3 MB. Ordem: 1-primeiro -> 2-paginas -> 3-mapas -> 4-home-e-sw -> 5-htaccess-por-ultimo.
+   Entram: Lotes B, D, E, F, G e H1 (30 guias + índice), mais o H2 (nome do escritório, 22 arquivos) e o H3 (sitemap.xml), o molde
+   dos guias e 15 arquivos de apoio da sua pasta que as páginas chamam (css, scripts leves, 6 fotos JPG da faixa das delegacias e o
+   service worker). Esta pasta é a versão FINAL de cada arquivo: o Lote C v2, os 7 guias avulsos e o índice do agente NÃO sobem
+   separados (o H1 já substitui todos; se o Lote C subisse depois, desfaria a limpeza). Não use mais as pastas individuais dos lotes.
+   Por que essa ordem: o servidor guarda css/js por 1 ano no navegador do visitante, e cada página chama o arquivo com um carimbo
+   (?v=...). Se a página subir antes do css/js, o visitante pode guardar o arquivo velho sob o nome novo e só trocar daqui a um ano.
+   Então: arquivos de apoio primeiro, páginas depois, home e .htaccess por último.
+   Pode reenviar o que já está no ar: o FileZilla sobrescreve e, se o arquivo for igual, não muda nada.
+   O que já sei do servidor: o relatório de 08/10 diz que o pacote do telefone e o .htaccess de 17.226 bytes subiram (415 arquivos, 0
+   falhas). Dos Lotes B a H1 não tenho registro de envio. Se você já enviou algum, tudo bem.
+
+
+1) CONFIRME ANTES (fatos que o site afirma; se algum não for verdade, me diga e eu tiro do texto ANTES de você subir)
+   a) Plantão 24h todos os dias, inclusive madrugada e feriados (home, guias, cidades, rodapé). Anunciar o que não é entregue pode ser
+      lido como induzir a erro (Provimento 205/2021).
+   b) Atuação nas cidades listadas, "atendimento presencial em Sabará e BH" e "atendimento virtual para qualquer cidade" (home e
+      cidades). Sete Lagoas aparece só no índice, como "sob demanda".
+   c) "Área do cliente" da home: o portal novo (portal/painel-cliente.html) está no ar, com login funcionando e clientes cadastrados?
+   d) Central do Caso: o texto diz que o que a pessoa escreve vai ao escritório e é usado só para o atendimento (LGPD). É esse o fluxo
+      real (formulário -> planilha/Apps Script)?
+   e) Faixa "Registros do Dr. Lucas nas delegacias da região" (índice das cidades): as legendas estão certas? Em Betim há uma pessoa
+      desfocada ao fundo. Na dúvida, eu tiro a faixa inteira antes de você subir.
+   f) Guia da revista pessoal: o parágrafo do Tema 1.439 (STJ) envelhece quando o STJ fixar a tese. No dia do envio, olhe o andamento
+      do tema ou me peça para conferir.
+   As demais perguntas (nome oficial, endereço, título da home...) estão no item 6 e nas notas de cada lote; não impedem o envio.
+
+
+2) ANTES DE COMEÇAR (10 minutos)
+   2.1 BACKUP DO SERVIDOR (é o que garante voltar atrás): no FileZilla, arraste do lado direito para uma pasta sua (ex.:
+       Desktop\backup-servidor-20261012) pelo menos: .htaccess, index.html, sitemap.xml, sitemap-urgencia.xml, sw.js, llms.txt e as pastas
+       css, js, advogado-criminalista e o-que-fazer-agora. Se a Hostinger oferecer backup/ponto de restauração no painel, gere um também.
+   2.2 FileZilla, 3 ajustes (uma vez só):
+       - Menu Servidor > "Forçar exibição de arquivos ocultos" (Server > Force showing hidden files), para enxergar o .htaccess.
+       - Menu Transferência > Tipo de transferência > Binário (Transfer > Transfer type > Binary): o servidor recebe o arquivo
+         exatamente como está aqui.
+       - Menu Transferência > "Ação padrão se o arquivo já existe..." > Sobrescrever (Transfer > Default file exists action >
+         Overwrite). Assim o FileZilla não fica perguntando arquivo por arquivo.
+   2.3 (opcional) Ver tudo no seu computador antes: dois cliques em _ferramentas\ver-site-local.bat e abra http://127.0.0.1:8080/ . No aviso
+       de cookies clique em "Rejeitar" (se aceitar, o Google Analytics pode contar a sua visita de teste).
+   2.4 (opcional) Conferir que esta pasta está íntegra: dois cliques em verificar-pacote.bat (compara cada arquivo com o
+       manifesto-subida-20261012.csv; só lê, não altera nada). O esperado: "Tudo certo".
+   2.5 (opcional) Abra conferir-no-servidor-20261012.txt: lista o que as páginas chamam e NÃO está no pacote (2 minutos no FileZilla).
+
+
+3) A ORDEM - termine um grupo, espere a fila do FileZilla zerar, e só então comece o próximo
+   Em cada grupo: lado ESQUERDO (seu computador) = abra a pasta do grupo; lado DIREITO (servidor) = abra /public_html. Selecione TUDO que
+   aparece dentro da pasta do grupo e arraste para o lado direito. Não arraste a pasta do grupo em si (senão cria uma pasta "1-primeiro"
+   no servidor).
+
+   GRUPO 1 - 1-primeiro (49 arquivos, 1,8 MB): css, js, codelei e img. É o apoio das páginas.
+   GRUPO 2 - 2-paginas (55 arquivos): 6 páginas da raiz (404, diagnostico, emergencia, faq, politica-privacidade, llms.txt),
+             18 de advogado-criminalista/ (índice + 17 cidades) e 31 de o-que-fazer-agora/ (30 guias + índice).
+   GRUPO 3 - 3-mapas (2): sitemap.xml e sitemap-urgencia.xml.
+   GRUPO 4 - 4-home-e-sw (2): index.html (a home) e sw.js. Terminando, abra a home (Ctrl+F5) e confira. Se estiver bem, siga.
+   GRUPO 5 - 5-htaccess-por-ultimo (1): o .htaccess. Terminando, abra a home e uma página interna. Se der ERRO 500 ou o site
+             sumir: item 5.
+   Fora dos grupos, na raiz desta pasta, ficam os documentos (este texto, manifesto, lista "conferir", verificador) e a pasta "reverter".
+   Nada disso sobe.
+
+
+4) CONFERIR DEPOIS DE SUBIR (janela anônima do navegador; Ctrl+F5; "Rejeitar" nos cookies)
+   [ ] https://lucassemim.adv.br/  -> home nova ("FAMILIAR PRESO? SAIBA O QUE FAZER AGORA."); os botões de WhatsApp e ligação mostram
+       (31) 98942-0094 (abrir o link basta, não precisa enviar mensagem).
+   [ ] https://lucassemim.adv.br/advogado-criminalista/  -> índice das cidades; abra Sabará e Belo Horizonte.
+   [ ] https://lucassemim.adv.br/o-que-fazer-agora/  -> índice dos guias; abra revista-pessoal-abordagem-policial-o-que-fazer.html e
+       meu-filho-foi-preso.html.
+   [ ] /faq.html, /emergencia.html, /diagnostico.html e /politica-privacidade.html abrem sem erro.
+   [ ] https://lucassemim.adv.br/pagina-que-nao-existe  -> aparece a página 404 nova.
+   [ ] https://lucassemim.adv.br/o-que-fazer-agora/politica-privacidade.html  -> leva para /politica-privacidade.html (regra nova do
+       .htaccess).
+   [ ] /sitemap.xml (74 endereços) e /sitemap-urgencia.xml (31 endereços) abrem como XML.
+   [ ] Celular: home, 1 guia e 1 cidade. O chat abre sozinho em tela cheia no celular depois de alguns segundos (vem do Lote E); feche no X.
+   [ ] https://civel.lucassemim.adv.br/ continua abrindo (o .htaccess da raiz vale para o subdomínio também).
+   Search Console: Sitemaps > adicionar sitemap.xml e sitemap-urgencia.xml. Inspeção de URL > "Solicitar indexação" de /,
+   /advogado-criminalista/, /o-que-fazer-agora/ e do guia da revista pessoal.
+   Página sem cores ou com aparência antiga: quase sempre é css/js que não subiu ou cache. Ctrl+Shift+R; se continuar, reenvie o grupo 1.
+
+
+5) SE ALGO DER ERRADO
+   - ERRO 500 / site fora do ar logo depois do grupo 5: o culpado é quase sempre o .htaccess. No servidor (FileZilla, lado direito), clique
+     com o botão direito no .htaccess > Renomear para htaccess-com-erro.txt. Depois envie o .htaccess do seu backup do servidor (item 2.1) e,
+     se não tiver, o arquivo reverter\htaccess-anterior.txt (versão de 08/10, 17.226 bytes): envie-o para /public_html e renomeie no
+     servidor para .htaccess. O site volta na hora. Me avise.
+   - Uma página específica com problema: reenvie a versão do seu backup do servidor (item 2.1) e me diga qual é.
+   - Dúvida sobre qualquer arquivo: o manifesto-subida-20261012.csv tem, para cada arquivo, o caminho no servidor, o tamanho, a soma
+     SHA-256, o lote de origem e uma observação.
+   - NÃO suba (nunca): _ferramentas, agentes, apps-script, clientes, templates, dados, .vscode, civel\Claude outputs, arquivos .py/.bat/.ps1/.md/
+     .gs, "Advogado Live.json", .claude-config.php, CLAUDE.md, CLAUDE_HANDOVER.md.
+
+
+6) PERGUNTAS QUE FICAM PARA DEPOIS DO ENVIO (não impedem subir; mexem em texto)
+   - Nome oficial do escritório (hoje o site usa "Dr. Lucas Semim", "Semim & Associados" e "Advogado Lucas Semim Consultoria Jurídica"):
+     com a resposta eu harmonizo rodapé, meta author e dados estruturados. O H2 já tirou "Estratégica" e "Inteligente".
+   - "Método Live™" saiu das assinaturas dos guias e da home (e do título de uma seção de Belo Horizonte). Manter fora?
+   - Endereço oficial (Sabará x Belo Horizonte), CEP e coordenadas: hoje há três endereços diferentes no site; as páginas novas não
+     mostram endereço de rua.
+   - Título da home ("...Plantão 24h em Sabará e BH..." tem 66 caracteres; o Google corta perto de 60). Sugestão: 58 caracteres.
+   - Defensoria no FAQ do guia "meu filho foi preso": a versão nova é neutra e com base legal (CF art. 5º, LXIII e LXXIV; CPP art. 306).
+   - Posso ajustar o molde e as regras do agente (pasta agentes\) para os próximos guias já saírem sem "Método Live™", "Estratégica" e
+     "Atendimento imediato"?
+   - Respostas por cidade (o que só você sabe) estão no item 13 da nota do Lote F, para cada cidade ficar única.
+
+
+7) O QUE MUDOU NESTE PACOTE DESDE OS AVISOS ANTERIORES
+   H2 (22 arquivos, 24 trocas): "Dr. Lucas Semim - Advocacia Criminal Estratégica" -> "Dr. Lucas Semim - Advocacia Criminal" (17 cidades,
+   índice das cidades e home); rodapé "Advocacia Criminal Inteligente" -> "Advocacia Criminal" (js/footer-seo.js); catálogo "Serviços de
+   Urgência e Estratégicos" -> "Serviços de Urgência" (js/ai-neural-seo.js); Belo Horizonte: título "Método Live em Belo Horizonte" ->
+   "Como é o atendimento em Belo Horizonte"; faq.html: "protocolo de blindagem" -> "como se preparar" e "Atendimento imediato" ->
+   "Contato com o advogado". Teste em navegador de verdade (celular 390 px e computador 1366 px): 0 falha de carregamento, 0 rolagem
+   lateral; o único erro de console é o "Cal is not defined" do agendamento Cal.com, que já existia (Lote H).
+   H3 (1 arquivo): sitemap.xml com o índice /advogado-criminalista/ e as datas novas (cidades 2026-10-09, home 2026-10-10).
+   Por isso as somas e listas dos lotes F e G (somas-lote-f.txt, somas-lote-g.txt) e as notas de cada lote ficam desatualizadas para
+   esses arquivos: vale o manifesto desta pasta. Backup de como estavam antes do H2: _ferramentas\backups\h2-antes-20261012\.
+   Arquivos por lote neste pacote (os que também receberam o ajuste de nome do H2 estão contados no lote de origem):
+     B (404, emergência, FAQ, privacidade, fotos do advogado, .htaccess) 9 | D (Belo Horizonte, rodapé, aviso de cookies) 5
+     E (cabeçalho, chat, diagnóstico, SEO técnico, llms.txt) 14 | F (índice e 16 cidades, css, fotos WebP) 29 | G (home) 1
+     H1 (30 guias, índice e sitemap-urgencia.xml) 32 | H3 (sitemap.xml) 1 | molde dos guias (css/js/avatar) 3
+     apoio vindo da sua pasta 15
+
+
+8) O QUE NÃO ESTÁ NESTE PACOTE (de propósito)
+   - Os 189 artigos (news\ 142 + defesa-criminal\ 47) do lote da noite de 08/10 (design v2 dos artigos): estão na sua pasta, mas ainda
+     têm termos que a OAB não aceita ("Especialista em...", "de elite", priceRange, "Resposta rápida", "sigilo absoluto"). Eu corrijo no Lote H
+     e você sobe tudo de uma vez só, em vez de subir duas vezes. Se preferir subir já: envie as duas pastas inteiras depois do grupo 1
+     (o css/lucas-v2-article.css e o sw.js v13 do lote já vão neste pacote).
+   - Site cível (civel\): nada mexido aqui. O guia novo civel\guia-holding-familiar-vale-a-pena.html (do agente) aguarda a sua decisão.
+   - Painel antigo da raiz (painel-cliente.html + codelei\clientes-vip.js, vip-logic.js, seguranca-painel.js): o login fica dentro do
+     JavaScript e o vip-logic.js tem 7 telefones em texto. As páginas novas já apontam para o portal. No Lote H eu proponho trocar por
+     redirecionamento e retirar esses arquivos do servidor.
+   - Apps Script (linha do WhatsApp 5531989420094, nova versão da implantação), troca da senha do FTP e da chave do Gemini, Perfil da
+     Empresa no Google: são pendências suas e minhas já listadas no LEIA-ME do release-20261008 (pasta Claude outputs).
+
+
+9) PRÓXIMOS PASSOS (depois do seu OK e do envio)
+   - Lote H: corrigir os 189 artigos, links entre guias <-> cidades <-> índice, noticias.html, plantao-flagrante.html, presídios,
+     endereço/CEP, Cal.com sob demanda, 320 px, carimbo ?v nas páginas antigas.
+   - Painel do cliente -> "software jurídico": primeiro a arquitetura (papéis, autorização por caso no servidor, sessão curta,
+     verificação em 2 etapas, auditoria sem conteúdo sensível), depois o portal v2.
+   - Site cível com o mesmo design; OmniRoute e agentes.

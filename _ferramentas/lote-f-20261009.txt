@@ -1,0 +1,180 @@
+﻿LOTE F - 16 páginas de cidade + índice "Comarcas atendidas" - 09/10/2026
+=========================================================================
+Nada foi subido ao site. Este lote é rascunho para você aprovar.
+ESTADO: gravado na sua pasta do site em 12/10/2026 (17 páginas, 2 css e 10 imagens .webp). Antes de gravar, comparei os 18 arquivos
+que já existiam na sua pasta com o backup deste lote: eram idênticos, e a gravação teve trava de data (nada que você tenha mudado foi
+sobrescrito). NÃO foi enviado ao servidor: o envio é pelo FileZilla, depois do seu OK. O item 8 vale para quem preferir copiar à mão.
+
+1) O QUE ESTE LOTE FAZ
+   Leva para as 16 cidades o molde persuasivo da página de BH (Lote D), agora com fatos locais conferidos e com fonte, e cria o
+   índice /advogado-criminalista/ ("Comarcas atendidas"): mapa em bússola a partir de Sabará, cartões por cidade (em ordem de
+   distância), registros fotográficos e perguntas frequentes. Quem busca "advogado criminalista em <cidade>" cai numa página que
+   responde o que a pessoa precisa saber, com WhatsApp, Ligar e Central do Caso já na primeira tela (celular e computador).
+   Cidades (16): Sabará, Barreiro (BH), Betim, Brumadinho, Caeté, Contagem, Esmeraldas, Ibirité, Igarapé, Lagoa Santa,
+   Ribeirão das Neves, Nova Lima, Pedro Leopoldo, Santa Luzia, São José da Lapa, Vespasiano.
+   Belo Horizonte continua sendo a página-modelo do Lote D (não muda aqui).
+
+2) ANTES x DEPOIS (cada página de cidade)
+   ANTES (páginas atuais)                              DEPOIS
+   título de 108 a 125 caracteres (cortado no Google)  título de 44 a 57 e description de 144 a 159 caracteres
+   e description de 214 a 300
+   H1 de efeito ("Um flagrante muda tudo...")          H1 com a busca do cliente: "Advogado criminalista em Contagem: prisão,
+                                                       delegacia ou processo?", e painel com foto, OAB, WhatsApp, Ligar e Central
+                                                       do Caso na primeira tela
+   FAQ montada por JavaScript (innerHTML) com          FAQ em HTML (<details>): funciona sem JavaScript e pelo teclado; 8 ou 9
+   google-ai-brain, faq-brain e page-v2 injetando      perguntas por cidade (endereço do fórum, varas criminais, falar com o preso,
+   blocos na página                                    "o Dr. Lucas atende em <cidade>?"); texto do Google (FAQPage) = texto visível
+   sem aviso de cookies nem Consent Mode               Consent Mode v2 "negado por padrão" ANTES do Tag Manager + aviso de cookies
+   um "negócio local" diferente em cada página         um só escritório (o LegalService do rodapé) e, em cada página, um Service com
+   (LegalService/LocalBusiness com nome da cidade,     a área atendida (a cidade): WebPage, trilha, Service, FAQPage. Saíram as
+   coordenadas do centro da cidade, horário 24h,       coordenadas do centro da cidade, o horário 24h por página, a lista de bairros
+   bairros e catálogo de ofertas), como se houvesse    e o catálogo de ofertas, que faziam parecer um escritório em cada cidade
+   um escritório em cada cidade
+   priceRange "$$$" nos dados estruturados             removido (não inferir faixa de honorários)
+   "melhor", "especialista" em algumas páginas         saíram; sem "gratuito", "100%", "resposta em até X min", depoimento ou
+                                                       comparação (Provimento 205/2021)
+   sem fatos locais conferidos                         comarca, endereço do fórum, varas criminais e unidades prisionais, cada um
+                                                       com a fonte pública e a data da conferência logo abaixo do bloco
+   ordem da página, agora: topo -> "o que está acontecendo agora?" (6 situações, cada uma leva ao guia "O que fazer agora") ->
+   as primeiras 24 horas de uma prisão (CPP, CF, Lei 8.906, Res. CNJ 213) -> onde a defesa atua na comarca (fatos com fonte) ->
+   quem atende (foto, OAB, consulta no CNA) + "como funciona o primeiro atendimento" em 3 passos -> perguntas -> chamada final.
+
+3) O ÍNDICE (advogado-criminalista\index.html)
+   Mapa em bússola (HTML/SVG, funciona sem JavaScript; no celular os nomes saem e ficam só os pontos) + 18 cartões em ordem de
+   distância de Sabará (17 com página própria e Sete Lagoas, que leva ao WhatsApp) + faixa "Registros do Dr. Lucas nas
+   delegacias da região" com as 5 fotos + 5 perguntas + chamada final. Dados estruturados: CollectionPage, trilha, lista das 17
+   páginas, LegalService e FAQPage. Distâncias: em linha reta, aproximadas, e a própria página avisa isso.
+
+4) PÁGINAS PARECIDAS ENTRE SI: O RISCO E O QUE EU FARIA (medido, sem enfeite)
+   Medi a semelhança entre as 16 páginas (sequências de 5 palavras): média 61%, máxima 70% (Brumadinho x Esmeraldas), mínima 51%.
+   Entre 12% e 21% do texto de cada cidade não aparece em nenhuma outra. Isso é melhor do que "trocar o nome da cidade", mas ainda é
+   molde. O Google pode tratar páginas muito parecidas como "doorway" (páginas feitas só para pegar buscas de cidades) e escolher
+   uma só para mostrar. O que protege: utilidade real e dado local verdadeiro (fórum, varas, unidades, fonte, data) + experiência
+   de quem atua ali. A primeira parte já está feita; a segunda só você tem. Por isso:
+   - NÃO criar mais cidades neste molde sem conteúdo local próprio (Sete Lagoas só entra com fórum/varas verificados e algo seu).
+   - Responda o questionário do item 13 (3 a 5 linhas por cidade). Eu acrescento um bloco "Nota do advogado" (assinado e datado)
+     em cada página; é isso que mais tira a página do molde e mostra experiência real.
+   - Acompanhe no Google Search Console (Desempenho > Páginas, filtro /advogado-criminalista/): impressões e cliques das cidades
+     nos 28 dias antes e depois. Se uma cidade perder posição ou deixar de ser indexada, me avise: eu reforço aquela página primeiro.
+
+5) ARQUIVOS DO LOTE (29 para o servidor)
+   NOVOS NO SERVIDOR
+     css\lucas-hub.css                                  estilo do índice
+     img\atendimento\*-480.webp e *-800.webp            10 arquivos (as 5 fotos do índice em tamanhos leves)
+   SUBSTITUEM O QUE JÁ ESTÁ NO AR
+     advogado-criminalista\index.html                   o índice
+     advogado-criminalista\<16 cidades>.html            barreiro, betim, brumadinho, caete, contagem, esmeraldas, ibirite, igarape,
+                                                        lagoasanta, neves, novalima, pedroleopoldo, sabara, santaluzia,
+                                                        saojosedalapa, vespasiano
+   SUBSTITUI O DO LOTE D (mesmo nome, só acrescenta regras; nada do D se perde)
+     css\lucas-local.css
+   ACOMPANHAM (já estão na sua pasta; confirme que estão no servidor): img\atendimento\*.jpg (6 fotos originais: o índice usa
+     o .jpg como reserva e o og-bussola.jpg na prévia de compartilhamento) e img\lucas-semim-avatar-192.jpg (foto redonda do painel).
+   Somas de verificação: _ferramentas\somas-lote-f.txt   |   O que cada cidade afirma + fonte: _ferramentas\fatos-conferidos-lote-f.txt
+
+6) ORDEM SEGURA DE ENVIO (FileZilla: pasta local -> /public_html) e DEPENDÊNCIAS
+   As páginas usam arquivos dos lotes anteriores e eles precisam estar no servidor ANTES: B (lucas-core.css/js, foto do painel),
+   D (lucas-core atualizado, rodapé, aviso de cookies, estilo-base das páginas locais) e E (cabeçalho). Sem o B as páginas ficam sem
+   o estilo-base; sem o D, rodapé, cookies e barra fixa aparecem na versão antiga; sem o E, o cabeçalho antigo. Se ainda não
+   subiram, suba na ordem B, C, D, E e por último este; se já subiram, pule.
+   1) css\lucas-local.css e css\lucas-hub.css                -> /public_html/css
+   2) img\atendimento\ (os 10 .webp; os .jpg só se faltarem)  -> /public_html/img/atendimento
+   3) advogado-criminalista\*.html (17 arquivos)             -> /public_html/advogado-criminalista
+   NÃO enviar: _ferramentas, agentes.
+   TOKEN DE CACHE: as páginas chamam lucas-local.css e lucas-hub.css com ?v=20261009f (e não ?v=20261009 do Lote D), de propósito:
+   o servidor guarda css por 1 ano; com o nome de versão novo ninguém fica com o CSS antigo do Lote D guardado no navegador.
+
+7) COMO VER NO SEU COMPUTADOR ANTES DE SUBIR
+   Dois cliques em _ferramentas\ver-lote-f-local.bat (usa o Python). Abre o índice no navegador a partir da sua própria pasta, só
+   neste computador. Para outra cidade, troque o final do endereço (ex.: .../advogado-criminalista/betim.html). Celular: F12 e o
+   ícone de celular. No aviso de cookies, clique em "Rejeitar" (se aceitar, o Google Analytics pode contar o teste como visita).
+   Prévias prontas em _ferramentas\previa\ (índice e Contagem, celular e computador).
+
+8) BACKUP E COMO VOLTAR ATRÁS
+   _ferramentas\backups\lote-f-antes-20261009-234739.zip  = as 17 páginas como estavam na sua pasta (último pacote que gravei nelas:
+   troca do telefone, 08/10 às 10:25) + css\lucas-local.css do Lote D. O LEIA-ME dentro do zip explica; antes de gravar eu comparo.
+   Se você gravar à mão: ANTES de copiar, dois cliques em _ferramentas\fazer-backup-antes-lote-f.bat (precisa do .ps1 ao lado; gera
+   o zip a partir da sua pasta, com as subpastas). Voltar atrás: extrair o zip e copiar cada arquivo de volta (advogado-criminalista\ e css\); no
+   servidor, reenviar esses mesmos arquivos pelo FileZilla. Os .webp novos e o lucas-hub.css podem ficar (ninguém os chama).
+
+9) SITEMAP
+   Depois de subir: em sitemap.xml, troque o lastmod das 17 linhas (16 cidades + BH) para 2026-10-09 e acrescente a linha do índice (prontas em
+   _ferramentas\sitemap-trecho-lote-f.txt). No Search Console: Inspeção de URL > Solicitar indexação para o índice e para 3 cidades
+   (sugestão: Sabará, Contagem e Betim). O sitemap.xml da sua pasta é uma cópia; confirme se é o mesmo que está no servidor.
+
+10) TESTES FEITOS (navegador de verdade, celular 390 px e computador 1366 px; só com dados fictícios) - rodados sobre o próprio pacote
+   - 17 páginas: 0 erros e 0 avisos no meu teste de qualidade (título/description/canonical, H1 único, hierarquia, JSON-LD válido,
+     FAQPage = texto visível, trilha = JSON-LD, links internos, 1 telefone só, nenhum termo proibido no HTML e no texto que aparece
+     na tela, ordem dos botões, scripts permitidos)
+   - Consentimento: o primeiro evento do Google é "negado" para os 4 sinais; nenhum pedido ao Analytics/Ads antes de aceitar;
+     "Rejeitar" envia a atualização correta; nenhum erro de JavaScript
+   - Celular: sem rolagem lateral; botões de contato na primeira tela; barra fixa WhatsApp/Ligar some quando os botões da página
+     aparecem e volta no meio do texto
+   - Teclado: 1º Tab = "Pular para o conteúdo"; perguntas abrem/fecham com Enter e Espaço; foco visível
+   - Sem JavaScript: H1, botão do WhatsApp, perguntas e guias continuam lá (no índice: as 18 cidades e as 5 perguntas)
+   - Acessibilidade (axe-core): 0 violações nas 17 páginas, no celular e no computador (34 verificações)
+   - Visual conferido em imagem (celular e computador): o índice inteiro, a página de Contagem inteira e o bloco "onde a defesa atua"
+     de Barreiro, Nova Lima e São José da Lapa (tipos diferentes: com unidades prisionais, regional de BH, cidade atendida por
+     outro fórum). As outras 12 páginas passaram pelos testes automáticos acima (mesmo molde), mas eu não olhei uma a uma em imagem.
+   NÃO foi possível: testar no ar (a Hostinger bloqueia as minhas checagens), leitor de tela de verdade, medir velocidade.
+
+11) CONFERIR NO AR DEPOIS DE ENVIAR
+   /advogado-criminalista/  (mapa, 18 cartões, fotos, perguntas; celular: botões WhatsApp/Ligar na primeira tela)
+   2 ou 3 cidades (Sabará, Contagem, Barreiro): título, fórum e fontes, perguntas abrindo, cookies na primeira visita (aba anônima)
+   Compartilhar o link do índice no WhatsApp e ver a prévia (imagem og-bussola.jpg)
+   Search Console: Cobertura/Indexação das 17 URLs nas 2 semanas seguintes
+
+12) PARA VOCÊ CONFIRMAR (não decidi nada disso sozinho)
+   1) Plantão 24h todos os dias, inclusive madrugada e feriados: está no título ("Plantão 24h"), no painel, na primeira pergunta
+      e na chamada final. A regra da OAB pune anunciar o que não é entregue. É verdade para todos os dias?
+   2) Presença em todas as cidades: "o Dr. Lucas atua em delegacias, audiências, fóruns e unidades prisionais de Sabará, Belo
+      Horizonte e região, como <cidade>" e a pergunta "O Dr. Lucas atende em <cidade>?". Se alguma cidade for só sob demanda (como
+      Sete Lagoas), me diga e eu mudo aquela página.
+   3) As 5 fotos do índice ("Registros do Dr. Lucas nas delegacias da região"): as legendas (local) estão certas? Há uma pessoa
+      desfocada ao fundo (Betim). Está de acordo com a sua leitura do Provimento 205/2021 (discrição e sobriedade)? Se preferir, tiro
+      a faixa inteira.
+   4) Sete Lagoas aparece só no índice, "atuação sob demanda", levando ao WhatsApp. Confirma? (Página própria só com fórum e varas
+      verificados: o Guia Judiciário do TJMG não respondeu corretamente às minhas consultas para essa comarca.)
+   5) Endereço oficial: o rodapé mostra R. Cel. Abílio Pereira, 337 (Sabará); os guias, Comendador Vianna, 214; o índice antigo, Rua
+      dos Timbiras, 3488 (Barro Preto). As páginas novas NÃO mostram endereço de rua nem coordenadas. Qual é o oficial? Há escritório
+      físico em BH? Com isso eu ponho o endereço certo, uma vez só, no LegalService do rodapé (vale para o site todo).
+   6) Nome do escritório: nos dados estruturados vai "Dr. Lucas Semim - Advocacia Criminal Estratégica"; o rodapé (Lote D) diz
+      "Semim & Associados" e "Advocacia Criminal Inteligente" (autoelogio, art. 3º, IV do Provimento 205/2021; existe sociedade
+      registrada?). Qual nome vale?
+   7) São José da Lapa: a página diz, com a fonte (Rede MG News, 27/05/2026), que o novo fórum de Vespasiano atende a população de
+      São José da Lapa. Na prática é assim? (Notícia de portal regional; o TJMG não confirmou na minha consulta.)
+   8) Unidades prisionais: usei a Resolução Sejusp 735/2022 (e o Portal MG), que pode ter mudado desde 2022. Sabará, Brumadinho,
+      Esmeraldas e Igarapé não citam unidade prisional (não constam da lista que usei); nas demais, só as que constam. Se você
+      conhece unidade ativa que falta ou que não existe mais, me diga (com a fonte oficial, se houver). Exemplo: o Presídio de São
+      Joaquim de Bicas (que aparece nas fotos do seu site) é da comarca de Igarapé? Se for e você quiser citar, preciso da fonte.
+   9) Varas: em Betim, Contagem e Santa Luzia só consegui ler parte da lista do Guia Judiciário; por isso o texto diz "entre as varas
+      do fórum, o Guia lista...". Se tiver a lista completa, me passe e eu completo. (Conferência por cidade: fatos-conferidos-lote-f.txt.)
+   10) Chamadas de ação em tom de urgência ("Fale agora", "Não espere o caso piorar para pedir orientação", "Prisão recente? Chame o
+       plantão criminal"): são convites, sem promessa de resultado nem de prazo. Se achar forte para a OAB, eu suavizo.
+   11) Honorários (última pergunta): "combinados de forma clara, antes da contratação" e dependem do caso; sem valor, desconto ou
+       gratuidade. Confirma?
+   12) Central do Caso: o texto diz que o WhatsApp e a Central do Caso levam o que a pessoa escrever ao escritório, que usa a informação
+       só para o atendimento (LGPD). Esse é o fluxo real (formulário -> planilha/Apps Script)? Se houver outro tratamento, eu corrijo.
+   13) Delegacias/plantões de cada cidade NÃO entraram: as páginas oficiais do Portal MG estão desatualizadas (2021). Se você me passar
+       as que realmente atende, entram na "Nota do advogado".
+
+13) PARA CADA CIDADE FICAR ÚNICA (o que só você sabe) - responda em tópicos, 3 a 5 linhas por cidade, sem citar clientes nem casos
+    reais (sigilo): pode mandar do jeito que vier, eu organizo
+    a) em quais delegacias/plantões da cidade você costuma atuar (só nomes de unidades públicas)?
+    b) quais situações mais aparecem (flagrante, tráfico, violência doméstica, trânsito, intimação...)?
+    c) alguma particularidade prática que você observou (onde a família espera, o que costuma ser pedido, rotina do fórum) - sem
+       prometer prazo nem resultado?
+    d) um conselho prático para a família de quem foi preso naquela cidade?
+    e) se tiver foto sua na unidade (e a data), dá para usar na página.
+    Sugestão de ordem (cidades maiores e mais próximas da sua base): Sabará, Contagem, Betim, Santa Luzia, Ribeirão das Neves,
+    Vespasiano, Nova Lima. Se tiver dado de onde chegam mais contatos, mude a ordem.
+
+14) PRÓXIMOS PASSOS (depois do seu OK)
+    - Você sobe este lote (ou eu gravo na pasta e você sobe), e eu acompanho os ajustes que aparecerem na conferência no ar.
+    - Lote G: a home (index.html): ainda tem "gratuito/grátis", "em até 15 minutos", "Resposta média", "CADA MINUTO CONTA", "PLANTÃO
+      ATIVO AGORA" e priceRange; mesmo molde de impacto + urgência, sem esses termos.
+    - Lote H: links internos (guias <-> cidades <-> índice), noticias.html (rolagem lateral e erro de JavaScript), página dos presídios.
+    - Painel do cliente -> "software jurídico": antes de mexer em código, eu apresento a arquitetura (papéis, autorização por caso no
+      servidor, sessão curta, verificação em 2 etapas, auditoria sem conteúdo sensível, sem dado de cliente em URL/analytics).
+    - Site cível (46+ páginas) com o mesmo design.
+    Lotes ainda aguardando o seu OK para subir: B, C (v2), D, E e este F. Nenhum deles foi enviado ao servidor.

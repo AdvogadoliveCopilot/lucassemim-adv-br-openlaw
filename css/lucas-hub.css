@@ -1,0 +1,87 @@
+/* =====================================================================
+   LUCAS SEMIM — ÍNDICE DAS COMARCAS (advogado-criminalista/index.html)
+   Depende de css/lucas-core.css e css/lucas-local.css.
+   Mapa em SVG estático (sem JavaScript); a lista de cidades é a navegação.
+   ===================================================================== */
+
+/* ---------- mapa + texto ---------- */
+.lc-cmp-grid{display:grid;gap:34px;align-items:center}
+@media(min-width:992px){.lc-cmp-grid{grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);gap:56px}}
+.lc-cmp-txt p{margin:0 0 14px;font-size:1.04rem;line-height:1.7;color:var(--lc-soft);max-width:38em}
+.lc-cmp-txt p b{color:#fff}
+.lc-legend{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:10px;font-size:.9rem;line-height:1.4;color:var(--lc-muted)}
+.lc-legend li{display:flex;align-items:center;gap:12px}
+.lc-legend__k{flex:0 0 auto;width:14px;height:14px;border-radius:50%;background:var(--lc-gold);border:2px solid #0b0b0b;box-shadow:0 0 0 1px rgba(212,175,55,.6)}
+.lc-legend__k--base{width:13px;height:13px;border-radius:2px;transform:rotate(45deg)}
+.lc-legend__k--reg{background:transparent;border:1.5px dashed var(--lc-gold-hi);box-shadow:none}
+.lc-cmp{margin:0}
+.lc-cmp__svg{display:block;width:100%;height:auto;max-width:640px;margin-inline:auto}
+.lc-cmp figcaption{margin:14px auto 0;max-width:640px;font-size:.82rem;line-height:1.55;color:var(--lc-muted);text-align:center}
+
+.lc-cmp__ring{fill:none;stroke:rgba(212,175,55,.3);stroke-width:1;stroke-dasharray:3 7}
+.lc-cmp__rl{font:500 15px 'Teko',sans-serif;letter-spacing:1px;fill:#a39d8d}
+.lc-cmp__card{font:600 30px 'Teko',sans-serif;fill:var(--lc-gold)}
+.lc-cmp__card--n{fill:var(--lc-red)}
+.lc-cmp__lab{font:500 19px 'Teko',sans-serif;letter-spacing:.9px;text-transform:uppercase;fill:#e6e2d8;paint-order:stroke;stroke:#0b0b0b;stroke-width:4px;stroke-linejoin:round}
+.lc-cmp__lab--base{fill:var(--lc-gold-hi);font-size:21px}
+.lc-cmp__guide{stroke:rgba(212,175,55,.55);stroke-width:1}
+.lc-pin{cursor:pointer;outline:none}
+.lc-pin__dot{fill:var(--lc-gold);stroke:#0b0b0b;stroke-width:2.5;transition:r .2s,fill .2s}
+.lc-pin__reg{fill:none;stroke:var(--lc-gold-hi);stroke-width:1.4;stroke-dasharray:3 3}
+.lc-pin.on .lc-pin__dot,.lc-pin:hover .lc-pin__dot{fill:var(--lc-gold-hi);r:10px}
+.lc-pin.on .lc-cmp__lab,.lc-pin:hover .lc-cmp__lab{fill:#fff}
+.lc-pin--off{cursor:default}
+.lc-pin--off .lc-pin__dot{fill:#0b0b0b;stroke:var(--lc-gold);stroke-dasharray:3 3}
+.lc-base__halo{fill:rgba(212,175,55,.14);stroke:rgba(212,175,55,.5);stroke-width:1}
+.lc-base__dot{fill:var(--lc-gold);stroke:#0b0b0b;stroke-width:2.5}
+.lc-needle{opacity:0;transition:transform .7s var(--lc-ease),opacity .3s}
+.lc-on .lc-needle{opacity:1}
+.lc-needle-tip{fill:var(--lc-red)}
+.lc-needle-tail{fill:var(--lc-red-deep)}
+@media(max-width:639px){
+  /* no celular o mapa é só uma imagem: os pontos ficam maiores e os nomes ficam na lista */
+  .lc-cmp__lab:not(.lc-cmp__lab--base),.lc-cmp__rl{display:none}
+  .lc-cmp__lab--base{font-size:30px}
+  .lc-pin__dot{r:12px}
+  .lc-pin__reg{r:21px}
+  .lc-pin{pointer-events:none}
+  .lc-cmp__card{font-size:42px}
+}
+@media(prefers-reduced-motion:reduce){.lc-needle,.lc-pin__dot{transition:none}}
+
+/* ---------- cartões das cidades ---------- */
+.lc-cities{list-style:none;margin:0;padding:0;display:grid;gap:14px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:640px){.lc-cities{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:992px){.lc-cities{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.lc-city{position:relative;display:flex;flex-direction:column;padding:20px 18px 16px;border:1px solid var(--lc-line);border-radius:16px;
+  background:linear-gradient(170deg,var(--lc-ink-3),var(--lc-ink-2));transition:border-color .25s,transform .3s var(--lc-ease)}
+.lc-city:hover,.lc-city:focus-within{border-color:var(--lc-line-2);transform:translateY(-3px)}
+.lc-city__k{margin:0 0 6px;font:600 .98rem/1.1 'Teko',sans-serif;letter-spacing:1.4px;text-transform:uppercase;color:var(--lc-gold-hi)}
+.lc-city h3{margin:0 0 8px;font:700 1.16rem/1.28 'Playfair Display',serif}
+.lc-city h3 a{color:#fff;text-decoration:none}
+.lc-city h3 a::after{content:"";position:absolute;inset:0;border-radius:16px}
+.lc-city h3 a:focus-visible{outline-offset:6px}
+.lc-city p{margin:0 0 10px;font-size:.93rem;line-height:1.55;color:var(--lc-soft)}
+.lc-city p.lc-city__k{margin:0 0 6px;font-size:.98rem;line-height:1.1;color:var(--lc-gold-hi)}
+.lc-city__reg{position:relative;z-index:2;display:inline-flex;align-items:center;gap:8px;align-self:flex-start;min-height:32px;margin:0 0 8px;font-size:.84rem;line-height:1.35;color:var(--lc-gold-hi);
+  text-decoration:underline;text-decoration-color:rgba(212,175,55,.5);text-underline-offset:3px}
+.lc-city__reg i{color:var(--lc-gold)}
+.lc-city__reg:hover{color:#fff}
+.lc-city__go{margin-top:auto;padding-top:8px;font:800 .72rem/1 'Lato',sans-serif;letter-spacing:1.1px;text-transform:uppercase;color:var(--lc-gold-hi)}
+.lc-city__go i{margin-left:6px;transition:transform .25s var(--lc-ease)}
+.lc-city:hover .lc-city__go i{transform:translateX(4px)}
+
+/* ---------- quadro de atendimentos (fotos) ---------- */
+.lc-rec-wrap{margin-inline:-16px;padding:2px 16px 10px;overflow-x:auto;scroll-snap-type:x proximity;scroll-padding-inline:16px;scrollbar-width:thin;scrollbar-color:var(--lc-gold-lo) transparent}
+.lc-rec-wrap:focus-visible{outline:2px solid var(--lc-gold-hi);outline-offset:-2px;border-radius:12px}
+.lc-rec{list-style:none;margin:0;padding:0;display:flex;gap:14px}
+.lc-rec li{flex:0 0 min(250px,70vw);scroll-snap-align:start}
+@media(min-width:992px){
+  .lc-rec-wrap{margin-inline:0;padding:0;overflow:visible}
+  .lc-rec{display:grid;grid-template-columns:repeat(5,minmax(0,1fr))}
+  .lc-rec li{flex:none}
+}
+.lc-rec figure{margin:0;height:100%;border:1px solid var(--lc-line);border-radius:16px;overflow:hidden;background:var(--lc-ink-3)}
+.lc-rec img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 14%}
+.lc-rec figcaption{padding:11px 13px 13px;font:700 .82rem/1.35 'Lato',sans-serif;letter-spacing:.2px;color:#ece8dc}
+.lc-rec figcaption span{display:block;margin-top:3px;font:600 .9rem/1.1 'Teko',sans-serif;letter-spacing:1.3px;text-transform:uppercase;color:var(--lc-gold)}

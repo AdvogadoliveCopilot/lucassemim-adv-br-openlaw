@@ -1,0 +1,110 @@
+﻿ordem;grupo;caminho;bytes;sha256;lote;origem;observacao
+1;1-primeiro;css/central-caso.css;20766;e3bdc077cfd318aa5ab8563ec2b29bfc94a9151959327aba21984b0b19289af0;apoio;PC;Central do Caso (diagnostico.html)
+2;1-primeiro;css/header-lux.css;21517;3bd4a36da9e29f6cc64ddb861395aa0093047a4b03de5eb36327e0c09f03c7a6;E;lotes;
+3;1-primeiro;css/lucas-core.css;17476;4814a650bc08ef8d2afa8fe9f53f35ae59b4d382ffb2923181e242536c9825a9;D;lotes;
+4;1-primeiro;css/lucas-hub.css;6291;23973ba4a1c6a9cfaf5ab348af7d455a90d86c859429e6ac6f3a07c6d7cacfcf;F;lotes;
+5;1-primeiro;css/lucas-local.css;12756;3302c5290edc97f8336b62b4fece4c9d691c25a4a9f63e4de23544d9659b307f;F;lotes;
+6;1-primeiro;css/lucas-v2-article.css;14908;e8352be555e71e53449f3404409c0911637c001346b122de5293c510960baa7c;apoio;PC lote 08/10 noite;so para os 189 artigos do lote da noite de 08/10 (os artigos NAO estao neste pacote)
+7;1-primeiro;css/lucas-v2-pages.css;16979;f693c5aea6e477e1d19d4774f32e310664bae2ac0d8bf2ee30548eb8e2e7be83;apoio;PC;design dos guias (chamado por todos os 31 guias)
+8;1-primeiro;css/lucas-v2.css;10223;fcd121de1743862960e9e8aacca6f19cddba29b6801498ec5104906ccc288f86;apoio;PC;design da home (versao do seu PC, a que foi testada na home do Lote G)
+9;1-primeiro;css/oqfa-v3.css;22035;c2baa5a324cf8445544e42729b610d9b2e7d8d191148ab0c2d483f7d2d926f50;molde dos guias;lotes;
+10;1-primeiro;js/ads-intelligence.js;26184;998dc643d8b5cc65590dfb143b232e934dfe0a28c625618c80067645f475c299;E;lotes;
+11;1-primeiro;js/ai-neural-seo.js;32337;9f7514ac0f9080d046b601904448641104b393e9501b7e6adf9cb9c53433d0e3;E + H2;lotes;"catalogo ""Servicos de Urgencia"" sem ""Estrategicos"" (Lote H2)"
+12;1-primeiro;js/article-v2.js;8037;b3e9359c1b9d0bfede661849839904129653dbd91fb47e2b24dadbf862b605dd;E;lotes;
+13;1-primeiro;js/central-caso.js;45664;f6f10f4c3a8fbd11ab13b83beca3248d17c07321ba32bdb07d009774f5683e04;E;lotes;
+14;1-primeiro;js/chat-elite.js;48169;e64770aa30a25f3827feda78ec59dbdf86a367461f25ae627f56b3ec07b552b8;E;lotes;
+15;1-primeiro;js/design-v2.js;1551;ea9da7e3bc85067ae1667f2bc2c8554584fba643fd0c3c669284fd4fafb677a2;apoio;PC;animacoes da home
+16;1-primeiro;js/diagnostico.js;24841;24c7d3f03e994d67794ba6a0b87d0993b3042db148cd297813faed1af8c026fd;E;lotes;
+17;1-primeiro;js/footer-seo.js;36030;35bde877389690a886631de541c38696819887ad9122d3a9a83d099c64ed6b3d;D + H2;lotes;"rodape sem ""Inteligente"" (Lote H2)"
+18;1-primeiro;js/google-ai-brain.js;28197;1013839c8e1999562955bb1a5a85ae2e510693e4f04df60ce78846db5260e0f0;E;lotes;
+19;1-primeiro;js/header-elite.js;38187;dcd0c5aad37a817ce8371c632aeb627d8c4184fa3d5dff3c4a67cc8360ea8285;E;lotes;
+20;1-primeiro;js/lgpd.js;32920;90c79f53c96a2f9b954469a341b27d0dc2c2602cd258f842aae7a0d01cc08ac0;D;lotes;
+21;1-primeiro;js/ls-api-config.js;930;70106ba515ba9ee4c8d88bb86324e66201b8e20f0d4c6dcb89972d98de4a2237;apoio;PC;configuracao do portal/Central do Caso (telefone novo)
+22;1-primeiro;js/lucas-core.js;7236;7e5d7528f896a5f54df92c179b57658424d0732ac1ebf873d75e74aa8518ac4d;D;lotes;
+23;1-primeiro;js/oqfa-v3.js;4469;edd71ab6185b99770960072ba08d3df5a06746afaa2996de7d35727419d6353e;molde dos guias;lotes;
+24;1-primeiro;js/page-v2.js;8737;f04f46821e4e732cdc2e0bc0e9c3130b7ea6a5768c842489d9dd4f675f597bb1;E;lotes;
+25;1-primeiro;js/return-lead.js;24690;aaf088a34ca0f3383b8ef2068c8cddd2cc5e0a3d0cdd6419448fd399cd4764d5;E;lotes;
+26;1-primeiro;js/smart-cta.js;32756;db4425900a3f2f89654865adb8a4d1bbc0f318a8e5a7e5324baf58aef9ed1ee1;E;lotes;
+27;1-primeiro;js/vcard-smart.js;9536;fcc965c72529a72d08af05e957c0dfaf19a685c773149c66e8d0b95318794814;apoio;PC;cartao de contato (telefone novo)
+28;1-primeiro;codelei/analytics.js;31024;846c1c0c4be1dda89a387f6c1922079a5ff98b43ccc17d063ad6a659943c1b33;apoio;PC;medicao do site (telefone novo, desde 08/10)
+29;1-primeiro;img/atendimento/atendimento-reds-policia-civil-480.webp;18068;2fdecf586185366d1baec1c8b6e36197a7c7dfde72ecf0aebd4f8451f4ee7044;F;lotes;
+30;1-primeiro;img/atendimento/atendimento-reds-policia-civil-800.webp;33562;6411190aa85462c02c63c9946b7c5018911cec4ed46426c312df261eb0769883;F;lotes;
+31;1-primeiro;img/atendimento/atendimento-reds-policia-civil.jpg;79360;fa6df2074cf7f9fea6050b29361213524033e06605c34403a504e208c74e7e2f;apoio;PC;foto original: reserva da versao WebP e prévia do link do indice das cidades
+32;1-primeiro;img/atendimento/betim-plantao-delegacia-regional-480.webp;32066;35afdff0dc008ceffbab2a583bcf961444f22b55cf4ed7a2f1a0c5b86a65a4b7;F;lotes;
+33;1-primeiro;img/atendimento/betim-plantao-delegacia-regional-800.webp;71268;52d303a57d98c04dd202f0c3c0b28940ee59c3560e2c45c0f4bee85fd6d074f0;F;lotes;
+34;1-primeiro;img/atendimento/betim-plantao-delegacia-regional.jpg;137773;c2792ee7c440cfba77b9d6426e7a131187b9d793f879c64ab23703c13721e990;apoio;PC;foto original (reserva da WebP / previa do link)
+35;1-primeiro;img/atendimento/contagem-1-delegacia-policia-civil-480.webp;36808;7d8f5acf6077d85ef5c5d895ead044af6cc17244f5a372e517324f331f4b4cca;F;lotes;
+36;1-primeiro;img/atendimento/contagem-1-delegacia-policia-civil-800.webp;73186;fbd62c8312ccf62a21177c3cf4e6ebf739ccb657395d2b89871e2c05a7d751c6;F;lotes;
+37;1-primeiro;img/atendimento/contagem-1-delegacia-policia-civil.jpg;131371;fa25abe48d3619728fe9ece378b5a5ecde04eab157e40b75bf8fa148bab2938f;apoio;PC;foto original (reserva da WebP / previa do link)
+38;1-primeiro;img/atendimento/og-bussola.jpg;109254;93bdc30e5d6e2bbbee198f88d9bec502c7198c371845baefd0d4f5ef2af221c5;apoio;PC;imagem de previa do link (indice das cidades)
+39;1-primeiro;img/atendimento/pedro-leopoldo-plantao-digital-480.webp;39840;d293d7e392273b10bb25d7c2aa9e1208193bb8a6204283e040e7d56eb0c18208;F;lotes;
+40;1-primeiro;img/atendimento/pedro-leopoldo-plantao-digital-800.webp;97734;d98fa9654a9b92e0e2e26afdd1afbf4f87d48f2828b166c26d51795d800d11c6;F;lotes;
+41;1-primeiro;img/atendimento/pedro-leopoldo-plantao-digital.jpg;165418;9a627f977dcc3592e149a738eb030cfe90071b48044c83de0cb37ccfc9349a32;apoio;PC;foto original (reserva da WebP / previa do link)
+42;1-primeiro;img/atendimento/sete-lagoas-delegacia-de-policia-480.webp;17548;6de99bc3f40fb0ac6e24d5ecccc520822702baeb6b666e1e8518c17228e18a38;F;lotes;
+43;1-primeiro;img/atendimento/sete-lagoas-delegacia-de-policia-800.webp;30082;94c3eb000f3878a3389421bc14353f4170bac4699f9153f3d311b525cc56dc97;F;lotes;
+44;1-primeiro;img/atendimento/sete-lagoas-delegacia-de-policia.jpg;75127;c8697d0288adb1952feef5fd236fbb1324278263eb3100c451f091a222986142;apoio;PC;foto original (reserva da WebP / previa do link)
+45;1-primeiro;img/lucas-semim-avatar-192.jpg;13449;c1dcff27adc95a823ea60afa7a7976bf0fff9c86b96b7a3550d19d42d1cc9950;molde dos guias;lotes;
+46;1-primeiro;img/lucas-semim-hero-480.jpg;30079;a91e43abbe41d8664f9f9fccf08c2305740ba1f127114d3a574db5ca1efca926;B;lotes;
+47;1-primeiro;img/lucas-semim-hero-480.webp;17244;554ea9715eada0288560e79f048b02fde0c726e57140084c59277dc5e19776b9;B;lotes;
+48;1-primeiro;img/lucas-semim-hero-800.jpg;61729;8d4fa0e6a829ab9f536d0d4f35907447e6c76a2ffe986f8a68e0f826547c6e0f;B;lotes;
+49;1-primeiro;img/lucas-semim-hero-800.webp;29820;0b7feae52679cec0fdc15917d9d70dd29726b4f82b82a545da7f5343c22fa235;B;lotes;
+50;2-paginas;404.html;7772;35c573df5d1002c080bd784750873f17cb6b9a2bcc01b964a9e970a8fe574bb3;B;lotes;
+51;2-paginas;diagnostico.html;15856;53b6bc1c7ddd30f15a8d5a3536001ad918e447fbe6661f61ced0a5fd65088de6;E;lotes;
+52;2-paginas;emergencia.html;37384;628556a4ae35c2ae8a3e4395dd6b36a0ce78e7315e2ea46870b33756ee190ead;B;lotes;
+53;2-paginas;faq.html;62380;4db1853fb0ab7a19182c5268ac273b79e3553d0ec02e8c2286b65aaa4a9ab39f;B + H2;lotes;
+54;2-paginas;llms.txt;1338;d3ca0c625070be35349310883d1c1c026399e1b5fc774154b1021896c48c8693;E;lotes;texto para leitores de IA
+55;2-paginas;politica-privacidade.html;35121;17b77990556b81d821fea1a781749e11304df37ab3d0c3af9f30dd61fafd8ece;B;lotes;
+56;2-paginas;advogado-criminalista/index.html;55322;d848028bc4afb151cdc18a94ea0e688ce2181be6cb85886e4ebb4ab122b7d19b;F + H2;lotes;
+57;2-paginas;advogado-criminalista/barreiro.html;46297;b27bdf0d4a1bb1e0044e0b415dd9c58208e9abed783d7a5a3778cb071c8a2ef3;F + H2;lotes;
+58;2-paginas;advogado-criminalista/belohorizonte.html;51896;004337561fb64fe2e9c1518a03c867970efeb67e114d853baa10c88438371fd9;D + H2;lotes;
+59;2-paginas;advogado-criminalista/betim.html;46140;ce72ea96ab2527873d0ca29c628450f0322c3505bf1e6802951a13c39104dfc2;F + H2;lotes;
+60;2-paginas;advogado-criminalista/brumadinho.html;44996;fd7bfa536af51f040399c78aa9c0dd6c837920be23d6cccef52d655b6142a6ec;F + H2;lotes;
+61;2-paginas;advogado-criminalista/caete.html;46388;c991505813698c8824e0c380abe7e3c7228d04ebea0d8f00b004c38251064d4b;F + H2;lotes;
+62;2-paginas;advogado-criminalista/contagem.html;47045;bc8078f5dce63ce94f5978e17d43410482ee9c7a2e89bf95812d322d2fe3a252;F + H2;lotes;
+63;2-paginas;advogado-criminalista/esmeraldas.html;45019;c35e45f526346215f2c3ca9095cc93303669e601d330d2ac8d2cdfbde032ed07;F + H2;lotes;
+64;2-paginas;advogado-criminalista/ibirite.html;46775;2115227962d50ba8d198fc18e113491a2574b4fad87c167d03c3cd2958724043;F + H2;lotes;
+65;2-paginas;advogado-criminalista/igarape.html;44950;2801c58b7ceb7c361c80cd3be02a77adca8285aac93a22744f06cae611a5bbe3;F + H2;lotes;
+66;2-paginas;advogado-criminalista/lagoasanta.html;46894;ddc71182166074ce6238bb586218476e68ba83c19fbe04b3ddf8adbe3a9ae6e0;F + H2;lotes;
+67;2-paginas;advogado-criminalista/neves.html;48509;85836919fcb54c7b64a0f9cbb47ae9060ee0948620497790bec65364c31d5a83;F + H2;lotes;
+68;2-paginas;advogado-criminalista/novalima.html;46770;a9a0aae0a96d0aeb9b989c80a915b9ed8049ae6a02f5f39141381d3849e7dfe8;F + H2;lotes;
+69;2-paginas;advogado-criminalista/pedroleopoldo.html;47182;7fb78209094787d3c6656405cce144152a139ec2db4bf035a812bf31f0769cc0;F + H2;lotes;
+70;2-paginas;advogado-criminalista/sabara.html;45037;97c8088fb8a80d43b87987b2ff393a1aedfd50fb6521e4749309a331fe1a8b18;F + H2;lotes;
+71;2-paginas;advogado-criminalista/santaluzia.html;46457;c120a44439d256dfbd54eaeb037f90ecbcf96f4abc8afd60aa68825edc270381;F + H2;lotes;
+72;2-paginas;advogado-criminalista/saojosedalapa.html;46077;a77187a072ee920473ef1bc03ee592345dc81526fbd0b4c3d20e9fd0e191bbd4;F + H2;lotes;
+73;2-paginas;advogado-criminalista/vespasiano.html;47625;bbaed313a9f77a214d9ee2057e2400303ee07d0d3abfda18f002a62c696659c7;F + H2;lotes;
+74;2-paginas;o-que-fazer-agora/index.html;43110;4693488635fac32b71178b6101da69cecaa5ef36bd5fff9268b354d2324b09b4;H1;lotes;
+75;2-paginas;o-que-fazer-agora/acabei-de-ser-preso-em-flagrante.html;45235;767dc75024ea3dc981693def975f4f39ea4246d235c341cdadbf8b6c20fed665;H1;lotes;
+76;2-paginas;o-que-fazer-agora/acidente-de-transito-com-vitima-o-que-fazer.html;47750;d5df6cefc3f12bfa69ed5913a38f98e648f191c4fd9e4d535ae2a79cadb1f1e6;H1;lotes;
+77;2-paginas;o-que-fazer-agora/agi-em-legitima-defesa-o-que-fazer.html;47660;0784b8f150b50de1ea682a6b5b127494d9ff2f0ff8665c3ab747fbd013816214;H1;lotes;
+78;2-paginas;o-que-fazer-agora/conta-bloqueada-processo-criminal-o-que-fazer.html;47261;3f3ae9243641271eec92315072fa66e3a283f57f73406eb3cb2c68c75c2a5ea4;H1;lotes;
+79;2-paginas;o-que-fazer-agora/estou-preso-preventivamente-o-que-fazer.html;47835;36651ee9c7b8417d3e17b43a855e8bfacbade9ddae67d971db18cf2a980e131e;H1;lotes;
+80;2-paginas;o-que-fazer-agora/fui-acusado-calunia-difamacao-injuria-o-que-fazer.html;48586;0d7840ab19e1278046106387520f22256219d823da5af3ffea63417991784eb6;H1;lotes;
+81;2-paginas;o-que-fazer-agora/fui-acusado-de-ameaca-o-que-fazer.html;48093;52db02367d42d689ee3516f9c5c41745e7b38c2692f1d1c8f54b5042c94355ea;H1;lotes;
+82;2-paginas;o-que-fazer-agora/fui-acusado-de-perseguicao-stalking-o-que-fazer.html;49100;b4a3e3a8163e0b29973e232523d4ec40b814ee0551e183e5c305d840b1cee238;H1;lotes;
+83;2-paginas;o-que-fazer-agora/fui-convidado-para-delacao-premiada-o-que-fazer.html;48517;e8c0c8e5b400de0641a65fde2d82efd9a8b7dbcaa07026a4121b574aff71114b;H1;lotes;
+84;2-paginas;o-que-fazer-agora/fui-intimado-para-depor-na-delegacia.html;46200;0d7a0577d99711b4f9197a37d04eb862fc53f31074698b8c6300a12d08bd9400;H1;lotes;
+85;2-paginas;o-que-fazer-agora/fui-levado-para-delegacia-mas-nao-fui-preso.html;48480;9bc76ac797d3b2c47b8af3013213c385fade1c13c67dda3b1f31e214d3450d10;H1;lotes;
+86;2-paginas;o-que-fazer-agora/fui-notificado-crime-eleitoral-redes-sociais-o-que-fazer.html;47574;eb65f42edd97f3198d0f67e5339fce4636db2e23e26fb01c99c76326d8e8081e;H1;lotes;
+87;2-paginas;o-que-fazer-agora/fui-notificado-investigado-apostas-ilegais-bets.html;50328;d1ab1e79381605930814e32921483380a0322012594d28998dfe22812f1680fe;H1;lotes;
+88;2-paginas;o-que-fazer-agora/fui-preso-acusado-trafico-drogas.html;47286;5ed3da8f73f0fdfa4cb3b6906449bc3d10782da01e8ae6d09199228799604549;H1;lotes;
+89;2-paginas;o-que-fazer-agora/fui-preso-boca-de-urna-o-que-fazer.html;49045;ae4e88cfe16215e51505dd4289150526216785510e65eeabff6e6ffa150f403f;H1;lotes;
+90;2-paginas;o-que-fazer-agora/fui-preso-maria-da-penha.html;48190;adc233f36c7002d0eced98255dad7280e247a2806a815f17f75a2aa658d054c5;H1;lotes;
+91;2-paginas;o-que-fazer-agora/fui-preso-por-furto-ou-roubo-o-que-fazer.html;45227;23b0ce7a61085820af939dd7466eba8bedfa98e87070f04f4a7bc7f668331d4e;H1;lotes;
+92;2-paginas;o-que-fazer-agora/fui-preso-porte-ilegal-de-arma.html;45581;ec32363fbf5c8223e0e679a97e706d08ad1b7791549c35120d09b24bc95fe994;H1;lotes;
+93;2-paginas;o-que-fazer-agora/fui-pronunciado-tribunal-do-juri-o-que-fazer.html;48688;264ef89bcef2747cec0b15f24215646c9ca82c25359cf3a4fe29b7f962b925bb;H1;lotes;
+94;2-paginas;o-que-fazer-agora/mandado-de-busca-e-apreensao-o-que-fazer.html;46992;356c838aa855614880e213bfeb56dbecea66dfc01953013d53a16905b31485c2;H1;lotes;
+95;2-paginas;o-que-fazer-agora/meu-filho-foi-preso.html;44598;ad065f23e5ddfdcbdc73f16a30e484b131e064c18387b4740b9fcb5f518f1522;H1;lotes;
+96;2-paginas;o-que-fazer-agora/preso-embriaguez-ao-volante-como-sair-da-delegacia.html;46308;6d79197c156a83c99903d265022c0e4a140539d40174a85a1845ad0cb1b47cba;H1;lotes;
+97;2-paginas;o-que-fazer-agora/preso-nao-consigo-pagar-fianca-o-que-fazer.html;46756;d865f4bbabf38cd7e281bb39d834679bcda2b6957e89a71fdd0c3e229314b65c;H1;lotes;
+98;2-paginas;o-que-fazer-agora/progressao-de-regime-atrasada-o-que-fazer.html;47688;f617bc6c95741a2fd18eba59de00c4758eda3a561f3a80df6d4ca37431af1b57;H1;lotes;
+99;2-paginas;o-que-fazer-agora/recebi-medida-protetiva-o-que-fazer.html;47947;ec05a8c79e85b5703505dca46a8aa11c9e8755c2f5b258c16fc9731ff2a23de4;H1;lotes;
+100;2-paginas;o-que-fazer-agora/revista-pessoal-abordagem-policial-o-que-fazer.html;50879;df700b1e8b48e211d7fc47cb720d28b7adca9ad6f107fe9c3da01916fc3f27c5;H1;lotes;
+101;2-paginas;o-que-fazer-agora/tenho-audiencia-de-custodia-o-que-fazer.html;47308;d5af7445ddc19e6eaf3bf285fec2048ecdd49c490bd576cfba55b08103e0c76a;H1;lotes;
+102;2-paginas;o-que-fazer-agora/tenho-audiencia-de-instrucao-o-que-fazer.html;48669;925ded8398cdf9c14d922c4e728661bed59678110930eb8a5846fa6e2a6d938f;H1;lotes;
+103;2-paginas;o-que-fazer-agora/tenho-mandado-de-prisao-o-que-fazer.html;47186;e92a24f3edbeaf6c218bb2f5153fb9a33239fd9ea7a4b14feedd46392847b56e;H1;lotes;
+104;2-paginas;o-que-fazer-agora/tornozeleira-eletronica-descarregou-o-que-fazer.html;49077;5550679cdf97d21cab774739a93253e67fb321e2c303b2f9db8829f19021bdce;H1;lotes;
+105;3-mapas;sitemap-urgencia.xml;9556;ffce9776188be6ed1ff25fdfa8e7e67ed8ac60def2e2f7df3fc02c4d07a9e563;H1;lotes;31 enderecos (30 guias + indice), lastmod 2026-10-12
+106;3-mapas;sitemap.xml;11854;3efad09258e97a4fa1d0e3befd42803f44a40030efdf713c09819f42e5f11958;H3 (base B);lotes;Lote H3: indice /advogado-criminalista/ incluido, 17 cidades com data 2026-10-09, home 2026-10-10 (base: sitemap do Lote B)
+107;4-home-e-sw;index.html;68818;71540caccd947c988fc802da85707d188674f5c845e77dee530bd2a5cdc1ebbc;G + H2;lotes;"home do Lote G; Lote H2 tirou ""Estrategica"" do nome. Enviar depois de todo o resto"
+108;4-home-e-sw;sw.js;14570;81a72be627ab3dd37b43d08e8ab999dd89fba3fcde5e75f0bcea66a8cf51a553;apoio;PC lote 08/10 noite;service worker v13 (so muda o numero da versao em relacao ao v12 do pacote do telefone)
+109;5-htaccess-por-ultimo;.htaccess;17525;55ce96564ab9a272396e7dc0e122edbeed1d7fb0b099b733e60a830582fbbe02;B;lotes;ENVIAR POR ULTIMO. Unica diferenca para o de 08/10 (17.226 bytes): regra 5.3b - politica de privacidade chamada de dentro de subpasta vai para /politica-privacidade.html

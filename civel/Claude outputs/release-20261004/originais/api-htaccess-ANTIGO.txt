@@ -1,0 +1,25 @@
+# ================================================================
+# SEGURANÇA DA PASTA /api/
+# ================================================================
+
+# Proibir acesso direto a qualquer arquivo oculto ou de configuração
+<FilesMatch "^\.">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# Proibir especificamente o .claude-config.php
+<Files ".claude-config.php">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</Files>

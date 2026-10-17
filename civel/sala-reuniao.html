@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sala de Guerra | Videoconferência Blindada | Dr. Lucas Semim</title>
+    <meta name="description" content="Ambiente virtual seguro para reuniões estratégicas. Acesso restrito e criptografado.">
+    <meta name="robots" content="noindex, nofollow"> <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&family=Teko:wght@300;500&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- TEMA: WAR ROOM (COCKPIT) --- */
+        :root {
+            --cor-fundo: #050505;
+            --cor-ouro: #d4af37;
+            --cor-vidro: rgba(10, 10, 12, 0.95);
+            --cor-valid: #2ecc71;
+            --cor-erro: #e74c3c;
+            --cor-info: #3498db;
+        }
+
+        body {
+            background-color: var(--cor-fundo); color: #e5e5e5; font-family: 'Lato', sans-serif;
+            min-height: 100vh; display: flex; flex-direction: column; overflow-x: hidden;
+            /* Fundo Bunker */
+            background: radial-gradient(circle at 50% 50%, rgba(0,0,0,0.4) 0%, #000 100%), 
+                        url('img/saladopoder-jesusabencoa.png');
+            background-size: cover; background-position: center; background-attachment: fixed;
+        }
+
+        #header-placeholder { min-height: 80px; }
+
+        main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 60px 20px; }
+
+        /* CARD PRINCIPAL (O PAINEL) */
+        .gatekeeper-box {
+            width: 100%; max-width: 650px;
+            background: var(--cor-vidro);
+            border: 1px solid rgba(255,255,255,0.1); border-top: 4px solid var(--cor-ouro);
+            border-radius: 12px; padding: 40px;
+            text-align: center;
+            box-shadow: 0 0 100px rgba(0,0,0,0.9);
+            position: relative; animation: zoomIn 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+        @keyframes zoomIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+
+        .gate-icon { font-size: 3.5rem; margin-bottom: 10px; display: inline-block; filter: drop-shadow(0 0 15px rgba(212,175,55,0.4)); }
+        .gate-title { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #fff; margin: 0; letter-spacing: 1px; }
+        .gate-sub { font-family: 'Fira Code'; color: #888; font-size: 0.8rem; letter-spacing: 3px; margin-bottom: 30px; text-transform: uppercase; border-bottom: 1px solid #333; padding-bottom: 20px; }
+
+        /* LOGIN FORM */
+        .input-gate {
+            width: 100%; padding: 18px; background: #08080a;
+            border: 1px solid #333; color: #fff; border-radius: 6px;
+            font-family: 'Fira Code'; font-size: 1.4rem; text-align: center; letter-spacing: 2px;
+            transition: 0.3s; margin-bottom: 25px;
+        }
+        .input-gate:focus { outline: none; border-color: var(--cor-ouro); box-shadow: 0 0 25px rgba(212, 175, 55, 0.2); }
+
+        .btn-gate {
+            width: 100%; padding: 18px; background: linear-gradient(45deg, var(--cor-ouro), #f1c40f);
+            color: #000; font-family: 'Teko'; font-size: 1.6rem; font-weight: bold; border: none; border-radius: 6px;
+            cursor: pointer; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px;
+        }
+        .btn-gate:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3); }
+
+        /* DASHBOARD (PAINEL DE DADOS) */
+        #process-dashboard { display: none; text-align: left; animation: fadeIn 0.8s; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .client-welcome { font-family: 'Playfair Display'; color: #fff; font-size: 1.8rem; margin-bottom: 5px; }
+        .client-welcome span { color: var(--cor-ouro); font-style: italic; }
+
+        .info-processo-box {
+            background: rgba(255,255,255,0.03); border: 1px solid #333;
+            padding: 25px; border-radius: 8px; margin: 25px 0;
+        }
+        .info-row { margin-bottom: 15px; border-bottom: 1px dashed #222; padding-bottom: 10px; display: flex; justify-content: space-between; align-items: center; }
+        .info-row:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        
+        .info-label { font-family: 'Fira Code'; color: #666; font-size: 0.75rem; text-transform: uppercase; }
+        .info-value { color: #eee; font-size: 1rem; font-weight: bold; text-align: right; }
+        .status-tag {
+            padding: 4px 10px; border-radius: 4px; background: rgba(52, 152, 219, 0.15); 
+            color: var(--cor-info); font-size: 0.75rem; font-family: 'Fira Code'; border: 1px solid rgba(52, 152, 219, 0.3);
+        }
+
+        /* CHECK DE SISTEMA (Simulado) */
+        .system-check-list { margin: 20px 0; font-family: 'Fira Code'; font-size: 0.8rem; color: #666; }
+        .check-item { display: flex; align-items: center; gap: 10px; margin-bottom: 5px; }
+        .check-ok { color: var(--cor-valid); }
+
+        .btn-meet-final {
+            background: #222; color: #555; text-decoration: none; display: block; padding: 20px;
+            border-radius: 8px; font-family: 'Teko'; font-size: 1.8rem; text-align: center;
+            transition: 0.4s; pointer-events: none; border: 1px solid #333; position: relative; overflow: hidden;
+        }
+        .btn-meet-final.active {
+            background: #000; color: #fff; pointer-events: all; border-color: var(--cor-valid);
+            box-shadow: 0 0 40px rgba(46, 204, 113, 0.2);
+        }
+        .btn-meet-final.active:hover { background: var(--cor-valid); box-shadow: 0 0 60px rgba(46, 204, 113, 0.5); }
+
+        /* ERROS */
+        .error-msg { 
+            color: var(--cor-erro); font-size: 0.9rem; margin-top: 20px; display: none; 
+            background: rgba(231, 76, 60, 0.1); padding: 15px; border-radius: 6px; border: 1px solid var(--cor-erro);
+            animation: shake 0.4s; text-align: center;
+        }
+        .btn-redirect { color: #fff; text-decoration: underline; display: block; margin-top: 5px; }
+        @keyframes shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
+
+        @media(max-width: 600px) {
+            .gatekeeper-box { padding: 30px 20px; }
+            .info-row { flex-direction: column; align-items: flex-start; gap: 5px; }
+            .info-value { text-align: left; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        <div class="gatekeeper-box" id="main-card">
+            
+            <div class="gate-header">
+                <span class="gate-icon">🎥</span>
+                <h1 class="gate-title">Sala de Guerra</h1>
+                <p class="gate-sub">// VIDEOCONFERÊNCIA ESTRATÉGICA</p>
+            </div>
+
+            <div id="login-screen">
+                <p style="color:#aaa; margin-bottom:25px; font-size:0.95rem; text-align: center; line-height:1.5;">
+                    Para sua segurança, autentique-se com seu telefone cadastrado para liberar o link criptografado.
+                </p>
+
+                <form onsubmit="return false;">
+                    <div class="form-group">
+                        <input type="tel" id="client-phone" class="input-gate" placeholder="(DDD) 9..." maxlength="15" oninput="mascaraTelefone(this)">
+                    </div>
+                    
+                    <button class="btn-gate" onclick="validarCliente()">INICIAR PROTOCOLO</button>
+                </form>
+                
+                <div id="msg-erro" class="error-msg">
+                    ⛔ <strong>Acesso Negado.</strong> Cliente não localizado na base ativa.
+                    <a href="cadastro-cliente.html" class="btn-redirect">Preencher Ficha de Admissão &rarr;</a>
+                </div>
+            </div>
+
+            <div id="process-dashboard">
+                <h2 class="client-welcome">Bem-vindo(a), <span id="cli-nome">Cliente</span>.</h2>
+                <p style="color:#888; font-size:0.9rem;">Sessão segura estabelecida. Dados carregados.</p>
+
+                <div class="info-processo-box">
+                    <div class="info-row">
+                        <span class="info-label">Dossiê</span>
+                        <span class="info-value" id="cli-proc">...</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Envolvidos</span>
+                        <span class="info-value" id="cli-partes">...</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Fase Atual</span>
+                        <span class="info-value" id="cli-mov">...</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Status</span>
+                        <span class="status-tag" id="cli-status">AGUARDANDO</span>
+                    </div>
+                </div>
+
+                <div class="system-check-list">
+                    <div class="check-item"><span class="check-ok">✔</span> Conexão Segura (SSL/TLS)</div>
+                    <div class="check-item"><span class="check-ok">✔</span> Câmera e Microfone: Prontos</div>
+                    <div class="check-item"><span class="check-ok">✔</span> Auditoria Read.ai: Ativa</div>
+                </div>
+
+                <div style="margin-top:25px; margin-bottom:25px;">
+                    <label style="display:flex; align-items:center; gap:12px; color:#ccc; font-size:0.9rem; cursor:pointer; background:rgba(255,255,255,0.05); padding:10px; border-radius:6px;">
+                        <input type="checkbox" id="check-termos" onchange="liberarBotao()" style="transform:scale(1.3); accent-color:var(--cor-ouro);">
+                        <span>Li e aceito o sigilo desta reunião.</span>
+                    </label>
+                </div>
+
+                <a href="#" id="btn-entrar" class="btn-meet-final" target="_blank">
+                    🔒 AGUARDANDO ACEITE...
+                </a>
+                
+                <p style="color:#555; font-size:0.8rem; margin-top:15px; font-family:'Fira Code';">
+                    Link único gerado para <span id="cli-hora" style="color:#888;">...</span>
+                </p>
+
+            </div>
+
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="codeleicivel/civel-core.js?v=20261008"></script>
+    </body>
+</html>

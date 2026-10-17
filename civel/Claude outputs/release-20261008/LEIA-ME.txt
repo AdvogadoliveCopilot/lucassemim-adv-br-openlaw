@@ -1,0 +1,83 @@
+﻿LEIA-ME — ATUALIZAÇÃO DE 08/10/2026 (lucassemim.adv.br)
+=========================================================
+Telefone definitivo + .htaccess novo + agentes + OmniRoute. Esta pasta NUNCA vai para o servidor.
+
+
+1) TELEFONE DEFINITIVO
+----------------------
+Antigo: (31) 98394-4973  /  5531983944973
+Novo:   (31) 98942-0094  /  5531989420094
+
+- Trocado em 344 arquivos do Desktop (HTML, JS, CSS, PHP, XML, JSON, TXT) e no 23_API_Central_Caso.gs (cópia local).
+- Nesta pasta: "originais-antes-da-troca-do-telefone.zip" (cópia de tudo como estava) e
+  "lista-de-arquivos-alterados.csv" (um arquivo por linha).
+- NÃO foi trocado (é com você): Perfil da Empresa no Google, Instagram/LinkedIn, cartões e assinaturas de e-mail,
+  imagens PNG/JPG que tenham o número impresso e o Apps Script publicado (veja o item 6).
+
+
+2) O QUE FOI PARA O SERVIDOR (FileZilla, pasta /public_html)
+-------------------------------------------------------------
+415 transferências, 0 falhas. Ordem usada: css e js -> scripts da raiz (sw.js, truth-shield.js, google-ai-brain.js) ->
+páginas -> sitemaps -> civel -> .htaccess por último.
+- Página nova no ar: o-que-fazer-agora/progressao-de-regime-atrasada-o-que-fazer.html (+ sitemap-urgencia.xml com 29 URLs).
+- api/claude-chat.php atualizado.
+- .htaccess da raiz: veja o item 3.
+
+NÃO enviados de propósito: agentes\, apps-script\, clientes\, templates\, dados\, img\, video\, "civel\Claude outputs",
+arquivos .gs/.md/.py, "Advogado Live.json", .claude-config.php, CLAUDE_HANDOVER.md, _content-plan.md.
+Ficaram mais novos no computador que no servidor (perguntar se quer subir): civel\robots.txt, civel\sitemap.xml e
+sitemap-news.xml da raiz.
+
+
+3) .HTACCESS NOVO (raiz, enviado por último)
+--------------------------------------------
+Novo: 17.226 bytes. Antigo (guardado): release-20261004\originais\htaccess-ANTIGO.txt (14.647 bytes).
+O que o novo faz a mais: páginas privadas com noindex; cabeçalho de segurança básico (CSP mínimo); bloqueio de
+scanners, traversal e SQLi na URL; bloqueio de .gs/.md/.log/.zip/.bak etc.; pasta clientes/ e apps-script/ fechadas
+(403); qualquer .json fechado (403), menos manifest, noticias, seo-intelligence e version; .claude-config.php negado.
+
+CONFERIR NO SEU NAVEGADOR (a Hostinger pede o CAPTCHA "Verificação de segurança" para o seu IP; resolva você mesmo):
+  1. https://lucassemim.adv.br/  (home abre normal)
+  2. uma notícia, por exemplo uma página dentro de /news/
+  3. https://civel.lucassemim.adv.br/
+Se algo der ERRO 500 ou o site inteiro sumir: avise e o antigo volta na hora (ou envie o htaccess-ANTIGO.txt para
+/public_html com o nome .htaccess, substituindo o novo).
+Efeito esperado: o painel antigo painel-cliente.html (clientes\) para de funcionar de propósito (só havia 2 clientes de teste).
+
+
+4) AGENTES (pasta agentes\ — só no seu computador)
+--------------------------------------------------
+- Reescritos, testados e salvos: pesquisador, redator, SEO, publicador (RASCUNHO primeiro), monitor, memória e compliance
+  (Provimento 205/2021: promessa de resultado, "[CONFERIR]", telefone antigo e código ativo travam a publicação).
+- Antes de usar: dar dois cliques em agentes\setup_segredos.bat e digitar a senha do FTP (só você digita; fica criptografada).
+- Depois: python pipeline.py --testar   (não publica nada)  /  python pipeline.py   (gera 1 rascunho em agentes\rascunhos)
+- Cópia dos originais: agentes\_backup_20261008\agentes-originais.zip. A senha do FTP que estava em texto puro no config.py
+  antigo foi retirada: TROQUE A SENHA DO FTP no painel da Hostinger por precaução.
+- Detalhes: agentes\README.md e agentes\SETUP_OMNIROUTE.md.
+
+
+5) OMNIROUTE (http://localhost:20128, v3.8.48)
+-----------------------------------------------
+- Combos auto/best-fast, auto/pro-chat, auto/smart, auto/coding, auto/legal-writer e auto/free agora só com modelos Gemini
+  atuais (Gemini 1.5/2.0/2.5 foram aposentados pelo Google). Testados ao vivo em 08/10/2026.
+- O login Claude (OAuth da assinatura) saiu dos combos: a Anthropic só permite esse login no Claude Code e no claude.ai;
+  em ferramentas de terceiros o certo é chave de API.
+- O combo lucassemim.adv e a conexão Ollama Cloud ("main", com alerta de chave) ficaram como estavam: ponha uma chave nova
+  ou desative a conexão.
+- Antes dos ajustes: agentes\backup_omniroute\combos_antes_20261008.json.
+- Recomendado (decisão sua): ligar "exigir chave de API" no OmniRoute; já existe a chave "lucassemimadv" no menu API Manager.
+
+
+6) PENDÊNCIAS
+-------------
+Suas:
+  [ ] Resolver o CAPTCHA da Hostinger e conferir home, uma notícia e o civel (item 3).
+  [ ] Trocar a senha do FTP e rodar agentes\setup_segredos.bat.
+  [ ] Apagar "Advogado Live.json" do computador (e confirmar que não está no servidor) e girar a chave do Gemini
+      que estava dentro dele.
+  [ ] Trocar o telefone no Perfil da Empresa no Google, redes sociais e imagens com o número antigo.
+Minhas (próxima sessão, se você mandar):
+  [ ] Apps Script no ar: linha 32 de 23_API_Central_Caso.gs (whatsapp: '5531989420094'), nova versão da implantação
+      principal, rodar escudoProtegerPlanilha e escudoInstalarRotinas e arquivar as versões antigas já autorizadas.
+  [ ] Subir civel\robots.txt, civel\sitemap.xml e sitemap-news.xml, se você quiser.
+  [ ] Tirar a chave antiga do Gemini do 00_Config_Menu.gs depois que você girar a chave.

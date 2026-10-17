@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    
+    <!-- 1. PERFORMANCE CRÍTICA: Preconnects PRIMEIRO (Elimina DNS lookup e TCP handshake) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+
+    <!-- 2. PRELOAD DE FONTES CRÍTICAS (Elimina FOIT / FCP instantâneo) -->
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/teko/v20/LYjNdG7kmE0gDasPEqKx.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/lato/v24/S6uyw4BMUTPHjx4wXiWtFCc.woff2">
+
+    <title>Advogado Criminalista Plantão 24h em Sabará e BH | Dr. Lucas Semim</title>
+    <meta name="description" content="Familiar preso agora? Atendimento criminal de urgência 24h em Sabará e BH. Chegada na delegacia em até 1h, Audiência de Custódia, Flagrantes e SEEU. OAB/MG 222.539.">
+    <meta name="keywords" content="Advogado Criminalista, Belo Horizonte, Advogado Criminal, Sabará, Prisão em Flagrante, Audiência de Custódia, Execução Penal, Lei de Drogas, Dr. Lucas Semim, Defesa Criminal Contagem, OAB/MG 222.539">
+    <meta name="author" content="SEMIM & ASSOCIADOS | Dr. Lucas Renan Semim">
+	
+    <link rel="canonical" href="https://lucassemim.adv.br/" />
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="https://lucassemim.adv.br/img/Favicon-lucassemim.png" type="image/png">
+    <link rel="icon" href="https://lucassemim.adv.br/Favicon-lucassemim.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="https://lucassemim.adv.br/Favicon-lucassemim.png" type="image/png" sizes="48x48">
+    <link rel="icon" href="https://lucassemim.adv.br/Favicon-lucassemim.png" type="image/png" sizes="96x96">
+    <link rel="icon" href="https://lucassemim.adv.br/Favicon-lucassemim.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="https://lucassemim.adv.br/img/favicon.ico">
+
+    <!-- PWA & Mobile Meta Tags -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#d4af37">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Lucas Semim">
+
+    <!-- ========================================== -->
+    <!-- GOOGLE CONSENT MODE V2 (Padrão Negado)     -->
+    <!-- ========================================== -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'wait_for_update': 500
+        });
+        gtag('set', 'url_passthrough', true);
+    </script>
+    
+    <!-- 3. CRITICAL CSS INLINE (Above-the-Fold Instantâneo sem Render-Blocking) -->
+    <style>
+        /* Reset e Base */
+        *,::after,::before{box-sizing:border-box}
+        body{margin:0;font-family:'Lato',sans-serif;background:#050505;color:#e0e0e0;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+        
+        /* Layout Grid Bootstrap Crítico */
+        .container{width:100%;padding-right:12px;padding-left:12px;margin-right:auto;margin-left:auto}
+        @media(min-width:576px){.container{max-width:540px}}
+        @media(min-width:768px){.container{max-width:720px}}
+        @media(min-width:992px){.container{max-width:960px}}
+        @media(min-width:1200px){.container{max-width:1140px}}
+        .row{--bs-gutter-x:1.5rem;--bs-gutter-y:0;display:flex;flex-wrap:wrap;margin-right:calc(-.5*var(--bs-gutter-x));margin-left:calc(-.5*var(--bs-gutter-x))}
+        .col-12{flex:0 0 auto;width:100%}
+        .col-lg-8,.col-lg-9,.col-md-4,.col-lg-3,.col-md-6{flex-shrink:0;width:100%;max-width:100%;padding-right:calc(var(--bs-gutter-x)*.5);padding-left:calc(var(--bs-gutter-x)*.5)}
+        @media(min-width:768px){.col-md-4{width:33.33333333%}.col-md-6{width:50%}}
+        @media(min-width:992px){.col-lg-8{width:66.66666667%}.col-lg-9{width:75%}.col-lg-3{width:25%}}
+        
+        /* Tipografia e Utilitários Críticos */
+        .font-teko{font-family:'Teko',sans-serif!important;text-transform:uppercase;letter-spacing:1px}
+        .text-gold{color:#d4af37!important}
+        .text-white{color:#fff!important}
+        .text-secondary{color:#aaa!important}
+        .d-flex{display:flex!important}
+        .flex-column{flex-direction:column!important}
+        .align-items-center{align-items:center!important}
+        .justify-content-center{justify-content:center!important}
+        .justify-content-between{justify-content:between!important}
+        .text-center{text-align:center!important}
+        .mb-0{margin-bottom:0!important}
+        .mb-1{margin-bottom:.25rem!important}
+        .mb-2{margin-bottom:.5rem!important}
+        .mb-3{margin-bottom:1rem!important}
+        .mb-4{margin-bottom:1.5rem!important}
+        .mb-5{margin-bottom:3rem!important}
+        .mt-3{margin-top:1rem!important}
+        .mt-4{margin-top:1.5rem!important}
+        .gap-3{gap:1rem!important}
+        .shadow{box-shadow:0 .5rem 1rem rgba(0,0,0,.15)!important}
+        .img-fluid{max-width:100%;height:auto}
+        .w-100{width:100%!important}
+
+        /* Hero Section Crítica Above-the-Fold */
+        .hero-section{position:relative;overflow:hidden;min-height:85vh;display:flex;align-items:center;border-bottom:3px solid #d4af37}
+        .hero-title{font-family:'Teko',sans-serif;font-size:4.6rem;font-weight:700;color:#fff;text-shadow:0 5px 25px #000;line-height:0.95;margin-bottom:15px}
+        .hero-subtitle{font-family:'Lato',sans-serif;font-size:1.25rem;color:#dcdcdc;max-width:650px;line-height:1.6}
+        
+        .badge{display:inline-block;padding:.35em .65em;font-size:.75em;font-weight:700;line-height:1;text-align:center;white-space:nowrap;vertical-align:baseline;border-radius:.25rem}
+        .bg-dark{background-color:#212529!important}
+        .border-warning{border-color:#ffc107!important}
+        
+        .btn{display:inline-block;font-weight:400;line-height:1.5;text-align:center;text-decoration:none;vertical-align:middle;cursor:pointer;user-select:none;border:1px solid transparent;padding:.375rem .75rem;font-size:1rem;border-radius:.25rem;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out}
+        .btn-warning{color:#000;background-color:#ffc107;border-color:#ffc107}
+        .btn-outline-light{color:#f8f9fa;border-color:#f8f9fa}
+
+        .plantao-live-indicator{display:inline-flex;align-items:center;gap:10px;background:rgba(30,80,30,.35);border:1px solid rgba(46,204,113,.5);border-radius:50px;padding:6px 18px;margin-top:22px;font-family:'Lato',sans-serif;font-size:0.9rem;color:#e0e0e0}
+        .pulse-dot{width:10px;height:10px;background:#2ecc71;border-radius:50%;flex-shrink:0;animation:livePulse 1.5s ease-in-out infinite}
+        @keyframes livePulse{0%,100%{box-shadow:0 0 0 0 rgba(46,204,113,.6)}50%{box-shadow:0 0 0 8px rgba(46,204,113,0)}}
+        
+        @media(max-width:768px){.hero-title{font-size:3.2rem}}
+        @media(min-width:576px){.flex-sm-row{flex-direction:row!important}}
+    </style>
+
+    <!-- 4. BOOTSTRAP CSS ASYNC (Não Bloqueia Render) -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    </noscript>
+
+    <!-- 5. GOOGLE FONTS ASYNC (Teko, Lato e Playfair Display para o header) -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Teko:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Teko:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    </noscript>
+
+    <!-- 6. FONTAWESOME ASYNC -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
+
+    <!-- Open Graph Persuasivo -->
+    <meta property="og:title" content="Familiar preso agora? Advogado Criminalista 24h — Dr. Lucas Semim">
+    <meta property="og:description" content="Atendimento em até 1 hora em Sabará e BH. Flagrante, Habeas Corpus, Audiência de Custódia. OAB/MG 222.539. Cada minuto conta.">
+    <meta property="og:image" content="https://lucassemim.adv.br/img/og-home.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Dr. Lucas Semim — Advogado Criminalista Plantão 24h — Sabará e BH">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lucassemim.adv.br/">
+    <meta property="og:site_name" content="Lucas Semim Advocacia Criminal">
+    <meta property="og:locale" content="pt_BR">
+
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Familiar preso agora? Advogado Criminalista 24h — Dr. Lucas Semim">
+    <meta name="twitter:description" content="Atendimento em até 1 hora. Flagrante, HC, Audiência de Custódia. OAB/MG 222.539.">
+    <meta name="twitter:image" content="https://lucassemim.adv.br/img/og-home.jpg">
+
+    <meta name="geo.region" content="BR-MG">
+    <meta name="geo.placename" content="Sabará, Belo Horizonte, Nova Lima">
+    <meta name="geo.position" content="-19.8971761;-43.886404">
+    <meta name="ICBM" content="-19.8971761, -43.886404">
+
+    <!-- Static Schema.org -->
+    <script type="application/ld+json">
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "LegalService",
+        "@id": "https://lucassemim.adv.br/#LegalService",
+        "name": "Dr. Lucas Semim - Advocacia Criminal Estratégica",
+        "image": "https://lucassemim.adv.br/img/lucasrenansemimeadvogado.jpeg",
+        "url": "https://lucassemim.adv.br",
+        "telephone": "+5531989420094",
+        "priceRange": "$$$",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "R. Cel. Abílio Pereira, 337",
+          "addressLocality": "Sabará",
+          "addressRegion": "MG",
+          "postalCode": "34575-020",
+          "addressCountry": "BR"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "-19.8971761",
+          "longitude": "-43.886404"
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "00:00",
+          "closes": "23:59"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "url": "https://lucassemim.adv.br/",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://lucassemim.adv.br/search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    ]
+    </script>
+
+    <style>
+        /* --- ESTILOS SECUNDÁRIOS DE APOIO --- */
+        :root {
+            --bg-dark: #050505;
+            --bg-card: #101010;
+            --text-light: #e0e0e0;
+            --accent-gold: #d4af37;
+            --gold-light: #f3e5ab;
+            --accent-red: #8b0000;
+            --glow: rgba(212, 175, 55, 0.3);
+        }
+
+        /* 3. PROVA SOCIAL BAR */
+        .social-proof-bar {
+            background: linear-gradient(135deg, #0a0a0a 0%, #111 100%);
+            border-top: 1px solid rgba(212,175,55,0.3);
+            border-bottom: 1px solid rgba(212,175,55,0.15);
+            padding: 30px 0;
+        }
+        .proof-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr);
+            gap: 20px; text-align: center;
+        }
+        .proof-item { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .proof-number-wrapper { display: flex; align-items: baseline; justify-content: center; }
+        .proof-number {
+            font-family: 'Teko', sans-serif; color: #d4af37;
+            font-size: 3.8rem; line-height: 1; font-weight: 600;
+        }
+        .proof-symbol { font-family: 'Teko', sans-serif; color: #d4af37; font-size: 2.2rem; line-height: 1; margin-left: 2px; }
+        .proof-label { font-family: 'Lato', sans-serif; color: #999; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+
+        /* 4. SITUAÇÕES SECTION */
+        .situacoes-section { padding: 80px 0; background: #050505; }
+        .situacao-card {
+            display: flex; flex-direction: column; align-items: flex-start;
+            gap: 12px; padding: 32px; border-radius: 10px;
+            text-decoration: none; height: 100%;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative; overflow: hidden;
+        }
+        .situacao-card::before {
+            content: ''; position: absolute; inset: 0;
+            transition: opacity 0.3s; opacity: 0;
+            background: linear-gradient(135deg, rgba(212,175,55,0.05), transparent);
+        }
+        .situacao-card:hover::before { opacity: 1; }
+        .situacao-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.8); }
+        .situacao-urgencia { background: rgba(139,0,0,0.15); border: 1px solid rgba(200,0,0,0.4); border-top: 4px solid #c0392b; }
+        .situacao-processo { background: rgba(212,175,55,0.06); border: 1px solid rgba(212,175,55,0.25); border-top: 4px solid #d4af37; }
+        .situacao-execucao { background: rgba(30,80,30,0.15); border: 1px solid rgba(46,160,46,0.3); border-top: 4px solid #27ae60; }
+        .situacao-card i { font-size: 2.2rem; margin-bottom: 5px; }
+        .situacao-urgencia i { color: #e74c3c; }
+        .situacao-processo i { color: #d4af37; }
+        .situacao-execucao i { color: #27ae60; }
+        .situacao-card h3 { font-family: 'Teko', sans-serif; color: #fff; font-size: 2rem; margin: 0; line-height: 1.1; }
+        .situacao-card p { font-family: 'Lato', sans-serif; color: #aaa; font-size: 0.95rem; line-height: 1.5; margin: 0; }
+        .situacao-cta { font-family: 'Teko', sans-serif; font-size: 1.2rem; letter-spacing: 0.5px; color: #fff; margin-top: auto; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.1); width: 100%; }
+        .situacao-urgencia .situacao-cta { color: #e74c3c; }
+        .situacao-processo .situacao-cta { color: #d4af37; }
+        .situacao-execucao .situacao-cta { color: #27ae60; }
+
+        /* DEPOIMENTOS SECTION */
+        .depoimentos-section {
+            padding: 80px 0;
+            background: linear-gradient(180deg, #0a0a0a 0%, #050505 100%);
+            border-top: 1px solid rgba(212,175,55,0.15);
+        }
+        .depoimento-card {
+            background: rgba(15,15,18,0.75); border: 1px solid #1a1a1a;
+            border-top: 3px solid #d4af37; border-radius: 10px;
+            padding: 28px; height: 100%; display: flex; flex-direction: column; gap: 16px;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+        .depoimento-card:hover { border-color: rgba(212,175,55,0.5); transform: translateY(-4px); }
+        .depo-stars { color: #d4af37; font-size: 1.1rem; letter-spacing: 2px; }
+        .depo-texto {
+            color: #ccc; font-family: 'Lato', sans-serif; font-size: 0.95rem;
+            line-height: 1.7; font-style: italic; margin: 0; flex: 1;
+            border-left: 3px solid rgba(212,175,55,0.3); padding-left: 14px;
+        }
+        .depo-autor { display: flex; align-items: center; gap: 12px; margin-top: auto; }
+        .depo-avatar {
+            width: 44px; height: 44px; border-radius: 50%;
+            background: linear-gradient(135deg, #d4af37, #aa8c2c);
+            color: #000; font-family: 'Teko', sans-serif; font-size: 1.1rem; font-weight: 700;
+            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+        }
+        .depo-autor strong { display: block; color: #fff; font-family: 'Lato', sans-serif; font-size: 0.95rem; }
+        .depo-autor small { color: #888; font-size: 0.8rem; display: block; }
+        .depo-resultado {
+            display: inline-block; background: rgba(39,174,96,0.15);
+            border: 1px solid rgba(39,174,96,0.35); color: #27ae60;
+            font-size: 0.75rem; padding: 2px 8px; border-radius: 4px;
+            font-family: 'Lato', sans-serif; font-weight: 700; margin-top: 4px;
+        }
+
+        /* AUTORIDADE SECTION */
+        .autoridade-section {
+            padding: 80px 0;
+            background: radial-gradient(circle at 30% 50%, #0e0e0e 0%, #050505 100%);
+            border-top: 1px solid rgba(212,175,55,0.15);
+            border-bottom: 1px solid rgba(212,175,55,0.15);
+        }
+        .foto-dr-lucas { position: relative; display: inline-block; }
+        .foto-dr-lucas img {
+            border-radius: 12px; border: 2px solid rgba(212,175,55,0.3);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.8);
+            object-fit: cover; width: 100%; max-width: 320px;
+        }
+        .foto-badge {
+            position: absolute; bottom: -16px; left: 50%; transform: translateX(-50%);
+            background: #d4af37; color: #000;
+            font-family: 'Teko', sans-serif; font-size: 1.1rem; font-weight: 700;
+            padding: 6px 20px; border-radius: 50px; white-space: nowrap;
+            display: flex; align-items: center; gap: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+        }
+        .diferenciais-grid { display: flex; flex-direction: column; gap: 16px; }
+        .diferencial-item {
+            display: flex; align-items: flex-start; gap: 16px;
+            padding: 16px; border-radius: 8px;
+            background: rgba(255,255,255,0.02); border: 1px solid #1a1a1a;
+            transition: border-color 0.3s, background 0.3s;
+        }
+        .diferencial-item:hover { border-color: rgba(212,175,55,0.3); background: rgba(212,175,55,0.03); }
+        .diferencial-item i { font-size: 1.5rem; flex-shrink: 0; margin-top: 2px; }
+        .diferencial-item strong { display: block; color: #fff; font-family: 'Lato', sans-serif; font-size: 0.95rem; margin-bottom: 4px; }
+        .diferencial-item span { color: #888; font-family: 'Lato', sans-serif; font-size: 0.88rem; line-height: 1.5; }
+
+        .btn-persuasao-gold {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: #d4af37; color: #000; text-decoration: none;
+            font-family: 'Teko', sans-serif; font-size: 1.3rem; font-weight: 700;
+            padding: 12px 28px; border-radius: 6px;
+            transition: background 0.2s, transform 0.15s;
+        }
+        .btn-persuasao-gold:hover { background: #fff; color: #000; transform: translateY(-2px); }
+        .btn-persuasao-outline {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: transparent; color: #d4af37; text-decoration: none;
+            font-family: 'Teko', sans-serif; font-size: 1.3rem;
+            padding: 12px 28px; border-radius: 6px;
+            border: 1px solid rgba(212,175,55,0.4);
+            transition: border-color 0.2s, background 0.2s;
+        }
+        .btn-persuasao-outline:hover { border-color: #d4af37; background: rgba(212,175,55,0.07); color: #d4af37; }
+
+        /* GARANTIA BAR */
+        .garantia-bar {
+            background: rgba(212,175,55,0.05); border-top: 1px solid rgba(212,175,55,0.2);
+            border-bottom: 1px solid rgba(212,175,55,0.2); padding: 16px 0;
+        }
+        .garantia-items {
+            display: flex; justify-content: center; flex-wrap: wrap;
+            gap: 15px 35px;
+        }
+        .garantia-items span {
+            color: #bbb; font-family: 'Lato', sans-serif; font-size: 0.9rem;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .garantia-items i { color: #d4af37; font-size: 1rem; }
+
+        /* DESKTOP STICKY CTA */
+        .desktop-emergency-cta {
+            display: none;
+            position: fixed; bottom: 0; left: 0; width: 100%; z-index: 9990;
+            background: rgba(10,10,10,0.97);
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            border-top: 2px solid rgba(212,175,55,0.5);
+            padding: 12px 0;
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+        }
+        .desktop-emergency-cta.visible { transform: translateY(0); }
+        @media (min-width: 992px) { .desktop-emergency-cta { display: block; } }
+        .btn-desk-cta-tel {
+            background: transparent; border: 1px solid #555; color: #ccc;
+            font-family: 'Teko', sans-serif; font-size: 1.2rem;
+            padding: 8px 20px; border-radius: 4px; text-decoration: none;
+            display: inline-flex; align-items: center; gap: 8px;
+            transition: border-color 0.2s, color 0.2s;
+        }
+        .btn-desk-cta-tel:hover { border-color: #d4af37; color: #d4af37; }
+        .btn-desk-cta-wpp {
+            background: linear-gradient(135deg, #128c7e, #25d366);
+            color: #fff; font-family: 'Teko', sans-serif; font-size: 1.2rem;
+            padding: 8px 24px; border-radius: 4px; text-decoration: none;
+            display: inline-flex; align-items: center; gap: 8px;
+            transition: opacity 0.2s;
+        }
+        .btn-desk-cta-wpp:hover { opacity: 0.9; color: #fff; }
+
+        /* GEO CARDS */
+        .geo-card-mini { background: #111; border: 1px solid #333; color: #888; padding: 6px 18px; border-radius: 50px; font-size: 0.92rem; text-decoration: none; transition: 0.3s; }
+        .geo-card-mini:hover { border-color: #d4af37; color: #d4af37; }
+        .border-gold { border-color: #d4af37 !important; color: #d4af37 !important; background: rgba(212, 175, 55, 0.05); cursor: default; }
+
+        @media(max-width: 768px) {
+            .proof-grid { grid-template-columns: repeat(2, 1fr); gap: 25px 15px; }
+        }
+    </style>
+    <!-- DESIGN V2: Impacto + Urgência -->
+    <link rel="stylesheet" href="css/lucas-v2.css?v=20261008">
+    <!-- HEADER LUX: acabamento elegante do menu (veste as classes .he-* do header-elite.js) -->
+    <link rel="stylesheet" href="css/header-lux.css?v=20261008">
+</head>
+<body>
+
+    <!-- 1. O Header dinâmico V3 será injetado pelo header-elite.js -->
+
+    <!-- 2. HERO SECTION -->
+    <header class="hero-section">
+        <video autoplay loop muted playsinline preload="metadata" aria-label="Vídeo demonstrativo de atuação criminal" style="position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: 0; transform: translate(-50%, -50%); object-fit: cover; opacity: 0.4;">
+            <source src="video/escritorioonline.mp4" type="video/mp4">
+        </video>
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.85) 50%, rgba(0,0,0,0.5) 100%); z-index: 1;"></div>
+
+        <div class="container" style="position: relative; z-index: 2;">
+            <div class="row">
+                <div class="col-lg-9">
+                    <span class="badge bg-dark border border-warning text-gold font-teko fs-5 px-3 py-2 mb-3"><i class="fas fa-shield-alt me-2"></i> PLANTÃO CRIMINAL 24H — SABARÁ E BH</span>
+                    <h1 class="hero-title">SEU FAMILIAR FOI PRESO AGORA? <br><span class="text-gold">CADA MINUTO CONTA.</span></h1>
+                    <p class="hero-subtitle mb-4">
+                        O Dr. Lucas Semim atua na delegacia em até 1 hora. Flagrantes, audiências de custódia e habeas corpus de urgência em Sabará, Belo Horizonte e RMBH.
+                    </p>
+                    
+                    <div class="d-flex flex-column flex-sm-row gap-3">
+                        <a href="https://wa.me/5531989420094?text=URGÊNCIA:%20Familiar%20preso%20agora.%20Preciso%20de%20advogado%20imediatamente." 
+                           target="_blank" class="btn btn-warning font-teko fs-3 px-5 py-2 fw-bold shadow text-dark" style="border-radius: 4px;" aria-label="Falar com Dr. Lucas Semim pelo WhatsApp agora">
+                            <i class="fab fa-whatsapp me-2"></i> FALAR COM DR. LUCAS AGORA →
+                        </a>
+                        <a href="diagnostico.html" class="btn btn-outline-light font-teko fs-3 px-4 py-2" style="border-radius: 4px;" aria-label="Analisar meu caso gratuitamente">
+                            ANALISAR MEU CASO (GRATUITO)
+                        </a>
+                    </div>
+
+                    <div class="plantao-live-indicator">
+                        <span class="pulse-dot"></span>
+                        <span>
+                            PLANTÃO ATIVO AGORA — <span id="current-time">--h--</span> — Resposta média: <strong>menos de 15 minutos</strong>
+                        </span>
+                    </div>
+                    <ul class="hero-trust" aria-label="Garantias do atendimento">
+                        <li><i class="fas fa-id-badge"></i> OAB/MG 222.539</li>
+                        <li><i class="fas fa-lock"></i> Sigilo profissional</li>
+                        <li><i class="fas fa-location-dot"></i> Sabará, BH e RMBH</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 3. BARRA DE PROVA SOCIAL COM CONTADORES ANIMADOS -->
+    <section class="social-proof-bar">
+        <div class="container">
+            <div class="proof-grid">
+                <div class="proof-item">
+                    <div class="proof-number-wrapper">
+                        <span class="proof-number" data-target="500">0</span>
+                        <span class="proof-symbol">+</span>
+                    </div>
+                    <span class="proof-label">Casos Atendidos</span>
+                </div>
+                
+                <div class="proof-item">
+                    <div class="proof-number-wrapper">
+                        <span class="proof-number" data-target="8">0</span>
+                        <span class="proof-symbol">+</span>
+                    </div>
+                    <span class="proof-label">Anos de Atuação</span>
+                </div>
+                
+                <div class="proof-item">
+                    <div class="proof-number-wrapper">
+                        <span class="proof-number" data-target="24">0</span>
+                        <span class="proof-symbol">h</span>
+                    </div>
+                    <span class="proof-label">Plantão Diário</span>
+                </div>
+                
+                <div class="proof-item">
+                    <div class="proof-number-wrapper">
+                        <span class="proof-number" data-target="15">0</span>
+                        <span class="proof-symbol">min</span>
+                    </div>
+                    <span class="proof-label">Tempo de Resposta</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. SEÇÃO "QUAL É A SUA SITUAÇÃO AGORA?" -->
+    <section class="situacoes-section">
+        <div class="container">
+            <h2 class="text-center font-teko text-white mb-2" style="font-size:3rem;">
+                QUAL É A SUA <span class="text-gold">SITUAÇÃO AGORA?</span>
+            </h2>
+            <p class="text-center text-secondary mb-5 fs-5">Clique na sua situação para ser direcionado ao atendimento estratégico:</p>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <a href="https://wa.me/5531989420094?text=URGÊNCIA:%20Familiar%20preso%20agora.%20Preciso%20de%20advogado%20imediatamente."
+                       target="_blank" class="situacao-card situacao-urgencia" aria-label="Atendimento urgente para preso agora">
+                        <i class="fas fa-triangle-exclamation"></i>
+                        <h3>FAMILIAR PRESO <br>AGORA</h3>
+                        <p>Prisão em flagrante, delegacia ou audiência de custódia. Intervenção imediata em até 1 hora.</p>
+                        <span class="situacao-cta">ACIONAR PLANTÃO 24H →</span>
+                    </a>
+                </div>
+                
+                <div class="col-md-4">
+                    <a href="diagnostico.html" class="situacao-card situacao-processo" aria-label="Análise de processo criminal em andamento">
+                        <i class="fas fa-scale-balanced"></i>
+                        <h3>PROCESSO <br>EM ANDAMENTO</h3>
+                        <p>Inquérito policial, denúncia, tráfico de drogas, Tribunal do Júri. Análise técnica sem custo inicial.</p>
+                        <span class="situacao-cta">ANALISAR MEU CASO →</span>
+                    </a>
+                </div>
+                
+                <div class="col-md-4">
+                    <a href="https://wa.me/5531989420094?text=Meu%20familiar%20está%20preso%20cumprindo%20pena.%20Quero%20verificar%20se%20tem%20direitos%20a%20receber%20no%20SEEU."
+                       target="_blank" class="situacao-card situacao-execucao" aria-label="Direitos na execução penal">
+                        <i class="fas fa-unlock"></i>
+                        <h3>PRESO CUMPRINDO <br>PENA</h3>
+                        <p>Auditoria no SEEU, progressão de regime, saidinha, livramento condicional e resgate de dias perdidos.</p>
+                        <span class="situacao-cta">VERIFICAR DIREITOS →</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. O PESO DA VERDADE (BALANÇA + EXECUÇÃO PENAL) -->
+    <section class="py-5 position-relative" style="background: radial-gradient(circle at center, #0a0a0c 0%, #000 100%); border-top: 1px solid #222; border-bottom: 1px solid #222; overflow: hidden;">
+        <div style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 100%; height: 100%; background: radial-gradient(circle, rgba(212,175,55,0.05) 0%, transparent 60%); z-index: 0; pointer-events: none;"></div>
+
+        <div class="container position-relative" style="z-index: 2;">
+            <div class="text-center mb-5">
+                <h2 class="font-teko text-white" style="font-size: 3.5rem; letter-spacing: 2px;">O PESO DA <span class="text-gold">VERDADE</span></h2>
+                <p class="text-secondary fs-5">A técnica que desequilibra o jogo contra o peso do Estado.</p>
+            </div>
+
+            <div class="row align-items-start">
+                
+                <div class="col-lg-7 mb-5 mb-lg-0">
+                    <div class="scale-wrapper">
+                        <div class="scale-beam">
+                            <div class="scale-core" tabindex="0" role="button" aria-label="Abrir o Altar da Defesa">
+                                <i class="fas fa-cross text-gold fs-2"></i>
+                                <span class="core-label font-teko">ALTAR DA DEFESA</span>
+                            </div>
+                        </div>
+                        
+                        <div class="scale-pillar"></div>
+
+                        <div class="pan-container">
+                            <div class="scale-pan left-pan">
+                                <div class="pan-rope"></div>
+                                <div class="pan-content">
+                                    <a href="news/homicidio-vicario-vinganca-destroi-vitima-tribunal-juri.html" class="tactic-card">
+                                        <span class="card-tag">TRIBUNAL DO JÚRI</span>
+                                        <h4 class="card-title">Homicídio Vicário: Guerra no Plenário</h4>
+                                    </a>
+                                    <a href="news/piramide-do-trafico-base-cadeia-topo-livre.html" class="tactic-card mt-3">
+                                        <span class="card-tag">LEI DE DROGAS</span>
+                                        <h4 class="card-title">Pirâmide do Tráfico: Base na Cadeia</h4>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="scale-pan right-pan">
+                                <div class="pan-rope"></div>
+                                <div class="pan-content">
+                                    <a href="news/linha-fina-liberdade-enquadro-40-gramas-trafico-privilegiado.html" class="tactic-card">
+                                        <span class="card-tag">STF / 40 GRAMAS</span>
+                                        <h4 class="card-title">A Nova Régua do Tráfico</h4>
+                                    </a>
+                                    <a href="news/delegacia-sabara-armadilha-plantao-fim-de-semana-advogado.html" class="tactic-card mt-3">
+                                        <span class="card-tag">PLANTÃO 24H</span>
+                                        <h4 class="card-title">Armadilha da Delegacia (Fim de Semana)</h4>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="hourglass-box">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-hourglass-half text-gold fs-1 hourglass-alive"></i>
+                            <h3 class="font-teko text-white fs-2 mt-3 mb-0">EXECUÇÃO PENAL <span class="text-gold">INTELIGENTE</span></h3>
+                            <p class="text-secondary small">O tempo não perdoa quem espera o Estado.</p>
+                        </div>
+                        
+                        <div class="execution-list">
+                            <a href="news/calendario-saidinha-2026-mg-regras.html" class="execution-item">
+                                <i class="fas fa-calendar-alt text-gold fs-4"></i>
+                                <div><strong>CALENDÁRIO SAIDINHA 2026</strong><small>Auditoria SEEU e Liminares Ativas</small></div>
+                            </a>
+                            <a href="news/reincidencia-generica-especifica-calculo-pena-stj.html" class="execution-item">
+                                <i class="fas fa-calculator text-gold fs-4"></i>
+                                <div><strong>ERRO NO CÁLCULO DA PENA</strong><small>Aplicação de Temas 1084 e 1172 (STJ)</small></div>
+                            </a>
+                            <a href="news/execucao-penal-seeu-prazo-venceu-preso.html" class="execution-item">
+                                <i class="fas fa-unlock text-gold fs-4"></i>
+                                <div><strong>LIBERDADE ESQUECIDA</strong><small>Resgate de benefícios vencidos</small></div>
+                            </a>
+                        </div>
+
+                        <div class="mt-4">
+                            <a href="https://wa.me/5531989420094?text=Dr.%20Lucas,%20preciso%20de%20auditoria%20urgente%20no%20SEEU!" target="_blank" class="btn btn-warning w-100 font-teko fs-4 fw-bold text-dark shadow" aria-label="Chamar para auditar a execução penal via WhatsApp">
+                                <i class="fas fa-search me-2"></i> AUDITAR SEEU AGORA
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <style>
+            .scale-wrapper { position: relative; width: 100%; max-width: 550px; margin: 0 auto; padding-top: 60px; min-height: 400px; }
+            .scale-beam { width: 100%; height: 4px; background: #d4af37; box-shadow: 0 0 15px #d4af37; position: relative; border-radius: 2px; animation: balanceBeam 6s ease-in-out infinite; transform-origin: center center; z-index: 5; }
+            .scale-pillar { position: absolute; top: 60px; left: 50%; transform: translateX(-50%); width: 8px; height: calc(100% - 60px); background: linear-gradient(to bottom, rgba(212,175,55,0.8), transparent); z-index: 1; }
+            .scale-core { position: absolute; top: 0; left: 50%; transform: translate(-50%, -50%); width: 90px; height: 90px; background: #050505; border: 2px solid #d4af37; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 0 20px rgba(212,175,55,0.5); transition: 0.3s; z-index: 10; }
+            .scale-core:hover { transform: translate(-50%, -50%) scale(1.1); box-shadow: 0 0 40px rgba(212,175,55,0.8); background: rgba(212,175,55,0.1); }
+            .core-label { font-size: 0.7rem; color: #fff; margin-top: 5px; opacity: 0; position: absolute; bottom: -20px; transition: 0.3s; white-space: nowrap; }
+            .scale-core:hover .core-label { opacity: 1; color: #d4af37; }
+
+            .pan-container { display: flex; justify-content: space-between; width: 100%; position: absolute; top: 64px; left: 0; z-index: 3; }
+            .scale-pan { width: 46%; display: flex; flex-direction: column; align-items: center; animation: balancePan 6s ease-in-out infinite; transform-origin: top center; }
+            .pan-rope { width: 2px; height: 40px; background: #d4af37; }
+            .pan-content { background: rgba(15,15,18,0.95); border: 1px solid #333; border-top: 3px solid #d4af37; padding: 15px; width: 100%; border-radius: 6px; box-shadow: 0 10px 25px rgba(0,0,0,0.7); }
+
+            .tactic-card { text-decoration: none; display: block; padding: 10px; border-radius: 4px; transition: 0.3s; background: rgba(255,255,255,0.02); border: 1px solid transparent; }
+            .tactic-card:hover { background: rgba(212,175,55,0.05); border-color: #333; transform: translateY(-3px); }
+            .card-tag { color: #d4af37; font-size: 0.7rem; font-weight: bold; display: block; margin-bottom: 3px; letter-spacing: 1px; }
+            .card-title { color: #fff; font-family: 'Teko', sans-serif; font-size: 1.2rem; margin: 0; line-height: 1.1; }
+
+            .hourglass-box { background: rgba(15,15,18,0.7); border: 1px dashed #333; border-radius: 12px; padding: 30px; border-left: 4px solid #d4af37; }
+            @keyframes timeRunningOut { 0% { transform: rotate(0deg); } 45% { transform: rotate(0deg); } 50% { transform: rotate(180deg); } 95% { transform: rotate(180deg); } 100% { transform: rotate(360deg); } }
+            .hourglass-alive { animation: timeRunningOut 5s infinite cubic-bezier(0.68, -0.55, 0.27, 1.55); display: inline-block; filter: drop-shadow(0 0 10px rgba(212,175,55,0.8)); }
+
+            .execution-list { display: flex; flex-direction: column; gap: 12px; }
+            .execution-item { text-decoration: none; display: flex; align-items: center; gap: 15px; padding: 15px; border-radius: 6px; background: rgba(255,255,255,0.03); transition: 0.3s; border: 1px solid #222; }
+            .execution-item:hover { background: rgba(212,175,55,0.1); border-color: #d4af37; }
+            .execution-item strong { display: block; color: #fff; font-size: 0.95rem; font-family: 'Lato', sans-serif; }
+            .execution-item small { color: #aaa; font-size: 0.8rem; }
+
+            @keyframes balanceBeam { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
+            @keyframes balancePan { 0%, 100% { transform: rotate(3deg); } 50% { transform: rotate(-3deg); } }
+            @media (max-width: 991px) { .scale-wrapper { display: none; } } 
+        </style>
+    </section>
+
+    <!-- 6. DEPOIMENTOS DE CLIENTES (PROVA SOCIAL) -->
+    <section class="depoimentos-section">
+        <div class="container">
+            <h2 class="text-center font-teko text-white mb-1" style="font-size:3rem;">
+                O QUE DIZEM <span class="text-gold">NOSSOS CLIENTES</span>
+            </h2>
+            <p class="text-center text-secondary mb-5 fs-5">Identidades preservadas. Resultados concretos.</p>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="depoimento-card">
+                        <div class="depo-stars">★★★★★</div>
+                        <blockquote class="depo-texto">
+                            "Meu filho foi preso em flagrante numa sexta à noite. O Dr. Lucas atendeu em menos de 1 hora. Na audiência de custódia no dia seguinte, conseguiu a liberdade. Não sei o que seria de nós sem ele."
+                        </blockquote>
+                        <div class="depo-autor">
+                            <div class="depo-avatar">M.S.</div>
+                            <div>
+                                <strong>M. S.</strong>
+                                <small>Mãe de cliente — Contagem/MG</small>
+                                <span class="depo-resultado">✓ Liberdade em 24h</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="depoimento-card">
+                        <div class="depo-stars">★★★★★</div>
+                        <blockquote class="depo-texto">
+                            "Passei 3 meses preso preventivamente. Com o Dr. Lucas, em 15 dias tinha um habeas corpus deferido no TJMG. Profissional técnico, atento e presente. Recomendo."
+                        </blockquote>
+                        <div class="depo-autor">
+                            <div class="depo-avatar">R.F.</div>
+                            <div>
+                                <strong>R. F.</strong>
+                                <small>Ex-cliente — Sabará/MG</small>
+                                <span class="depo-resultado">✓ HC deferido no TJMG</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="depoimento-card">
+                        <div class="depo-stars">★★★★★</div>
+                        <blockquote class="depo-texto">
+                            "A calculadora do site mostrou que meu marido tinha quase 1 ano de pena esquecida pelo SEEU. O Dr. Lucas peticionou e ele foi solto antes do tempo. Que presente."
+                        </blockquote>
+                        <div class="depo-autor">
+                            <div class="depo-avatar">A.C.</div>
+                            <div>
+                                <strong>A. C.</strong>
+                                <small>Esposa de cliente — BH/MG</small>
+                                <span class="depo-resultado">✓ Antecipação da liberdade</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="https://share.google/6q7sPmlBaTkZY9gnd" target="_blank" class="btn btn-outline-secondary rounded-pill font-teko px-4 fs-5" aria-label="Abrir link externo com mais avaliações 5 estrelas no Google"><i class="fab fa-google text-white me-2"></i> VER MAIS AVALIAÇÕES 5.0 ESTRELAS NO GOOGLE</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. SEÇÃO "POR QUE O DR. LUCAS SEMIM?" -->
+    <section class="autoridade-section">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                
+                <div class="col-lg-4 text-center">
+                    <div class="foto-dr-lucas">
+                        <img src="img/lucasrenansemimeadvogado.jpeg"
+                             alt="Dr. Lucas Renan Semim — Advogado Criminalista OAB/MG 222.539"
+                             width="320" height="400"
+                             class="img-fluid"
+                             loading="lazy">
+                        <div class="foto-badge">
+                            <i class="fas fa-shield-halved"></i>
+                            <span>OAB/MG 222.539</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-8">
+                    <span class="badge bg-warning text-dark font-teko mb-3 fs-6 px-3 py-2" style="letter-spacing: 2px;">
+                        <i class="fas fa-gavel me-2"></i> DEFESA DE ALTO RENDIMENTO
+                    </span>
+                    <h2 class="font-teko text-white mb-2" style="font-size:3.2rem; line-height: 0.95;">
+                        POR QUE O <span class="text-gold">DR. LUCAS SEMIM?</span>
+                    </h2>
+                    <p class="text-secondary mb-4 fs-5">
+                        Não é qualquer defesa. É defesa <strong class="text-white">estratégica, auditada e com base em perícia.</strong>
+                    </p>
+                    
+                    <div class="diferenciais-grid">
+                        <div class="diferencial-item">
+                            <i class="fas fa-bolt text-gold"></i>
+                            <div>
+                                <strong>ATENDIMENTO EM 1 HORA</strong>
+                                <span>Presente na delegacia no flagrante e na audiência de custódia. Não amanhã — agora.</span>
+                            </div>
+                        </div>
+                        
+                        <div class="diferencial-item">
+                            <i class="fas fa-magnifying-glass text-gold"></i>
+                            <div>
+                                <strong>ADVOCACIA AUDITADA (MÉTODO LIVE™)</strong>
+                                <span>Cada prova é rastreada. Cada nulidade é explorada. A defesa começa antes do processo.</span>
+                            </div>
+                        </div>
+                        
+                        <div class="diferencial-item">
+                            <i class="fas fa-calculator text-gold"></i>
+                            <div>
+                                <strong>TECNOLOGIA NA DEFESA</strong>
+                                <span>Calculadora penal, auditoria SEEU e ferramentas forenses para identificar erros que juízes ignoram.</span>
+                            </div>
+                        </div>
+                        
+                        <div class="diferencial-item">
+                            <i class="fas fa-lock text-gold"></i>
+                            <div>
+                                <strong>SIGILO ABSOLUTO</strong>
+                                <span>Comunicação criptografada. Portal do cliente exclusivo. O que é seu, fica protegido entre nós.</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 d-flex gap-3 flex-wrap">
+                        <a href="https://wa.me/5531989420094?text=Dr.%20Lucas,%20quero%20analisar%20meu%20caso%20com%20você."
+                           target="_blank"
+                           class="btn-persuasao-gold"
+                           aria-label="Falar com Dr. Lucas Semim pelo WhatsApp">
+                            <i class="fab fa-whatsapp"></i> FALAR COM DR. LUCAS AGORA
+                        </a>
+                        <a href="legal-tech/calculadora-prescricao.html"
+                           class="btn-persuasao-outline"
+                           aria-label="Usar calculadora de prescrição penal gratuita">
+                            <i class="fas fa-calculator"></i> CALCULADORA PENAL (GRÁTIS)
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. PROCESSO NA PALMA DA MÃO -->
+    <section class="py-5" style="background: radial-gradient(circle at 80% 50%, #1a1a1d 0%, #000 100%); border-top: 1px solid rgba(212, 175, 55, 0.2);">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 text-center text-lg-start">
+                    <h2 class="font-teko text-white" style="font-size: 3.5rem; line-height: 1.1;">O SEU PROCESSO <br><span class="text-gold">NA PALMA DA MÃO</span></h2>
+                    <p class="text-secondary fs-5 mt-3 mb-4">Escritório 100% digitalizado. Acompanhe a sua defesa em tempo real, receba notificações de andamento e fale com o Dr. Lucas com sigilo absoluto através da nossa plataforma WebApp.</p>
+                    <a href="painel-cliente.html" class="btn btn-outline-light font-teko fs-4 px-4" aria-label="Acessar o WebApp na área do cliente"><i class="fas fa-mobile-alt me-2"></i> ACESSAR ÁREA DO CLIENTE</a>
+                </div>
+                <div class="col-lg-6 mt-5 mt-lg-0 text-center">
+                    <img src="img/provas/processoonline.webp" alt="Demonstração do Aplicativo Lucas Semim" width="300" height="475" class="img-fluid" style="max-width: 300px; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.8)); transform: rotate(-5deg);" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. CIDADES / ÁREA DE ATENDIMENTO -->
+    <section class="py-4" style="background: #050505; border-top: 1px solid #222;">
+        <div class="container text-center">
+            <h4 class="font-teko text-secondary mb-3 fs-3">ATENDIMENTO PRESENCIAL E VIRTUAL</h4>
+            <div class="d-flex flex-wrap justify-content-center gap-2">
+                <a href="advogado-criminalista/sabara.html" class="geo-card-mini" aria-label="Advocacia Criminal em Sabará">Sabará</a>
+                <a href="advogado-criminalista/belohorizonte.html" class="geo-card-mini" aria-label="Advocacia Criminal em Belo Horizonte">Belo Horizonte</a>
+                <a href="advogado-criminalista/contagem.html" class="geo-card-mini" aria-label="Advocacia Criminal em Contagem">Contagem</a>
+                <a href="advogado-criminalista/betim.html" class="geo-card-mini" aria-label="Advocacia Criminal em Betim">Betim</a>
+                <a href="advogado-criminalista/santaluzia.html" class="geo-card-mini" aria-label="Advocacia Criminal em Santa Luzia">Santa Luzia</a>
+                <a href="advogado-criminalista/novalima.html" class="geo-card-mini" aria-label="Advocacia Criminal em Nova Lima">Nova Lima</a>
+                <span class="geo-card-mini text-gold border-gold" tabindex="0" aria-label="Atendimento virtual em todo o Brasil"><i class="fas fa-globe-americas me-1"></i> Todo o Brasil (Digital)</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. BARRA DE GARANTIA E CONFIANÇA -->
+    <section class="garantia-bar">
+        <div class="container">
+            <div class="garantia-items">
+                <span><i class="fas fa-shield-halved"></i> Sigilo garantido pelo Estatuto da OAB</span>
+                <span><i class="fas fa-clock"></i> Resposta em até 15 minutos</span>
+                <span><i class="fas fa-file-contract"></i> Análise inicial gratuita</span>
+                <span><i class="fas fa-map-pin"></i> Atendimento presencial em Sabará e BH</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. DESKTOP STICKY CTA BAR -->
+    <div id="desktop-emergency-cta" class="desktop-emergency-cta" aria-hidden="true">
+        <div class="container d-flex align-items-center justify-content-between">
+            <div>
+                <strong class="text-gold font-teko fs-4">PLANTÃO ATIVO AGORA</strong>
+                <span class="text-secondary ms-3">Dr. Lucas Semim — OAB/MG 222.539</span>
+            </div>
+            <div class="d-flex gap-3">
+                <a href="tel:+5531989420094" class="btn-desk-cta-tel" aria-label="Ligar para o Dr. Lucas Semim">
+                    <i class="fas fa-phone-alt"></i> (31) 98942-0094
+                </a>
+                <a href="https://wa.me/5531989420094?text=Dr.%20Lucas,%20preciso%20de%20ajuda%20urgente."
+                   target="_blank" class="btn-desk-cta-wpp" aria-label="WhatsApp Dr. Lucas Semim">
+                    <i class="fab fa-whatsapp"></i> FALAR AGORA
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 12. O Footer dinâmico V3 será injetado pelo javascript nesta tag -->
+    <div id="footer-master-injecao"></div>
+
+    <!-- Frameworks -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Cal.com Embed com Defer -->
+    <script src="https://app.cal.com/embed/embed.js" defer></script>
+    <script defer>
+      document.addEventListener('DOMContentLoaded', () => {
+        if (typeof Cal !== 'undefined') {
+          Cal("init", { origin: "https://cal.com" });
+          Cal("ui", {
+            "styles": { "branding": { "brandColor": "#d4af37" } },
+            "hideEventTypeDetails": false,
+            "layout": "month_view"
+          });
+        }
+      });
+    </script>
+    
+    <!-- ARQUITETURA ELITE V3 -->
+    <script src="codelei/analytics.js?v=20261008"></script>
+    <script src="js/ai-neural-seo.js?v=20261008"></script>
+    <script src="js/ads-intelligence.js?v=20261008"></script>
+    <script src="js/lgpd.js?v=20261008"></script>
+    <script src="js/tradutor-global.js?v=20261008"></script>
+    <script src="js/vlibras-plugin.js?v=20261008"></script>
+    <script src="js/vcard-smart.js?v=20261008"></script>
+    <script src="js/diagnostico.js?v=20261008"></script>
+    <script src="js/header-elite.js?v=20261008"></script>
+    <script src="js/footer-seo.js?v=20261008"></script>
+    <script src="js/chat-elite.js?v=20261008"></script>
+    <script src="js/smart-cta.js?v=20261008"></script>
+    <script src="js/design-v2.js?v=20261008" defer></script>
+	<script src="js/return-lead.js?v=20261008"></script>
+
+    <!-- Scripts de Interatividade e Persuasão V7 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 1. Modo de Emergência
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('urgencia')) {
+                document.body.classList.add('emergency-mode');
+            }
+
+            // 2. Relógio em Tempo Real para o Plantão
+            function updateTime() {
+                const now = new Date();
+                const hours = String(now.getHours()).padStart(2, '0');
+                const mins = String(now.getMinutes()).padStart(2, '0');
+                const el = document.getElementById('current-time');
+                if (el) el.textContent = `${hours}h${mins}`;
+            }
+            updateTime();
+            setInterval(updateTime, 30000);
+
+            // 3. Contadores Animados de Prova Social
+            function animateCounters() {
+                const counters = document.querySelectorAll('.proof-number');
+                const obs = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (!entry.isIntersecting) return;
+                        const el = entry.target;
+                        const target = parseInt(el.getAttribute('data-target'), 10);
+                        const step = Math.ceil(target / 40);
+                        let current = 0;
+                        const timer = setInterval(() => {
+                            current = Math.min(current + step, target);
+                            el.textContent = current;
+                            if (current >= target) clearInterval(timer);
+                        }, 35);
+                        obs.unobserve(el);
+                    });
+                }, { threshold: 0.4 });
+                counters.forEach(c => obs.observe(c));
+            }
+            animateCounters();
+
+            // 4. Desktop Sticky Emergency CTA
+            const desktopCTA = document.getElementById('desktop-emergency-cta');
+            if (desktopCTA && window.innerWidth >= 992) {
+                window.addEventListener('scroll', () => {
+                    const scrollTotal = document.body.scrollHeight - window.innerHeight;
+                    if (scrollTotal > 0) {
+                        const pct = (window.scrollY / scrollTotal) * 100;
+                        desktopCTA.classList.toggle('visible', pct >= 50);
+                    }
+                }, { passive: true });
+            }
+        });
+    </script>
+
+</body>
+</html>

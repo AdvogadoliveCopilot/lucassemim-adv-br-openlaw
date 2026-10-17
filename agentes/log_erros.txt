@@ -1,0 +1,18 @@
+
+[2026-10-17T09:36:19]
+Traceback (most recent call last):
+  File "c:\Users\adm\Desktop\lucassemim.adv.br\agentes\util.py", line 166, in rodar_principal
+    funcao()
+    ~~~~~~^^
+  File "c:\Users\adm\Desktop\lucassemim.adv.br\agentes\agente_redator.py", line 503, in main
+    artigo = redigir_artigo(pauta, briefing)
+  File "c:\Users\adm\Desktop\lucassemim.adv.br\agentes\agente_redator.py", line 442, in redigir_artigo
+    return processar_resposta(resposta, pauta, pasta)
+  File "c:\Users\adm\Desktop\lucassemim.adv.br\agentes\agente_redator.py", line 482, in processar_resposta
+    pagina = montar_pagina({"titulo": titulo, "meta": meta, "categoria": categoria, "tags": tags,
+                            "conteudo_html": conteudo, "faq": faq, "slug": slug, "pasta": pasta,
+                            "data": datetime.date.today()})
+  File "c:\Users\adm\Desktop\lucassemim.adv.br\agentes\agente_redator.py", line 378, in montar_pagina
+    raise RuntimeError("tokens do template sem valor: %s" % sorted(set(sobras)))
+RuntimeError: tokens do template sem valor: ['<<SITE>>', '<<VERSAO>>']
+

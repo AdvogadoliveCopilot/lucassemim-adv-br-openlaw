@@ -1,0 +1,308 @@
+/* =====================================================================
+   LUCAS SEMIM — "O QUE FAZER AGORA" V3  ·  molde de conversão
+   Páginas de urgência (/o-que-fazer-agora/*): quem chega aqui está em crise
+   e precisa de UMA coisa: falar com o advogado agora.
+   Camada por cima do CSS de cada página: não troca nenhum texto, schema
+   ou título existente. Tudo escopado em html.oq3.
+   Depende de: lucas-v2-pages.css (carregado antes). Sem JS a página funciona.
+   ===================================================================== */
+html.oq3{
+  --oq-gold:#d4af37; --oq-gold-hi:#f6e7a6; --oq-gold-lo:#9a7a16;
+  --oq-red:#e5322d; --oq-red-hi:#ff7a72;
+  --oq-green:#25d366; --oq-green-hi:#34e47a; --oq-green-lo:#14a14a;
+  --oq-ink:#050505; --oq-panel:#0d0d0d;
+  --oq-line:rgba(212,175,55,.26); --oq-ease:cubic-bezier(.2,.7,.2,1);
+  --oq-hdr:66px;
+}
+@media(min-width:992px){html.oq3{--oq-hdr:78px}}
+
+/* ---------- base / layout ---------- */
+.oq3 body{padding-bottom:88px}
+.oq3 .container-urgency{max-width:880px;padding:16px 16px 34px}
+.oq3 [id]{scroll-margin-top:calc(var(--oq-hdr) + 18px)}
+.oq3 .breadcrumb-custom{margin:0 0 10px;font-size:.76rem;line-height:1.4}
+
+@media(min-width:992px){
+  .oq3 body{padding-bottom:0}
+  .oq3 .container-urgency{
+    max-width:1180px;display:grid;grid-template-columns:minmax(0,1fr) 344px;column-gap:48px;
+    align-items:start;padding:26px 24px 56px}
+  .oq3 .container-urgency>*{grid-column:1;min-width:0}
+  .oq3 .container-urgency>.oq-side{grid-column:2;grid-row:1/span 60;position:sticky;
+    top:calc(var(--oq-hdr) + 22px);align-self:start}
+}
+
+/* banners automáticos (smart-cta.js) e a faixa de CTA do rodapé repetem a ação principal desta página */
+.oq3 .cta-internal,.oq3 .smart-cta-elite,.oq3 .footer-cta-strip{display:none!important}
+
+/* ---------- selo "plantão ativo" ---------- */
+.oq3 .oq-live{display:inline-flex;align-items:center;gap:9px;margin:0 0 12px;padding:7px 13px;border-radius:50px;
+  font:800 .7rem/1 'Lato',sans-serif;letter-spacing:1.5px;text-transform:uppercase;color:#d8ffe7;
+  background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.42)}
+.oq3 .oq-live .oq-sep{opacity:.45}
+.oq3 .oq-dot{flex:0 0 auto;width:9px;height:9px;border-radius:50%;background:var(--oq-green);
+  box-shadow:0 0 0 0 rgba(37,211,102,.7);animation:oqPing 1.9s ease-out infinite}
+@keyframes oqPing{0%{box-shadow:0 0 0 0 rgba(37,211,102,.65)}75%,100%{box-shadow:0 0 0 10px rgba(37,211,102,0)}}
+
+/* ---------- título ---------- */
+.oq3 .h1-urgency{font-size:clamp(1.8rem,6.6vw,2.85rem);line-height:1.1;margin:0 0 16px;letter-spacing:-.2px}
+
+/* ---------- botões de ação (hero, aside, faixas, final) ---------- */
+.oq3 .oq-cta{display:grid;gap:10px;margin:0 0 14px}
+.oq3 .oq-btn{position:relative;display:flex;align-items:center;gap:14px;padding:13px 16px;border-radius:16px;
+  text-decoration:none!important;overflow:hidden;isolation:isolate;-webkit-tap-highlight-color:transparent;
+  transition:transform .25s var(--oq-ease),box-shadow .25s,filter .25s;cursor:pointer}
+.oq3 .oq-btn:focus-visible{outline:3px solid var(--oq-gold-hi);outline-offset:3px}
+.oq3 .oq-btn:active{transform:scale(.985)}
+.oq3 .oq-ico{flex:0 0 46px;height:46px;border-radius:50%;display:grid;place-items:center;font-size:1.45rem;line-height:1}
+.oq3 .oq-btn-t{display:flex;flex-direction:column;gap:3px;min-width:0;text-align:left}
+.oq3 .oq-btn-t b{font:600 clamp(1.28rem,5.2vw,1.55rem)/1.04 'Teko',sans-serif;letter-spacing:.7px;text-transform:uppercase;text-wrap:balance}
+.oq3 .oq-btn-t small{font:700 .7rem/1.25 'Lato',sans-serif;letter-spacing:.6px;opacity:.92}
+.oq3 .oq-arrow{margin-left:auto;font-size:1rem;opacity:.85;transition:transform .25s var(--oq-ease)}
+.oq3 .oq-btn:hover .oq-arrow{transform:translateX(5px)}
+
+.oq3 .oq-wa{color:#fff!important;background:linear-gradient(135deg,var(--oq-green-hi),var(--oq-green-lo) 78%);
+  box-shadow:0 14px 34px rgba(37,211,102,.36),inset 0 1px 0 rgba(255,255,255,.35);animation:oqPulseG 2.7s ease-in-out infinite}
+.oq3 .oq-wa .oq-ico{background:#fff;color:var(--oq-green-lo)}
+.oq3 .oq-wa::after{content:"";position:absolute;z-index:-1;top:0;bottom:0;left:-60%;width:38%;pointer-events:none;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.38),transparent);transform:skewX(-20deg);animation:oqSweep 4.2s ease-in-out infinite}
+.oq3 .oq-wa:hover{transform:translateY(-3px);filter:brightness(1.05)}
+@keyframes oqPulseG{0%,100%{box-shadow:0 14px 34px rgba(37,211,102,.36),0 0 0 0 rgba(37,211,102,.5),inset 0 1px 0 rgba(255,255,255,.35)}
+  50%{box-shadow:0 14px 34px rgba(37,211,102,.36),0 0 0 12px rgba(37,211,102,0),inset 0 1px 0 rgba(255,255,255,.35)}}
+@keyframes oqSweep{0%,55%{left:-60%}100%{left:130%}}
+
+.oq3 .oq-tel{color:var(--oq-gold-hi)!important;background:linear-gradient(160deg,rgba(212,175,55,.14),rgba(12,12,12,.9));
+  border:1.5px solid var(--oq-gold);box-shadow:0 10px 26px rgba(0,0,0,.4)}
+.oq3 .oq-tel .oq-ico{background:rgba(212,175,55,.18);color:var(--oq-gold)}
+.oq3 .oq-tel:hover{transform:translateY(-3px);background:linear-gradient(160deg,rgba(212,175,55,.24),rgba(12,12,12,.9))}
+
+.oq3 .oq-central{display:inline-flex;align-items:center;gap:8px;margin:6px 0 18px;padding:6px 2px;color:#cfcfcf!important;
+  font:700 .82rem/1.3 'Lato',sans-serif;text-decoration:none!important;border-bottom:1px dashed rgba(212,175,55,.45)}
+.oq3 .oq-central i{color:var(--oq-gold)}
+.oq3 .oq-central:hover{color:#fff!important;border-bottom-color:var(--oq-gold)}
+
+@media(min-width:560px) and (max-width:991px){
+  .oq3 .oq-cta{grid-template-columns:1.6fr 1fr}
+}
+/* no desktop o card lateral assume os botões */
+@media(min-width:992px){.oq3 .oq-hero-cta,.oq3 .oq-hero-central{display:none}}
+
+/* ---------- linha de provas curtas ---------- */
+.oq3 .oq-proof{display:flex;flex-wrap:wrap;gap:8px 16px;list-style:none;margin:0 0 22px;padding:0;
+  font:800 .68rem/1.2 'Lato',sans-serif;letter-spacing:1px;text-transform:uppercase;color:#cdcdcd}
+.oq3 .oq-proof li{display:inline-flex;align-items:center;gap:7px}
+.oq3 .oq-proof i{color:var(--oq-gold)}
+/* identidade em miniatura (celular): rosto + nome logo abaixo dos botões */
+.oq3 .oq-who-mini{flex:1 0 100%;gap:12px!important;margin:0 0 2px;text-transform:none;letter-spacing:0}
+.oq3 .oq-who-mini img{flex:0 0 44px;width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--oq-gold);
+  box-shadow:0 0 0 3px rgba(212,175,55,.14)}
+.oq3 .oq-who-mini span{display:flex;flex-direction:column;gap:2px;min-width:0}
+.oq3 .oq-who-mini b{font:700 1rem/1.2 'Playfair Display',serif;color:#fff}
+.oq3 .oq-who-mini small{font:600 .76rem/1.3 'Lato',sans-serif;color:#bdbdbd}
+@media(min-width:992px){.oq3 .oq-proof .oq-who-mini{display:none}}
+
+/* ---------- resposta imediata ---------- */
+.oq3 .urgent-box{padding:20px 18px 18px;margin-bottom:16px;border-radius:18px}
+.oq3 .urgent-box h2{display:flex;gap:10px;align-items:flex-start;margin:0 0 10px;font-size:clamp(1.3rem,4.8vw,1.7rem);line-height:1.08;letter-spacing:1.4px}
+.oq3 .urgent-box h2 i{margin-top:.12em;color:var(--oq-gold)}
+.oq3 .urgent-box p{font-size:1.04rem;line-height:1.62;color:#f4f4f4}
+.oq3 .urgent-box .deadline-alert{display:block;margin-top:14px;padding:12px 14px;border-radius:12px;
+  background:linear-gradient(135deg,rgba(229,50,45,.24),rgba(229,50,45,.08));border:1px solid rgba(229,50,45,.6);
+  color:#ffe6e3;font-weight:700;font-size:.92rem;line-height:1.5}
+
+/* ---------- faixa do advogado ---------- */
+.oq3 .trust-badge-compact{gap:16px;padding:14px 16px;margin-bottom:26px;border-radius:16px;
+  background:linear-gradient(135deg,#141414,#090909);border:1px solid var(--oq-line);border-left:4px solid var(--oq-gold)}
+.oq3 .trust-badge-compact img{width:68px;height:68px;flex:0 0 68px}
+.oq3 .trust-badge-info h3{font-family:'Playfair Display',serif;font-size:1.12rem}
+.oq3 .trust-badge-info p{font-size:.84rem;line-height:1.45;color:#bdbdbd}
+.oq3 .trust-badge-info .oq-quote{margin:6px 0 0;font:italic 400 .92rem/1.35 'Playfair Display',serif;color:var(--oq-gold-hi)}
+
+/* ---------- seletor de situação ---------- */
+.oq3 main>h3.font-teko{margin:0 0 12px!important;font-size:clamp(1.35rem,4.8vw,1.7rem)!important;letter-spacing:1.2px;color:#fff}
+.oq3 .age-cards{gap:12px;margin-bottom:34px}
+.oq3 .age-card{position:relative;display:block;padding:16px 46px 16px 16px;border-radius:16px}
+.oq3 .age-card::after{content:"\f061";font-family:"Font Awesome 6 Free","Font Awesome 5 Free";font-weight:900;position:absolute;right:16px;top:50%;
+  transform:translateY(-50%);color:var(--oq-gold);font-size:.95rem;transition:transform .25s var(--oq-ease)}
+.oq3 .age-card:hover::after{transform:translate(5px,-50%)}
+.oq3 .age-card h4{font-size:1.28rem;margin-bottom:5px}
+.oq3 .age-card p{font-size:.88rem;line-height:1.45;color:#c4c4c4}
+
+/* ---------- passos ---------- */
+.oq3 .checklist-urgency{gap:12px;margin-bottom:30px}
+.oq3 .check-item-urgency{padding:16px 16px 16px 14px;gap:14px;align-items:flex-start}
+.oq3 .check-number-urgency{width:50px;height:50px;font-size:1.8rem}
+.oq3 .check-content-urgency h4{font-size:1.08rem;line-height:1.3;margin-bottom:6px}
+.oq3 .check-content-urgency p{font-size:.92rem;line-height:1.55;color:#bfbfbf}
+.oq3 .check-content-urgency p a{color:var(--oq-gold-hi)}
+
+/* ---------- como funciona + compromissos (novos) ---------- */
+.oq3 .oq-h2{margin:6px 0 18px;display:flex;align-items:center;gap:12px;font:600 clamp(1.55rem,5vw,2.1rem)/1.05 'Teko',sans-serif;
+  letter-spacing:1.2px;text-transform:uppercase;color:#fff;text-wrap:balance}
+.oq3 .oq-h2::before{content:"";flex:0 0 5px;align-self:stretch;min-height:1.2em;border-radius:3px;background:linear-gradient(180deg,var(--oq-gold-hi),var(--oq-gold-lo))}
+.oq3 .oq-how,.oq3 .oq-pledge{margin:8px 0 36px}
+
+/* linha do tempo: ícones ligados por um fio dourado (diferente dos 5 passos numerados) */
+.oq3 .oq-how-list{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.oq3 .oq-how-list li{position:relative;display:grid;grid-template-columns:50px minmax(0,1fr);column-gap:16px;align-items:start;padding:0 0 24px}
+.oq3 .oq-how-list li:last-child{padding-bottom:0}
+.oq3 .oq-how-list li::before{content:"";position:absolute;left:24px;top:56px;bottom:6px;width:2px;border-radius:2px;
+  background:linear-gradient(180deg,var(--oq-gold),rgba(212,175,55,.12))}
+.oq3 .oq-how-list li:last-child::before{display:none}
+.oq3 .oq-st{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;font-size:1.2rem;color:var(--oq-gold-hi);
+  background:radial-gradient(circle at 30% 25%,#2c230a,#0b0b0b 72%);border:2px solid var(--oq-gold);box-shadow:0 0 0 5px rgba(212,175,55,.1)}
+.oq3 .oq-how-list b{display:block;margin:3px 0 5px;font:700 1.08rem/1.25 'Playfair Display',serif;color:#fff}
+.oq3 .oq-how-list p{margin:0;font-size:.94rem;line-height:1.58;color:#c6c6c6}
+@media(min-width:760px){
+  .oq3 .oq-how-list{grid-template-columns:repeat(3,minmax(0,1fr));column-gap:26px}
+  .oq3 .oq-how-list li{grid-template-columns:minmax(0,1fr);row-gap:14px;align-content:start;padding:0}
+  .oq3 .oq-how-list li::before{left:62px;right:-26px;top:24px;bottom:auto;width:auto;height:2px;
+    background:linear-gradient(90deg,var(--oq-gold),rgba(212,175,55,.12))}
+  .oq3 .oq-st{justify-self:start}
+}
+
+/* compromissos: linhas compactas no celular, 4 colunas no desktop */
+.oq3 .oq-pledge-grid{list-style:none;margin:0 0 16px;padding:0;display:grid;gap:10px;grid-template-columns:minmax(0,1fr)}
+.oq3 .oq-pledge-grid li{display:grid;grid-template-columns:40px minmax(0,1fr);column-gap:14px;align-items:start;padding:14px;border-radius:16px;
+  background:linear-gradient(160deg,#141414,#090909);border:1px solid rgba(255,255,255,.1)}
+.oq3 .oq-pledge-grid i{grid-row:1/span 2;display:grid;place-items:center;width:40px;height:40px;margin:0;border-radius:12px;color:var(--oq-gold);
+  background:rgba(212,175,55,.12);border:1px solid var(--oq-line);font-size:1rem}
+.oq3 .oq-pledge-grid b{grid-column:2;display:block;margin:1px 0 4px;font:600 1.3rem/1.05 'Teko',sans-serif;letter-spacing:.8px;text-transform:uppercase;color:#fff}
+.oq3 .oq-pledge-grid p{grid-column:2;margin:0;font-size:.86rem;line-height:1.5;color:#c6c6c6}
+@media(min-width:560px) and (max-width:759px){.oq3 .oq-pledge-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:760px){
+  .oq3 .oq-pledge-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .oq3 .oq-pledge-grid li{display:block;padding:16px 14px 14px}
+  .oq3 .oq-pledge-grid i{margin-bottom:10px}
+  .oq3 .oq-pledge-grid b{margin:0 0 4px}
+}
+.oq3 .oq-pledge-link{display:inline-flex;align-items:center;gap:8px;color:var(--oq-gold-hi)!important;font:700 .9rem/1.3 'Lato',sans-serif;
+  text-decoration:none!important;border-bottom:1px solid rgba(212,175,55,.5);padding-bottom:2px}
+.oq3 .oq-pledge-link:hover{color:#fff!important}
+
+/* ---------- faixa de ação no meio do texto ---------- */
+.oq3 .oq-band{margin:30px 0;padding:18px;border-radius:18px;border:1px solid var(--oq-line);
+  background:linear-gradient(135deg,rgba(212,175,55,.12),rgba(10,10,10,.96) 70%)}
+.oq3 .oq-band-t{margin:0 0 12px;font:600 clamp(1.35rem,4.6vw,1.7rem)/1.1 'Teko',sans-serif;letter-spacing:.8px;text-transform:uppercase;color:#fff;text-wrap:balance}
+.oq3 .oq-band .oq-cta{margin:0}
+@media(min-width:560px){.oq3 .oq-band .oq-cta{grid-template-columns:1.6fr 1fr}}
+
+/* ---------- corpo do texto ---------- */
+.oq3 .content-body p,.oq3 .content-body li{font-size:1.04rem;line-height:1.78}
+@media(min-width:992px){.oq3 .content-body>p,.oq3 .content-body>ul,.oq3 .content-body>ol{max-width:72ch}}
+.oq3 .warning-box{margin:26px 0;padding:18px}
+
+/* ---------- FAQ ---------- */
+.oq3 .faq-container-urgency{margin:30px 0 34px}
+.oq3 .faq-question-urgency{min-height:58px;padding:16px 18px;font-size:1.04rem;line-height:1.35;gap:12px}
+
+/* ---------- fechamento ---------- */
+.oq3 .oq-final{position:relative;overflow:hidden;margin:34px 0 8px;padding:26px 20px 22px;border-radius:22px;text-align:center;
+  border:1px solid rgba(212,175,55,.5);
+  background:radial-gradient(90% 80% at 50% 0,rgba(212,175,55,.2),transparent 62%),linear-gradient(180deg,#120f08,#080808);
+  box-shadow:0 24px 60px rgba(0,0,0,.6)}
+.oq3 .oq-final-k{margin:0 0 6px;font:700 .78rem/1 'Lato',sans-serif;letter-spacing:2.2px;text-transform:uppercase;color:var(--oq-gold)}
+.oq3 .oq-final-h{margin:0 0 10px;font:600 clamp(2rem,7.4vw,3rem)/1.02 'Teko',sans-serif;letter-spacing:.6px;text-transform:uppercase;color:#fff;text-wrap:balance}
+.oq3 .oq-final-p{margin:0 auto 18px;max-width:52ch;font-size:1rem;line-height:1.6;color:#d6d6d6}
+.oq3 .oq-final .oq-cta{max-width:620px;margin:0 auto 12px}
+@media(min-width:560px){.oq3 .oq-final .oq-cta{grid-template-columns:1.6fr 1fr}}
+.oq3 .oq-final-foot{margin:14px 0 0;font-size:.78rem;line-height:1.5;color:#a9a9a9}
+.oq3 .oq-final-foot i{color:var(--oq-gold);margin-right:6px}
+
+/* ---------- card lateral (desktop) ---------- */
+.oq3 .oq-side{display:none}
+@media(min-width:992px){
+  .oq3 .oq-side{display:block}
+  .oq3 .oq-card{position:relative;overflow:hidden;padding:20px 18px 18px;border-radius:22px;border:1px solid rgba(212,175,55,.5);
+    background:radial-gradient(120% 70% at 100% 0,rgba(212,175,55,.2),transparent 60%),linear-gradient(170deg,#141109,#090909 62%);
+    box-shadow:0 26px 64px rgba(0,0,0,.65),0 0 0 1px rgba(212,175,55,.06) inset}
+  .oq3 .oq-card .oq-live{margin-bottom:14px}
+  .oq3 .oq-who{display:flex;align-items:center;gap:14px;margin:0 0 14px}
+  .oq3 .oq-who img{width:72px;height:72px;border-radius:50%;object-fit:cover;border:2px solid var(--oq-gold);
+    box-shadow:0 0 0 4px rgba(212,175,55,.15),0 0 24px rgba(212,175,55,.3)}
+  .oq3 .oq-who b{display:block;font:700 1.12rem/1.2 'Playfair Display',serif;color:#fff}
+  .oq3 .oq-who span{display:block;margin-top:3px;font-size:.78rem;line-height:1.35;color:#bdbdbd}
+  .oq3 .oq-card-q{margin:0 0 12px;font:600 1.85rem/1.02 'Teko',sans-serif;letter-spacing:.7px;text-transform:uppercase;color:#fff;text-wrap:balance}
+  .oq3 .oq-card .oq-cta{margin:0 0 12px}
+  .oq3 .oq-card .oq-cta{grid-template-columns:1fr}
+  .oq3 .oq-card .oq-btn-t b{font-size:1.38rem}
+  .oq3 .oq-card .oq-central{margin:14px 0 0}
+  .oq3 .oq-card-list{list-style:none;margin:0;padding:12px 0 0;border-top:1px solid rgba(255,255,255,.1);display:grid;gap:8px;
+    font-size:.82rem;line-height:1.35;color:#d0d0d0}
+  .oq3 .oq-card-list i{width:18px;margin-right:6px;color:var(--oq-gold);text-align:center}
+}
+
+@media(min-width:992px){
+  .oq3 .oq-card{transition:opacity .4s var(--oq-ease),transform .4s var(--oq-ease)}
+  .oq3.oq-card-quiet .oq-card{opacity:0;transform:translateX(14px);pointer-events:none}
+}
+
+/* ---------- barra fixa (celular) ---------- */
+.oq3 .sticky-cta-urgency{display:flex!important;gap:10px;align-items:stretch;justify-content:center;padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+  background:linear-gradient(180deg,rgba(5,5,5,0),rgba(5,5,5,.96) 26%);
+  transition:transform .35s var(--oq-ease),opacity .35s}
+.oq3 .sticky-cta-urgency .btn-whatsapp-urgency{flex:1 1 auto;width:auto;max-width:none;min-height:54px;padding:10px 14px;gap:9px;border-radius:14px;
+  font:600 1.4rem/1 'Teko',sans-serif;letter-spacing:1px;white-space:nowrap;
+  background:linear-gradient(135deg,var(--oq-green-hi),var(--oq-green-lo) 78%);box-shadow:0 10px 28px rgba(37,211,102,.36)}
+.oq3 .sticky-cta-urgency .btn-whatsapp-urgency i{font-size:1.5rem;margin:0}
+.oq3 .oq-s-tel{flex:0 0 auto;min-width:108px;display:flex;align-items:center;justify-content:center;gap:8px;padding:10px 16px;border-radius:14px;
+  border:1.5px solid var(--oq-gold);background:rgba(10,10,10,.94);color:var(--oq-gold-hi)!important;
+  font:600 1.4rem/1 'Teko',sans-serif;letter-spacing:1px;text-transform:uppercase;text-decoration:none!important}
+.oq3 .oq-s-tel i{font-size:1.1rem;color:var(--oq-gold)}
+/* enquanto os botões do topo estão na tela, a barra fica recolhida (o JS marca html.oq-hero-in) */
+.oq3.oq-hero-in .sticky-cta-urgency{transform:translateY(115%);opacity:0;pointer-events:none}
+@media(min-width:992px){.oq3 .sticky-cta-urgency{display:none!important}}
+
+/* ---------- entrada suave (só abaixo da dobra; o JS adiciona .oq-rv) ---------- */
+.oq3 .oq-rv{opacity:0;transform:translateY(18px);transition:opacity .6s var(--oq-ease),transform .6s var(--oq-ease)}
+.oq3 .oq-rv.oq-in{opacity:1;transform:none}
+
+/* acessibilidade: parágrafo cinza do rodapé (injetado pelo footer-seo.js) com contraste 3,5:1 → ~8:1 */
+.oq3 .entity-desc{color:#a3a3a3!important}
+@media(prefers-reduced-motion:reduce){
+  .oq3 *,.oq3 *::before,.oq3 *::after{animation:none!important;transition:none!important}
+  .oq3 .oq-rv{opacity:1;transform:none}
+}
+
+/* =====================================================================
+   ÍNDICE (hub /o-que-fazer-agora/): html.oq3.oq-hub
+   ===================================================================== */
+.oq-hub .lead-urgency{margin:0 0 18px;font-size:1.06rem;line-height:1.62;color:#d6d6d6;max-width:none}
+.oq-hub .urgent-box{margin-bottom:14px}
+.oq-hub .urgent-box h2{font-size:clamp(1.3rem,4.8vw,1.6rem)}
+.oq-hub .urgent-box p a{color:var(--oq-gold-hi)!important;font-weight:800;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+.oq-hub .section-title-urgency{margin:30px 0 14px}
+
+/* busca */
+.oq3 .oq-search{position:relative;margin:0 0 22px}
+.oq3 .oq-search input{width:100%;padding:16px 16px 16px 48px;border-radius:14px;border:1px solid var(--oq-line);background:#0d0d0d;color:#fff;
+  font:400 1rem 'Lato',sans-serif;-webkit-appearance:none;appearance:none}
+.oq3 .oq-search input::placeholder{color:#9b9b9b}
+.oq3 .oq-search input:focus{outline:2px solid var(--oq-gold);outline-offset:2px;border-color:var(--oq-gold)}
+.oq3 .oq-search i{position:absolute;left:17px;top:50%;transform:translateY(-50%);color:var(--oq-gold);pointer-events:none}
+.oq3 .oq-empty{display:none;margin:0 0 22px;padding:16px 18px;border:1px dashed var(--oq-line);border-radius:14px;color:#d2d2d2;line-height:1.5}
+.oq3 .oq-empty.is-on{display:block}
+.oq3 .oq-empty a{color:var(--oq-gold-hi);font-weight:700}
+.oq3 .oq-hide{display:none!important}
+
+/* grupos de situações */
+.oq3 .oq-group{margin:0 0 34px}
+.oq3 .oq-gh{display:flex;align-items:center;gap:12px;margin:0 0 14px;font:600 clamp(1.35rem,4.6vw,1.75rem)/1.1 'Teko',sans-serif;
+  letter-spacing:1.1px;text-transform:uppercase;color:#fff;text-wrap:balance}
+.oq3 .oq-gh i{flex:0 0 40px;width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-size:1.05rem;color:var(--oq-gold);
+  background:rgba(212,175,55,.12);border:1px solid var(--oq-line)}
+.oq3 .oq-gh-sub{display:block;margin-top:2px;font:400 .86rem/1.35 'Lato',sans-serif;letter-spacing:0;text-transform:none;color:#a9a9a9}
+
+/* cartões */
+.oq3 .guide-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;margin:0}
+@media(min-width:620px){.oq3 .guide-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.oq3 .guide-card{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:10px;row-gap:7px;padding:15px 16px 14px;
+  border-radius:16px;border:1px solid rgba(255,255,255,.12);border-left:1px solid rgba(255,255,255,.12);
+  background:linear-gradient(160deg,#151515,#0a0a0a)}
+.oq3 .guide-card .guide-tag{grid-column:1;grid-row:1;justify-self:start;display:inline-block;margin:0;padding:5px 10px;border-radius:50px;
+  font:800 .68rem/1 'Lato',sans-serif;letter-spacing:1.4px;color:#111;background:linear-gradient(135deg,var(--oq-gold-hi),var(--oq-gold))}
+.oq3 .guide-card h3{grid-column:1/-1;grid-row:2;margin:2px 0 0;font:700 1.08rem/1.3 'Playfair Display',serif;color:#fff}
+.oq3 .guide-card p{grid-column:1/-1;grid-row:3;margin:0;font-size:.88rem;line-height:1.5;color:#bdbdbd}
+.oq3 .guide-card .guide-arrow{grid-column:2;grid-row:1;margin:0;padding:0;color:var(--oq-gold);font-weight:800;font-size:.78rem;letter-spacing:.4px;white-space:nowrap}
+.oq3 .guide-card:hover{transform:translateY(-4px);border-color:var(--oq-gold);box-shadow:0 18px 44px rgba(212,175,55,.18)}
+.oq3 .guide-card:focus-visible{outline:3px solid var(--oq-gold-hi);outline-offset:3px}

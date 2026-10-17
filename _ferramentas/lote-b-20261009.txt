@@ -1,0 +1,78 @@
+LOTE B - paginas de apoio com o novo design - 09/10/2026
+==========================================================
+Aplica o visual da home (preto e dourado, Playfair/Teko/Lato) nas paginas que o cliente
+mais abre depois do anuncio. Texto e fatos juridicos conferidos; nada foi subido ainda.
+
+O QUE MUDOU
+- faq.html            34 perguntas em 6 assuntos (flagrante e delegacia; investigacao e intimacao; preventiva e
+                      habeas corpus; processo criminal; situacoes frequentes; atendimento, sigilo e honorarios),
+                      busca, "abrir todas", atalhos por assunto, botoes WhatsApp/Ligar no topo e no fim,
+                      barra fixa no celular. Dados estruturados (FAQPage) = texto visivel.
+                      Entrou o Consent Mode "negado por padrao" antes do Tag Manager (igual a home): cookies de
+                      analise e anuncios ficam desligados ate o visitante aceitar no aviso de cookies.
+- emergencia.html     pagina de anuncio (continua noindex,nofollow). Passos, o que o advogado faz, o que
+                      a lei garante, FAQ curto, formulario que abre o WhatsApp. Sem depoimentos e sem
+                      promessa de prazo ou de resultado.
+- politica-privacidade.html   texto novo, completo, em linguagem simples (LGPD). Substitui as duas versoes
+                      antigas, que eram curtas e se contradiziam. Botao "Gerenciar cookies".
+- 404.html            pagina de erro no mesmo visual, com os caminhos mais procurados e WhatsApp/Ligar.
+- .htaccess           +1 regra (5.3b): o link "Politica de Privacidade" do aviso de cookies, quando clicado
+                      dentro de uma subpasta (ex.: /o-que-fazer-agora/), caia em 404. Agora vai para a politica.
+                      Nada mais foi mexido (o escudo de 04/10 continua igual).
+- sitemap.xml         faq.html com data de hoje + politica-privacidade.html (73 URLs).
+
+ARQUIVOS NOVOS (nao existem no servidor)
+  css\lucas-core.css
+  js\lucas-core.js
+  img\lucas-semim-hero-480.jpg   img\lucas-semim-hero-480.webp
+  img\lucas-semim-hero-800.jpg   img\lucas-semim-hero-800.webp
+ARQUIVOS SUBSTITUIDOS
+  faq.html  emergencia.html  404.html  politica-privacidade.html  sitemap.xml  .htaccess
+
+BACKUP DOS ORIGINAIS
+  _ferramentas\backups\lote-b-antes-20261009-134049.zip
+  (os 6 arquivos substituidos, como estavam)
+
+ORDEM SEGURA DE ENVIO (FileZilla: pasta local -> /public_html)
+  1) css\lucas-core.css          -> /public_html/css
+  2) js\lucas-core.js            -> /public_html/js
+  3) os 4 arquivos img\lucas-semim-hero-*   -> /public_html/img
+  4) faq.html, emergencia.html, 404.html, politica-privacidade.html   -> /public_html
+  5) .htaccess                   -> /public_html
+  6) sitemap.xml                 -> /public_html
+  Total: 12 arquivos. NAO enviar: _ferramentas, agentes.
+
+COMO VOLTAR ATRAS
+  1) Abra o zip de backup (botao direito > Extrair tudo).
+  2) Envie de volta, pelo FileZilla, os 6 arquivos extraidos para /public_html (substituindo).
+  (css, js e imagens novos podem ficar: so as paginas novas usam.)
+
+TOKEN DE CACHE: ?v=20261009 (lucas-core.css/js sao arquivos novos; se mexer neles depois, troque o token).
+
+CONFERIR NO AR DEPOIS DE ENVIAR (o site da Hostinger bloqueia as minhas checagens automaticas)
+  /faq.html  /emergencia.html  /politica-privacidade.html
+  /qualquer-coisa-que-nao-existe  (deve mostrar a 404 nova)
+  /politica-de-privacidade.html   (deve ir para /politica-privacidade.html)
+  /o-que-fazer-agora/ -> aviso de cookies -> "Politica de Privacidade" (deve abrir a politica nova)
+
+PARA VOCE CONFIRMAR (detalhes na conversa)
+  - Itens antigos da FAQ que NAO entraram (taxa de urgencia/PIX, Diagnostico Live pago, Colaboradores Taticos,
+    Missao Pro Bono, "cobertura nacional"). Se ainda forem verdade, me diga que eu recoloco com o texto adequado.
+  - Politica: e-mail contato@ monitorado? prazos de guarda? CNPJ/razao do escritorio? provedor de hospedagem?
+    Hoje o texto diz o que o site faz de fato (formularios -> Google Planilhas/Drive, chat com IA via Anthropic,
+    Google Analytics/Ads com consentimento, WhatsApp) e nao promete nada que eu nao consiga ver no codigo.
+
+REVISAO DE 09/10 (tarde) - o que mudou depois do teste automatico das 4 paginas (0 erros, 0 violacoes de acessibilidade)
+  - faq.html e politica-privacidade.html: tirei a pilha de scripts de "IA/SEO" (ai-neural-seo, ads-intelligence, chat-elite,
+    smart-cta, tradutor, vcard, diagnostico, bootstrap.js). Eles injetavam texto proibido pela OAB ("melhor advogado",
+    "especialista", "analise gratuita"), um 2o FAQPage duplicado e priceRange "$$". Ficaram: header, rodape, aviso de cookies
+    (lgpd), VLibras e lucas-core. Visual e conteudo das paginas nao mudaram.
+  - emergencia.html e 404.html: o Google Tag Manager disparava SEM o Consent Mode "negado por padrao" e sem aviso de cookies.
+    Agora tem o Consent Mode antes do GTM e o aviso de cookies (lgpd.js). Efeito: quem recusa cookies nao entra na medicao
+    do Google Analytics/Ads (e o correto pela LGPD; os cliques no WhatsApp continuam funcionando).
+  - faq.html e emergencia.html: "Plantao ativo agora" virou "Plantao criminal 24 horas" (promessa de presenca em tempo real).
+  - css\lucas-core.css e js\lucas-core.js foram atualizados (barra fixa do celular): a pasta ja tem a versao nova,
+    suba uma vez so. Detalhes no Lote D (_ferramentas\lote-d-20261009.txt).
+  - Ficou de fora de proposito: js\return-lead.js (emergencia.html) ainda tem a frase "Podemos fazer uma analise gratuita." -
+    sera corrigida no lote de scripts compartilhados (nao e arquivo desta pagina).
+  - Backup dos originais: o mesmo zip (lote-b-antes-20261009-134049.zip).
