@@ -24,3 +24,56 @@ api/.claude-config.local.php
 *.key
 *.pem
 api/*.local.*
+
+# =============================================
+# SEGURANÇA — dados sensíveis (nunca no GitHub)
+# =============================================
+
+# Pastas de clientes (dados pessoais, CPF, processos)
+clientes/
+civel/clientes/
+codelei/clientes/
+
+# Dados de clientes no Codelei (CPF + senha)
+codelei/clientes-vip.js
+
+# Google Apps Script (IDs de planilhas/pastas, lógica interna)
+apps-script/
+
+# Backups e ferramentas de deploy (cópias do site inteiro, inclusive cópias sensíveis)
+_ferramentas/backups/
+_ferramentas/subida-*/
+_ferramentas/verificacao-pos-upload-*/
+_ferramentas/backups-servidor/
+
+# Agentes: logs, memória, rascunhos, status de provedores, configs
+agentes/*.json
+agentes/*.jsonl
+agentes/*.log
+agentes/log_*.txt
+agentes/rascunhos/
+agentes/backup_omniroute/
+agentes/_backup_*/
+agentes/__pycache__/
+agentes/setup_segredos.*
+agentes/*.dpapi
+agentes/.omniroute*
+agentes/*.bat
+
+# Dados do site (banco de notícias pode conter rascunhos)
+dados/*.json
+
+# Saídas de IA / outputs
+agentes/output_*.json
+
+# Relatórios e HTML gerados dos agentes
+agentes/relatorio_*.html
+
+# Arquivos de verificação de propriedade e credenciais de terceiros
+*.dpapi
+*.ftppass
+*.secret
+
+# Painéis administrativos locais (não são públicos)
+painel-gestao-admin.html
+diagnostico.html

@@ -1,7 +1,0 @@
-open ftp://lucassemim1:'' + pw + r'@ftp.lucassemim.adv.br/'
-cd /public_html
-get js/ls-api-config.js C:/Users/adm/Desktop/lucassemim.adv.br/_ferramentas/backups/servidor-antes-portal-novo-20261015/ls-api-config.js
-get portal/painel-cliente.html C:/Users/adm/Desktop/lucassemim.adv.br/_ferramentas/backups/servidor-antes-portal-novo-20261015/painel-cliente.html
-get .htaccess C:/Users/adm/Desktop/lucassemim.adv.br/_ferramentas/backups/servidor-antes-portal-novo-20261015/htaccess-atual
-ls
-exit

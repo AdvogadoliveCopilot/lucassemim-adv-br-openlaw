@@ -1,6 +1,0 @@
-BACKUP DA ARVORE DO PC (pasta lucassemim.adv.br) - 15/10/2026, ANTES de alinhar com o que foi ao ar.
-
-portal\painel-cliente-14-10-V2.html  (60.008 bytes) = pagina do redesign de 14/10, feita para o desenho "V2" da API.
-   NAO sobe para o servidor: nao conversa com o Portal V3 (campos vazios/erros).
-   O que esta no ar hoje (e na arvore do PC apos a sincronia) e a versao adaptada ao V3 (77.351 bytes).
-js\ls-api-config-14-10.js (1.236 bytes) = config de 14/10, sem a linha apiUrlPortal.
